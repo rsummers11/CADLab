@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<point_set_file>
+  <file_version>0.1</file_version>
+  <point_set>
+    <time_series>
+      <time_series_id>0</time_series_id>
+      <point>
+        <id>0</id>
+        <specification>0</specification>
+        <x>-48.3398</x>
+        <y>-146.885</y>
+        <z>-420.5</z>
+      </point>
+      <point>
+        <id>1</id>
+        <specification>0</specification>
+        <x>-42.4805</x>
+        <y>-167.393</y>
+        <z>-400.5</z>
+      </point>
+      <point>
+        <id>2</id>
+        <specification>0</specification>
+        <x>-68.8477</x>
+        <y>-176.182</y>
+        <z>-382.5</z>
+      </point>
+    </time_series>
+  </point_set>
+</point_set_file>
