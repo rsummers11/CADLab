@@ -1,5 +1,5 @@
 Developed by Holger Roth (holger.roth@nih.gov, h.roth@ucl.ac.uk)
-Acknolwedgment: my-cuda-convnet2 is derived and modified from cuda-convnet2: https://code.google.com/p/cuda-convnet2
+Acknowledgement: my-cuda-convnet2 is derived and modified from cuda-convnet2: https://code.google.com/p/cuda-convnet2
 The code uses various files from the Matlab File Exchange (http://www.mathworks.com/matlabcentral/fileexchange/): niftiIO, rdir, cvsimport
 The slice extraction is based on ITK (http://itk.org/)
 
