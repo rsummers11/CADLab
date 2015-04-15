@@ -1,0 +1,16 @@
+This is a modified version of https://code.google.com/p/cuda-convnet2/
+
+Extra files:
+liver/make_general_data_liver.sh
+liver/predict_multiview_liver.sh
+liver/run_make_general_data_liver.sh
+liver/run_predict_multiview_liver.sh
+liver/run_scripts_liver.sh
+liver/test_liver.sh
+liver/train_liver.sh
+make_data/combine_batch_log_files.py
+
+Modified files:
+make_data/make_general_data.py
+predict_multiview.py
+shownet.py
