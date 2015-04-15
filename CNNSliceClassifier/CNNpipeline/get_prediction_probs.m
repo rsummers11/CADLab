@@ -74,31 +74,35 @@ if size(probs,1) ~= NZ
     error(' could not find probability for each slice!')
 end
 
+% normalize probs for each class
+norm_probs = probs./( ones(NZ,1)*max(probs) );
+
+
 %% scale for plots
 x = (1:vsiz(1))*vdim(1);
 z = (1:vsiz(3))*vdim(3);
 
 %% plot horizontal
-figure
-subplot(2,1,1)
-imagesc(squeeze(V(:,round(end/2),:)),window), colormap gray;
-title(image_file)
-ylabel('x','FontSize',15)
-xlabel('Slice #','FontSize',15)
-colormap gray
-%axis equal
-subplot(2,1,2)
-plot(probs,'LineWidth',2)
-legend(classes,'FontSize',15)
-xlabel('Slice #','FontSize',15)
-ylabel('probability','FontSize',12)
-xlim([1 NZ])
-grid
-shg
-
-saveas(gcf,[outprefix,'_horizontal.fig']);
-saveas(gcf,[outprefix,'_horizontal.png']);
-fprintf(' save results as %s (.fig/.png)\n\n', outprefix);
+% figure
+% subplot(2,1,1)
+% imagesc(squeeze(V(:,round(end/2),:)),window), colormap gray;
+% title(image_file)
+% ylabel('x','FontSize',15)
+% xlabel('Slice #','FontSize',15)
+% colormap gray
+% %axis equal
+% subplot(2,1,2)
+% plot(probs,'LineWidth',2)
+% legend(classes,'FontSize',15)
+% xlabel('Slice #','FontSize',15)
+% ylabel('probability','FontSize',12)
+% xlim([1 NZ])
+% grid
+% shg
+% 
+% saveas(gcf,[outprefix,'_horizontal.fig']);
+% saveas(gcf,[outprefix,'_horizontal.png']);
+% fprintf(' save results as %s (.fig/.png)\n\n', outprefix);
 
 %% plot vertical
 figure
@@ -111,11 +115,30 @@ colormap gray
 %axis equal
 subplot(1,2,2)
 hold on;
-plot(probs,([1:NZ]')*ones(1,6),'LineWidth',2)
+plot(probs,((1:NZ)')*ones(1,6),'LineWidth',2)
 legend(classes,'FontSize',15)
 xlabel('probability','FontSize',12)
 ylabel('Slice #','FontSize',15)
-ylim([1 NZ])
+ylim([1, NZ])
+grid
+shg
+
+%% plot normalized
+figure
+subplot(1,2,1)
+imagesc(flipud(squeeze(V(:,round(end/2),:))'),window), colormap gray;
+title(image_file)
+xlabel('x','FontSize',15)
+ylabel('Slice #','FontSize',15)
+colormap gray
+%axis equal
+subplot(1,2,2)
+hold on;
+plot(norm_probs,((1:NZ)')*ones(1,6),'LineWidth',2)
+legend(classes,'FontSize',15)
+xlabel('Normalized probabilites','FontSize',12)
+ylabel('Slice #','FontSize',15)
+ylim([1, NZ])
 grid
 shg
 
