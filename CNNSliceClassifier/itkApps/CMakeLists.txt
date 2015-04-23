@@ -18,3 +18,7 @@ set(APP_NAME itkExtractImageSlices)
 add_executable (${APP_NAME} Apps/${APP_NAME}.cxx ${LIB_SRC})
 target_link_libraries (${APP_NAME} ${ITK_LIBRARIES})
 
+set(APP_NAME itkRandomlyDeformImages2D)
+add_executable (${APP_NAME} Apps/${APP_NAME}.cxx ${LIB_SRC})
+target_link_libraries (${APP_NAME} ${ITK_LIBRARIES})
+

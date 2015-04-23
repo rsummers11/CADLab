@@ -24,6 +24,9 @@ Run example (Windows 7, 64-bit):
 2. CD to where 'run_CNNSlices_Pipeline.m' and specify input image (*.nii and *.nii.gz tested. itkExtractImageSlices should work with all ITK-supported formats, but other than nii/img will not be plotted as a result figure in the matlab code matlab will require the readers for any specific format).
 Note: if using the pre-compiled version of 'itkExtractImageSlices', you might need change permission by: chmod +x CNNSliceClassifier/itkApps_build/release/itkExtractImageSlices
 
+To generate your own augmentated training data:
+1. Run 'run_itkRandomlyDeformImages2D' on a folder with training images.
+
 Compiling:
 All libraries and executables are provided pre-compiled on github for Ubuntu 12.04 LTS. However, if your system is different, you might want to compile the code yourself:  
 

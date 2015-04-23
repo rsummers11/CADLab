@@ -1092,10 +1092,10 @@ typename TOutputImageType::Pointer randomWarpImage2D(typename TInputImageType::P
   }
 
   unsigned int NLandmarks = landmarkCount;
-  printf(" warping image (size [%d, %d]) with %d random vectors...\n", movingSize[0], movingSize[1], NLandmarks);
+  printf(" warping image (size [%d, %d]) with %d random vectors...\n", (int)movingSize[0], (int)movingSize[1], NLandmarks);
 
 #if _DEBUG
-  std::string debug_dir = "C:/HR/Data/Pancreas/SPIE/deform_examples/def5";
+  std::string debug_dir = "/tmp/DEBUG";
   // save landmarks
   std::ofstream sourceLandmarkFile;
   std::ofstream targetLandmarkFile;

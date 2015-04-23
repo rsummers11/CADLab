@@ -31,21 +31,7 @@ const unsigned int Dimension = 2;
 
 
 static const char * argv_hc[] = {"*.exe",
-	"D:/HolgerRoth/data/Liver/LiverImages/Training512", //inputDir
-  ".png", //searchString
-  "D:/HolgerRoth/data/Liver/LiverImages/Training512_t1_r1_d1_6", //outputDir
-  "256", // outSize
-//	"D:/HolgerRoth/data/Liver/LiverImages/Training", //inputDir
-//  ".png", //searchString
-//  "D:/HolgerRoth/data/Liver/LiverImages/Training_t1_r1_d1", //outputDir
-  "1", // Ntranslations
-  "1", // Nrotations
-  "1", // Nnonrigiddeforms
-  "80.0", //translation_max [mm]
-  "5.0", //rotation_max [degrees]
-  "5", // Nnonrigid_points
-  "15.0", //nonrigid_deform_max [mm]
-  "1e-2" // siffness
+	""
 };
 
 #define HARDCODEDPARAMS 0
@@ -145,7 +131,7 @@ int main(int argc, const char **argv)
     {
       image_count++;
       inputImageName = inputDir + "/" + dir->GetFile(i);
-      printf(" Reading image %d of %d: %s ...\n", i+1, dir->GetNumberOfFiles(), inputImageName.c_str() );
+      printf(" Reading image %d of %d: %s ...\n", (int)i+1, (int)dir->GetNumberOfFiles(), inputImageName.c_str() );
       // Read intensity image
       reader->SetFileName( inputImageName );
       try
@@ -169,7 +155,7 @@ int main(int argc, const char **argv)
           translation[0] = translation[0] * translation_max;
           translation[1] = translation[1] * translation_max;
           deform_count++;
-          printf(" %d.: %d. translation by [%g, %g]...\n", i+1, t, translation[0], translation[1]);
+          printf(" %d.: %d. translation by [%g, %g]...\n", (int)i+1, (int)t, translation[0], translation[1]);
           deformed = nih::translateImage<InputImageType,OutputImageType, Dimension>(image, translation, interpolationType);
         }
         else // no deform
@@ -182,7 +168,7 @@ int main(int argc, const char **argv)
           {
             deform_count++;
             rotationAngle = nih::getRandomVariateUniformDouble( rotation_max );
-            printf(" %d.: %d. rotation around [%g, %g, %g] by %g degrees...\n", i+1, r, rotationAxis[0], rotationAxis[1], rotationAxis[2], rotationAngle);
+            printf(" %d.: %d. rotation around [%g, %g, %g] by %g degrees...\n", (int)i+1, r, rotationAxis[0], rotationAxis[1], rotationAxis[2], rotationAngle);
             deformed = nih::rotateImageAroundCenter<OutputImageType,OutputImageType, Dimension>(deformed, rotationAxis, rotationAngle, interpolationType);
           }
           for (unsigned int d=0; d<=Nnonrigiddeforms; ++d)
@@ -190,7 +176,7 @@ int main(int argc, const char **argv)
             if (d>0) // randomly deform
             {
               deform_count++;
-              printf(" %d.: %d. rotation\n", i+1, d);
+              printf(" %d.: %d. rotation\n", (int)i+1, d);
               deformed = nih::randomWarpImage2D<OutputImageType,OutputImageType>(deformed, Nnonrigid_points, nonrigid_deform_max, siffness);
             }
 
@@ -219,8 +205,8 @@ int main(int argc, const char **argv)
     } // if ( strcmp(dir.GetFile(i), searchString.c_str()) == 0 )
   } // for ( unsigned long i = 0; i < dir.GetNumberOfFiles(); i++ )
 
-  printf(" read %d images...\n", image_count);
-  printf(" saved %d deformed prefix %s...\n", deform_count);
+  printf(" read %d images...\n", (int)image_count);
+  printf(" saved %d deformed images with prefix %s...\n", (int)deform_count, outputFilenamePrefix.c_str() );
 
   return EXIT_SUCCESS;
 }

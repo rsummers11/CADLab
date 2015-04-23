@@ -1,0 +1,150 @@
+function get_prediction_probs(image_file,prediction_file,window)
+
+%% RUN
+[pred_path, pred_name] = fileparts(prediction_file);
+outprefix = [pred_path, pred_name];
+
+warning off; % switch off padding warning
+pred = csvimport(prediction_file);
+warning on;
+
+[V, vsiz, vdim] = read_nifti_volume(image_file);
+if ~exist('window','var')
+    window = [min(V(:)), max(V(:))];
+end
+
+NZ = vsiz(3);
+Nlines = size(pred,1);
+Ncolums = size(pred,2);
+
+% get classes
+header = [];
+for i = 1:Ncolums
+    header = [header, pred{1,i}];
+end
+class_strings = header(find(header=='[',1,'last')+1:find(header==']',1,'last')-1);
+Nclasses = numel(strfind(class_strings,' '))+1;
+classes = cell(Nclasses,1);
+for i = 1:Nclasses
+    if ~isempty(strfind(class_strings,' '))
+        idx = find(class_strings==' ',1,'first')-2;
+        classes{i} = class_strings(2:idx);
+        class_strings = class_strings(idx+3:end);
+    else
+        classes{i} = class_strings(2:end-1);
+    end
+end
+disp('found the following classes:')
+disp(classes)
+
+% get class colums
+class_start = [];
+class_end = [];
+for i = 1:Ncolums
+    if ~isempty(strfind(pred{1,i},classes{1}))
+        class_start = i-2;
+    elseif ~isempty(strfind(pred{1,i},classes{end})) 
+        class_end = i-2;
+    end
+end
+if isempty(class_start) || isempty(class_end)
+    error(' could not find start and end index of classes!')
+end
+
+% get probs
+probs = NaN*ones(Nlines-1,Nclasses);
+for l = 2:Nlines
+    for c = class_start:class_end
+        cell_entry = pred{l,c};
+        if ~isempty(cell_entry)
+            if ischar(cell_entry)
+                cell_entry = strrep(cell_entry,'"','');
+                probs(l-1,c-class_start+1) = str2double(cell_entry);
+            elseif isnumeric(cell_entry)
+                probs(l-1,c-class_start+1) = cell_entry;
+            else
+                disp(cell_entry)
+                error(' -> cannot interpret cell entry')
+            end
+        end
+    end
+end
+
+if size(probs,1) ~= NZ
+    error(' could not find probability for each slice!')
+end
+
+% normalize probs for each class
+norm_probs = probs/repmat(NZ,[],max(probs));
+
+
+%% scale for plots
+x = (1:vsiz(1))*vdim(1);
+z = (1:vsiz(3))*vdim(3);
+
+%% plot horizontal
+% figure
+% subplot(2,1,1)
+% imagesc(squeeze(V(:,round(end/2),:)),window), colormap gray;
+% title(image_file)
+% ylabel('x','FontSize',15)
+% xlabel('Slice #','FontSize',15)
+% colormap gray
+% %axis equal
+% subplot(2,1,2)
+% plot(probs,'LineWidth',2)
+% legend(classes,'FontSize',15)
+% xlabel('Slice #','FontSize',15)
+% ylabel('probability','FontSize',12)
+% xlim([1 NZ])
+% grid
+% shg
+% 
+% saveas(gcf,[outprefix,'_horizontal.fig']);
+% saveas(gcf,[outprefix,'_horizontal.png']);
+% fprintf(' save results as %s (.fig/.png)\n\n', outprefix);
+
+%% plot vertical
+figure
+subplot(1,2,1)
+imagesc(flipud(squeeze(V(:,round(end/2),:))'),window), colormap gray;
+title(image_file)
+xlabel('x','FontSize',15)
+ylabel('Slice #','FontSize',15)
+colormap gray
+%axis equal
+subplot(1,2,2)
+hold on;
+plot(probs,((1:NZ)')*ones(1,6),'LineWidth',2)
+legend(classes,'FontSize',15)
+xlabel('probability','FontSize',12)
+ylabel('Slice #','FontSize',15)
+ylim([1, NZ])
+grid
+shg
+
+%% plot normalized
+figure
+subplot(1,2,1)
+imagesc(flipud(squeeze(V(:,round(end/2),:))'),window), colormap gray;
+title(image_file)
+xlabel('x','FontSize',15)
+ylabel('Slice #','FontSize',15)
+colormap gray
+%axis equal
+subplot(1,2,2)
+hold on;
+plot(norm_probs,((1:NZ)')*ones(1,6),'LineWidth',2)
+legend(classes,'FontSize',15)
+xlabel('Normalized probabilites','FontSize',12)
+ylabel('Slice #','FontSize',15)
+ylim([1, NZ])
+grid
+shg
+
+saveas(gcf,[outprefix,'_vertical.fig']);
+saveas(gcf,[outprefix,'_vertical.png']);
+fprintf(' save results as %s (.fig/.png)\n\n', outprefix);
+
+
+

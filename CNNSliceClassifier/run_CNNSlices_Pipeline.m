@@ -1,5 +1,9 @@
-imageFilename = '' % please specifiy
-output_dir = '' % please specifiy
+% CT torso
+imageFilename = '/home/rothhr/Code/CADLab-GitHub/Data/ISBI2015_data/TorsoCT001.nii.gz' % please specifiy
+output_dir = '/tmp/TorsoCT001' % please specifiy
+% Pancreas
+imageFilename = '/home/rothhr/Code/CADLab-GitHub/Data/ISBI2015_data/1002.nii.gz' % please specifiy
+output_dir = '/tmp/1002' % please specifiy
 
 %% PARAMS
 optROI.corrValue = []; % if images are not in HU, add this value to desired HU thresholds
@@ -14,8 +18,8 @@ optSlices.itkExtractImageSlices_exe = 'itkApps_build/release/itkExtractImageSlic
 
 % params for convnet predictions
 optConvNet.ConvNetSrcFolder = [pwd,'/my-cuda-convnet2'];
-optConvNet.CNNmodel                  = [pwd,'/CNNSliceClassifier_TrainedConvNets/All512_to_def_t2_r2_balanced_256_500batches_ConvNet2/ConvNet__2014-11-14_21.13.15/101.1']; 
-optConvNet.existingMeanImageFilename = [pwd,'/CNNSliceClassifier_TrainedConvNets/All512_to_def_t2_r2_balanced_256_500batches_ConvNet2/data_mean.png']; 
+optConvNet.CNNmodel                  = [pwd,'/TrainedConvNets/All512_to_def_t2_r2_balanced_256_500batches_ConvNet2/ConvNet__2014-11-14_21.13.15/101.1']; 
+optConvNet.existingMeanImageFilename = [pwd,'/TrainedConvNets/All512_to_def_t2_r2_balanced_256_500batches_ConvNet2/data_mean.png']; 
 
 optConvNet.NumberBatchesFactor = 1; % 1 makes sure no files get missed
 optConvNet.UseMultiview = true;

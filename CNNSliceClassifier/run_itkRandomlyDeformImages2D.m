@@ -1,8 +1,10 @@
-itkRandomlyDeformImages2D_exe = 'itkApps_build/release/itkRandomlyDeformImages2D.exe';
+%% INPUT
+inputDir = ''; % Please specify!
+outputDir = ''; % Please specify!
 
-inputDir = ''; % specify!
-outputDir = ''; % specify!
-
+%% PARAMS
+  itkRandomlyDeformImages2D_exe = 'itkApps_build/release/itkRandomlyDeformImages2D';
+  
   searchString = '.png';
   outSize = 256;
   Ntranslations = 3;
