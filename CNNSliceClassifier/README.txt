@@ -25,7 +25,7 @@ Run example (Windows 7, 64-bit):
 Note: if using the pre-compiled version of 'itkExtractImageSlices', you might need change permission by: chmod +x CNNSliceClassifier/itkApps_build/release/itkExtractImageSlices
 
 To generate your own augmentated training data:
-1. Run 'run_itkRandomlyDeformImages2D' on a folder with training images.
+1. Run 'run_itkRandomlyDeformImages2D.m' on a folder with training images.
 
 Compiling:
 All libraries and executables are provided pre-compiled on github for Ubuntu 12.04 LTS. However, if your system is different, you might want to compile the code yourself:  
