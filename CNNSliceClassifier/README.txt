@@ -1,4 +1,8 @@
 Developed by Holger Roth (holger.roth@nih.gov, h.roth@ucl.ac.uk)
+-------------------------------------------------------------------------------------------------------------------
+Code as used for the following paper:
+"Anatomy-specific classification of medical images using deep convolutional nets" Holger R. Roth, Christopher T. Lee, Hoo-Chang Shin, Ari Seff, Lauren Kim, Jianhua Yao, Le Lu, Ronald M. Summers, IEEE International Symposium on Biomedical Imaging, April 16-19, 2015, New York Marriott at Brooklyn Bridge, NY, USA
+-------------------------------------------------------------------------------------------------------------------
 Acknowledgement: my-cuda-convnet2 is derived and modified from cuda-convnet2: https://code.google.com/p/cuda-convnet2
 The code uses various files from the Matlab File Exchange (http://www.mathworks.com/matlabcentral/fileexchange/): niftiIO, rdir, cvsimport
 The slice extraction is based on ITK (http://itk.org/)
@@ -10,7 +14,10 @@ Requirements:
 	3. CUDA-compatible graphics card (tested: NVIDIA TITAN Z)
 	4. Same requirements as for cuda-convnet2: https://code.google.com/p/cuda-convnet2/wiki/Compiling
 	5. ITK v4.6.0 (others are untested): http://sourceforge.net/projects/itk/files/itk/4.6/InsightToolkit-4.6.0.tar.gz/download
-	
+
+Download CT example "TorsoCT001" from Roth et al. ISBI 2015, Fig. 7 (Note, this is image is cropped in order to keep anonymity of the patient):
+https://drive.google.com/file/d/0Byig_cLsHdU0NTJiWXhxM20zR0k/view?usp=sharing
+
 Run example (Windows 7, 64-bit):
 
 1. Open Matlab
