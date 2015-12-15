@@ -1,0 +1,15 @@
+This is a modified of http://cs.nyu.edu/~wanli/dropc/ based on https://code.google.com/p/cuda-convnet/
+
+Extra files:
+lymphnode-layers/*
+lymph-nodes/*
+bonelesion-layers/*
+run_bash_scripts*
+ITKapps/*
+CMakeLists.txt
+
+Modified files:
+make_data/make_general_data.py
+predict_multiview.py
+shownet.py
+

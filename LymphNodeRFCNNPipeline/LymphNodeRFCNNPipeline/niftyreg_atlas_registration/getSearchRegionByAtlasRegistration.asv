@@ -1,0 +1,68 @@
+function [SR, limits] = getSearchRegionByAtlasRegistration(NiftyRegAppsDir,sourceImageFile,sourceAtlasFile,targetFile, V, t_low, t_high, rErodeDilate)
+    
+    aladin_params='-ln 5 -lp 2';
+    f3d_params='-ln 5 -lp 4 --gpu';
+    %aladin_params='-ln 3 -lp 3';
+    f3d_params='-gpu';    
+    REMOVE_TABLE = true;
+    
+    %Debug (fast) options: 
+    %aladin_params='-ln 5 -lp 2 -sym -maxit 1';
+    %f3d_params='-ln 5 -lp 3 -sx -20 -maxit 1';    
+
+    outputPrefix = [fileparts(targetFile),filesep,'niftyregSR',filesep];
+
+    disp(' Run atlas-based registration')
+    %% Run registartion of atlas image
+    if REMOVE_TABLE
+        %sourceImageFile is already body only
+        targetFile = extractTableFast(targetFile,fileparts(targetFile));
+    end
+    [affineTransFilename, affineResultFilename, nonrigidTransFilename, nonrigidResultImageFilename] = ...
+        niftyreg_aladin_plus_f3d(NiftyRegAppsDir,sourceImageFile,targetFile,outputPrefix,aladin_params,f3d_params);
+    
+    %% Propagate atlas
+    [affineResultAtlasFilename, nonrigidResultFilename] = ...
+        niftyreg_resample(NiftyRegAppsDir,sourceAtlasFile,targetFile,affineTransFilename,nonrigidTransFilename,outputPrefix);
+    
+    SR = read_nifti_volume(nonrigidResultFilename);
+    
+    %% Threshold and remove isolated components
+    if exist('V','var') 
+        if exist('t_low','var') 
+            SR(V<t_low) = 0;
+        end
+        if exist('t_high','var')
+            SR(V>t_high) = 0;
+        end
+        
+        if exist('rErodeDilate','var')
+            if rErodeDilate<0
+                try % in case no image toolbox
+                SR = findLargestConnComponent(SR,rErodeDilate);
+                end
+            elseif rErodeDilate<0
+                try % in case no image toolbox
+                SR = dilateColon(SR,rErodeDilate);
+                end
+            end
+        end         
+    end
+    
+    % Get region limits
+    abdstats = regionprops(SR, 'BoundingBox');
+    if numel(abdstats) ~= 1
+        error(' could not find bounding box!');
+    end
+    ul_corner = abdstats.BoundingBox(1:3);
+    width = abdstats.BoundingBox(4:6);
+    x1 = ceil(ul_corner(1));
+    y1 = ceil(ul_corner(2));
+    z1 = ceil(ul_corner(3)); % z1 is bottom of lungs (above)!
+    x2 = floor(x1 + width(1) -1);
+    y2 = floor(y1 + width(2) -1);
+    z2 = floor(z1 + width(3) -1);    
+    
+    limits = [x1,x2; y1,y2; z1,z2];  
+    
+    

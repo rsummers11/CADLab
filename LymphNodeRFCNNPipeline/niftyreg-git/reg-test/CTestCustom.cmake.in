@@ -1,0 +1,6 @@
+set(CTEST_CUSTOM_COVERAGE_EXCLUDE
+    "reg-io/nifti"
+    "reg-io/nrrd/NrrdIO"
+    "reg-io/png/lpng1510"
+    "reg-io/zlib"
+    "third-party/Eigen")

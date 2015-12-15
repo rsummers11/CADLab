@@ -1,0 +1,6 @@
+$ git log
+commit 390df2baaf809a625ed5afe0dbc81ca6a3f7c647
+Author: Marc Modat <m.modat@ucl.ac.uk>
+Date:   Fri Nov 14 13:06:52 2014 +0000
+
+    Modified the bending energy computation so that it does not over-regularise

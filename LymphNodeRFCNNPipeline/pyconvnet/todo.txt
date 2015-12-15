@@ -1,0 +1,50 @@
+Jan30
+implement resize/rotate with cimg library
+
+----------------------------------------
+Jan 10:(merged to Sixin's code Jan21 )
+Adding         combine_pred.py
+Sending        convdata.py
+Sending        include/pyconvnet.cuh
+Sending        include/worker.cuh
+Sending        shownet.py
+Sending        src/pyconvnet.cu
+Sending        src/worker.cu
+
+Nov 29:
+1) finalize adaptive drop out in python code
+2) network input rate will become drop rate boundary
+3) implement re-load and decease learning rate code
+4) try typical networks on cifar-10, MNIST
+?       build-home.sh
+?       bin
+?       features
+?       SdkMasterLog.csv
+?       tags
+?       obj
+?       cifar-tmp
+?       doc/dropc.out
+?       doc/dropc.pdf
+?       doc/dropc.aux
+?       doc/google-doc-dec25.pdf
+?       doc/dropc.log
+?       doc/dropc.dvi
+?       doc/google-doc-dec18.pdf
+M       Makefile
+?       cifar-layers/params-conv-local-13pct-nomomwc.cfg
+M       todo.txt
+D       include/cuda_common.hpp
+M       include/layer_kernels.cuh
+M       include/layer.cuh
+D       include/dropc_dev.hpp
+A       include/dropc
+A       include/dropc/dropc_bit_dev.hpp
+A  +    include/dropc/cuda_common.hpp
+A  +    include/dropc/dropc_dev.hpp
+M       src/layer_kernels.cu
+A       src/dropc
+A       src/dropc/dropc_bit_dev.cu
+A  +    src/dropc/dropc_dev.cu
+D       src/dropc_dev.cu
+M       src/layer.cu
+M       src/convnet.cu
