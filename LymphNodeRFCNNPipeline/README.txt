@@ -14,13 +14,13 @@ Code includes open-source packages:
 Requirements:
 	1. Matlab
 	2. CUDA-compatible graphics card
-	3. Install CUDA 4.2 64-bit (https://developer.nvidia.com/cuda-toolkit-42-archive)
+	3. Install CUDA 4.2 64-bit (https://developer.nvidia.com/cuda-toolkit-42-archive), CUDA 7.0 works as well.
 	4. Python 2.7 64-bit with Numpy and Matplotlib!
 		Recommended to use Anaconda python distribution: http://continuum.io/downloads
 		Make sure it's added to path (and remove any conflicting python versions from path)
 	5. Optional: MITK for viewing result (http://www.mitk.org/Download)
 	
-Run example (Windows 7, 64-bit):
+Run example (Windows or Linux):
 
 1. Download example data from https://drive.google.com/file/d/0Byig_cLsHdU0VkdGTXQ1N195ZWc/view?usp=sharing and extract to .\data
 2. Open Matlab
@@ -28,7 +28,7 @@ Run example (Windows 7, 64-bit):
 4. Select ".\data\CTimage" as input folder
 5. Select a suitable output folder
 
-Compile yourself (should work on platforms other than Windows 7, 64-bit and Visual Studio 10, but links have to be updated):
+Compile yourself (should work on platforms other than Windows 7, 64-bit and Visual Studio 10, but links have to be updated. Ubuntu 14.04 and CUDA 7.0 seems to work as well):
 
 	Requirements:
 		1. ITK v4.5.0 (others are untested) http://sourceforge.net/projects/itk/files/itk/4.5/InsightToolkit-4.5.0.zip/download
