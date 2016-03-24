@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib_reg_tools.a  CMakeFiles/_reg_tools.dir/_reg_tools.cpp.o
+/usr/bin/ranlib lib_reg_tools.a

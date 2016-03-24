@@ -108,6 +108,7 @@ def get_cpu():
     return 'amd'
 
 def is_windows_machine():
+    print('os.name: {}'.format(os.name))
     return os.name == 'nt'
 
 def plot_array_image( image, image_size ):

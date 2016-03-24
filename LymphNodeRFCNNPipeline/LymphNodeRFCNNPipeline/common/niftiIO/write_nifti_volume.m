@@ -21,14 +21,11 @@ if nargin < 5
     end
 end
 
-filename = strrep(filename,'"','');
+filename = cleanFileName(filename);
 
 % support compressed nifti (.nii.gz)
 compressed_file = false;
 if strcmpi(filename(end-2:end),'.gz')
-    if isunix
-        error(' gzip support has not been tested on linux/mac yet!')
-    end
     compressed_file = true;
     filename = filename(1:end-3);
 end
@@ -96,9 +93,24 @@ if ~isempty(hdr)
       nii.hdr.dime.bitpix = 128; precision = 'float64';
    otherwise
       error('Datatype is not supported by make_nii.');
-   end    
+   end  
+   
+   if numel(vdim)==4 % update assuming 4D volume
+       disp(' update header assuming 4D volume.')
+       nii.hdr.dime.dim(1) = 4;
+       nii.hdr.dime.dim(2:5) = size(v);
+       nii.hdr.dime.pixdim(1) = 4;
+       nii.hdr.dime.pixdim(2:5) = vdim;
+       
+       nii.hdr.hist.srow_z(end) = vdim(4);
+   end
 else
     disp('... using empty nifty header.');
+end
+
+outdir = fileparts(filename);
+if ~isdir(outdir)
+    mkdir(outdir);
 end
 
 save_nii(nii,filename);

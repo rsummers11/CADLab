@@ -93,8 +93,8 @@ function exportCADe(Patient_IDs,Patient_Unique_Roi_Centroids,Patient_Unique_Roi_
             if ~isdir(curr_outputFolder)
                 mkdir(curr_outputFolder);
             end
-            write2mps(CADe,        [curr_outputFolder,export_suffix,'_greater',num2str(operating_probability(o)),'.mps']);
-            writeMatrixToFile(CADe,[curr_outputFolder,export_suffix,'_greater',num2str(operating_probability(o)),'.txt']);
+            write2mps(CADe,        [curr_outputFolder,export_suffix,'_greater',strrep(num2str(operating_probability(o)),'.','_'),'.mps']);
+            writeMatrixToFile(CADe,[curr_outputFolder,export_suffix,'_greater',strrep(num2str(operating_probability(o)),'.','_'),'.txt']);
         end
     end
 end

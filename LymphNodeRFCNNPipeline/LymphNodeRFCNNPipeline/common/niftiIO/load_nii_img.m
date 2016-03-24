@@ -350,19 +350,19 @@ function [img,hdr] = read_image(hdr, filetype,fileprefix,machine,img_idx,dim5_id
    hdr.dime.glmax = max(double(img(:)));
    hdr.dime.glmin = min(double(img(:)));
 
-   if old_RGB & hdr.dime.datatype == 128 & hdr.dime.bitpix == 24
+   if old_RGB && hdr.dime.datatype == 128 && hdr.dime.bitpix == 24
       img = squeeze(reshape(img, [hdr.dime.dim(2:3) 3 hdr.dime.dim(4) length(img_idx) length(dim5_idx) length(dim6_idx) length(dim7_idx)]));
       img = permute(img, [1 2 4 3 5 6 7 8]);
-   elseif hdr.dime.datatype == 128 & hdr.dime.bitpix == 24
+   elseif hdr.dime.datatype == 128 && hdr.dime.bitpix == 24
       img = squeeze(reshape(img, [3 hdr.dime.dim(2:4) length(img_idx) length(dim5_idx) length(dim6_idx) length(dim7_idx)]));
       img = permute(img, [2 3 4 1 5 6 7 8]);
-   elseif hdr.dime.datatype == 511 & hdr.dime.bitpix == 96
+   elseif hdr.dime.datatype == 511 && hdr.dime.bitpix == 96
       img = double(img);
       img = (img - min(img))/(max(img) - min(img));
       img = squeeze(reshape(img, [3 hdr.dime.dim(2:4) length(img_idx) length(dim5_idx) length(dim6_idx) length(dim7_idx)]));
       img = permute(img, [2 3 4 1 5 6 7 8]);
    else
-      if numel(img)==prod(hdr.dime.dim(2:4))
+      if numel(img)==prod(hdr.dime.dim(2:5))
         img = squeeze(reshape(img, [hdr.dime.dim(2:4) length(img_idx) length(dim5_idx) length(dim6_idx) length(dim7_idx)]));
       else
           error(' Image data does not fit with dimensions in header!');

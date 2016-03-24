@@ -20,7 +20,7 @@ function Y_hat = regRF_predict(X,model)
 	
 	Y_hat = mexRF_predict(X',model.lDau,model.rDau,model.nodestatus,model.nrnodes,model.upper,model.avnode,model.mbest,model.ndtree,model.ntree);
     
-    if ~isempty(find(model.coef)) %for bias corr
+    if ~isempty(find(model.coef,1)) %for bias corr
         Y_hat = model.coef(1) + model.coef(2)*Y_hat;
     end
 	clear mexRF_predict

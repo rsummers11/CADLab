@@ -31,8 +31,7 @@ if nargin < 2
     end    
 end
 
-filename = strrep(filename,' ','');
-filename = strrep(filename,'"','');
+filename = cleanFileName(filename);
 
 if exist('rdir')
     disp('loading image from ')
@@ -46,9 +45,8 @@ compressed_file = false;
 if strcmpi(filename(end-2:end),'.gz')
     compressed_file = true;    
     if isunix
-        error(' gzip support has not been tested on linux/mac yet!')
-        disp(['gunzip ',filename]);
-        unix(['gunzip ',filename]);
+        disp(['gunzip -f ',filename]);
+        unix(['gunzip -f ',filename]);
         filename = filename(1:end-3);
     else
         curr_dir = pwd;
@@ -65,7 +63,7 @@ nii = load_untouch_nii(filename);
 
 v = nii.img;
 vsize = size(v);
-vdim = nii.hdr.dime.pixdim(2:4);
+vdim = nii.hdr.dime.pixdim(2:numel(vsize)+1);
 hdr = nii.hdr;
 
 if permute_on
@@ -83,8 +81,8 @@ end
 % support compressed nifti (.nii.gz)
 if compressed_file
     if isunix
-        disp(['gzip ',filename]);
-        unix(['gzip ',filename]);
+        disp(['gzip -f ',filename]);
+        unix(['gzip -f ',filename]);
         filename = [filename,'.gz'];
     else
 %        gzip(filename);

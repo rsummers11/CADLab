@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib_reg_tools_gpu.a  CMakeFiles/_reg_tools_gpu.dir/./_reg_tools_gpu_generated__reg_tools_gpu.cu.o CMakeFiles/_reg_tools_gpu.dir/./_reg_tools_gpu_generated__reg_tools_kernels.cu.o
+/usr/bin/ranlib lib_reg_tools_gpu.a

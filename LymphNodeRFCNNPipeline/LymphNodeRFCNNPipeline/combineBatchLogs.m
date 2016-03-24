@@ -8,7 +8,7 @@ function combinedBatchLogFile = combineBatchLogs(batch_folder,batch_range)
         num2str(batch_range(1)),'-',num2str(batch_range(2)),'.txt'];
     
     if exist(combinedBatchLogFile,'file')
-        dos(['del ',combinedBatchLogFile])
+        delete(combinedBatchLogFile)
         if exist(combinedBatchLogFile,'file')
             error('deletion not always working because of permission issues for file: %s',combinedBatchLogFile)
         end
@@ -19,8 +19,12 @@ function combinedBatchLogFile = combineBatchLogs(batch_folder,batch_range)
         curr_batch = rdir([batch_folder,filesep,'data_batch_',num2str(batch),'.txt']);
         if ~isempty(curr_batch)
             
-            command = ['type ',curr_batch.name,' 1>>',combinedBatchLogFile];
-            [status, result] = dos(command,'-echo');
+            if ispc
+                command = ['type ',curr_batch.name,' 1>>',combinedBatchLogFile];
+            else % linux
+                command = ['cat ',curr_batch.name,' >> ',combinedBatchLogFile];
+            end
+            [status, result] = system(command,'-echo');
             if status~=0
                 error(result)
             end

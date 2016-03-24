@@ -1,0 +1,1 @@
+/usr/bin/g++-4.4    -fopenmp -O3 -DNDEBUG    CMakeFiles/reg_test_interp.dir/reg_test_interp.cpp.o  -o reg_test_interp -rdynamic ../reg-lib/lib_reg_resampling.a ../reg-lib/lib_reg_maths.a ../reg-io/nifti/libreg_nifti.a -lz 

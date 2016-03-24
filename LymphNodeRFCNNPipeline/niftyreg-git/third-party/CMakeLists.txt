@@ -1,5 +1,0 @@
-if(OPENMP_FOUND)
-	if(USE_OPENMP)
-		add_definitions(-DEIGEN_HAS_OPENMP)
-	endif(USE_OPENMP)
-endif(OPENMP_FOUND)

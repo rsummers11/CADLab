@@ -52,9 +52,8 @@ function [hdr, filetype, fileprefix, machine] = load_nii_hdr(fileprefix)
     if strcmpi(fileprefix(end-2:end),'.gz')
         compressed_file = true;    
         if isunix
-            error(' gzip support has not been tested on linux/mac yet!')
-            disp(['gunzip ',fileprefix]);
-            unix(['gunzip ',fileprefix]);
+            disp(['gunzip -f ',fileprefix]);
+            unix(['gunzip -f ',fileprefix]);
             fileprefix = fileprefix(1:end-3);
         else
             curr_dir = pwd;
@@ -84,12 +83,12 @@ function [hdr, filetype, fileprefix, machine] = load_nii_hdr(fileprefix)
       fileprefix(nii_idx:end) = [];
    end
 
-   if findstr('.hdr',fileprefix)
-      fileprefix = strrep(fileprefix,'.hdr','');
+   if strcmpi(fileprefix(end-3:end),'.hdr')
+      fileprefix = fileprefix(1:end-4);
    end
 
-   if findstr('.img',fileprefix)
-      fileprefix = strrep(fileprefix,'.img','');
+   if strcmpi(fileprefix(end-3:end),'.img')
+      fileprefix = fileprefix(1:end-4);
    end
 
    if new_ext
@@ -163,9 +162,9 @@ function [hdr, filetype, fileprefix, machine] = load_nii_hdr(fileprefix)
     % support compressed nifti (.nii.gz)
     if compressed_file
         if isunix
-            disp(['gzip ',fileprefix]);
-            unix(['gzip ',fileprefix]);
-            fileprefix = [fileprefix,'.gz'];
+            disp(['gzip -f ',fileprefix,'.nii']);
+            unix(['gzip -f ',fileprefix,'.nii']);
+            fileprefix = [fileprefix,'.nii.gz'];
         else
     %        gzip(fileprefix);
             dos(['del ',filepath,filesep,fileprefix,'.nii'],'-echo'); % delete unzipped file       

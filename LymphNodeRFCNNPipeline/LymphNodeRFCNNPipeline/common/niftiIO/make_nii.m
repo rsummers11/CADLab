@@ -71,7 +71,7 @@ function nii = make_nii(varargin)
    end
 
    if nargin > 1 & ~isempty(varargin{2})
-      voxel_size(2:4) = double(varargin{2});
+      voxel_size(2:numel(double(varargin{2}))+1) = double(varargin{2});
    end
 
    if nargin > 2 & ~isempty(varargin{3})

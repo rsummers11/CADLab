@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib_reg_blockMatching_gpu.a  CMakeFiles/_reg_blockMatching_gpu.dir/./_reg_blockMatching_gpu_generated__reg_blockMatching_gpu.cu.o CMakeFiles/_reg_blockMatching_gpu.dir/./_reg_blockMatching_gpu_generated__reg_blockMatching_kernels.cu.o
+/usr/bin/ranlib lib_reg_blockMatching_gpu.a

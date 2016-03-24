@@ -3,7 +3,7 @@
  *  Copyright National Institutes of Health
  *
  *  Unless required by applicable law or agreed to in writing, this software
- *  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF 
+ *  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
  *  ANY KIND, either express or implied.
  *
  *=========================================================================*/
@@ -32,7 +32,7 @@ public:
 
   /** Run-time type information (and related methods).   */
   itkTypeMacro(IsotropicWindowingResampleImageFilter, ImageToImageFilter);
-  
+
   /** Image dimension. */
   itkStaticConstMacro(ImageDimension, unsigned int,
                       TInputImageType::ImageDimension);
@@ -51,8 +51,8 @@ public:
   typedef typename InputImageType::PointType    InputImagePointType;
 
   typedef typename NumericTraits<InputImagePixelType>::RealType    RealType;
-  /** Define the image type for internal computations 
-      RealType is usually 'double' in NumericTraits. 
+  /** Define the image type for internal computations
+      RealType is usually 'double' in NumericTraits.
       Here we prefer float in order to save memory.  */
   typedef float InternalRealType;
   typedef Image< InternalRealType, TInputImageType::ImageDimension > RealImageType;
@@ -94,7 +94,7 @@ private:
 
   typename IntensityFilterType::Pointer     m_IntensityFilter;
   typename ResampleFilterType::Pointer      m_ResampleFilter;
-  
+
   InputImagePixelType   m_InputWinMin;
   InputImagePixelType   m_InputWinMax;
   OutputImagePixelType   m_OutputWinMin;
@@ -154,17 +154,17 @@ GenerateData()
   m_IntensityFilter->SetWindowMinimum( m_InputWinMin );
   m_IntensityFilter->SetWindowMaximum( m_InputWinMax );
   m_IntensityFilter->SetOutputMinimum( m_OutputWinMin );
-  m_IntensityFilter->SetOutputMaximum( m_OutputWinMax ); 
+  m_IntensityFilter->SetOutputMaximum( m_OutputWinMax );
   m_IntensityFilter->SetInput( this->GetInput() );
 
   InputImageConstPointer inputImage = this->GetInput();
-  TInputImageType::SpacingType inputSpacing = inputImage->GetSpacing();
+  typename TInputImageType::SpacingType inputSpacing = inputImage->GetSpacing();
   printf("	input spacing is [%g, %g, %g]\n", inputSpacing[0], inputSpacing[1], inputSpacing[2]);
 
   // compute size of isometric image
   typedef itk::IdentityTransform< double, TInputImageType::ImageDimension >  TransformType;
 
-  TransformType::Pointer transform = TransformType::New();
+  typename TransformType::Pointer transform = TransformType::New();
   transform->SetIdentity();
   m_ResampleFilter->SetTransform( transform );
 
@@ -173,21 +173,21 @@ GenerateData()
   {
     std::cout << "  ... using nearest neighbor interpolation..." << std::endl;
     typedef itk::NearestNeighborInterpolateImageFunction< RealImageType, double >  InterpolatorType;
-    InterpolatorType::Pointer interpolator = InterpolatorType::New();
+    typename InterpolatorType::Pointer interpolator = InterpolatorType::New();
     m_ResampleFilter->SetInterpolator( interpolator );
   }
   else if (m_InterpolationType == nih::LINEAR)
   {
     std::cout << "  ... using linear interpolation..." << std::endl;
     typedef itk::LinearInterpolateImageFunction< RealImageType, double >  InterpolatorType;
-    InterpolatorType::Pointer interpolator = InterpolatorType::New();
+    typename InterpolatorType::Pointer interpolator = InterpolatorType::New();
     m_ResampleFilter->SetInterpolator( interpolator );
   }
-  else if (m_InterpolationType == nih::BSPLINE) // best trade-off between accuracy and computational cost 
+  else if (m_InterpolationType == nih::BSPLINE) // best trade-off between accuracy and computational cost
   {
     std::cout << "  ... using B-Spline interpolation..." << std::endl;
-    typedef itk::BSplineInterpolateImageFunction< RealImageType, double > InterpolatorType; 
-    InterpolatorType::Pointer interpolator = InterpolatorType::New();
+    typedef itk::BSplineInterpolateImageFunction< RealImageType, double > InterpolatorType;
+    typename InterpolatorType::Pointer interpolator = InterpolatorType::New();
     m_ResampleFilter->SetInterpolator( interpolator );
   }
   else
@@ -199,7 +199,7 @@ GenerateData()
   m_ResampleFilter->SetDefaultPixelValue( m_OutputWinMax ); // highlight regions without source
 
   printf("	target isometric spacing is [%g, %g, %g]\n", m_IsoSpacing, m_IsoSpacing, m_IsoSpacing);
-  OutputImageType::SpacingType spacing;
+  typename OutputImageType::SpacingType spacing;
   spacing[0] = m_IsoSpacing;
   spacing[1] = m_IsoSpacing;
   spacing[2] = m_IsoSpacing;
@@ -207,31 +207,31 @@ GenerateData()
   m_ResampleFilter->SetOutputSpacing( spacing );
   m_ResampleFilter->SetOutputOrigin( inputImage->GetOrigin() );
   m_ResampleFilter->SetOutputDirection( inputImage->GetDirection() );
-  InputImageType::SizeType   inputSize =
+  typename InputImageType::SizeType   inputSize =
                     inputImage->GetLargestPossibleRegion().GetSize();
 
-  typedef OutputImageType::SizeType::SizeValueType SizeValueType;
-  printf("	input size is [%d, %d, %d]\n", inputSize[0], inputSize[1], inputSize[2]);
+  typedef typename OutputImageType::SizeType::SizeValueType SizeValueType;
+  printf("	input size is [%d, %d, %d]\n", (int)inputSize[0], (int)inputSize[1], (int)inputSize[2]);
 
   const double dx = inputSize[0] * inputSpacing[0] / m_IsoSpacing;
   const double dy = inputSize[1] * inputSpacing[1] / m_IsoSpacing;
 
   const double dz = (inputSize[2] - 1 ) * inputSpacing[2] / m_IsoSpacing;
-  OutputImageType::SizeType   size;
-  
+  typename OutputImageType::SizeType   size;
+
   size[0] = static_cast<SizeValueType>( dx );
   size[1] = static_cast<SizeValueType>( dy );
   size[2] = static_cast<SizeValueType>( dz );
-  printf("	output size is [%d, %d, %d]\n", size[0], size[1], size[2]);
+  printf("	output size is [%d, %d, %d]\n", (int)size[0], (int)size[1], (int)size[2]);
 
   m_ResampleFilter->SetSize( size );
-  
+
   m_ResampleFilter->GraftOutput( this->GetOutput() );
   try
   {
     /** Running a pipeline where the LargestPossibleRegion in the pipeline
-    * is expected to change on consecutive runs. The pipeline does not 
-    * detect this condition, and it will throw an exception. In this case, 
+    * is expected to change on consecutive runs. The pipeline does not
+    * detect this condition, and it will throw an exception. In this case,
     * an UpdateLargestPossibleRegion() call is required instead of Update(). */
     m_ResampleFilter->UpdateLargestPossibleRegion();
   }

@@ -3,12 +3,17 @@ function [affineResultFilename, nonrigidResultFilename] = ...
 
      %Interpolation order (0, 1, 3, 4)[3] (0=NN, 1=LIN; 3=CUB, 4=SINC)
      inter=0;
+     
+     sourceFile = cleanFileName(sourceFile);
+     targetFile = cleanFileName(targetFile);
+     affineTransFilename = cleanFileName(affineTransFilename);
+     nonrigidTransFilename = cleanFileName(nonrigidTransFilename);
         
     %% RUN    
     inter_str = [' -inter ',num2str(inter)];
 
     tic
-    reg_resample_exe=[NiftyRegAppsDir,'/reg_resample.exe'];
+    reg_resample_exe=[NiftyRegAppsDir,'/reg_resample'];
     
     % check ifle formats
     [~, ~, sourceExt] = fileparts(sourceFile);

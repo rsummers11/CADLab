@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib_reg_cudaCommon.a  CMakeFiles/_reg_cudaCommon.dir/./_reg_cudaCommon_generated__reg_cudaCommon.cu.o
+/usr/bin/ranlib lib_reg_cudaCommon.a

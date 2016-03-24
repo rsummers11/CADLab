@@ -8,8 +8,8 @@ function [affineTransFilename, affineResultFilename, nonrigidTransFilename, nonr
         mkdir(outdir)
     end
     
-    reg_aladin_exe=[NiftyRegAppsDir,'/reg_aladin.exe'];
-    reg_f3d_exe=[NiftyRegAppsDir,'/reg_f3d.exe'];
+    reg_aladin_exe=[NiftyRegAppsDir,'/reg_aladin'];
+    reg_f3d_exe=[NiftyRegAppsDir,'/reg_f3d'];
         
     % check file formats
     [~, ~, sourceExt] = fileparts(sourceFile);

@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib_reg_globalTransformation_gpu.a  CMakeFiles/_reg_globalTransformation_gpu.dir/./_reg_globalTransformation_gpu_generated__reg_globalTransformation_gpu.cu.o CMakeFiles/_reg_globalTransformation_gpu.dir/./_reg_globalTransformation_gpu_generated__reg_globalTransformation_kernels.cu.o
+/usr/bin/ranlib lib_reg_globalTransformation_gpu.a

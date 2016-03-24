@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib_reg_resampling.a  CMakeFiles/_reg_resampling.dir/_reg_resampling.cpp.o
+/usr/bin/ranlib lib_reg_resampling.a

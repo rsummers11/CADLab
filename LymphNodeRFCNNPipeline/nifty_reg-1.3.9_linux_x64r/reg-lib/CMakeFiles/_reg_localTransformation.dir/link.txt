@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib_reg_localTransformation.a  CMakeFiles/_reg_localTransformation.dir/_reg_localTransformation.cpp.o
+/usr/bin/ranlib lib_reg_localTransformation.a

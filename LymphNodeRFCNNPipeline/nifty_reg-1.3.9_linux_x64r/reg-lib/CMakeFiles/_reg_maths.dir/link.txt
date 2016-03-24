@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib_reg_maths.a  CMakeFiles/_reg_maths.dir/_reg_maths.cpp.o
+/usr/bin/ranlib lib_reg_maths.a

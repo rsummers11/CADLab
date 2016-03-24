@@ -86,7 +86,13 @@ function save_nii(nii, fileprefix, old_RGB)
 
       %  So earlier versions of SPM can also open it with correct originator
       %
-      M=[[diag(nii.hdr.dime.pixdim(2:4)) -[nii.hdr.hist.originator(1:3).*nii.hdr.dime.pixdim(2:4)]'];[0 0 0 1]];
+      if isfield(nii.hdr.hist,'originator')
+        M=[[diag(nii.hdr.dime.pixdim(2:4)) -[nii.hdr.hist.originator(1:3).*nii.hdr.dime.pixdim(2:4)]'];[0 0 0 1]];
+      else % Holger fix to allow replacing header
+        originator = [nii.hdr.hist.qoffset_x, nii.hdr.hist.qoffset_y, nii.hdr.hist.qoffset_z];
+        M=[[diag(nii.hdr.dime.pixdim(2:4)) -[originator(1:3).*nii.hdr.dime.pixdim(2:4)]'];[0 0 0 1]];   
+      end
+          
       save(fileprefix, 'M');
    end
    

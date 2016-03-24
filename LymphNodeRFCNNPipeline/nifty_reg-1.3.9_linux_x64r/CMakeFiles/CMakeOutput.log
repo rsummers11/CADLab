@@ -1,0 +1,315 @@
+The system is: Linux - 3.19.0-49-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc-4.4 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/2.8.12.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/g++-4.4 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/2.8.12.2/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3334130437/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3334130437.dir/build.make CMakeFiles/cmTryCompileExec3334130437.dir/build
+make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3334130437.dir/testCCompiler.c.o
+/usr/bin/gcc-4.4    -o CMakeFiles/cmTryCompileExec3334130437.dir/testCCompiler.c.o   -c /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec3334130437
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3334130437.dir/link.txt --verbose=1
+/usr/bin/gcc-4.4       CMakeFiles/cmTryCompileExec3334130437.dir/testCCompiler.c.o  -o cmTryCompileExec3334130437 -rdynamic 
+make[1]: Leaving directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3358459049/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3358459049.dir/build.make CMakeFiles/cmTryCompileExec3358459049.dir/build
+make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3358459049.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc-4.4    -o CMakeFiles/cmTryCompileExec3358459049.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec3358459049
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3358459049.dir/link.txt --verbose=1
+/usr/bin/gcc-4.4     -v CMakeFiles/cmTryCompileExec3358459049.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3358459049 -rdynamic  
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.4.7-8ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --disable-libmudflap --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.7 (Ubuntu/Linaro 4.4.7-8ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3358459049' '-rdynamic' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.7/collect2 --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec3358459049 -z relro /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../.. CMakeFiles/cmTryCompileExec3358459049.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec3358459049/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3358459049.dir/build.make CMakeFiles/cmTryCompileExec3358459049.dir/build]
+  ignore line: [make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec3358459049.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc-4.4    -o CMakeFiles/cmTryCompileExec3358459049.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec3358459049]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3358459049.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc-4.4     -v CMakeFiles/cmTryCompileExec3358459049.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3358459049 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.4.7-8ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --disable-libmudflap --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.4.7 (Ubuntu/Linaro 4.4.7-8ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3358459049' '-rdynamic' '-mtune=generic']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.4.7/collect2 --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec3358459049 -z relro /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../.. CMakeFiles/cmTryCompileExec3358459049.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/collect2] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec3358459049] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec3358459049.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.4.7]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.4.7]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1877253353/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1877253353.dir/build.make CMakeFiles/cmTryCompileExec1877253353.dir/build
+make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1877253353.dir/testCXXCompiler.cxx.o
+/usr/bin/g++-4.4     -o CMakeFiles/cmTryCompileExec1877253353.dir/testCXXCompiler.cxx.o -c /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec1877253353
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1877253353.dir/link.txt --verbose=1
+/usr/bin/g++-4.4        CMakeFiles/cmTryCompileExec1877253353.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec1877253353 -rdynamic 
+make[1]: Leaving directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2345827041/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2345827041.dir/build.make CMakeFiles/cmTryCompileExec2345827041.dir/build
+make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2345827041.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/g++-4.4     -o CMakeFiles/cmTryCompileExec2345827041.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec2345827041
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2345827041.dir/link.txt --verbose=1
+/usr/bin/g++-4.4      -v CMakeFiles/cmTryCompileExec2345827041.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2345827041 -rdynamic  
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.4.7-8ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --disable-libmudflap --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.7 (Ubuntu/Linaro 4.4.7-8ubuntu1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2345827041' '-rdynamic' '-shared-libgcc' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.7/collect2 --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec2345827041 -z relro /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../.. CMakeFiles/cmTryCompileExec2345827041.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec2345827041/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec2345827041.dir/build.make CMakeFiles/cmTryCompileExec2345827041.dir/build]
+  ignore line: [make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec2345827041.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/g++-4.4     -o CMakeFiles/cmTryCompileExec2345827041.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec2345827041]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2345827041.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/g++-4.4      -v CMakeFiles/cmTryCompileExec2345827041.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2345827041 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 4.4.7-8ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --disable-libmudflap --disable-werror --with-arch-32=i686 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.4.7 (Ubuntu/Linaro 4.4.7-8ubuntu1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2345827041' '-rdynamic' '-shared-libgcc' '-mtune=generic']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.4.7/collect2 --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec2345827041 -z relro /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../.. CMakeFiles/cmTryCompileExec2345827041.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/collect2] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec2345827041] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../..]
+    arg [CMakeFiles/cmTryCompileExec2345827041.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.4.7]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7] ==> [/usr/lib/gcc/x86_64-linux-gnu/4.4.7]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/4.4.7/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/4.4.7;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec870924140/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec870924140.dir/build.make CMakeFiles/cmTryCompileExec870924140.dir/build
+make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec870924140.dir/CheckIncludeFile.c.o
+/usr/bin/gcc-4.4   -fopenmp    -o CMakeFiles/cmTryCompileExec870924140.dir/CheckIncludeFile.c.o   -c /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec870924140
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec870924140.dir/link.txt --verbose=1
+/usr/bin/gcc-4.4   -fopenmp     CMakeFiles/cmTryCompileExec870924140.dir/CheckIncludeFile.c.o  -o cmTryCompileExec870924140 -rdynamic 
+make[1]: Leaving directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2532668962/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2532668962.dir/build.make CMakeFiles/cmTryCompileExec2532668962.dir/build
+make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2532668962.dir/CheckIncludeFile.c.o
+/usr/bin/gcc-4.4   -fopenmp    -o CMakeFiles/cmTryCompileExec2532668962.dir/CheckIncludeFile.c.o   -c /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec2532668962
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2532668962.dir/link.txt --verbose=1
+/usr/bin/gcc-4.4   -fopenmp     CMakeFiles/cmTryCompileExec2532668962.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2532668962 -rdynamic 
+make[1]: Leaving directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2567313032/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2567313032.dir/build.make CMakeFiles/cmTryCompileExec2567313032.dir/build
+make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2567313032.dir/CheckIncludeFile.c.o
+/usr/bin/gcc-4.4   -fopenmp    -o CMakeFiles/cmTryCompileExec2567313032.dir/CheckIncludeFile.c.o   -c /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTryCompileExec2567313032
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2567313032.dir/link.txt --verbose=1
+/usr/bin/gcc-4.4   -fopenmp     CMakeFiles/cmTryCompileExec2567313032.dir/CheckIncludeFile.c.o  -o cmTryCompileExec2567313032 -rdynamic 
+make[1]: Leaving directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+
+
+Determining size of unsigned short passed with the following output:
+Change Dir: /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3445276011/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3445276011.dir/build.make CMakeFiles/cmTryCompileExec3445276011.dir/build
+make[1]: Entering directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3445276011.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
+/usr/bin/gcc-4.4   -fopenmp    -o CMakeFiles/cmTryCompileExec3445276011.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
+Linking C executable cmTryCompileExec3445276011
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3445276011.dir/link.txt --verbose=1
+/usr/bin/gcc-4.4   -fopenmp     CMakeFiles/cmTryCompileExec3445276011.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTryCompileExec3445276011 -rdynamic 
+make[1]: Leaving directory `/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/CMakeFiles/CMakeTmp'
+
+

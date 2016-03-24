@@ -1,0 +1,2 @@
+/usr/bin/ar cr lib_reg_globalTransformation.a  CMakeFiles/_reg_globalTransformation.dir/_reg_globalTransformation.cpp.o
+/usr/bin/ranlib lib_reg_globalTransformation.a

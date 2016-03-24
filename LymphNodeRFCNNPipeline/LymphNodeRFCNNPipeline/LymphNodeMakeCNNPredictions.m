@@ -55,7 +55,9 @@ function [OUT_BATCH_FOLDER, PREDICTIONS_TEXT_FILE] = LymphNodeMakeCNNPredictions
     IMG_SIZE=num2str(32);
     IMG_CHANNELS=num2str(ImageChannels);
 
+    disp('=======================================================================')
     command = ['python ./lymph-nodes/make_general_batches.py ',INPUT_FOLDER,' ',OUT_BATCH_FOLDER,' ',START_IDX,' ',NUMBER_BATCHES,' ',SEARCH_STR,' ',IMG_SIZE,' ',IMG_CHANNELS];
+    disp(command)
     [status,result] = system(command,'-echo');
     if status~=0
         error(result);
@@ -77,6 +79,7 @@ function [OUT_BATCH_FOLDER, PREDICTIONS_TEXT_FILE] = LymphNodeMakeCNNPredictions
     end
     
     % RECONFIGURE
+    disp('=======================================================================')
     disp('RECONFIGURE')
     command = ['python ./convnet.py -f ',INPUT_NN,' --logreg-name=logprob --multiview-test=',USE_MULTIVIEW,' --train-range=',TEST_RANGE,' --test-range=',TEST_RANGE,' --test-only=1 --data-path=',DATA_SET_PATH,' --save-path=',INPUT_MODEL_DIR,' --test-freq=1'];
     disp(command);
@@ -86,6 +89,7 @@ function [OUT_BATCH_FOLDER, PREDICTIONS_TEXT_FILE] = LymphNodeMakeCNNPredictions
     end
 
     % WRITE PREDICTIONS
+    disp('=======================================================================')
     disp('WRITE PREDICTIONS')
     command = ['python ./shownet.py -f ',INPUT_NN,' --write-predictions=',PREDICTIONS_BATCH_FILE,' --multiview-test=',USE_MULTIVIEW,' --test-range=',TEST_RANGE];
     disp(command);
@@ -95,6 +99,7 @@ function [OUT_BATCH_FOLDER, PREDICTIONS_TEXT_FILE] = LymphNodeMakeCNNPredictions
     end    
     
     % CONVERT PREDICTIONS TO TEXT FILE
+    disp('=======================================================================')
     disp('CONVERT PREDICTIONS TO TEXT FILE')
     command = ['python ./lymph-nodes/predict_multiview.py ',PREDICTIONS_BATCH_FILE,' ',PREDICTIONS_TEXT_FILE,' ',USE_MULTIVIEW];
     disp(command);
@@ -102,6 +107,8 @@ function [OUT_BATCH_FOLDER, PREDICTIONS_TEXT_FILE] = LymphNodeMakeCNNPredictions
     if status~=0
         error(result);
     end  
+    disp('=======================================================================')
+    disp('=======================================================================')
     
     cd(curr_dir)
     

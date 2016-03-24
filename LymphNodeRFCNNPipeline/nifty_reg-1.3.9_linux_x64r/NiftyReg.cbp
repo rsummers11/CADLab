@@ -1,0 +1,2145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="NiftyReg" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\reg-io\;CMake Files\reg-io\nifti\;CMake Files\reg-io\png\;CMake Files\reg-io\nrrd\;CMake Files\reg-io\nrrd\NrrdIO\;CMake Files\reg-io\nrrd\NrrdIO\CMake\;CMake Files\reg-lib\;CMake Files\reg-apps\;CMake Files\reg-test\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Continuous">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 Continuous" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Experimental">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 Experimental" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Nightly">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 Nightly" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 install" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/local">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 install/local" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/strip">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 install/strip" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="list_install_components">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 list_install_components" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="package">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 package" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="package_source">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 package_source" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test">
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 test" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_ReadWriteImage">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/lib_reg_ReadWriteImage.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/Makefile&quot;  VERBOSE=1 _reg_ReadWriteImage" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_ReadWriteImage/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/lib_reg_ReadWriteImage.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/Makefile&quot;  VERBOSE=1 _reg_ReadWriteImage/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_KLdivergence">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_KLdivergence.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_KLdivergence" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_KLdivergence/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_KLdivergence.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_KLdivergence/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_aladin">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_aladin.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_aladin" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_aladin/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_aladin.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_aladin/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_blockMatching">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_blockMatching.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_blockMatching" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_blockMatching/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_blockMatching.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_blockMatching/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_f3d">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_f3d.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_f3d" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_f3d/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_f3d.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_f3d/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_femTransformation">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_femTransformation.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_femTransformation" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_femTransformation/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_femTransformation.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_femTransformation/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_globalTransformation">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_globalTransformation.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_globalTransformation" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_globalTransformation/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_globalTransformation.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_globalTransformation/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_localTransformation">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_localTransformation.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_localTransformation" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_localTransformation/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_localTransformation.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_localTransformation/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_maths">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_maths.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_maths" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_maths/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_maths.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_maths/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_mutualinformation">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_mutualinformation.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_mutualinformation" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_mutualinformation/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_mutualinformation.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_mutualinformation/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_resampling">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_resampling.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_resampling" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_resampling/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_resampling.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_resampling/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_ssd">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_ssd.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_ssd" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_ssd/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_ssd.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_ssd/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_thinPlateSpline">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_thinPlateSpline.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_thinPlateSpline" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_thinPlateSpline/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_thinPlateSpline.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_thinPlateSpline/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_tools">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_tools.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_tools" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_reg_tools/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/lib_reg_tools.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 _reg_tools/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-lib/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_aladin">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_aladin" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_aladin" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_aladin/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_aladin" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_aladin/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_average">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_average" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_average" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_average/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_average" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_average/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_f3d">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_f3d" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_f3d" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_f3d/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_f3d" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_f3d/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_jacobian">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_jacobian" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_jacobian" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_jacobian/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_jacobian" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_jacobian/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_resample">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_resample" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_resample" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_resample/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_resample" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_resample/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_tools">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_tools" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_tools" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_tools/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_tools" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_tools/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_transform">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_transform" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_transform" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_transform/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/reg_transform" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 reg_transform/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-apps/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_test_interp">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/reg_test_interp" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 reg_test_interp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_test_interp/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/reg_test_interp" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 reg_test_interp/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_test_mat44_operations">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/reg_test_mat44_operations" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 reg_test_mat44_operations" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_test_mat44_operations/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/reg_test_mat44_operations" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 reg_test_mat44_operations/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_nifti">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/libreg_nifti.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add option="-DHAVE_ZLIB" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/Makefile&quot;  VERBOSE=1 reg_nifti" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_nifti/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/libreg_nifti.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add option="-DHAVE_ZLIB" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/Makefile&quot;  VERBOSE=1 reg_nifti/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nifti/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_png">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/libreg_png.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/Makefile&quot;  VERBOSE=1 reg_png" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_png/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/libreg_png.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/Makefile&quot;  VERBOSE=1 reg_png/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/png/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_NrrdIO">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/libreg_NrrdIO.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add option="-DTEEM_BUILD=1" />
+            <Add option="-DTEEM_DIO=0" />
+            <Add option="-DTEEM_ZLIB=1" />
+            <Add option="-DTEEM_QNANHIBIT=1" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 reg_NrrdIO" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_NrrdIO/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/libreg_NrrdIO.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add option="-DTEEM_BUILD=1" />
+            <Add option="-DTEEM_DIO=0" />
+            <Add option="-DTEEM_ZLIB=1" />
+            <Add option="-DTEEM_QNANHIBIT=1" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 reg_NrrdIO/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_nrrd">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/libreg_nrrd.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add option="-DTEEM_BUILD=1" />
+            <Add option="-DTEEM_DIO=0" />
+            <Add option="-DTEEM_ZLIB=1" />
+            <Add option="-DTEEM_QNANHIBIT=1" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 reg_nrrd" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="reg_nrrd/fast">
+         <Option output="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/libreg_nrrd.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-D_USE_SSE" />
+            <Add option="-D_BUILD_NR_DEV" />
+            <Add option="-DTEEM_BUILD=1" />
+            <Add option="-DTEEM_DIO=0" />
+            <Add option="-DTEEM_ZLIB=1" />
+            <Add option="-DTEEM_QNANHIBIT=1" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib" />
+            <Add directory="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.4" />
+            <Add directory="/usr/include/c++/4.4/backward" />
+            <Add directory="/usr/include/c++/4.4/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.4.7/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 reg_nrrd/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9_linux_x64r/reg-io/nrrd/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_aladin.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_average.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_f3d.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_jacobian.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_resample.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_tools.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_transform.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/_reg_ReadWriteImage.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti/nifti1_io.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti/znzlib.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/754.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/accessors.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/array.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/arraysNrrd.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/axis.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/biffbiff.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/biffmsg.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/comment.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/defaultsNrrd.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/dio.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/encoding.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/encodingAscii.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/encodingBzip2.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/encodingGzip.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/encodingHex.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/encodingRaw.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/endianAir.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/endianNrrd.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/enum.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/enumsNrrd.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/format.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/formatEPS.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/formatNRRD.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/formatPNG.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/formatPNM.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/formatText.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/formatVTK.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/gzio.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/keyvalue.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/methodsNrrd.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/miscAir.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/mop.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/parseAir.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/parseNrrd.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/read.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/reorder.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/sane.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/simple.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/string.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/subset.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/write.c">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/reg_nrrd.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png/readpng.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png/reg_png.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_KLdivergence.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_aladin.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_aladin_sym.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_blockMatching.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_f3d.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_f3d2.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_f3d_sym.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_femTransformation.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_globalTransformation.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_localTransformation.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_maths.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_mutualinformation.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_resampling.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_ssd.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_thinPlateSpline.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_tools.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-test/reg_test_interp.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-test/reg_test_mat44_operations.cpp">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_aladin.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_average.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_f3d.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_jacobian.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_resample.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_tools.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/reg_transform.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/_reg_ReadWriteImage.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti/nifti1.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti/nifti1_io.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti/znzlib.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/NrrdIO.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/biff.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/itk_NrrdIO_mangle.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/privateAir.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/privateNrrd.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/teem32bit.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/teemDio.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/teemEndian.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/teemPng.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/teemQnanhibit.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/reg_nrrd.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png/readpng.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png/reg_png.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_KLdivergence.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_aladin.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_aladin_sym.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_blockMatching.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_f3d.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_f3d2.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_f3d_sym.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_femTransformation.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_globalTransformation.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_localTransformation.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_maths.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_mutualinformation.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_resampling.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_ssd.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_thinPlateSpline.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/_reg_tools.h">
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/CTestConfig.cmake">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\reg-io\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nifti/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\reg-io\nifti\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/png/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\reg-io\png\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\reg-io\nrrd\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/NrrdConfigure.h.in">
+          <Option virtualFolder="CMake Files\reg-io\nrrd\NrrdIO\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-io/nrrd/NrrdIO/CMake/TestQnanhibit.cmake">
+          <Option virtualFolder="CMake Files\reg-io\nrrd\NrrdIO\CMake\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-lib/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\reg-lib\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-apps/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\reg-apps\" />
+      </Unit>
+      <Unit filename="/home/rothhr/Code/CADLab-GitHub/CADLab-git/LymphNodeRFCNNPipeline/nifty_reg-1.3.9/nifty_reg/reg-test/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\reg-test\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

@@ -33,12 +33,12 @@ function ext = load_nii_ext(fileprefix)
       fileprefix(nii_idx:end) = [];      
    end
 
-   if findstr('.hdr',fileprefix)
-      fileprefix = strrep(fileprefix,'.hdr','');
+   if strcmpi(fileprefix(end-3:end),'.hdr')
+      fileprefix = fileprefix(1:end-4);
    end
 
-   if findstr('.img',fileprefix)
-      fileprefix = strrep(fileprefix,'.img','');
+   if strcmpi(fileprefix(end-3:end),'.img')
+      fileprefix = fileprefix(1:end-4);
    end
 
    if new_ext

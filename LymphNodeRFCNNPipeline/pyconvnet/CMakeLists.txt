@@ -4,23 +4,37 @@
 message(WARNING "requires Python 2.7 64-bit with Numpy and Matplotlib!")
 message(WARNING "recommended to use Anaconda python distribution: http://continuum.io/downloads")
 
-project(pyconvnet)
- 
+if(WIN32)
+  project(pyconvnet)
+else(WIN32)
+  project(_ConvNet)
+endif(WIN32)
 #The FindCUDA script is distributed since version 2.8
 cmake_minimum_required(VERSION 2.8)
 
 #Find Python
 find_package(PythonLibs REQUIRED)
-include_directories(
-  ${PYTHON_INCLUDE_DIR}
-  ${PYTHON_INCLUDE_DIR}/../Lib/site-packages/numpy/core/include/numpy
+# Find Numpy directoy
+message(STATUS "Find Numpy...")
+find_path(NUMPY_INCLUDE_DIR arrayobject.h)
+if(NUMPY_INCLUDE_DIR)
+  message(STATUS "add numpy include directory: ${NUMPY_INCLUDE_DIR}")
+else(NUMPY_INCLUDE_DIR)
+  message(FATAL_ERROR "NUMPY_INCLUDE_DIR not found. Please set NUMPY_INCLUDE_DIR path manually (${NUMPY_INCLUDE_DIR}). The path should include arrayobject.h.")
+endif(NUMPY_INCLUDE_DIR)
+mark_as_advanced(NUMPY_INCLUDE_DIR)
+include_directories( 
+  ${PYTHON_INCLUDE_DIR} 
+  ${NUMPY_INCLUDE_DIR}
 )
+
 link_directories(
   ${PYTHON_INCLUDE_DIR}/../libs
 )
 #target_link_libraries(<your exe or lib> ${PYTHON_LIBRARIES})
  
 #Find CUDA
+message(STATUS "Find CUDA...")
 find_package(CUDA)
 mark_as_advanced(CUDA_SDK_ROOT_DIR)
 if(CUDA_FOUND)
@@ -70,6 +84,9 @@ if(CUDA_FOUND)
 else(CUDA_FOUND)
 	message(FATAL_ERROR "CUDA not found. Please turn the USE_CUDA flag off or set the variables manually.")
 endif(CUDA_FOUND)
+if(NOT CUDA_SDK_ROOT_DIR)
+	message(FATAL_ERROR "CUDA_SDK_ROOT_DIR not found. Please set CUDA_SDK_ROOT_DIR path manually.")
+endif(NOT CUDA_SDK_ROOT_DIR)
 	 
 #cuda-convnet files
 include_directories( 
@@ -77,10 +94,18 @@ include_directories(
   include/common
   include/cudaconv2
   include/nvmatrix
-  LIBS/include
-  ${CUDA_SDK_ROOT_DIR}/common/inc
 )
- 
+if(WIN32)
+	include_directories( 
+          ${CUDA_SDK_ROOT_DIR}/common/inc 
+	  LIBS/include
+	)
+else(WIN32) # linux
+	include_directories( 
+          ${CUDA_SDK_ROOT_DIR}/C/common/inc 
+	)
+endif(WIN32)
+
 set(CUDA_FILES
   include/common/matrix.h
   include/common/matrix_funcs.h
@@ -132,13 +157,30 @@ link_directories(
   ${CMAKE_SOURCE_DIR}/LIBS
   ${CUDA_TOOLKIT_ROOT_DIR}/lib/x64
 )
-set(TARGET_LIBRARIES
-  libopenblas.lib
-  pthreadVC2_x64.lib
-  cublas.lib
-  cudart.lib
-  curand.lib
-)
+if(WIN32)
+	set(TARGET_LIBRARIES
+	  libopenblas.lib
+	  pthreadVC2_x64.lib
+	  cublas.lib
+	  cudart.lib
+	  curand.lib
+	)
+else(WIN32) # assume linux-based system
+	set(TARGET_LIBRARIES
+	  ${CUDA_cublas_LIBRARY}
+	  ${CUDA_cudart_LIBRARY}
+	  ${CUDA_curand_LIBRARY}
+	  cblas 
+          m 
+          pthread 
+          X11 
+          python2.7
+	)
+	set(COMMONFLAGS "-fopenmp -DNUMPY_INTERFACE -DMODELNAME=${PROJECT_NAME} -DINITNAME=init${PROJECT_NAME}")
+	set(CMAKE_CXX_FLAGS ${COMMONFLAGS})
+	set(CMAKE_C_FLAGS ${COMMONFLAGS})
+endif(WIN32)
+
 
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 cuda_add_library(${PROJECT_NAME} SHARED ${CUDA_FILES} ${DROPCONNECT_FILES})
@@ -147,12 +189,21 @@ install(TARGETS ${PROJECT_NAME} DESTINATION ${PROJECT_NAME})
 
 # Python requires dll to be name *.pyd (this is not supported by cmake and therefore have to manually rename the resulting dll to a pyd file as a post-build event)
 message(WARNING "RENAME_DLL is currently hardcoded for Release mode!")
-add_custom_target(RENAME_DLL ALL
+if(WIN32)
+  add_custom_target(RENAME_DLL ALL
 	DEPENDS ${PROJECT_NAME}
     COMMAND ${CMAKE_COMMAND} -E copy_if_different  # which executes "cmake - E copy_if_different..."
         "${LIBRARY_OUTPUT_PATH}/Release/${PROJECT_NAME}.dll" # <--this is in-file
         "${CMAKE_SOURCE_DIR}/${PROJECT_NAME}.pyd" # <--this is out-file path		
-)
+  )
+else(WIN32) # linux
+  add_custom_target(RENAME_DLL ALL
+	DEPENDS ${PROJECT_NAME}
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different  # which executes "cmake - E copy_if_different..."
+        "${LIBRARY_OUTPUT_PATH}/lib${PROJECT_NAME}.so" # <--this is in-file
+        "${CMAKE_SOURCE_DIR}/${PROJECT_NAME}.so" # <--this is out-file path		
+  )
+endif(WIN32)
 		
 # if you need to pass options/flags
 #set( custom_cuda_flags "-arch=sm_20" CACHE STRING "Set the cuda flags like --arch=sm_20 --ptxas-options=-v #--use_fast_math")

@@ -18,6 +18,11 @@
 #include <itkWindowedSincInterpolateImageFunction.h>
 #include <itkVector.h>
 #include <itkWarpImageFilter.h>
+#include <itkFlatStructuringElement.h>
+#include <itkBinaryDilateImageFilter.h>
+#include <itkBinaryNotImageFilter.h>
+#include <itkAndImageFilter.h>
+#include <itkLabelOverlapMeasuresImageFilter.h>
 #if ITK_VERSION_MAJOR < 4
   #include <itkDeformationFieldSource.h>
 #else
@@ -28,6 +33,8 @@
 #else
   #include <itkComposeImageFilter.h>
 #endif
+
+const unsigned int Dimension = 3;
 
 namespace nih
 {
@@ -43,18 +50,20 @@ enum InterpolationType { NEAREST, LINEAR, BSPLINE };
 template <class TImageType>
 typename TImageType::Pointer getNegativeROIcandidatesMask(typename TImageType::Pointer roiImage, typename TImageType::Pointer tissueImage, float radius)
 {
+  typename TImageType::PixelType insideValue = 255;
+
   std::cout << "  getNegativeROIcandidatesMask with box element of size " << radius << " [voxels]." << std::endl;
   // Dilate region of roiImage by box of size 'radius'
   typedef itk::FlatStructuringElement< Dimension > StructuringElementType;
   StructuringElementType::RadiusType elementRadius;
   elementRadius.Fill( radius );
- 
+
   StructuringElementType structuringElement = StructuringElementType::Box(elementRadius);
- 
-  typedef itk::BinaryDilateImageFilter <SegmentationImageType, SegmentationImageType, StructuringElementType>
+
+  typedef itk::BinaryDilateImageFilter <TImageType, TImageType, StructuringElementType>
     dilateImageFilterType;
- 
-  dilateImageFilterType::Pointer dilateFilter = dilateImageFilterType::New();
+
+  typename dilateImageFilterType::Pointer dilateFilter = dilateImageFilterType::New();
   dilateFilter->SetInput( roiImage );
   dilateFilter->SetKernel(structuringElement);
   dilateFilter->SetDilateValue( insideValue );
@@ -70,8 +79,8 @@ typename TImageType::Pointer getNegativeROIcandidatesMask(typename TImageType::P
   }
 
   // Invert roiImage for AND operation
-  typedef itk::BinaryNotImageFilter< SegmentationImageType > BinaryNotImageFilterType;
-  BinaryNotImageFilterType::Pointer binaryNotFilter = BinaryNotImageFilterType::New();
+  typedef itk::BinaryNotImageFilter< TImageType > BinaryNotImageFilterType;
+  typename BinaryNotImageFilterType::Pointer binaryNotFilter = BinaryNotImageFilterType::New();
   binaryNotFilter->SetInput( roiImage );
   try
   {
@@ -85,8 +94,8 @@ typename TImageType::Pointer getNegativeROIcandidatesMask(typename TImageType::P
   }
 
   // 1. AND (two images at a time): Dilated ROIs AND Tissue
-  typedef itk::AndImageFilter< SegmentationImageType > AndImageFilterType;
-  AndImageFilterType::Pointer andFilter = AndImageFilterType::New();
+  typedef itk::AndImageFilter< TImageType > AndImageFilterType;
+  typename AndImageFilterType::Pointer andFilter = AndImageFilterType::New();
   andFilter->SetInput1( dilateFilter->GetOutput() );
   andFilter->SetInput2( tissueImage );
   try
@@ -123,7 +132,7 @@ typename TImageType::Pointer getNegativeROIcandidatesMask(typename TImageType::P
 template <class TInputImageType, class TOutputImageType>
 typename TOutputImageType::Pointer getRGBImagePatch(typename TInputImageType::Pointer roiImage)
 {
-  typedef itk::Image<TInputImageType::PixelType, 2  >                             SliceImageType;
+  typedef itk::Image<typename TInputImageType::PixelType, 2  >                             SliceImageType;
   typedef itk::ExtractImageFilter< TInputImageType, SliceImageType >              SliceFilterType;
   #if ITK_VERSION_MAJOR < 4
     typedef itk::Compose3DCovariantVectorImageFilter<OutputSliceImageType, RGBImageType> ComposeImageFilterType;
@@ -131,31 +140,31 @@ typename TOutputImageType::Pointer getRGBImagePatch(typename TInputImageType::Po
     typedef itk::ComposeImageFilter<SliceImageType, TOutputImageType> ComposeImageFilterType;
   #endif
 
-  unsigned int slicingDim = 0;  
+  unsigned int slicingDim = 0;
 
-  SliceFilterType::Pointer slicingFilterZ = SliceFilterType::New();
+  typename SliceFilterType::Pointer slicingFilterZ = SliceFilterType::New();
   slicingFilterZ->InPlaceOn();
   slicingFilterZ->SetDirectionCollapseToIdentity(); // direction does not matter for RGB images?
 
-  SliceFilterType::Pointer slicingFilterX = SliceFilterType::New();
+  typename SliceFilterType::Pointer slicingFilterX = SliceFilterType::New();
   slicingFilterX->InPlaceOn();
   slicingFilterX->SetDirectionCollapseToIdentity(); // direction does not matter for RGB images?
 
-  SliceFilterType::Pointer slicingFilterY = SliceFilterType::New();
+  typename SliceFilterType::Pointer slicingFilterY = SliceFilterType::New();
   slicingFilterY->InPlaceOn();
   slicingFilterY->SetDirectionCollapseToIdentity(); // direction does not matter for RGB images?
 
-  TInputImageType::SizeType slicingSize;
-  TInputImageType::IndexType slicingStart;
-  
-  TInputImageType::RegionType slicingRegion;
+  typename TInputImageType::SizeType slicingSize;
+  typename TInputImageType::IndexType slicingStart;
+
+  typename TInputImageType::RegionType slicingRegion;
 
   // Z slice (axial)
-  slicingDim = 2; 
+  slicingDim = 2;
   slicingSize = roiImage->GetLargestPossibleRegion().GetSize();
   slicingStart.Fill( 0 );
   slicingStart[slicingDim] = slicingSize[slicingDim]/2 - 1;
-  slicingSize[slicingDim] = 0; 
+  slicingSize[slicingDim] = 0;
   slicingRegion.SetSize( slicingSize );
   slicingRegion.SetIndex( slicingStart );
   slicingFilterZ->SetInput( roiImage );
@@ -172,11 +181,11 @@ typename TOutputImageType::Pointer getRGBImagePatch(typename TInputImageType::Po
   }
 
   // X slice
-  slicingDim = 0; 
+  slicingDim = 0;
   slicingSize = roiImage->GetLargestPossibleRegion().GetSize();
   slicingStart.Fill( 0 );
   slicingStart[slicingDim] = slicingSize[slicingDim]/2 - 1;
-  slicingSize[slicingDim] = 0; 
+  slicingSize[slicingDim] = 0;
   slicingRegion.SetSize( slicingSize );
   slicingRegion.SetIndex( slicingStart );
   slicingFilterX->SetInput( roiImage );
@@ -193,11 +202,11 @@ typename TOutputImageType::Pointer getRGBImagePatch(typename TInputImageType::Po
   }
 
   // Y slice
-  slicingDim = 1; 
+  slicingDim = 1;
   slicingSize = roiImage->GetLargestPossibleRegion().GetSize();
   slicingStart.Fill( 0 );
   slicingStart[slicingDim] = slicingSize[slicingDim]/2 - 1;
-  slicingSize[slicingDim] = 0; 
+  slicingSize[slicingDim] = 0;
   slicingRegion.SetSize( slicingSize );
   slicingRegion.SetIndex( slicingStart );
   slicingFilterY->SetInput( roiImage );
@@ -214,18 +223,18 @@ typename TOutputImageType::Pointer getRGBImagePatch(typename TInputImageType::Po
   }
 
   // Compose RGB image
-  SliceImageType::Pointer sliceZ = slicingFilterZ->GetOutput();
-  SliceImageType::Pointer sliceX = slicingFilterX->GetOutput();
-  SliceImageType::Pointer sliceY = slicingFilterY->GetOutput();
+  typename SliceImageType::Pointer sliceZ = slicingFilterZ->GetOutput();
+  typename SliceImageType::Pointer sliceX = slicingFilterX->GetOutput();
+  typename SliceImageType::Pointer sliceY = slicingFilterY->GetOutput();
 
-  SliceImageType::PointType origin;
+  typename SliceImageType::PointType origin;
   origin.Fill(0.0);
-  
+
   sliceZ->SetOrigin( origin );
   sliceX->SetOrigin( origin );
   sliceY->SetOrigin( origin );
 
-  ComposeImageFilterType::Pointer composeFilter = ComposeImageFilterType::New();
+  typename ComposeImageFilterType::Pointer composeFilter = ComposeImageFilterType::New();
   composeFilter->SetInput1( sliceZ );
   composeFilter->SetInput2( sliceX );
   composeFilter->SetInput3( sliceY );
@@ -249,7 +258,7 @@ typename TOutputImageType::Pointer getRGBImagePatch(typename TInputImageType::Po
 template <class TInputImageType, class TOutputImageType>
 typename TOutputImageType::Pointer getRGBImagePatchXY(typename TInputImageType::Pointer roiImage)
 {
-  typedef itk::Image<TInputImageType::PixelType, 2  >                             SliceImageType;
+  typedef itk::Image<typename TInputImageType::PixelType, 2  >                             SliceImageType;
   typedef itk::ExtractImageFilter< TInputImageType, SliceImageType >              SliceFilterType;
   #if ITK_VERSION_MAJOR < 4
     typedef itk::Compose3DCovariantVectorImageFilter<OutputSliceImageType, RGBImageType> ComposeImageFilterType;
@@ -257,23 +266,23 @@ typename TOutputImageType::Pointer getRGBImagePatchXY(typename TInputImageType::
     typedef itk::ComposeImageFilter<SliceImageType, TOutputImageType> ComposeImageFilterType;
   #endif
 
-  unsigned int slicingDim = 0;  
+  unsigned int slicingDim = 0;
 
-  SliceFilterType::Pointer slicingFilterZ = SliceFilterType::New();
+  typename SliceFilterType::Pointer slicingFilterZ = SliceFilterType::New();
   slicingFilterZ->InPlaceOn();
   slicingFilterZ->SetDirectionCollapseToIdentity(); // direction does not matter for RGB images?
 
-  TInputImageType::SizeType slicingSize;
-  TInputImageType::IndexType slicingStart;
-  
-  TInputImageType::RegionType slicingRegion;
+  typename TInputImageType::SizeType slicingSize;
+  typename TInputImageType::IndexType slicingStart;
+
+  typename TInputImageType::RegionType slicingRegion;
 
   // Z slice (axial)
-  slicingDim = 2; 
+  slicingDim = 2;
   slicingSize = roiImage->GetLargestPossibleRegion().GetSize();
   slicingStart.Fill( 0 );
   slicingStart[slicingDim] = slicingSize[slicingDim]/2 - 1;
-  slicingSize[slicingDim] = 0; 
+  slicingSize[slicingDim] = 0;
   slicingRegion.SetSize( slicingSize );
   slicingRegion.SetIndex( slicingStart );
   slicingFilterZ->SetInput( roiImage );
@@ -290,14 +299,14 @@ typename TOutputImageType::Pointer getRGBImagePatchXY(typename TInputImageType::
   }
 
   // Compose RGB image
-  SliceImageType::Pointer sliceZ = slicingFilterZ->GetOutput();
+  typename SliceImageType::Pointer sliceZ = slicingFilterZ->GetOutput();
 
-  SliceImageType::PointType origin;
+  typename SliceImageType::PointType origin;
   origin.Fill(0.0);
-  
+
   sliceZ->SetOrigin( origin );
 
-  ComposeImageFilterType::Pointer composeFilter = ComposeImageFilterType::New();
+  typename ComposeImageFilterType::Pointer composeFilter = ComposeImageFilterType::New();
   composeFilter->SetInput1( sliceZ );
   composeFilter->SetInput2( sliceZ );
   composeFilter->SetInput3( sliceZ );
@@ -324,19 +333,19 @@ typename TOutputImageType::Pointer getGrayImagePatch(typename TInputImageType::P
   //typedef itk::Image<TInputImageType::PixelType, 2  >                             SliceImageType;
   typedef itk::ExtractImageFilter< TInputImageType, TOutputImageType >              SliceFilterType;
 
-  SliceFilterType::Pointer slicingFilter = SliceFilterType::New();
+  typename SliceFilterType::Pointer slicingFilter = SliceFilterType::New();
   slicingFilter->InPlaceOn();
   slicingFilter->SetDirectionCollapseToIdentity(); // direction does not matter for RGB/gray images?
 
-  TInputImageType::SizeType slicingSize;
-  TInputImageType::IndexType slicingStart;
-  
-  TInputImageType::RegionType slicingRegion;
+  typename TInputImageType::SizeType slicingSize;
+  typename TInputImageType::IndexType slicingStart;
+
+  typename TInputImageType::RegionType slicingRegion;
 
   slicingSize = roiImage->GetLargestPossibleRegion().GetSize();
   slicingStart.Fill( 0 );
   slicingStart[slicingDim] = slicingSize[slicingDim]/2 - 1;
-  slicingSize[slicingDim] = 0; 
+  slicingSize[slicingDim] = 0;
   slicingRegion.SetSize( slicingSize );
   slicingRegion.SetIndex( slicingStart );
   slicingFilter->SetInput( roiImage );
@@ -361,20 +370,20 @@ typename TOutputImageType::Pointer getGrayImagePatch(typename TInputImageType::P
 template <class TInputImageType, class TOutputImageType>
 typename TOutputImageType::Pointer getImageSlice(typename TInputImageType::Pointer roiImage, unsigned int slice, unsigned int slicingDim=2)
 {
-  //Axial (default): slicingDim = 2; 
-  // X slice: slicingDim = 0; 
-  // Y slice: slicingDim = 1; 
+  //Axial (default): slicingDim = 2;
+  // X slice: slicingDim = 0;
+  // Y slice: slicingDim = 1;
 
   typedef itk::ExtractImageFilter< TInputImageType, TOutputImageType > SliceFilterType;
 
-  SliceFilterType::Pointer slicingFilter = SliceFilterType::New();
+  typename SliceFilterType::Pointer slicingFilter = SliceFilterType::New();
   slicingFilter->InPlaceOn();
   slicingFilter->SetDirectionCollapseToIdentity(); // direction does not matter for RGB images?
 
-  TInputImageType::SizeType slicingSize;
-  TInputImageType::IndexType slicingStart;
-  
-  TInputImageType::RegionType slicingRegion;
+  typename TInputImageType::SizeType slicingSize;
+  typename TInputImageType::IndexType slicingStart;
+
+  typename TInputImageType::RegionType slicingRegion;
 
   slicingSize = roiImage->GetLargestPossibleRegion().GetSize();
   if ((slice<0) || (slice>=slicingSize[slicingDim]))
@@ -384,7 +393,7 @@ typename TOutputImageType::Pointer getImageSlice(typename TInputImageType::Point
   }
   slicingStart.Fill( 0 );
   slicingStart[slicingDim] = slice;
-  slicingSize[slicingDim] = 0; 
+  slicingSize[slicingDim] = 0;
   slicingRegion.SetSize( slicingSize );
   slicingRegion.SetIndex( slicingStart );
   slicingFilter->SetInput( roiImage );
@@ -429,12 +438,12 @@ double getRandomVariateUniformDouble(double limit)
   limit = abs(limit);
   typedef itk::Statistics::MersenneTwisterRandomVariateGenerator GeneratorType;
   GeneratorType::Pointer generator = GeneratorType::New();
- 
+
   generator->Initialize();
-  
+
   return generator->GetUniformVariate(-1*limit, limit);
 }
- 
+
 //================================================================================================//
 //  nih::getRandomVariateInt
 //================================================================================================//
@@ -442,7 +451,7 @@ int getRandomVariateInt(int limit)
 {
   typedef itk::Statistics::MersenneTwisterRandomVariateGenerator GeneratorType;
   GeneratorType::Pointer generator = GeneratorType::New();
- 
+
   generator->Initialize();
 
   return generator->GetIntegerVariate( limit ); // Get an int between 0 and limit (inclusive - e.g. limit=5 is sample from the set {0,1,2,3,4,5})
@@ -477,7 +486,7 @@ typename TImageType::PointType normalizePoint( typename TImageType::PointType p 
 template <class TImageType>
 typename TImageType::PointType getRandomUniformPoint()
 {
-  TImageType::PointType v;
+  typename TImageType::PointType v;
   v[0] = getRandomVariateUniformDouble( 1.0 );
   v[1] = getRandomVariateUniformDouble( 1.0 );
   v[2] = getRandomVariateUniformDouble( 1.0 );
@@ -495,17 +504,17 @@ typename TImageType::PointType getImageCenter(typename TImageType::Pointer image
   // see ITK guide, section 6.9. Geometric Transformations
   typedef itk::ImageFunction<TImageType, TImageType> Superclass;
 
-  TImageType::SizeType size = image->GetLargestPossibleRegion().GetSize();
-  Superclass::ContinuousIndexType halfsize;
-  Superclass::PointType center;
+  typename TImageType::SizeType size = image->GetLargestPossibleRegion().GetSize();
+  typename Superclass::ContinuousIndexType halfsize;
+  typename Superclass::PointType center;
 
   for (unsigned int i=0; i<image->GetImageDimension(); i++)
   {
-    halfsize[i] = size[i]/2.0; 
+    halfsize[i] = size[i]/2.0;
   }
 
   image->TransformContinuousIndexToPhysicalPoint(halfsize, center);
-  
+
 
   //printf("  getImageCenter: center at [%g, %g, %g] (image size is [%d, %d, %d]).\n",
     //center[0], center[1], center[2], size[0], size[1], size[2]);
@@ -528,10 +537,10 @@ typename TOutputImageType::Pointer rotateImageAroundCenter
 {
   typedef itk::ResampleImageFilter<TInputImageType, TOutputImageType >            RotationFilterType;
   typedef itk::AffineTransform< double, Dimension >                               TransformType;
-  //typedef itk::NearestNeighborInterpolateImageFunction< TInputImageType, double > InterpolatorType; 
-  //typedef itk::LinearInterpolateImageFunction< TInputImageType, double >          InterpolatorType; 
-  //typedef itk::BSplineInterpolateImageFunction< TInputImageType, double >          InterpolatorType; // best trade-off between accuracy and computational cost 
-  
+  //typedef itk::NearestNeighborInterpolateImageFunction< TInputImageType, double > InterpolatorType;
+  //typedef itk::LinearInterpolateImageFunction< TInputImageType, double >          InterpolatorType;
+  //typedef itk::BSplineInterpolateImageFunction< TInputImageType, double >          InterpolatorType; // best trade-off between accuracy and computational cost
+
   // best possible interpolator for grid data but slow (see ITK guide sec. 8.9.4 'Windowed Sinc Interpolation')
   /*typedef itk::ConstantBoundaryCondition< TInputImageType > BoundaryConditionType;
   const unsigned int WindowRadius = 5;
@@ -540,7 +549,7 @@ typename TOutputImageType::Pointer rotateImageAroundCenter
             TInputImageType, WindowRadius, WindowFunctionType,
             BoundaryConditionType, double  >                 InterpolatorType;*/
 
-  RotationFilterType::Pointer rotationFilter = RotationFilterType::New();
+  typename RotationFilterType::Pointer rotationFilter = RotationFilterType::New();
   TransformType::Pointer transform = TransformType::New();
 
   // select interpolation type
@@ -548,21 +557,21 @@ typename TOutputImageType::Pointer rotateImageAroundCenter
   {
     //std::cout << "  ... using nearest neighbor interpolation..." << std::endl;
     typedef itk::NearestNeighborInterpolateImageFunction< TInputImageType, double >  InterpolatorType;
-    InterpolatorType::Pointer interpolator = InterpolatorType::New();
+    typename InterpolatorType::Pointer interpolator = InterpolatorType::New();
     rotationFilter->SetInterpolator( interpolator );
   }
   else if (interpolationType == nih::LINEAR)
   {
     //std::cout << "  ... using linear interpolation..." << std::endl;
     typedef itk::LinearInterpolateImageFunction< TInputImageType, double >  InterpolatorType;
-    InterpolatorType::Pointer interpolator = InterpolatorType::New();
+    typename InterpolatorType::Pointer interpolator = InterpolatorType::New();
     rotationFilter->SetInterpolator( interpolator );
   }
-  else if (interpolationType == nih::BSPLINE) // best trade-off between accuracy and computational cost 
+  else if (interpolationType == nih::BSPLINE) // best trade-off between accuracy and computational cost
   {
     //std::cout << "  ... using B-Spline interpolation..." << std::endl;
-    typedef itk::BSplineInterpolateImageFunction< TInputImageType, double > InterpolatorType; 
-    InterpolatorType::Pointer interpolator = InterpolatorType::New();
+    typedef itk::BSplineInterpolateImageFunction< TInputImageType, double > InterpolatorType;
+    typename InterpolatorType::Pointer interpolator = InterpolatorType::New();
     rotationFilter->SetInterpolator( interpolator );
   }
   else
@@ -577,18 +586,18 @@ typename TOutputImageType::Pointer rotateImageAroundCenter
   rotationFilter->SetOutputDirection( image->GetDirection() );
   rotationFilter->SetSize(            image->GetLargestPossibleRegion().GetSize() );
   rotationFilter->SetOutputOrigin(    image->GetOrigin() );
-        
+
   // translate region to physical origin (0,0,0)
-  TOutputImageType::PointType center = nih::getImageCenter< TOutputImageType >( image );
+  typename TOutputImageType::PointType center = nih::getImageCenter< TOutputImageType >( image );
   TransformType::OutputVectorType translation1;
-  translation1[0] = -1*center[0]; 
+  translation1[0] = -1*center[0];
   translation1[1] = -1*center[1];
   translation1[2] = -1*center[2];
   transform->Translate( translation1 );
 
   const double degreesToRadians = vcl_atan(1.0) / 45.0;
   double radians = angle_in_degrees * degreesToRadians;
-      
+
   TransformType::OutputVectorType rotationAxis;
   rotationAxis[0] = axis[0];
   rotationAxis[1] = axis[1];
@@ -644,7 +653,7 @@ typename TOutputImageType::Pointer translateImage(
             TInputImageType, WindowRadius, WindowFunctionType,
             BoundaryConditionType, double  >                 InterpolatorType;*/
 
-  RotationFilterType::Pointer translationFilter = RotationFilterType::New();
+  typename RotationFilterType::Pointer translationFilter = RotationFilterType::New();
   TransformType::Pointer transform = TransformType::New();
 
   // select interpolation type
@@ -652,21 +661,21 @@ typename TOutputImageType::Pointer translateImage(
   {
     //std::cout << "  ... using nearest neighbor interpolation..." << std::endl;
     typedef itk::NearestNeighborInterpolateImageFunction< TInputImageType, double >  InterpolatorType;
-    InterpolatorType::Pointer interpolator = InterpolatorType::New();
+    typename InterpolatorType::Pointer interpolator = InterpolatorType::New();
     translationFilter->SetInterpolator( interpolator );
   }
   else if (interpolationType == nih::LINEAR)
   {
     //std::cout << "  ... using linear interpolation..." << std::endl;
     typedef itk::LinearInterpolateImageFunction< TInputImageType, double >  InterpolatorType;
-    InterpolatorType::Pointer interpolator = InterpolatorType::New();
+    typename InterpolatorType::Pointer interpolator = InterpolatorType::New();
     translationFilter->SetInterpolator( interpolator );
   }
-  else if (interpolationType == nih::BSPLINE) // best trade-off between accuracy and computational cost 
+  else if (interpolationType == nih::BSPLINE) // best trade-off between accuracy and computational cost
   {
     //std::cout << "  ... using B-Spline interpolation..." << std::endl;
-    typedef itk::BSplineInterpolateImageFunction< TInputImageType, double > InterpolatorType; 
-    InterpolatorType::Pointer interpolator = InterpolatorType::New();
+    typedef itk::BSplineInterpolateImageFunction< TInputImageType, double > InterpolatorType;
+    typename InterpolatorType::Pointer interpolator = InterpolatorType::New();
     translationFilter->SetInterpolator( interpolator );
   }
   else
@@ -681,11 +690,11 @@ typename TOutputImageType::Pointer translateImage(
   translationFilter->SetOutputDirection( image->GetDirection() );
   translationFilter->SetSize(            image->GetLargestPossibleRegion().GetSize() );
   translationFilter->SetOutputOrigin(    image->GetOrigin() );
-        
+
   // translate region to physical origin (0,0,0)
-  TOutputImageType::PointType center = nih::getImageCenter< TOutputImageType >( image );
+  typename TOutputImageType::PointType center = nih::getImageCenter< TOutputImageType >( image );
   TransformType::OutputVectorType translation1;
-  translation1[0] = translation[0]; 
+  translation1[0] = translation[0];
   translation1[1] = translation[1];
   translation1[2] = translation[2];
   transform->Translate( translation1 );
@@ -714,12 +723,12 @@ template <class TInputImageType, class TOutputImageType>
 typename TOutputImageType::Pointer randomWarpImage2D(typename TInputImageType::Pointer movingImage, unsigned int Npoints=0)
 {
   typedef   float VectorComponentType;
- 
+
   typedef   itk::Vector< VectorComponentType, 2 >    VectorType;
   typedef   itk::Image< VectorType,  2 >   DeformationFieldType;
- 
-  TInputImageType::SizeType movingSize = movingImage->GetLargestPossibleRegion().GetSize();
- 
+
+  typename TInputImageType::SizeType movingSize = movingImage->GetLargestPossibleRegion().GetSize();
+
 #if ITK_VERSION_MAJOR < 4
   typedef itk::DeformationFieldSource<DeformationFieldType>  DeformationFieldSourceType;
 #else
@@ -730,30 +739,30 @@ typename TOutputImageType::Pointer randomWarpImage2D(typename TInputImageType::P
   deformationFieldSource->SetOutputOrigin(  movingImage->GetOrigin() );
   deformationFieldSource->SetOutputRegion(  movingImage->GetLargestPossibleRegion() );
   deformationFieldSource->SetOutputDirection( movingImage->GetDirection() );
-  
+
   deformationFieldSource->GetKernelTransform()->SetStiffness( 1e-6 ); // doesn't seem to make a lot of difference
   printf("Spline stiffness = %g\n", deformationFieldSource->GetKernelTransform()->GetStiffness() ); // default is 0.0
- 
+
   //  Create source and target landmarks.
   typedef DeformationFieldSourceType::LandmarkContainerPointer   LandmarkContainerPointer;
   typedef DeformationFieldSourceType::LandmarkContainer          LandmarkContainerType;
   typedef DeformationFieldSourceType::LandmarkPointType          LandmarkPointType;
- 
+
   itk::SmartPointer<LandmarkContainerType> sourceLandmarks = LandmarkContainerType::New();
   itk::SmartPointer<LandmarkContainerType> targetLandmarks = LandmarkContainerType::New();
- 
+
   LandmarkPointType sourcePoint;
   LandmarkPointType targetPoint;
- 
+
   // insert landmarks along that fix the border
   unsigned int Nborder = 1;
   unsigned int landmarkCount = 0;
-  // along x1 
+  // along x1
   double xstep = itk::Math::Ceil<double>((double)movingSize[0]/3);
   double ystep = itk::Math::Ceil<double>((double)movingSize[0]/3);
   for (double i=0; i<movingSize[0]; i=i+xstep)
   {
-    // x1-ystep 
+    // x1-ystep
     for (double j=1; j<=Nborder; j++)
     {
       sourcePoint[0] = i;
@@ -762,7 +771,7 @@ typename TOutputImageType::Pointer randomWarpImage2D(typename TInputImageType::P
       targetLandmarks->InsertElement( landmarkCount, sourcePoint );
       landmarkCount++;
     }
-    // x1 
+    // x1
     sourcePoint[0] = i;
     sourcePoint[1] = 0;
     sourceLandmarks->InsertElement( landmarkCount, sourcePoint );
@@ -776,7 +785,7 @@ typename TOutputImageType::Pointer randomWarpImage2D(typename TInputImageType::P
     sourceLandmarks->InsertElement( landmarkCount, sourcePoint );
     targetLandmarks->InsertElement( landmarkCount, sourcePoint );
     landmarkCount++;
-    // x2+ystep 
+    // x2+ystep
     for (double j=1; j<=Nborder; j++)
     {
       sourcePoint[0] = i;
@@ -801,7 +810,7 @@ typename TOutputImageType::Pointer randomWarpImage2D(typename TInputImageType::P
       targetLandmarks->InsertElement( landmarkCount, sourcePoint );
       landmarkCount++;
     }
-    // y1 
+    // y1
     sourcePoint[0] = 0;
     sourcePoint[1] = i;
     sourceLandmarks->InsertElement( landmarkCount, sourcePoint );
@@ -846,7 +855,7 @@ typename TOutputImageType::Pointer randomWarpImage2D(typename TInputImageType::P
       //printf(" %d. adding target: [%g, %g]...\n", landmarkCount,  targetPoint[0], targetPoint[1]);
     }
   }
-  
+
   unsigned int NLandmarks = landmarkCount;
   printf(" warping image (size [%d, %d]) with %d random vectors...", movingSize[0], movingSize[1], NLandmarks);
 
@@ -891,11 +900,11 @@ typename TOutputImageType::Pointer randomWarpImage2D(typename TInputImageType::P
 
   typedef itk::WarpImageFilter< TInputImageType, TOutputImageType, DeformationFieldType  >  WarpImageFilterType;
   itk::SmartPointer<WarpImageFilterType> warpImageFilter = WarpImageFilterType::New();
- 
-  //typedef itk::NearestNeighborInterpolateImageFunction< TInputImageType, double > InterpolatorType; 
-  //typedef itk::LinearInterpolateImageFunction< TInputImageType, double >          InterpolatorType; 
-  typedef itk::BSplineInterpolateImageFunction< TInputImageType, double >          InterpolatorType; // best trade-off between accuracy and computational cost 
- 
+
+  //typedef itk::NearestNeighborInterpolateImageFunction< TInputImageType, double > InterpolatorType;
+  //typedef itk::LinearInterpolateImageFunction< TInputImageType, double >          InterpolatorType;
+  typedef itk::BSplineInterpolateImageFunction< TInputImageType, double >          InterpolatorType; // best trade-off between accuracy and computational cost
+
   itk::SmartPointer<InterpolatorType> interpolator = InterpolatorType::New();
   warpImageFilter->SetInterpolator( interpolator );
   warpImageFilter->SetOutputSpacing( deformationFieldSource->GetOutput()->GetSpacing() );
@@ -916,7 +925,7 @@ typename TOutputImageType::Pointer randomWarpImage2D(typename TInputImageType::P
     std::cerr << excep << std::endl;
     return NULL;
   }
- 
+
   return warpImageFilter->GetOutput();
 } // nih::warpImage
 
@@ -928,16 +937,16 @@ typename TOutputImageType::Pointer rescaleImage2D(typename TInputImageType::Poin
 {
   const unsigned int Dimension = 2;
 
-  TInputImageType::SizeType inputSize = input->GetLargestPossibleRegion().GetSize();
+  typename TInputImageType::SizeType inputSize = input->GetLargestPossibleRegion().GetSize();
   printf(" warping image size [%d,%d] to size [%d,%d] ...\n",
     inputSize[0],inputSize[1],
     outputSize[0],outputSize[1]);
- 
+
   // Resize
-  TOutputImageType::SpacingType outputSpacing;
+  typename TOutputImageType::SpacingType outputSpacing;
   outputSpacing[0] = input->GetSpacing()[0] * (static_cast<double>(inputSize[0]) / static_cast<double>(outputSize[0]));
   outputSpacing[1] = input->GetSpacing()[1] * (static_cast<double>(inputSize[1]) / static_cast<double>(outputSize[1]));
- 
+
   typedef itk::AffineTransform< double, Dimension > TransformType;
   typedef itk::NearestNeighborInterpolateImageFunction<
     TInputImageType, double > InterpolatorType;
@@ -966,8 +975,8 @@ typename TOutputImageType::Pointer rescaleImage2D(typename TInputImageType::Poin
     std::cerr << "Exception caught !" << std::endl;
     std::cerr << excep << std::endl;
     return NULL;
-  } 
- 
+  }
+
   return resample->GetOutput();
 } // nih::rescaleImage2D
 
@@ -980,16 +989,16 @@ double getSegmentationOverlap2D(typename TInputImageType::Pointer segSource, typ
   typename TInputImageType::PixelType backgroundValue = 0;
   typename TInputImageType::PixelType labelValue      = 1;
 
-  TInputImageType::SizeType sizeSource = segSource->GetLargestPossibleRegion().GetSize();
-  TInputImageType::SizeType sizeTarget = segTarget->GetLargestPossibleRegion().GetSize();
+  typename TInputImageType::SizeType sizeSource = segSource->GetLargestPossibleRegion().GetSize();
+  typename TInputImageType::SizeType sizeTarget = segTarget->GetLargestPossibleRegion().GetSize();
   // Check if images are consistent
-  if ( (sizeSource[0]!=sizeTarget[0]) || (sizeSource[1]!=sizeTarget[1]) || (sizeSource[2]!=sizeTarget[2]) ) 
+  if ( (sizeSource[0]!=sizeTarget[0]) || (sizeSource[1]!=sizeTarget[1]) || (sizeSource[2]!=sizeTarget[2]) )
   {
     std::cerr << " [ERROR] getSegmentationOverlap2D: Image dimensions of image and label image does not fit!" << std::endl;
-    return EXIT_FAILURE;  
+    return EXIT_FAILURE;
   }
 
-  // Make sure there is only one label in each image 
+  // Make sure there is only one label in each image
   itk::ImageRegionIterator<TInputImageType> segSourceIterator(segSource, segSource->GetLargestPossibleRegion());
   itk::ImageRegionIterator<TInputImageType> segTargetIterator(segTarget, segTarget->GetLargestPossibleRegion());
   while(!segSourceIterator.IsAtEnd())

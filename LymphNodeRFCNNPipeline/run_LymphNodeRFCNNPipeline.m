@@ -11,13 +11,13 @@ install_LymphNodeRFCNNPipeline;
 Cpp_Exe_Folder=itk_dir;
 
 %% RANDOM FOREST CANDIDATE GENERATION
-optRF.itkConvertIndexToPhysicalPointsExe = [Cpp_Exe_Folder,filesep,'itkConvertIndexToPhysicalPoints.exe'];
+optRF.itkConvertIndexToPhysicalPointsExe = [Cpp_Exe_Folder,filesep,'itkConvertIndexToPhysicalPoints'];
 optRF.SearchRegionAtlas_dir = [pwd,filesep,'data\SearchRegionAtlas'];
 optRF.NiftyRegAppsDir = nifty_prebuild_apps_dir;
 optRF.save_flag = true;
 optRF.t_prob = 0.25; % only keep probabilities >= t_prob
 
-optRF.randForestFilename = [pwd,filesep,'trained_Forests\RF_regression.mat'];
+optRF.randForestFilename = [pwd,filesep,'trained_Forests',filesep,'RF_regression.mat'];
 optRF.randForestModelName = 'model_reg_f5';
 
 %SEARCH REGION PARAMETERS
@@ -32,7 +32,7 @@ optRF.N_feature_display = 2000;
 
 %% IMAGE PATCH GENERATION FOR CNN
 
-optCNNimages.itkResampleRegionOfInterestExe = [Cpp_Exe_Folder,filesep,'itkResampleRegionOfInterestFromCoordinateList.exe'];
+optCNNimages.itkResampleRegionOfInterestExe = [Cpp_Exe_Folder,filesep,'itkResampleRegionOfInterestFromCoordinateList'];
 optCNNimages.pointList_suffix = '_physicalPoints.txt';
 optCNNimages.outputLabel = 'CADe';
 optCNNimages.t_lower='-100';%[HU]
@@ -54,8 +54,8 @@ optCNNimages.transformType='XYZ';
 %->FASTER OPTIONS
 
 %% CNN PREDICTIONS    
-optCNNpredictions.ConvNetSrcFolder = convnent_dir;
-optCNNpredictions.CNNmodel = [pwd,filesep,'trained_pyconvnet\train_batch23_AxCoSa_balanced\fc512-11pct\1200.5']; % JUST ABDOMEN
+optCNNpredictions.ConvNetSrcFolder = pyconvnet_dir;
+optCNNpredictions.CNNmodel = [pwd,filesep,'trained_pyconvnet',filesep,'train_batch23_AxCoSa_balanced',filesep,'fc512-11pct',filesep,'1200.5']; % JUST ABDOMEN
 optCNNpredictions.NumberBatches = 10*numel(optCNNimages.scales); % makes sure all images are included
 optCNNpredictions.UseMultiview = true;
 optCNNpredictions.ImageSize = optCNNimages.numberROIvoxels;
@@ -65,7 +65,7 @@ optCNNpredictions.BatchStartIndex = 1;
 optCNNpredictions.operating_probability = [0.1, 0.2, 0.3, 0.4, 0.5, 0.75, 0.80, 0.85, 0.90, 0.95];
 optCNNpredictions.showMPRpredictions = false;
 optCNNpredictions.unique_roi_nifti_str = '_t00000_r00000.nii.gz';
-optCNNpredictions.itkGetRegionOfInterestCentersFromList_exe = [Cpp_Exe_Folder,filesep,'itkGetRegionOfInterestCentersFromList.exe'];
+optCNNpredictions.itkGetRegionOfInterestCentersFromList_exe = [Cpp_Exe_Folder,filesep,'itkGetRegionOfInterestCentersFromList'];
   
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%                    RUN CADe                                      %%%%%
@@ -93,7 +93,7 @@ if ~exist('output_dir','var') || isempty(output_dir) || ~ischar(output_dir)
 end
 [~, outname] = fileparts(output_dir); % folder with dicom slices
 OutFileName = [output_dir, filesep, outname, '.nii'];
-dicom2volume([Cpp_Exe_Folder,filesep,'itkDicomSeriesReadImageWrite2.exe'],input_dicom_dir,OutFileName) %% recompile and change exe!!!!
+dicom2volume([Cpp_Exe_Folder,filesep,'itkDicomSeriesReadImageWrite2'],input_dicom_dir,OutFileName) 
 
 %% run CADe
 Result_dir = LymphNodeRFCNNPipeline(OutFileName,optRF,optCNNimages,optCNNpredictions);

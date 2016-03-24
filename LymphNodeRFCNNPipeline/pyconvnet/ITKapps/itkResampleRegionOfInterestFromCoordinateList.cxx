@@ -3,10 +3,13 @@
  *  Copyright National Institutes of Health
  *
  *  Unless required by applicable law or agreed to in writing, this software
- *  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF 
+ *  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
  *  ANY KIND, either express or implied.
  *
  *=========================================================================*/
+
+
+#include <stdio.h>
 
 #include <itkImageFileReader.h>
 #include <itkImageFileWriter.h>
@@ -21,7 +24,7 @@
 #include <itkAndImageFilter.h>
 #include <itkFileTools.h>
 #include <itkTimeProbe.h>
-#include <itkMath.h.>
+//#include <itkMath.h.>
 
 #include <nihHelperFunctions.h>
 /*
@@ -31,7 +34,7 @@ static const char * argv_hc[] = {"*.exe",
   "-101", //lower[HU]
   "201", //upper[HU]
   "D:/HolgerRoth/data/LymphNodes/test/U12GV2G1/U12GV2G1_lymphnodes_physicalPoints.txt", //roiCentersFilename
-  "30", //cubeSize[mm] 
+  "30", //cubeSize[mm]
   "32", //numberROIvoxels
   "2", //numberRandomTranslations
   "3.0", // displacementLimitRandomTranslations[mm]
@@ -58,12 +61,12 @@ static const char * argv_hc[] = {"*.exe",
 bool WRITE_ISOMETRIC_IMAGE = false;
 bool WRITE_SEGMENTATION_IMAGE = false;
 
-const unsigned int Dimension = 3;
+//const unsigned int Dimension = 3;
 
 typedef float InputPixelType;
 typedef unsigned short OutputPixelType; // 16-bit png images
 //typedef unsigned char OutputPixelType; // 8-bit png image
-typedef unsigned char SegmentationPixelType; 
+typedef unsigned char SegmentationPixelType;
 typedef itk::RGBPixel<OutputPixelType> RGBPixelType;
 
 typedef itk::Image<InputPixelType, Dimension>                                   InputImageType;
@@ -117,23 +120,23 @@ int main(int argc, const char **argv)
 
   const char* roiCentersFilename = argv[5];
   const float cubeSize = atof( argv[6] ); // in mm
-  const unsigned int numberROIvoxels = atoi( argv[7] ); 
+  const unsigned int numberROIvoxels = atoi( argv[7] );
 
-  const unsigned int numberRandomTranslations = atoi( argv[8] ); 
-  const double displacementLimitRandomTranslations = atof( argv[9] );  
+  const unsigned int numberRandomTranslations = atoi( argv[8] );
+  const double displacementLimitRandomTranslations = atof( argv[9] );
   const unsigned int numberRandomRotations = atoi( argv[10] );
-  
-  const char* interpTypeChoice = argv[11];
+
+  std::string interpTypeChoice = argv[11];
   nih::InterpolationType interpolationType;
-  if ( _strcmpi(interpTypeChoice,"NEAREST") == 0 )
+  if ( interpTypeChoice.compare("NEAREST") == 0 )
   {
     interpolationType = nih::NEAREST;
   }
-  else if ( _strcmpi(interpTypeChoice,"LINEAR") == 0 )
+  else if ( interpTypeChoice.compare("LINEAR") == 0 )
   {
     interpolationType = nih::LINEAR;
   }
-  else if ( _strcmpi(interpTypeChoice,"BSPLINE") == 0 )
+  else if ( interpTypeChoice.compare("BSPLINE") == 0 )
   {
     interpolationType = nih::BSPLINE;
   }
@@ -143,14 +146,14 @@ int main(int argc, const char **argv)
     return EXIT_FAILURE;
   }
 
-  const char* transformType = argv[12];
+  std::string transformType = argv[12];
   bool ONLY_XY;
-  if ( _strcmpi(transformType,"XY") == 0 )
+  if ( transformType.compare("XY") == 0 )
   {
     std::cout << " Transformation are computed in XY ONLY." << std::endl;
     ONLY_XY = true;
   }
-  else if ( _strcmpi(transformType,"XYZ") == 0 )
+  else if ( transformType.compare("XYZ") == 0 )
   {
     std::cout << " Transformation are computed in XYZ." << std::endl;
     ONLY_XY = false;
@@ -158,7 +161,7 @@ int main(int argc, const char **argv)
   else
   {
     std::cerr << " No such transformation type: " << transformType << std::endl;
-    return EXIT_FAILURE;    
+    return EXIT_FAILURE;
   }
 
   printf("Number random transformations:\n  %d Translations, %d Rotations...\n",numberRandomTranslations,numberRandomRotations);
@@ -168,9 +171,9 @@ int main(int argc, const char **argv)
   double isoSpacing = cubeSize/numberROIvoxels;
 
   //create output directory
-  std::string outDir = nih::getPath(OutputFilenamePrefix); 
+  std::string outDir = nih::getPath(OutputFilenamePrefix);
   std::cout << "  Creating output directory at: " << outDir << std::endl;
-  itk::FileTools::CreateDirectoryA( outDir.c_str() );
+  itk::FileTools::CreateDirectory( outDir.c_str() );
 
   //read image
   ReaderType::Pointer reader = ReaderType::New();
@@ -211,7 +214,7 @@ int main(int argc, const char **argv)
   OutputImageType::Pointer isoImage = isoFilter->GetOutput();
   OutputImageType::SizeType isoImageSize = isoImage->GetLargestPossibleRegion().GetSize();
 
-  printf("  isoImageSize before padding [%d, %d, %d]\n", isoImageSize[0], isoImageSize[1], isoImageSize[2]);
+  printf("  isoImageSize before padding [%d, %d, %d]\n", (int)isoImageSize[0], (int)isoImageSize[1], (int)isoImageSize[2]);
   // Zero pad iso image to ensure not extracting ROIs outside of image boundary
   //unsigned long paddingSize = (displacementLimitRandomTranslations/isoSpacing) + numberROIvoxels + 1; // to be on the save side
   unsigned long paddingSize = 1.5*numberROIvoxels + 2;
@@ -234,7 +237,7 @@ int main(int argc, const char **argv)
   }
   isoImage = paddingFilter->GetOutput();
   isoImageSize = isoImage->GetLargestPossibleRegion().GetSize();
-  printf("  isoImageSize after padding [%d, %d, %d]\n", isoImageSize[0], isoImageSize[1], isoImageSize[2]);
+  printf("  isoImageSize after padding [%d, %d, %d]\n", (int)isoImageSize[0], (int)isoImageSize[1], (int)isoImageSize[2]);
 
   // segment tissue
   printf("  thresholding between %d and %d.\n", lowerThreshold, upperThreshold);
@@ -243,7 +246,7 @@ int main(int argc, const char **argv)
   thresholdFilter->SetLowerThreshold(lowerThreshold);
   thresholdFilter->SetUpperThreshold(upperThreshold);
   thresholdFilter->SetInsideValue( insideValue );
-  thresholdFilter->SetOutsideValue( outsideValue ); 
+  thresholdFilter->SetOutsideValue( outsideValue );
   try
   {
     thresholdFilter->Update();
@@ -272,7 +275,7 @@ int main(int argc, const char **argv)
   }
   SegmentationImageType::Pointer posRoiImage = duplicateFilter->GetOutput();
   // set all voxels to 'outside'
-  posRoiImage->FillBuffer( outsideValue); 
+  posRoiImage->FillBuffer( outsideValue);
 
   // write isometric image
   WriterType::Pointer writer = WriterType::New();
@@ -357,15 +360,15 @@ int main(int argc, const char **argv)
     startIdx[0] = startIdx[0];
     startIdx[1] = startIdx[1];
     startIdx[2] = startIdx[2] - 1;
-    printf("  %d: [%g, %g, %g] mm\t maps to index [%d, %d, %d].\n", NumberROIs, 
+    printf("  %d: [%g, %g, %g] mm\t maps to index [%d, %d, %d].\n", NumberROIs,
             roiCenterPhys[0], roiCenterPhys[1], roiCenterPhys[2],
-                  startIdx[0], startIdx[1], startIdx[2]);
+                  (int)startIdx[0], (int)startIdx[1], (int)startIdx[2]);
 
     subROIRegion.SetIndex( startIdx );
     if (WRITE_SEGMENTATION_IMAGE)
     {
       // "label" ROI regions in posRoiImage in ROIs
-      itk::ImageRegionIterator<SegmentationImageType> roiIterator(posRoiImage, subROIRegion);  
+      itk::ImageRegionIterator<SegmentationImageType> roiIterator(posRoiImage, subROIRegion);
       while(!roiIterator.IsAtEnd())
       {
         roiIterator.Set( insideValue );
@@ -417,7 +420,7 @@ int main(int argc, const char **argv)
         double shift_distance = nih::getPointNorm< OutputImageType >(randVec);
         if (shift_distance > cubeSize/2)
         {
-          std::cerr << "  shifting distance should not be larger than half the cube size (" 
+          std::cerr << "  shifting distance should not be larger than half the cube size ("
             << shift_distance << " > " << cubeSize/2 << ")!" << std::endl;
         }
         else
@@ -447,7 +450,7 @@ int main(int argc, const char **argv)
           }
           rotationAngle = nih::getRandomVariateUniformDouble( 360.0 );
 
-          /*printf("    -> %d. region rotated by %g degrees around [%g, %g, %g]...\n", 
+          /*printf("    -> %d. region rotated by %g degrees around [%g, %g, %g]...\n",
             r, rotationAngle, rotationAxis[0], rotationAxis[1], rotationAxis[2]);*/
 
           // rotate
@@ -458,7 +461,7 @@ int main(int argc, const char **argv)
         // get rotated ROI from "larger" translated and rotated ROI
         subROIRegion.SetIndex( subROIIndex );
 
-        subRoiFilter->SetInput( superROIImage ); 
+        subRoiFilter->SetInput( superROIImage );
         subRoiFilter->SetRegionOfInterest( subROIRegion );
         try
         {
@@ -471,9 +474,9 @@ int main(int argc, const char **argv)
           return EXIT_FAILURE;
         }
         subROIImage = subRoiFilter->GetOutput();
-        
+
         //****************** WRITE OUTPUTS **************************//
-        sprintf_s(count_char, "_ROI%05d_t%05d_r%05d", NumberROIs, t, r);
+        sprintf(count_char, "_ROI%05d_t%05d_r%05d", NumberROIs, t, r);
 
         // write ROI output and centroid text file
         if (r==0 && t==0) // only non-transformed ROI
@@ -494,9 +497,9 @@ int main(int argc, const char **argv)
           }
         }
 
-        // Text centroids 
+        // Text centroids
         OutputFilename = OutputFilenamePrefix + count_char + ".txt";
-        std::ofstream oCentroidsFile( OutputFilename );
+        std::ofstream oCentroidsFile( OutputFilename.c_str() );
         oCentroidsFile << physPt0 << " "
                        << physPt1 << " "
                        << physPt2 << std::endl;
@@ -589,7 +592,7 @@ int main(int argc, const char **argv)
   } /* while (iFile >> physPt0 >> physPt1 >> physPt2) */
   iFile.close();
 
-  unsigned int numberTotalT = 0; 
+  unsigned int numberTotalT = 0;
   unsigned int numberTotalR = 0;
   if (numberRandomTranslations>1)
   {
@@ -598,9 +601,9 @@ int main(int argc, const char **argv)
   if (numberRandomRotations>1)
   {
     numberTotalR = numberRandomRotations*NumberROIs;
-  }  
-  printf("  Found %d ROIs of size [%d, %d, %d] (%d translations, %d rotations).\n", 
-    NumberROIs, numberROIvoxels, numberROIvoxels, numberROIvoxels, 
+  }
+  printf("  Found %d ROIs of size [%d, %d, %d] (%d translations, %d rotations).\n",
+    NumberROIs, numberROIvoxels, numberROIvoxels, numberROIvoxels,
     numberTotalT,
     numberTotalR);
 
@@ -637,7 +640,7 @@ int main(int argc, const char **argv)
       return EXIT_FAILURE;
     }
   }
- 
+
   std::cout << "Results save with prefix " << OutputFilenamePrefix << std::endl;
 
   return EXIT_SUCCESS;
