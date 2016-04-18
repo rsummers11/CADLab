@@ -1,0 +1,4 @@
+fname,dslb,tph1,tph2,tph3,sents
+ris_test_00000041.JPEG,0,0,0,0,nothing nothing nothing
+ris_test_00000051.JPEG,0,0,0,0,nothing nothing nothing
+ris_test_00000061.JPEG,0,0,0,0,nothing nothing nothing
