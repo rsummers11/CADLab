@@ -42,7 +42,9 @@ This was tested with Ubuntu 16.04, CUDA 8.0, Python 2.7, ITK v4.10.0, and Matlab
 
 2. Download the dicom image archive from https://wiki.cancerimagingarchive.net/display/Public/Pancreas-CT
 
-3. Run run_pancreas_hnn.m (input file paths might need adjustment to show inupt dicomdir or nifti image file).
+3. Run run_pancreas_hnn.m 
+    CAFFE_LD_LIBRARY_PATH needs to be updated to show location of libcaffe.so and cuda libraries
+    input file paths need adjustment to show inupt dicomdir or nifti image file)
 
 The results are saved as *meanmaxAxCoSa.nii.gz in the stage1/stage2 subfolders of the output directory. All resulting images should overlay correctly when using a viewer that respects image offset and orientation (e.g. MitkWorkbench).
 

@@ -1,8 +1,8 @@
 %% Input/output (comment this if using run_batch.m)
 %% TCIA Pancreas-CT
-imagename_or_dicomdir = '/media/TCIA/DICOM/DOI/PANCREAS_0001/1.2.826.0.1.3680043.2.1125.1.38381854871216336385978062044218957/1.2.826.0.1.3680043.2.1125.1.68878959984837726447916707551399667'
-gtname = '/media/TCIA/TCIA_pancreas_labels-02-05-2017/label0001.nii.gz' % can be empty string!
-outroot = '/media/TCIA/Results/PANCREAS_0001' % use absolute path for results!
+imagename_or_dicomdir = '/media/rothhr/SSD/NIHpancreas/TCIA/DICOM/DOI/PANCREAS_0001/1.2.826.0.1.3680043.2.1125.1.38381854871216336385978062044218957/1.2.826.0.1.3680043.2.1125.1.68878959984837726447916707551399667'
+gtname = '/media/rothhr/SSD/NIHpancreas/TCIA/TCIA_pancreas_labels-02-05-2017/label0001.nii.gz' % can be empty string!
+outroot = '/media/rothhr/SSD/NIHpancreas/TCIA/Results/PANCREAS_0001' % use absolute path for results!
 
 
 %% Common params
@@ -22,7 +22,7 @@ itkExtractImageSlices_exe = [apps_build_dir,'/itkExtractImageSlices'];
 itkExtractBoundingBoxRegion_exe = [apps_build_dir,'/itkExtractBoundingBoxRegion'];
 DicomSeriesReadImageWrite2_exe = [apps_build_dir,'/itkDicomSeriesReadImageWrite2'];
 
-CAFFE_LD_LIBRARY_PATH='/home/rothhr/torch/install/lib:/usr/local/cuda-8.0/lib64:/usr/local/cuda/extras/CUPTI/lib64';
+CAFFE_LD_LIBRARY_PATH='/home/rothhr/NIH/Code/CADLab-git/panreas_hnn/hed-globalweight/.build_release/lib:/usr/local/cuda-8.0/lib64:/usr/local/cuda/extras/CUPTI/lib64';
 
 caffe_stage1_hed_dir = [pwd,filesep,'/hed-globalweight/stage1_model'];
 caffe_stage2_hed_dir = [pwd,filesep,'/hed-globalweight/stage2_model'];
