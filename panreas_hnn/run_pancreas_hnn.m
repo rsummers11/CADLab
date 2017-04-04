@@ -1,8 +1,8 @@
 %% Input/output (comment this if using run_batch.m)
 %% TCIA Pancreas-CT
-imagename_or_dicomdir = '/media/TCIA/DICOM/DOI/PANCREAS_0001'
-gtname = '/media/TCIA/TCIA_pancreas_labels-02-05-2017/label0082.nii.gz' % can be empty string!
-outroot = '/media/TCIA/Results/PANCREAS_0082' % use absolute path for results!
+imagename_or_dicomdir = '/media/TCIA/DICOM/DOI/PANCREAS_0001/1.2.826.0.1.3680043.2.1125.1.38381854871216336385978062044218957/1.2.826.0.1.3680043.2.1125.1.68878959984837726447916707551399667'
+gtname = '/media/TCIA/TCIA_pancreas_labels-02-05-2017/label0001.nii.gz' % can be empty string!
+outroot = '/media/TCIA/Results/PANCREAS_0001' % use absolute path for results!
 
 
 %% Common params
