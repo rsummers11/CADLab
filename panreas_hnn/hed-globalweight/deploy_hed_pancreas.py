@@ -11,7 +11,7 @@ import matplotlib.pylab as pylab
 import matplotlib.cm as cm
 #%matplotlib inline
 #import scipy.misc
-import Image
+from PIL import Image
 #import scipy.io
 import os
 import sys
