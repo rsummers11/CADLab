@@ -37,7 +37,7 @@ Requirements:
 Execution:
 
 1. compile hed-globalweight following the Caffe instructions: http://caffe.berkeleyvision.org/installation.html#prequequisites
-install ITK and compile nihApps using cmake. Choose 'nihApps-release' as output folder. 
+compile/install ITK (with Module_ITKReview ON) and compile nihApps using cmake. Choose 'nihApps-release' as output folder. 
 This was tested with Ubuntu 16.04, CUDA 8.0, Python 2.7, ITK v4.10.0, and Matlab 2015b.
 
 2. Download the dicom image archive from https://wiki.cancerimagingarchive.net/display/Public/Pancreas-CT
