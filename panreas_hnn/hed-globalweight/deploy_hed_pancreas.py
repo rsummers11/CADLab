@@ -9,10 +9,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.pylab as pylab
 import matplotlib.cm as cm
-#%matplotlib inline
-#import scipy.misc
-from PIL import Image
-#import scipy.io
+try:
+    from PIL import Image
+except ImportError:
+    import Image
 import os
 import sys
 
