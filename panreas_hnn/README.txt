@@ -48,3 +48,12 @@ This was tested with Ubuntu 16.04, CUDA 8.0, Python 2.7, ITK v4.10.0, and Matlab
 
 The results are saved as *meanmaxAxCoSa.nii.gz in the stage1/stage2 subfolders of the output directory. All resulting images should overlay correctly when using a viewer that respects image offset and orientation (e.g. MitkWorkbench).
 
+Note:
+
+if you compile caffe for CPU only usage, please replace the following lines in 
+deploy_hed_pancreas.py
+	caffe.set_mode_gpu()
+	caffe.set_device(GPU) 
+with
+	caffe.set_mode_cpu();
+Warning: CPU only computation will take >1 hour for each case, while the GPU exection typically finishes in less than 5 minutes (tested with NVIDIA TITAN X).
