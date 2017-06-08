@@ -18,7 +18,7 @@ case_name = strrep(case_name,'.nii','');
 
 %% RUN
 B = findLargestConnComponent(V>t_body,rTable);
-V(~B) = min(V(:)); % remove table
+V(~B) = min(V(V>min(V(:)))); % remove table and fill with lowest reconstructed value (tries to ignore values outside of reconstruction)
 
 result_file = [results_dir,filesep,case_name,'_body.nii.gz'];
 write_nifti_volume(V,vdim,result_file,hdr);
