@@ -1,7 +1,7 @@
 function [SR, limits] = getSearchRegionByAtlasRegistration(NiftyRegAppsDir,sourceImageFile,sourceAtlasFile,targetFile, V, t_low, t_high, rErodeDilate)
     
-    aladin_params='-ln 5 -lp 2';
-    f3d_params='-ln 5 -lp 4 -be 0.1';
+    aladin_params='-ln 5 -lp 2 -sym';
+    f3d_params='-ln 5 -lp 4 -be 0.01';
     if ispc % niftyreg USE_CUDA does not compile with my version of cuda (only windows)...
         f3d_params = [f3d_params,' -gpu'];
     end
