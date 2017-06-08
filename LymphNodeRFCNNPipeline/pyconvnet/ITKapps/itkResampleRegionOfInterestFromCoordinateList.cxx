@@ -397,7 +397,6 @@ int main(int argc, const char **argv)
       std::cout << " superRoiFilter-InputImageSize = " << superRoiFilter->GetInput()->GetLargestPossibleRegion().GetSize() << std::endl;
       return EXIT_FAILURE;
     }
-    superROIImage = superRoiFilter->GetOutput();
 
     OutputImageType::PointType randVec;
     double *rotationAxis = new double[3];
@@ -405,6 +404,8 @@ int main(int argc, const char **argv)
 
     for (unsigned int t = 0; t < numberRandomTranslations; t++)
     {
+      superROIImage = superRoiFilter->GetOutput();
+	    
       if (t>0) // initially, stay on centroit
       {
         // convert mm to voxels
