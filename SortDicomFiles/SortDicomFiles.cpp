@@ -56,8 +56,9 @@ std::unordered_map<std::string, std::string> g_mSeriesUIDToMD5;
 #endif // USE_MD5
 
 void Usage(const char *p_cArg0) {
-  std::cerr << "Usage: " << p_cArg0 << " [-ehlr] folder|filePattern [folder2|filePattern2 ...] destinationPattern" << std::endl;
+  std::cerr << "Usage: " << p_cArg0 << " [-cehlr] folder|filePattern [folder2|filePattern2 ...] destinationPattern" << std::endl;
   std::cerr << "\nOptions:" << std::endl;
+  std::cerr << "-c -- Copy instead of move." << std::endl;
   std::cerr << "-e -- Try to remove empty folders." << std::endl;
   std::cerr << "-l -- List supported patterns." << std::endl;
   std::cerr << "-h -- This help message." << std::endl;
@@ -103,7 +104,7 @@ void MakeFoldersForFile(const std::string &strPath);
 std::string MakeFailedValue(const std::string &strTag);
 std::string MakeValue(const std::string &strTag, const itk::MetaDataDictionary &clDicomTags, const std::string &strPath = "");
 bool ProcessString(std::string &strPattern, const itk::MetaDataDictionary &clDicomTags, const std::string &strPath = "");
-bool MoveDicomFile(const std::string &strFileName, const std::string &strPattern);
+bool MoveDicomFile(const std::string &strFileName, const std::string &strPattern, bool bCopy);
 
 // Special handling
 itk::ImageBase<3>::Pointer LoadImageBase(const itk::MetaDataDictionary &clDicomTags, const std::string &strPath);
@@ -143,10 +144,14 @@ int main(int argc, char **argv) {
 
   bool bEraseFolders = false;
   bool bRecursive = false;
+  bool bCopy = false;
 
   int c = 0;
-  while ((c = getopt(argc, argv, "ehlr")) != -1) {
+  while ((c = getopt(argc, argv, "cehlr")) != -1) {
     switch (c) {
+    case 'c':
+      bCopy = true;
+      break;
     case 'h':
       Usage(p_cArg0);
       break;
@@ -195,10 +200,13 @@ int main(int argc, char **argv) {
     }
   }
 
-  std::cout << "Moving DICOM files to '" << strDestPattern << "' ..." << std::endl;
+  if (bCopy)
+    std::cout << "Copying DICOM files to '" << strDestPattern << "' ..." << std::endl;
+  else
+    std::cout << "Moving DICOM files to '" << strDestPattern << "' ..." << std::endl;
 
   for (size_t i = 0; i < vFiles.size(); ++i)
-    MoveDicomFile(vFiles[i], strDestPattern);
+    MoveDicomFile(vFiles[i], strDestPattern, bCopy);
 
   if (bEraseFolders) {
     std::unordered_set<std::string> sFolders;
@@ -398,7 +406,7 @@ bool ProcessString(std::string &strPattern, const itk::MetaDataDictionary &clDic
   return true;
 }
 
-bool MoveDicomFile(const std::string &strFileName, const std::string &strPattern) {
+bool MoveDicomFile(const std::string &strFileName, const std::string &strPattern, bool bCopy) {
   typedef itk::GDCMImageIO ImageIOType;
 
   ImageIOType::Pointer p_clImageIO = ImageIOType::New();
@@ -427,9 +435,17 @@ bool MoveDicomFile(const std::string &strFileName, const std::string &strPattern
 
   MakeFoldersForFile(strDestPath);
 
-  if (!Rename(strFileName, strDestPath, false)) {
-    std::cerr << "Error: Failed to move file '" << strFileName << "' to '" << strDestPath << "'." << std::endl;
-    return false;
+  if (bCopy) {
+    if (!Copy(strFileName, strDestPath, false)) {
+      std::cerr << "Error: Failed to copy file '" << strFileName << "' to '" << strDestPath << "'." << std::endl;
+      return false;
+    }
+  }
+  else {
+    if (!Rename(strFileName, strDestPath, false)) {
+      std::cerr << "Error: Failed to move file '" << strFileName << "' to '" << strDestPath << "'." << std::endl;
+      return false;
+    }
   }
 
   std::cout << strFileName << " --> " << strDestPath << std::endl;

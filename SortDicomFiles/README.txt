@@ -135,9 +135,10 @@ Lastly, SortDicomFiles provides the below usage message when
 provided with the -h flag or no arguments. It's useful if you
 forget.
 
-Usage: SortDicomFiles [-ehlr] folder|filePattern [folder2|filePattern2 ...] destinationPattern
+Usage: ./SortDicomFiles [-cehlr] folder|filePattern [folder2|filePattern2 ...] destinationPattern
 
 Options:
+-c -- Copy instead of move.
 -e -- Try to remove empty folders.
 -l -- List supported patterns.
 -h -- This help message.
@@ -206,6 +207,15 @@ Make sure you select "Release" mode.
 Unix-like systems:
 - Run the "make" command.
 
+SortDicomFiles has been successfully built and tested with:
+GCC 4.8.5 on Ubuntu 14.04
+Microsoft Visual Studio 2010 on Windows 7 and Windows Server 2012
+Microsoft Visual Studio 2013 on Windows 7
+
+using ITK versions:
+ITK 4.11
+ITK 4.7
+
 #######################################################################
 # Modifying                                                           #
 #######################################################################
@@ -234,4 +244,8 @@ For example: /path/to/*/folder
 
 This mostly affects Windows users since Unix shells already expand 
 these.
+
+Using absolute paths to Windows shares (i.e. \\name\folder) could cause
+problems since BaseName() and DirName() have not yet implemented
+parsing these kinds of paths.
 
