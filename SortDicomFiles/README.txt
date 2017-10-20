@@ -148,6 +148,7 @@ This version supports the following destination patterns:
 
 Supported patterns:
 <accession number> (0008|0050)
+<body part examined> (0018|0015)
 <instance number> (0020|0013)
 <instance uid> (0008|0018)
 <patient id> (0010|0020)
