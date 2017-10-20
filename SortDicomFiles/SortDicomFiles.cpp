@@ -75,6 +75,7 @@ void PrintSupportedPatterns() {
   std::cout << "<diffusion b-value> (0018|9087 or vendor-specific)" << std::endl;
   std::cout << "<z spacing> (z voxel spacing)" << std::endl;
   std::cout << "<z coordinate> (z voxel coordinate)" << std::endl;
+  std::cout << "<z origin> (z patient origin)" << std::endl;
   std::cout << "<x dim> (x voxel dimension)" << std::endl;
   std::cout << "<y dim> (y voxel dimension)" << std::endl;
   std::cout << "<z dim> (z voxel dimension)" << std::endl;
@@ -109,12 +110,14 @@ bool MoveDicomFile(const std::string &strFileName, const std::string &strPattern
 // Special handling
 itk::ImageBase<3>::Pointer LoadImageBase(const itk::MetaDataDictionary &clDicomTags, const std::string &strPath);
 std::string ComputeZCoordinate(const itk::MetaDataDictionary &clDicomTags, const std::string &strPath);
+std::string ComputeZOrigin(const itk::MetaDataDictionary &clDicomTags, const std::string &strPath);
 std::string ComputeZSpacing(const itk::MetaDataDictionary &clDicomTags, const std::string &strPath);
 std::string ComputeDimension(const itk::MetaDataDictionary &clDicomTags, const std::string &strPath, int iDim);
 std::string ComputeDiffusionBValue(const itk::MetaDataDictionary &clDicomTags);
 std::string ComputeDiffusionBValueSiemens(const itk::MetaDataDictionary &clDicomTags);
 std::string ComputeDiffusionBValueGE(const itk::MetaDataDictionary &clDicomTags);
 std::string ComputeDiffusionBValueProstateX(const itk::MetaDataDictionary &clDicomTags); // Same as Skyra and Verio
+std::string ComputeDiffusionBValuePhilips(const itk::MetaDataDictionary &clDicomTags);
 
 #ifdef USE_MD5
 template<typename PixelType, unsigned int Dimension>
@@ -141,6 +144,7 @@ int main(int argc, char **argv) {
   g_mNameToTagMap["study date"] = "0008|0020";
   g_mNameToTagMap["accession number"] = "0008|0050";
   g_mNameToTagMap["series uid"] = "0020|000e";
+  g_mNameToTagMap["body part examined"] = "0018|0015";
 
   bool bEraseFolders = false;
   bool bRecursive = false;
@@ -314,6 +318,10 @@ std::string MakeValue(const std::string &strTag, const itk::MetaDataDictionary &
     const std::string strValue = ComputeZCoordinate(clDicomTags, DirName(strPath));
     return strValue.size() > 0 ? strValue : MakeFailedValue(strTag); 
   }
+  else if (strTag == "z origin") {
+    const std::string strValue = ComputeZOrigin(clDicomTags, DirName(strPath));
+    return strValue.size() > 0 ? strValue : MakeFailedValue(strTag); 
+  }
   else if (strTag == "x dim") {
     const std::string strValue = ComputeDimension(clDicomTags, DirName(strPath), 0);
     return strValue.size() > 0 ? strValue : MakeFailedValue(strTag); 
@@ -415,6 +423,7 @@ bool MoveDicomFile(const std::string &strFileName, const std::string &strPattern
     return false; // Not a DICOM file
 
   p_clImageIO->SetFileName(strFileName.c_str());
+  p_clImageIO->LoadPrivateTagsOn();
 
   try {
     p_clImageIO->ReadImageInformation();
@@ -573,6 +582,8 @@ std::string ComputeDiffusionBValue(const itk::MetaDataDictionary &clDicomTags) {
     return ComputeDiffusionBValueSiemens(clDicomTags);
   else if (strcasestr(strManufacturer.c_str(), "ge") != nullptr)
     return ComputeDiffusionBValueGE(clDicomTags);
+  else if (strcasestr(strManufacturer.c_str(), "philips") != nullptr)
+    return ComputeDiffusionBValuePhilips(clDicomTags);
 
   return std::string();
 }
@@ -611,6 +622,19 @@ std::string ComputeZCoordinate(const itk::MetaDataDictionary &clDicomTags, const
     return std::string();
 
   return std::to_string((long long)clIndex[2]);
+}
+
+std::string ComputeZOrigin(const itk::MetaDataDictionary &clDicomTags, const std::string &strPath) {
+  std::string strImagePosition; // Try to grab this first before doing expensive stuff
+  if (!itk::ExposeMetaData(clDicomTags, "0020|0032", strImagePosition))
+    return std::string();
+
+  float a_fTmp[3] = { 0.0f, 0.0f, 0.0f };
+
+  if (sscanf(strImagePosition.c_str(), "%f\\%f\\%f", a_fTmp+0, a_fTmp+1, a_fTmp+2) != 3)
+    return std::string();
+
+  return std::to_string(a_fTmp[2]);
 }
 
 std::string ComputeDiffusionBValueSiemens(const itk::MetaDataDictionary &clDicomTags) {
@@ -727,6 +751,15 @@ std::string ComputeDiffusionBValueProstateX(const itk::MetaDataDictionary &clDic
   std::cerr << "Error: Could not parse sequence name '" << strSequenceName << "'." << std::endl;
 
   return std::string();
+}
+
+std::string ComputeDiffusionBValuePhilips(const itk::MetaDataDictionary &clDicomTags) {
+  std::string strBValue;
+
+  if (!itk::ExposeMetaData(clDicomTags, "2001|1003", strBValue))
+    return std::string();
+
+  return strBValue;
 }
 
 bool IsHexDigit(char c) {
