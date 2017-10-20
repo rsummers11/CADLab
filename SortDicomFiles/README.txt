@@ -160,6 +160,7 @@ Supported patterns:
 <diffusion b-value> (0018|9087 or vendor-specific)
 <z spacing> (z voxel spacing)
 <z coordinate> (z voxel coordinate)
+<z origin> (z patient origin)
 <x dim> (x voxel dimension)
 <y dim> (y voxel dimension)
 <z dim> (z voxel dimension)
