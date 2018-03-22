@@ -1,0 +1,18 @@
+# see config.py for explanations of some variables
+DATA_DIR: 'train_data/'  # your folder of training volumes
+SCALE: 128
+MAX_SIZE: 128
+RNG_SEED: 23
+IMG_SUFFIX: '.png'
+IMG_IS_16bit: False
+TRAIN:
+  GROUPS_PER_BATCH: 20
+  SLICE_NUM: 8
+  DO_VALIDATION: False
+  SNAPSHOT_ITERS: 500
+  VALIDATION_ITERATION: '[500*i for i in range(2)]'
+  MIN_IM_SIZE_KB: 13
+  USE_PREFETCH: True
+  CROP_RANDOM_PATCH: True
+#TEST:
+  # USE_PREFETCH: True
