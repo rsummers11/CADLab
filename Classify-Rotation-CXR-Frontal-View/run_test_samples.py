@@ -49,6 +49,10 @@ import matplotlib.pyplot as plt
 
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
+def mk_dir(directory):
+	if not os.path.exists(directory):
+		os.makedirs(directory)
+
 def run_test():
 
 	model = models.__dict__['resnet18'](pretrained=False)
@@ -74,7 +78,10 @@ def run_test():
 
 	model.load_state_dict(torch.load('./trained-models/resnet18_cxr_rotation_cls.pth')['state_dict'])
 
-	test(img_dir, split_files[split_name], split_name, model, batch_size=128, img_size=256, crop_size=224)
+	mk_dir('./images-90/')
+	mk_dir('./images-0/')
+	
+	test(img_dir, split_files[split_name], split_name, model, batch_size=32, img_size=256, crop_size=224)
 
 
 def test(img_dir, split_test, split_name, model, batch_size, img_size, crop_size):
