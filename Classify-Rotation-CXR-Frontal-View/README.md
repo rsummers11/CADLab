@@ -1,4 +1,4 @@
-## Noraml and 90-degree Rotated Chest X-ray Classification/Split)
+## Noraml and 90-degree Rotated Chest X-ray Classification/Split
 
 *Developed by Yuxing Tang (yuxing.tang@nih.gov), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory,
 National Institutes of Health Clinical Center*
