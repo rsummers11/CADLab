@@ -1,7 +1,7 @@
 ## Noraml and 90-degree Rotated Chest X-ray Classification/Split)
 
-Developed by Yuxing Tang (yuxing.tang@nih.gov), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory,
-National Institutes of Health Clinical Center
+*Developed by Yuxing Tang (yuxing.tang@nih.gov), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory,
+National Institutes of Health Clinical Center*
 
 This software provides a trained model to seperate the frontal view chest x-ray (CXR) into two categories: 
 normal vertical and anti-clock wise 90-degree rotated. 
