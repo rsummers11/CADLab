@@ -21,6 +21,7 @@ rotated ones.
 
 ## Usage
 ### Testing the sample images
+(Image Source: NIH ChestXray14 https://nihcc.app.box.com/v/ChestXray-NIHCC)
 1. Download the trained model in our Google Drive [here](https://drive.google.com/file/d/1FmUcTV8WRM24ZOLHbS9KX77ARNW-p4wr/view?usp=sharing) (85M).
 2. Put the trained model into ./trained-models/
 3. Run python run_test_samples.py
