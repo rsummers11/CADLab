@@ -22,13 +22,13 @@ rotated ones.
 ## Usage
 ### Testing the sample images
 (Image Source: NIH ChestXray14 https://nihcc.app.box.com/v/ChestXray-NIHCC)
-1. Download the trained model in our Google Drive [here](https://drive.google.com/file/d/1FmUcTV8WRM24ZOLHbS9KX77ARNW-p4wr/view?usp=sharing) (85M).
+1. Download the trained model in our lab Box Drive [here](https://nihcc.box.com/shared/static/7fqpys563oqlwizxncbryhrsrpocas0x.pth) (85M).
 2. Put the trained model into ./trained-models/
 3. Run python run_test_samples.py
 4. The images will be seperated into two individual folders, namely: images-0 with normal CXRs, and images-90 with 90-degree roatations.
 
 ### Testing your own images
-1. Download the trained model in our Google Drive [here](https://drive.google.com/file/d/1FmUcTV8WRM24ZOLHbS9KX77ARNW-p4wr/view?usp=sharing) (85M).
+1. Download the trained model in our lab Box Drive [here](https://nihcc.box.com/shared/static/7fqpys563oqlwizxncbryhrsrpocas0x.pth) (85M).
 2. Put the trained model into ./trained-models/
 3. Create ./images/ folder and put your own images into this foler.
 4. Generate a .txt file to include the image file names in shell command line: ls ./images/ > test_list.txt
