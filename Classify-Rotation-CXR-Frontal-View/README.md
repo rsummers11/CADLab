@@ -29,9 +29,9 @@ rotated ones.
 ### Testing your own images
 1. Download the trained model in our Google Drive [here](https://drive.google.com/file/d/1FmUcTV8WRM24ZOLHbS9KX77ARNW-p4wr/view?usp=sharing) (85M).
 2. Put the trained model into ./trained-models/
-3. Creat ./images/ folder and put your own images into this foler.
-4. Generate a .txt file to in command line: ls ./images/ > test_list.txt
-5. Run python run_test_own.py
+3. Create ./images/ folder and put your own images into this foler.
+4. Generate a .txt file to include the image file names in shell command line: ls ./images/ > test_list.txt
+5. Run: python run_test_own.py to test.
 6. The images will be seperated into two individual folders, namely: images-0-own with normal CXRs, and images-90-own with 90-degree roatations.
 
 ### PLCO dataset
