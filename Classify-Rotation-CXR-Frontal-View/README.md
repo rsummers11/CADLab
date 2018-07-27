@@ -6,6 +6,8 @@ National Institutes of Health Clinical Center*
 This software provides a trained model to seperate the frontal view chest x-ray (CXR) into two categories: 
 normal vertical and anti-clock wise 90-degree rotated. 
 
+<img src="example_0.jpg" width="900px"/>
+
 For example, a large number of CXRs in the PLCO dataset (https://biometry.nci.nih.gov/cdas/plco/) are left (anti-clock wise) 90-degree rotated, however, 
 no meta data is available with the CXR image describing this. Here I provide a trained CNN model (ResNet18) to automatic seperate normal view CXRs and 
 rotated ones.
