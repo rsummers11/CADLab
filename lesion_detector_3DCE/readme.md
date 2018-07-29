@@ -49,5 +49,5 @@ Adapted from the code in [https://github.com/sxjscience/mx-rcnn-1]()
 1. K. Yan, X. Wang, L. Lu, and R. M. Summers, “DeepLesion: Automated Mining of Large-Scale Lesion Annotations and Universal Lesion Detection with Deep Learning,” J. Med. Imaging, 2018. ([paper](http://yanke23.com/papers/18_JMI_DeepLesion.pdf))
 1. K. Yan et al., “Deep Lesion Graphs in the Wild: Relationship Learning and Organization of Significant Radiology Image Findings in a Diverse Large-scale Lesion Database,” in CVPR, 2018. ([arXiv](https://arxiv.org/abs/1711.10535))
 
-![3DCE framework](images/3dce_framework.png)
+![3DCE framework](images/3dce_framework.png =500x)
 ![lesion detection results](images/3DCE_lesion_detection_results.png)
