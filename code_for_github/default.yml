@@ -1,0 +1,34 @@
+exp_name: '3DCE 1 image 3 slice'
+gpus: '0'  # '': auto select one idle gpu
+dataset: 'DeepLesion'
+image_set: 'train'
+rand_seed: 23  # -1: don't fix random seed
+prefetch_thread_num: 4  # 0: no prefetch
+begin_epoch: 0  # if > 0, resume from previously trained model according to exp_name; if =0, initialize from pretrained model
+shuffle: True
+use_roidb_cache: True
+dataset_path: '/home/yk/research/data/DeepLesion/'
+groundtruth_file: 'DL_info.csv'
+image_path: '/home/yk/research/data/DeepLesion/Images_png/'
+
+# optimizer
+e2e_lr: 0.001
+e2e_lr_step: '4,5'  # decrease lr after e2e_lr_step epochs
+e2e_epoch: 6
+lr_factor: 0.1
+weight_decay: 0.0005
+frequent: 100  # show loss after "frequent" iterations
+show_avg_loss: 100  # average the loss in show_avg_loss iterations
+iter_size: 1  # if iter_size > 1, gradients will be cumulated in iter_size iterations, so maybe lr should be reduced
+
+# validation
+val_image_set: 'val'
+val_max_box: 5
+val_thresh: 0
+validate_at_begin: False  # do validation before start training, may be useful if begin_epoch > 0
+keep_best_model: True  # only keep the model w best acc to save disk space
+val_avg_fp: [.5,1,2,4,8,16]  # compute the sensitivity at val_avg_fp FPs per image
+#val_gpu: '3'
+
+# for test.py
+test_image_set: 'test'
