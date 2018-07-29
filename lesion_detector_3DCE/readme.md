@@ -2,9 +2,9 @@
 
 Developed by Ke Yan (ke.yan@nih.gov, [yanke23.com]()), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory, National Institutes of Health Clinical Center
 
-3DCE [1] is designed to make use of the 3D context in volumetric image data (and maybe video data) efficiently.
+3DCE [1] is an object detection framework which makes use of the 3D context in volumetric image data (and maybe video data) efficiently. 
 
-However, the project also contains Faster RCNN and R-FCN, which can be used for other object detection tasks.
+It was primarily designed for lesion detection in 3D CT images. However, the project also contains 2D Faster RCNN and R-FCN, which can be used for other object detection tasks.
 
 Adapted from the code in [https://github.com/sxjscience/mx-rcnn-1]()
  
@@ -49,5 +49,5 @@ Adapted from the code in [https://github.com/sxjscience/mx-rcnn-1]()
 1. K. Yan, X. Wang, L. Lu, and R. M. Summers, “DeepLesion: Automated Mining of Large-Scale Lesion Annotations and Universal Lesion Detection with Deep Learning,” J. Med. Imaging, 2018. ([paper](http://yanke23.com/papers/18_JMI_DeepLesion.pdf))
 1. K. Yan et al., “Deep Lesion Graphs in the Wild: Relationship Learning and Organization of Significant Radiology Image Findings in a Diverse Large-scale Lesion Database,” in CVPR, 2018. ([arXiv](https://arxiv.org/abs/1711.10535))
 
-
+![3DCE framework](images/3dce_framework.png)
 ![lesion detection results](images/3DCE_lesion_detection_results.png)
