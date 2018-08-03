@@ -25,7 +25,7 @@ iter_size: 1  # if iter_size > 1, gradients will be cumulated in iter_size itera
 val_image_set: 'val'
 val_max_box: 5
 val_thresh: 0
-validate_at_begin: False  # do validation before start training, may be useful if begin_epoch > 0
+validate_at_begin: True  # do validation before start training, may be useful if begin_epoch > 0
 keep_best_model: True  # only keep the model w best acc to save disk space
 val_avg_fp: [.5,1,2,4,8,16]  # compute the sensitivity at val_avg_fp FPs per image
 #val_gpu: '3'

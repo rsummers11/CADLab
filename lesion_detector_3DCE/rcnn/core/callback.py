@@ -1,6 +1,6 @@
 import time
 import numpy as np
-
+import os
 import logging
 import mxnet as mx
 from rcnn.tools.validate import validate
@@ -62,15 +62,23 @@ class Speedometer(object):
 
 def do_checkpoint(prefix, means, stds):
     def _callback(iter_no, sym, arg, aux):
-        bbox_param = 'bbox_pred'  # for faster rcnn
-        bbox_param = 'rfcn_bbox'  # for RFCN
+        if config.FRAMEWORK == 'RFCN':
+            bbox_param = 'rfcn_bbox'  # for RFCN, because its final layer is pooling
+        else:
+            bbox_param = 'bbox_pred'  # for faster rcnn
         if config.TRAIN.BBOX_NORMALIZE_TARGETS:
             arg[bbox_param+'_weight_test'] = (arg[bbox_param+'_weight'].T * mx.nd.array(stds)).T
             arg[bbox_param+'_bias_test'] = arg[bbox_param+'_bias'] * mx.nd.array(stds) + mx.nd.array(means)
+
+        path = os.path.dirname(prefix)
+        if not os.path.exists(path):
+            os.mkdir(path)
         mx.model.save_checkpoint(prefix, iter_no + 1, sym, arg, aux)
+
         if config.TRAIN.BBOX_NORMALIZE_TARGETS:
             arg.pop(bbox_param+'_weight_test')
             arg.pop(bbox_param+'_bias_test')
+
     return _callback
 
 
