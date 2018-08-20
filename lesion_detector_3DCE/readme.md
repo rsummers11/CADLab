@@ -1,12 +1,12 @@
 ## 3D Context Enhanced Region-based Convolutional Neural Network (3DCE)
 
-Developed by Ke Yan (ke.yan@nih.gov, [yanke23.com]()), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory, National Institutes of Health Clinical Center
+Developed by Ke Yan (ke.yan@nih.gov, [yanke23.com](http://yanke23.com)), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory, National Institutes of Health Clinical Center
 
 3DCE [1] is an object detection framework which makes use of the 3D context in volumetric image data (and maybe video data) efficiently. 
 
 It was primarily designed for lesion detection in 3D CT images. However, the project also contains 2D Faster RCNN and R-FCN, which can be used for other object detection tasks.
 
-Adapted from the code in [https://github.com/sxjscience/mx-rcnn-1]()
+Adapted from the code in [https://github.com/sxjscience/mx-rcnn-1](https://github.com/sxjscience/mx-rcnn-1)
  
 ## Introduction
 * Implemented frameworks: Faster RCNN, R-FCN, Improved R-FCN [1], 3DCE R-FCN (see rcnn/symbol/symbol_vgg.py and tools/train.py)
@@ -30,6 +30,7 @@ Adapted from the code in [https://github.com/sxjscience/mx-rcnn-1]()
 #### Requirements
 * MXNet 1.0.0
 * Python 2.7
+* Before running, run "make" to compile binary files
 * To train the universal lesion detector, download the DeepLesion dataset [2]
 
 #### File structure
