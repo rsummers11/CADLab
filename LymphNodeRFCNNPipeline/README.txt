@@ -22,7 +22,7 @@ Requirements:
 	
 Run example (Windows or Linux):
 
-1. Download example data from https://drive.google.com/file/d/0Byig_cLsHdU0VkdGTXQ1N195ZWc/view?usp=sharing and extract to .\data
+1. Download example data from https://wiki.cancerimagingarchive.net/display/Public/CT+Lymph+Nodes and place in .\data
 2. Open Matlab
 3. CD to where 'run_LymphNodeRFCNNPipeline.m' is located and run it (it will automatically add necessary sub-folders to Matlab path)
 4. Select ".\data\CTimage" as input folder
