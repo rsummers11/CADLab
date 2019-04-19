@@ -8,16 +8,9 @@ This file defines the XLSor model, which is implemented based on CCNet.
 '''
 
 import torch.nn as nn
-from torch.nn import functional as F
-import math
-import torch.utils.model_zoo as model_zoo
 import torch
-import numpy as np
-from torch.autograd import Variable
 affine_par = True
 import functools
-
-import sys, os
 
 from libs import InPlaceABNSync
 from cc_attention import CrissCrossAttention
@@ -27,7 +20,6 @@ BatchNorm2d = functools.partial(InPlaceABNSync, activation='none')
 
 
 def conv3x3(in_planes, out_planes, stride=1):
-    "3x3 convolution with padding"
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
                      padding=1, bias=False)
 
