@@ -19,8 +19,8 @@ import functools
 
 import sys, os
 
-from libs import InPlaceABN, InPlaceABNSync
-from cc_attention import CrissCrossAttention, PAM_Module
+from libs import InPlaceABNSync
+from cc_attention import CrissCrossAttention
 
 
 BatchNorm2d = functools.partial(InPlaceABNSync, activation='none')
