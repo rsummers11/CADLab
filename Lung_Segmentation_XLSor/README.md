@@ -53,7 +53,7 @@ The `build.sh` script assumes that the `nvcc` compiler is available in the curre
 The CUDA kernels are compiled for `sm_50`, `sm_52` and `sm_61` by default.
 To change this (_e.g._ if you are using a Kepler GPU), please edit the `CUDA_GENCODE` variable in `build.sh`.
 
-Please replace the CrossEntropyLoss with MSELoss in the file of utils/criterion.py, where self.criterion should be "torch.nn.MSELoss(size_average=True)" instead of "torch.nn.CrossEntropyLoss(ignore_index=ignore_index, reduce=reduce)".
+If extra_compile_args=["-std=c99"] in the `build.py`, you may need to change it as extra_compile_args=["-std=c++11"] when you get errors during building, e.g. "CompileError: command 'gcc' failed with exit status 1".
 
 ### Pretrained model
 
