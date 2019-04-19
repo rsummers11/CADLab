@@ -4,7 +4,7 @@ Imaging Biomarkers and Computer-Aided Diagnosis Laboratory
 National Institutes of Health Clinical Center
 April 2019
 
-For testing, you need to modify some augments according to your own setting and run the command "python test.py".
+For testing, you need to modify some arguments according to your own setting and run the command "python test.py".
 '''
 
 
