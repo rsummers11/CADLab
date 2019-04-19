@@ -15,6 +15,7 @@ from torch.utils import data
 import numpy as np
 import torch.optim as optim
 import torch.backends.cudnn as cudnn
+from torch.nn import functional as F
 import os
 import os.path as osp
 from networks.xlsor import XLSor
@@ -23,7 +24,6 @@ from dataset.datasets import XRAYDataSet
 import timeit
 from tensorboardX import SummaryWriter
 from utils.utils import inv_preprocess
-from utils.criterion import CriterionDSN, CriterionOhemDSN
 from utils.encoding import DataParallelModel, DataParallelCriterion
 
 torch_ver = torch.__version__[:3]
@@ -46,7 +46,7 @@ NUM_STEPS = 50000
 POWER = 0.9
 RANDOM_SEED = 1234
 RESTORE_FROM = './dataset/resnet101-imagenet.pth'
-SAVE_NUM_IMAGES = 4
+SAVE_NUM_IMAGES = 2
 SAVE_PRED_EVERY = 10000
 SNAPSHOT_DIR = './XLSor_snapshots/'
 WEIGHT_DECAY = 0.0005
@@ -110,12 +110,6 @@ def get_arguments():
     parser.add_argument("--ft", type=bool, default=False,
                         help="fine-tune the model with large input size.")
 
-    parser.add_argument("--ohem", type=str2bool, default='False',
-                        help="use hard negative mining")
-    parser.add_argument("--ohem-thres", type=float, default=0.6,
-                        help="choose the samples with correct probability underthe threshold.")
-    parser.add_argument("--ohem-keep", type=int, default=200000,
-                        help="choose the samples with correct probability underthe threshold.")
     return parser.parse_args()
 
 args = get_arguments()
@@ -138,6 +132,25 @@ def set_bn_momentum(m):
     classname = m.__class__.__name__
     if classname.find('BatchNorm') != -1 or classname.find('InPlaceABN') != -1:
         m.momentum = 0.0003
+
+class Criterion(nn.Module):
+    def __init__(self, ignore_index=255, use_weight=True, reduce=True):
+        super(Criterion, self).__init__()
+        self.ignore_index = ignore_index
+        self.criterion = torch.nn.MSELoss(size_average=True)
+        if not reduce:
+            print("disabled the reduce.")
+
+    def forward(self, preds, target):
+        h, w = target.size(2), target.size(3)
+
+        scale_pred = F.upsample(input=preds[0], size=(h, w), mode='bilinear', align_corners=True)
+        loss1 = self.criterion(scale_pred, target)
+
+        scale_pred = F.upsample(input=preds[1], size=(h, w), mode='bilinear', align_corners=True)
+        loss2 = self.criterion(scale_pred, target)
+
+        return loss1 + loss2*0.4
 
 def main():
     writer = SummaryWriter(args.snapshot_dir)
@@ -167,10 +180,7 @@ def main():
     model.float()
     model.cuda()    
 
-    if args.ohem:
-        criterion = CriterionOhemDSN(thresh=args.ohem_thres, min_kept=args.ohem_keep)
-    else:
-        criterion = CriterionDSN()
+    criterion = Criterion()
     criterion = DataParallelCriterion(criterion)
     criterion.cuda()
     
