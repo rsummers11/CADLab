@@ -1,0 +1,5844 @@
+[
+  {
+    "text": "Left lower lobe juxtapleural wedge-shaped opacity", 
+    "lesion_idx": 24941, 
+    "expanded_terms": [
+      "opacity", 
+      "left lower lobe", 
+      "wedge-shaped", 
+      "pleura", 
+      "left lung", 
+      "chest", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "periportal lymph node", 
+    "lesion_idx": 1725, 
+    "expanded_terms": [
+      "lymph node", 
+      "abdomen lymph node", 
+      "porta Hepatis", 
+      "porta Hepatis lymph node", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "right renal hypodensity; cyst", 
+    "lesion_idx": 20994, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "right kidney", 
+      "hypoattenuation", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "right perihilar lung nodule", 
+    "lesion_idx": 16540, 
+    "expanded_terms": [
+      "hilum", 
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "perihilar"
+    ]
+  }, 
+  {
+    "text": "right anterior mediastinal mass; partially calcified", 
+    "lesion_idx": 10283, 
+    "expanded_terms": [
+      "mediastinum", 
+      "chest", 
+      "mass", 
+      "calcified", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "left hepatic cyst, segment 4A", 
+    "lesion_idx": 16508, 
+    "expanded_terms": [
+      "cyst", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "left ureteral mass", 
+    "lesion_idx": 25297, 
+    "expanded_terms": [
+      "pelvis", 
+      "mass", 
+      "ureter"
+    ]
+  }, 
+  {
+    "text": "calcified mass liver dome; right hepatic lobe", 
+    "lesion_idx": 5943, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "liver", 
+      "calcified"
+    ]
+  }, 
+  {
+    "text": "borderline enlarged left paraaortic retroperitoneal lymph node; lymphadenopathy", 
+    "lesion_idx": 275, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "paraaortic", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "left paraaortic retroperitoneal lymph node", 
+    "lesion_idx": 2962, 
+    "expanded_terms": [
+      "retroperitoneum lymph node", 
+      "lymph node", 
+      "paraaortic", 
+      "abdomen", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "large necrotic right hepatic mass", 
+    "lesion_idx": 812, 
+    "expanded_terms": [
+      "necrosis", 
+      "upper abdomen", 
+      "abdomen", 
+      "large", 
+      "mass", 
+      "liver", 
+      "liver mass"
+    ]
+  }, 
+  {
+    "text": "left paraaortic retroperitoneal lymph node", 
+    "lesion_idx": 18099, 
+    "expanded_terms": [
+      "retroperitoneum lymph node", 
+      "lymph node", 
+      "paraaortic", 
+      "abdomen", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "partially calcified right hepatic mass; liver dome", 
+    "lesion_idx": 5931, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "liver", 
+      "calcified"
+    ]
+  }, 
+  {
+    "text": "mesenteric lymph node", 
+    "lesion_idx": 1826, 
+    "expanded_terms": [
+      "lymph node", 
+      "abdomen lymph node", 
+      "mesentery", 
+      "mesentery lymph node", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "right renal fossa mass", 
+    "lesion_idx": 22472, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "right kidney", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "peripancreatic perisplenic mass", 
+    "lesion_idx": 18098, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "mass", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "juxtadiaphragmatic right perirenal nodule", 
+    "lesion_idx": 24122, 
+    "expanded_terms": [
+      "diaphragm", 
+      "upper abdomen", 
+      "abdomen", 
+      "chest", 
+      "nodule", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "juxtapleural right lower lobe nodule", 
+    "lesion_idx": 19928, 
+    "expanded_terms": [
+      "pleura", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "retroperitoneal paracaval lymphadenopathy", 
+    "lesion_idx": 3182, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "left lower lobe pleural based nodule", 
+    "lesion_idx": 24945, 
+    "expanded_terms": [
+      "left lower lobe", 
+      "pleura", 
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "precarinal lymph node", 
+    "lesion_idx": 28335, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "right lower lobe mucous plugging", 
+    "lesion_idx": 25915, 
+    "expanded_terms": [
+      "right lung", 
+      "chest", 
+      "right lower lobe", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "right hilar lymphadenopathy", 
+    "lesion_idx": 20877, 
+    "expanded_terms": [
+      "lymph node", 
+      "right hilum lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "enlargement", 
+      "chest", 
+      "mediastinum", 
+      "hilum lymph node"
+    ]
+  }, 
+  {
+    "text": "left renal enhancing mass", 
+    "lesion_idx": 10460, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "mass", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "left hepatic low attenuation lesion, possibly focal fat", 
+    "lesion_idx": 9425, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "fat", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "hyperenhancing lesion the head of the pancreas", 
+    "lesion_idx": 6514, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "retroperitoneum", 
+      "hyperattenuation", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "cavitary right upper lobe nodule", 
+    "lesion_idx": 22789, 
+    "expanded_terms": [
+      "cavitary", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "left external iliac lymph node", 
+    "lesion_idx": 21492, 
+    "expanded_terms": [
+      "lymph node", 
+      "iliac", 
+      "external iliac lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "right retrocrural lymphadenopathy", 
+    "lesion_idx": 30857, 
+    "expanded_terms": [
+      "lymph node", 
+      "retrocrural lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node"
+    ]
+  }, 
+  {
+    "text": "liver dome lesion indeterminate", 
+    "lesion_idx": 22166, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "enhancing hypervascular right hepatic lobe hemangioma", 
+    "lesion_idx": 15628, 
+    "expanded_terms": [
+      "blood vessel", 
+      "enhancing", 
+      "hypervascular", 
+      "upper abdomen", 
+      "abdomen", 
+      "neoplasm", 
+      "liver", 
+      "hemangioma"
+    ]
+  }, 
+  {
+    "text": "heterogeneously enhancing right", 
+    "lesion_idx": 14374, 
+    "expanded_terms": [
+      "heterogeneous", 
+      "enhancing"
+    ]
+  }, 
+  {
+    "text": "hypodense hypoattenuating left hepatic lobe mass", 
+    "lesion_idx": 29467, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "mass", 
+      "liver"
+    ]
+  }, 
+  {
+    "text": "posterior left lower lobe noncalcified nodule", 
+    "lesion_idx": 17805, 
+    "expanded_terms": [
+      "left lower lobe", 
+      "noncalcified", 
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "liver capsule dome low attenuation lesion", 
+    "lesion_idx": 19785, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "capsule", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "destructive left iliac bone ilium mass with extraosseous mass invading the adjacent iliopsoas and gluteus minimus muscles", 
+    "lesion_idx": 2545, 
+    "expanded_terms": [
+      "muscle", 
+      "paraspinal", 
+      "mass", 
+      "bone", 
+      "paraspinal muscle", 
+      "iliopsoas", 
+      "psoas muscle"
+    ]
+  }, 
+  {
+    "text": "inferior right hepatic lobe low attenuation mass", 
+    "lesion_idx": 14121, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "mass", 
+      "liver"
+    ]
+  }, 
+  {
+    "text": "Exophytic mid right renal mixed solid and cystic lesion", 
+    "lesion_idx": 17008, 
+    "expanded_terms": [
+      "solid", 
+      "upper abdomen", 
+      "abdomen", 
+      "right kidney", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "exophytic", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "noncalcified right middle lobe nodule", 
+    "lesion_idx": 29170, 
+    "expanded_terms": [
+      "nodule", 
+      "right lung", 
+      "chest", 
+      "noncalcified", 
+      "lung", 
+      "right mid lung"
+    ]
+  }, 
+  {
+    "text": "perisplenic cystic mass", 
+    "lesion_idx": 32124, 
+    "expanded_terms": [
+      "cyst", 
+      "upper abdomen", 
+      "mass", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "mmesenteric lymph node", 
+    "lesion_idx": 15600, 
+    "expanded_terms": [
+      "lymph node", 
+      "abdomen lymph node", 
+      "mesentery", 
+      "mesentery lymph node", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "left post-remedial plural mass", 
+    "lesion_idx": 22430, 
+    "expanded_terms": [
+      "chest", 
+      "mass", 
+      "pleura"
+    ]
+  }, 
+  {
+    "text": "left paramediastinal juxtapericardial mass", 
+    "lesion_idx": 27629, 
+    "expanded_terms": [
+      "mediastinum", 
+      "chest", 
+      "pericardium", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "right hepatic low attenuation lesion", 
+    "lesion_idx": 16611, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "splenic low attenuation mass", 
+    "lesion_idx": 16250, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "mass", 
+      "abdomen", 
+      "spleen"
+    ]
+  }, 
+  {
+    "text": "upper pole right renal septated low attenuation lesion", 
+    "lesion_idx": 24610, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "right kidney", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "cystic pancreatic head lesion", 
+    "lesion_idx": 31936, 
+    "expanded_terms": [
+      "pancreatic head", 
+      "upper abdomen", 
+      "abdomen", 
+      "retroperitoneum", 
+      "cyst", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "left lower lobe ground glass nodule", 
+    "lesion_idx": 30088, 
+    "expanded_terms": [
+      "opacity", 
+      "left lower lobe", 
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "ground-glass opacity"
+    ]
+  }, 
+  {
+    "text": "right renal parapelvic cyst", 
+    "lesion_idx": 13317, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "right kidney", 
+      "parapelvic cyst", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "pelvis", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "pretracheal lymph node lymphadenopathy", 
+    "lesion_idx": 21866, 
+    "expanded_terms": [
+      "lymph node", 
+      "pretracheal lymph node", 
+      "superior mediastinum", 
+      "lymphadenopathy", 
+      "superior mediastinum lymph node", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "left mediastinal pleural enhancing mass", 
+    "lesion_idx": 7184, 
+    "expanded_terms": [
+      "mediastinum", 
+      "chest", 
+      "mass", 
+      "enhancing", 
+      "pleura"
+    ]
+  }, 
+  {
+    "text": "superior mesenteric vein filling defect thrombus", 
+    "lesion_idx": 31220, 
+    "expanded_terms": [
+      "blood vessel", 
+      "portal vein", 
+      "abdomen", 
+      "thrombus", 
+      "mesentery", 
+      "superior mesenteric vein", 
+      "vein"
+    ]
+  }, 
+  {
+    "text": "right middle lobe noncalcified nodule", 
+    "lesion_idx": 26421, 
+    "expanded_terms": [
+      "nodule", 
+      "right lung", 
+      "chest", 
+      "noncalcified", 
+      "lung", 
+      "right mid lung"
+    ]
+  }, 
+  {
+    "text": "left axillary cutaneous subcutaneous mass", 
+    "lesion_idx": 16545, 
+    "expanded_terms": [
+      "chest wall", 
+      "subcutaneous mass", 
+      "axilla", 
+      "subcutaneous", 
+      "chest", 
+      "mass", 
+      "skin"
+    ]
+  }, 
+  {
+    "text": "small bowel intussusception right hemipelvis", 
+    "lesion_idx": 15337, 
+    "expanded_terms": [
+      "pelvis", 
+      "gastrointestinal", 
+      "intestine", 
+      "small bowel", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "left perisplenic perirenal low attenuation mass", 
+    "lesion_idx": 19539, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "left mid right renal enhancing mass carcinoma", 
+    "lesion_idx": 22420, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "neoplasm", 
+      "mass", 
+      "retroperitoneum", 
+      "carcinoma", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "right lower lobe noncalcified nodule", 
+    "lesion_idx": 2518, 
+    "expanded_terms": [
+      "nodule", 
+      "right lung", 
+      "chest", 
+      "noncalcified", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "left plantar mass foot juxtametatarsal", 
+    "lesion_idx": 10347, 
+    "expanded_terms": [
+      "foot", 
+      "extremity", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "perisplenic omental nodule peritoneal", 
+    "lesion_idx": 29746, 
+    "expanded_terms": [
+      "omentum", 
+      "nodule", 
+      "peritoneum", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "interaortocaval lymph node lymphadenopathy", 
+    "lesion_idx": 16509, 
+    "expanded_terms": [
+      "lymph node", 
+      "paracaval lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node"
+    ]
+  }, 
+  {
+    "text": "left adrenal nodule thickening lateral limb", 
+    "lesion_idx": 29413, 
+    "expanded_terms": [
+      "thickening", 
+      "left adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "nodule", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "hyperdense hemorrhagic left retroperitoneal fluid collection", 
+    "lesion_idx": 28103, 
+    "expanded_terms": [
+      "hemorrhage", 
+      "abdomen", 
+      "fluid", 
+      "hyperattenuation", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "lingular mass nodule consolidation", 
+    "lesion_idx": 29460, 
+    "expanded_terms": [
+      "lingula", 
+      "left lung", 
+      "consolidation", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "pancreatic head cyst septated", 
+    "lesion_idx": 436, 
+    "expanded_terms": [
+      "pancreatic head", 
+      "upper abdomen", 
+      "abdomen", 
+      "retroperitoneum", 
+      "cyst", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "hypervascular enhancing pancreatic head mass", 
+    "lesion_idx": 23862, 
+    "expanded_terms": [
+      "pancreatic head", 
+      "enhancing", 
+      "hypervascular", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "right paratracheal borderline enlarged adenopathy lymph node", 
+    "lesion_idx": 26809, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "right upper lobe cavitary heterogeneous mass lesion nodule", 
+    "lesion_idx": 22803, 
+    "expanded_terms": [
+      "cavitary", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "mass", 
+      "heterogeneous", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "right adductor magnus proximal thigh medial hyperdense high attenuation mass", 
+    "lesion_idx": 9109, 
+    "expanded_terms": [
+      "extremity", 
+      "mass", 
+      "thigh", 
+      "hyperattenuation"
+    ]
+  }, 
+  {
+    "text": "enhancing central liver mass heterogeneous well demarcated well circumscribed", 
+    "lesion_idx": 17016, 
+    "expanded_terms": [
+      "enhancing", 
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "liver", 
+      "circumscribed", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "bilobed cystic lateral left kidney mass", 
+    "lesion_idx": 28097, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "mass", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "left upper lobe spiculated noncalcified nodule", 
+    "lesion_idx": 25769, 
+    "expanded_terms": [
+      "left lung", 
+      "noncalcified", 
+      "spiculated", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "right adrenal mass lateral limb", 
+    "lesion_idx": 11778, 
+    "expanded_terms": [
+      "right adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "mass", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "periportal lymphadenopathy", 
+    "lesion_idx": 27897, 
+    "expanded_terms": [
+      "lymph node", 
+      "porta Hepatis lymph node", 
+      "porta Hepatis", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node"
+    ]
+  }, 
+  {
+    "text": "right omental soft tissue nodule lesion", 
+    "lesion_idx": 10494, 
+    "expanded_terms": [
+      "omentum", 
+      "nodule", 
+      "abdomen", 
+      "soft tissue"
+    ]
+  }, 
+  {
+    "text": "left supraclavicular mass", 
+    "lesion_idx": 22173, 
+    "expanded_terms": [
+      "mass"
+    ]
+  }, 
+  {
+    "text": "precarinal lymphadenopathy", 
+    "lesion_idx": 26874, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "right hepatic posterior segment hypervascular lesion", 
+    "lesion_idx": 31317, 
+    "expanded_terms": [
+      "hypervascular", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "right middle lobe noncalcified nodule", 
+    "lesion_idx": 7386, 
+    "expanded_terms": [
+      "nodule", 
+      "right lung", 
+      "chest", 
+      "noncalcified", 
+      "lung", 
+      "right mid lung"
+    ]
+  }, 
+  {
+    "text": "heterogeneously enhancing lobulated large right hepatic mass", 
+    "lesion_idx": 27443, 
+    "expanded_terms": [
+      "enhancing", 
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "lobular", 
+      "large", 
+      "mass", 
+      "liver", 
+      "heterogeneous", 
+      "lobular mass"
+    ]
+  }, 
+  {
+    "text": "right upper lobe faint nodule", 
+    "lesion_idx": 5729, 
+    "expanded_terms": [
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right upper lobe"
+    ]
+  }, 
+  {
+    "text": "right adrenal nodule", 
+    "lesion_idx": 11779, 
+    "expanded_terms": [
+      "right adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "nodule", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "left hepatic heterogeneous low attenuation mass", 
+    "lesion_idx": 21916, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "mass", 
+      "liver", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "gastrohepatic lymphadenopathy", 
+    "lesion_idx": 280, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "mesenteric peripancreatic heterogeneous enhancing mass", 
+    "lesion_idx": 3055, 
+    "expanded_terms": [
+      "heterogeneous", 
+      "mesentery", 
+      "mass", 
+      "abdomen", 
+      "enhancing"
+    ]
+  }, 
+  {
+    "text": "left iliac bone sclerotic lesion", 
+    "lesion_idx": 12134, 
+    "expanded_terms": [
+      "sclerotic", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "low attenuation pericaval right upper quadrant mass", 
+    "lesion_idx": 10314, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "spiculated right upper lobe nodule mass", 
+    "lesion_idx": 11193, 
+    "expanded_terms": [
+      "spiculated", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "mass", 
+      "spiculated mass", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "retroperitoneal lymph node periaortic", 
+    "lesion_idx": 20316, 
+    "expanded_terms": [
+      "retroperitoneum lymph node", 
+      "lymph node", 
+      "paraaortic", 
+      "abdomen", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "perihepatic peritoneal mass", 
+    "lesion_idx": 23197, 
+    "expanded_terms": [
+      "peritoneum", 
+      "mass", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "right anterolateral abdominal wall mass", 
+    "lesion_idx": 8766, 
+    "expanded_terms": [
+      "abdominal wall", 
+      "mass", 
+      "abdomen", 
+      "body wall"
+    ]
+  }, 
+  {
+    "text": "indeterminate enhancing nodule within a small bowel loop", 
+    "lesion_idx": 8705, 
+    "expanded_terms": [
+      "intestine", 
+      "enhancing", 
+      "small bowel", 
+      "abdomen", 
+      "nodule", 
+      "gastrointestinal"
+    ]
+  }, 
+  {
+    "text": "heterogeneous predominantly low attenuation mass in the medial segment of the left hepatic lobe", 
+    "lesion_idx": 4630, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "mass", 
+      "liver", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "right lower lobe basilar juxtapleural noncalcified nodule", 
+    "lesion_idx": 2512, 
+    "expanded_terms": [
+      "nodule", 
+      "pleura", 
+      "lung base", 
+      "right lung", 
+      "chest", 
+      "noncalcified", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "mesenteric lymphadenopathy", 
+    "lesion_idx": 2867, 
+    "expanded_terms": [
+      "lymph node", 
+      "mesentery lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node", 
+      "mesentery"
+    ]
+  }, 
+  {
+    "text": "solid left renal mass carcinoma medial mid kidney", 
+    "lesion_idx": 20922, 
+    "expanded_terms": [
+      "solid", 
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "neoplasm", 
+      "carcinoma", 
+      "retroperitoneum", 
+      "mass", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "left external iliac lymph node", 
+    "lesion_idx": 12188, 
+    "expanded_terms": [
+      "lymph node", 
+      "iliac", 
+      "external iliac lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "right upper lobe spiculated nodule", 
+    "lesion_idx": 186, 
+    "expanded_terms": [
+      "spiculated", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "left pleural nodule medial paraspinal", 
+    "lesion_idx": 273, 
+    "expanded_terms": [
+      "chest", 
+      "nodule", 
+      "paraspinal", 
+      "pleura"
+    ]
+  }, 
+  {
+    "text": "left renal medial indeterminate lesion", 
+    "lesion_idx": 12822, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "retroperitoneum", 
+      "kidney", 
+      "left kidney", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Mass in the medial segment of the left hepatic lobe", 
+    "lesion_idx": 18358, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "mass", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Left upper quadrant fluid collection", 
+    "lesion_idx": 17826, 
+    "expanded_terms": [
+      "fluid", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Left hepatic indeterminate nodule", 
+    "lesion_idx": 249, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "nodule", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Left thyroid low attenuation nodule", 
+    "lesion_idx": 18322, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "thyroid gland", 
+      "nodule", 
+      "neck"
+    ]
+  }, 
+  {
+    "text": "Right hilar lymphadenopathy", 
+    "lesion_idx": 20548, 
+    "expanded_terms": [
+      "lymph node", 
+      "right hilum lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "enlargement", 
+      "chest", 
+      "mediastinum", 
+      "hilum lymph node"
+    ]
+  }, 
+  {
+    "text": "Right lung base nodule along right hemi diaphragm", 
+    "lesion_idx": 7965, 
+    "expanded_terms": [
+      "diaphragm", 
+      "lung base", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "lung nodule"
+    ]
+  }, 
+  {
+    "text": "Right upper lobe nodular focus of consolidation", 
+    "lesion_idx": 31646, 
+    "expanded_terms": [
+      "consolidation", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "Left pericolonic peritoneal omental mass", 
+    "lesion_idx": 32421, 
+    "expanded_terms": [
+      "peritoneum", 
+      "mass", 
+      "omentum", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Right hilar perihilar mass lymphadenopathy", 
+    "lesion_idx": 31410, 
+    "expanded_terms": [
+      "lymph node", 
+      "right hilum lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "enlargement", 
+      "chest", 
+      "mass", 
+      "mediastinum", 
+      "hilum lymph node", 
+      "perihilar"
+    ]
+  }, 
+  {
+    "text": "Right hepatic low attenuation lesion", 
+    "lesion_idx": 26775, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Left adrenal nodule", 
+    "lesion_idx": 1613, 
+    "expanded_terms": [
+      "left adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "nodule", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "Right upper lobe speculated mass", 
+    "lesion_idx": 18512, 
+    "expanded_terms": [
+      "right lung", 
+      "lung", 
+      "chest", 
+      "mass", 
+      "right upper lobe"
+    ]
+  }, 
+  {
+    "text": "Well marginated lytic L3 vertebral body lesion Schmorl's node", 
+    "lesion_idx": 23478, 
+    "expanded_terms": [
+      "lymph node", 
+      "lytic", 
+      "spine", 
+      "vertebral body", 
+      "circumscribed", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "Left upper lobe spiculated irregular mass", 
+    "lesion_idx": 20431, 
+    "expanded_terms": [
+      "left lung", 
+      "spiculated", 
+      "chest", 
+      "lung", 
+      "spiculated mass", 
+      "left upper lung", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "Right adrenal nodule", 
+    "lesion_idx": 18546, 
+    "expanded_terms": [
+      "right adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "nodule", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "Gastric perigastric mass", 
+    "lesion_idx": 26705, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "mass", 
+      "gastrointestinal", 
+      "stomach", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Low attenuation right hepatic lobe dome lesion", 
+    "lesion_idx": 21475, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Peripheral low attenuation right hepatic lobe lesion", 
+    "lesion_idx": 17992, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Right internal mammary adenopathy (note that two lesions are marked on a single image)", 
+    "lesion_idx": 28326, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "enlargement", 
+      "chest", 
+      "breast", 
+      "internal mammary lymph node"
+    ]
+  }, 
+  {
+    "text": "Left posterior medial bladder diverticulum", 
+    "lesion_idx": 25392, 
+    "expanded_terms": [
+      "pelvis", 
+      "diverticulum", 
+      "urinary bladder"
+    ]
+  }, 
+  {
+    "text": "Peripheral sub capsular left hepatic lobe low attenuation lesion", 
+    "lesion_idx": 17465, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "capsule", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Left renal indeterminate low attenuation lesion", 
+    "lesion_idx": 16406, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "hypoattenuation", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Left retrosternal anterior mediastinal enhancing nodule", 
+    "lesion_idx": 83, 
+    "expanded_terms": [
+      "mediastinum", 
+      "chest", 
+      "nodule", 
+      "enhancing", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "Left lower lobe juxtapleural nodule", 
+    "lesion_idx": 7925, 
+    "expanded_terms": [
+      "left lower lobe", 
+      "pleura", 
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "Mass in the left posterior lateral abdominal wall possibly invading the left kidney", 
+    "lesion_idx": 14260, 
+    "expanded_terms": [
+      "abdominal wall", 
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "mass", 
+      "retroperitoneum", 
+      "body wall", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Left lower lobe nodule", 
+    "lesion_idx": 18390, 
+    "expanded_terms": [
+      "left lung", 
+      "nodule", 
+      "left lower lobe", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Large right hepatic mass", 
+    "lesion_idx": 26195, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "large", 
+      "mass", 
+      "liver"
+    ]
+  }, 
+  {
+    "text": "Subcarinal adenopathy", 
+    "lesion_idx": 18477, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "subcarinal lymph node", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "Right upper pole renal low attenuation lesion, likely a cyst", 
+    "lesion_idx": 24529, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "right kidney", 
+      "hypoattenuation", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Punctate left lower lobe nodule", 
+    "lesion_idx": 12941, 
+    "expanded_terms": [
+      "left lower lobe", 
+      "punctate", 
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "Low attenuation lesion in the head of the pancreas", 
+    "lesion_idx": 12815, 
+    "expanded_terms": [
+      "pancreatic head", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Right inguinal nodule", 
+    "lesion_idx": 15879, 
+    "expanded_terms": [
+      "pelvis", 
+      "nodule", 
+      "groin"
+    ]
+  }, 
+  {
+    "text": "Left periaortic lymph node", 
+    "lesion_idx": 17755, 
+    "expanded_terms": [
+      "lymph node", 
+      "paraaortic"
+    ]
+  }, 
+  {
+    "text": "Lingular bulla", 
+    "lesion_idx": 29942, 
+    "expanded_terms": [
+      "left lung", 
+      "chest", 
+      "lingula", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "Left anterior renal mass", 
+    "lesion_idx": 12869, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "mass", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Right inguinal lymph node", 
+    "lesion_idx": 30158, 
+    "expanded_terms": [
+      "lymph node", 
+      "pelvis", 
+      "groin lymph node", 
+      "pelvis lymph node", 
+      "groin"
+    ]
+  }, 
+  {
+    "text": "Gastrohepatic mass", 
+    "lesion_idx": 17968, 
+    "expanded_terms": [
+      "mass"
+    ]
+  }, 
+  {
+    "text": "Left hepatic lobe mass", 
+    "lesion_idx": 18825, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "mass", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Mass in the lateral segment of the left hepatic lobe", 
+    "lesion_idx": 30320, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "mass", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Right paratracheal lymphadenopathy", 
+    "lesion_idx": 11520, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "Anterior left renal cyst", 
+    "lesion_idx": 22317, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Left anterior abdominal wall subcutaneous lipoma", 
+    "lesion_idx": 21683, 
+    "expanded_terms": [
+      "abdominal wall", 
+      "subcutaneous", 
+      "abdomen", 
+      "neoplasm", 
+      "body wall", 
+      "anterior abdominal wall", 
+      "lipoma"
+    ]
+  }, 
+  {
+    "text": "Right hepatic mass with ring like enhancement", 
+    "lesion_idx": 26066, 
+    "expanded_terms": [
+      "enhancing", 
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "liver"
+    ]
+  }, 
+  {
+    "text": "Left hilar paramediastinal mass", 
+    "lesion_idx": 4020, 
+    "expanded_terms": [
+      "hilum", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "Low attenuation lesion in the pancreatic tail", 
+    "lesion_idx": 20895, 
+    "expanded_terms": [
+      "pancreatic tail", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Right upper lobe nodule near the major oblique fissure", 
+    "lesion_idx": 26547, 
+    "expanded_terms": [
+      "oblique fissure", 
+      "fissure", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "Right middle lobe nodule", 
+    "lesion_idx": 29581, 
+    "expanded_terms": [
+      "right lung", 
+      "right mid lung", 
+      "nodule", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Enhancing lesion in the right hepatic lobe", 
+    "lesion_idx": 22231, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "liver", 
+      "enhancing", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Mass in the gastrohepatic ligament", 
+    "lesion_idx": 29527, 
+    "expanded_terms": [
+      "abdomen", 
+      "lesser sac", 
+      "mass", 
+      "ligament", 
+      "gastrohepatic ligament", 
+      "omentum", 
+      "mesentery"
+    ]
+  }, 
+  {
+    "text": "Mass in the right middle lobe lateral segment", 
+    "lesion_idx": 5650, 
+    "expanded_terms": [
+      "right lung", 
+      "lung", 
+      "right mid lung", 
+      "mass", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Left upper lobe thin-walled cavity", 
+    "lesion_idx": 11288, 
+    "expanded_terms": [
+      "cavitary", 
+      "left lung", 
+      "chest", 
+      "lung", 
+      "thin", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "Right posterior hemithorax mass", 
+    "lesion_idx": 11085, 
+    "expanded_terms": [
+      "hemithorax", 
+      "chest", 
+      "mass", 
+      "right hemithorax"
+    ]
+  }, 
+  {
+    "text": "Left paratracheal mass that compresses the trachea", 
+    "lesion_idx": 8180, 
+    "expanded_terms": [
+      "mass"
+    ]
+  }, 
+  {
+    "text": "Right middle lobe nodule in the medial segment", 
+    "lesion_idx": 32469, 
+    "expanded_terms": [
+      "right lung", 
+      "right mid lung", 
+      "nodule", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Precarinal lymph node", 
+    "lesion_idx": 28450, 
+    "expanded_terms": [
+      "lymph node"
+    ]
+  }, 
+  {
+    "text": "Left pelvic mass", 
+    "lesion_idx": 29030, 
+    "expanded_terms": [
+      "pelvis", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "Mesenteric lymph node", 
+    "lesion_idx": 7501, 
+    "expanded_terms": [
+      "lymph node", 
+      "abdomen lymph node", 
+      "mesentery", 
+      "mesentery lymph node", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Hypoenhancing pancreatic tail mass with ill-defined borders", 
+    "lesion_idx": 19207, 
+    "expanded_terms": [
+      "pancreatic tail", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "mass", 
+      "retroperitoneum", 
+      "indistinct", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Right middle lobe nodule", 
+    "lesion_idx": 29140, 
+    "expanded_terms": [
+      "right lung", 
+      "right mid lung", 
+      "nodule", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Right paratracheal adenopathy", 
+    "lesion_idx": 20461, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "Lingular nodule", 
+    "lesion_idx": 3487, 
+    "expanded_terms": [
+      "lingula", 
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "Left posterior basilar pleural/chest wall mass", 
+    "lesion_idx": 18361, 
+    "expanded_terms": [
+      "chest", 
+      "chest wall", 
+      "mass", 
+      "pleura"
+    ]
+  }, 
+  {
+    "text": "Fissural nodule along right oblique fissure", 
+    "lesion_idx": 14724, 
+    "expanded_terms": [
+      "chest", 
+      "nodule", 
+      "lung", 
+      "fissure", 
+      "oblique fissure"
+    ]
+  }, 
+  {
+    "text": "Retroperitoneal lymph node", 
+    "lesion_idx": 31454, 
+    "expanded_terms": [
+      "retroperitoneum lymph node", 
+      "lymph node", 
+      "abdomen", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "Pre-tracheal lymph node", 
+    "lesion_idx": 29360, 
+    "expanded_terms": [
+      "lymph node", 
+      "pretracheal lymph node", 
+      "superior mediastinum", 
+      "superior mediastinum lymph node", 
+      "mediastinum lymph node", 
+      "chest", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "Left external iliac lymph node", 
+    "lesion_idx": 31290, 
+    "expanded_terms": [
+      "lymph node", 
+      "iliac", 
+      "external iliac lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "Left external iliac lymph node", 
+    "lesion_idx": 21825, 
+    "expanded_terms": [
+      "lymph node", 
+      "iliac", 
+      "external iliac lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "Left paraaortic lymph node (note that this bookmark does not match the report text)", 
+    "lesion_idx": 18316, 
+    "expanded_terms": [
+      "lymph node", 
+      "paraaortic"
+    ]
+  }, 
+  {
+    "text": "Left pleural mass", 
+    "lesion_idx": 8179, 
+    "expanded_terms": [
+      "chest", 
+      "mass", 
+      "pleura"
+    ]
+  }, 
+  {
+    "text": "Gastrohepatic mass", 
+    "lesion_idx": 957, 
+    "expanded_terms": [
+      "mass"
+    ]
+  }, 
+  {
+    "text": "Anterior abdominal wall subcutaneous mass", 
+    "lesion_idx": 26744, 
+    "expanded_terms": [
+      "subcutaneous mass", 
+      "abdominal wall", 
+      "abdomen", 
+      "mass", 
+      "subcutaneous", 
+      "anterior abdominal wall", 
+      "body wall"
+    ]
+  }, 
+  {
+    "text": "Left upper abdominal mass invading the pancreatic tail and the spleen", 
+    "lesion_idx": 23396, 
+    "expanded_terms": [
+      "pancreatic tail", 
+      "spleen", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Right pelvic sidewall mass", 
+    "lesion_idx": 29592, 
+    "expanded_terms": [
+      "pelvis", 
+      "pelvic wall", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "Right lower lobe nodule", 
+    "lesion_idx": 16523, 
+    "expanded_terms": [
+      "right lung", 
+      "nodule", 
+      "right lower lobe", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Retroperitoneal nodule", 
+    "lesion_idx": 26810, 
+    "expanded_terms": [
+      "nodule", 
+      "abdomen", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "Pre-tracheal enhancing lymph node", 
+    "lesion_idx": 7068, 
+    "expanded_terms": [
+      "lymph node", 
+      "enhancing"
+    ]
+  }, 
+  {
+    "text": "Right middle lobe peripheral nodule", 
+    "lesion_idx": 913, 
+    "expanded_terms": [
+      "right lung", 
+      "right mid lung", 
+      "nodule", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Nonenhancing lesion in the right hepatic lobe", 
+    "lesion_idx": 14148, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "nonenhancing", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Right adrenal or periadrenal nodule possibly arising from the upper pole of the right kidney", 
+    "lesion_idx": 27908, 
+    "expanded_terms": [
+      "right adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "nodule", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "Left inguinal lymphadenopathy", 
+    "lesion_idx": 14710, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "enlargement", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "groin lymph node", 
+      "groin"
+    ]
+  }, 
+  {
+    "text": "Right epicardial mass", 
+    "lesion_idx": 15975, 
+    "expanded_terms": [
+      "mass"
+    ]
+  }, 
+  {
+    "text": "Low attenuation lesion in the posterior segment of the right hepatic lobe", 
+    "lesion_idx": 13994, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Cavitary or necrotic mass in the head of the pancreas", 
+    "lesion_idx": 12173, 
+    "expanded_terms": [
+      "cavitary", 
+      "pancreatic head", 
+      "necrosis", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Hyper enhancing mass in the uncinate process of the pancreas, likely a neuroendocrine tumor", 
+    "lesion_idx": 20809, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Left upper pole renal cyst", 
+    "lesion_idx": 21140, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Left renal probable cyst", 
+    "lesion_idx": 27797, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Left upper lobe nodule", 
+    "lesion_idx": 15819, 
+    "expanded_terms": [
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "Prominent thymus", 
+    "lesion_idx": 13736, 
+    "expanded_terms": [
+      "chest", 
+      "thymus", 
+      "prominent"
+    ]
+  }, 
+  {
+    "text": "Complex heterogeneously enhancing mass in the posterior segment of the right hepatic lobe", 
+    "lesion_idx": 23720, 
+    "expanded_terms": [
+      "enhancing", 
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "liver", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "Right ovarian cyst", 
+    "lesion_idx": 19305, 
+    "expanded_terms": [
+      "pelvis", 
+      "cyst", 
+      "ovary", 
+      "ovarian cyst"
+    ]
+  }, 
+  {
+    "text": "Right middle lobe nodule", 
+    "lesion_idx": 22705, 
+    "expanded_terms": [
+      "right lung", 
+      "right mid lung", 
+      "nodule", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Right renal enhancing mass compatible with carcinoma", 
+    "lesion_idx": 20150, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "neoplasm", 
+      "mass", 
+      "right kidney", 
+      "retroperitoneum", 
+      "carcinoma", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Right lower lobe partially calcified nodule", 
+    "lesion_idx": 11985, 
+    "expanded_terms": [
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe", 
+      "calcified"
+    ]
+  }, 
+  {
+    "text": "Left renal exophytic mass", 
+    "lesion_idx": 126, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "mass", 
+      "retroperitoneum", 
+      "exophytic", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Right renal solid mass", 
+    "lesion_idx": 12761, 
+    "expanded_terms": [
+      "solid", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "right kidney", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Left retroperitoneal adenopathy", 
+    "lesion_idx": 26477, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "Right hilar adenopathy", 
+    "lesion_idx": 16842, 
+    "expanded_terms": [
+      "lymph node", 
+      "right hilum lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "enlargement", 
+      "chest", 
+      "mediastinum", 
+      "hilum lymph node"
+    ]
+  }, 
+  {
+    "text": "Right renal solid mass", 
+    "lesion_idx": 1081, 
+    "expanded_terms": [
+      "solid", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "right kidney", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Partially calcified right thyroid nodule", 
+    "lesion_idx": 3073, 
+    "expanded_terms": [
+      "neck", 
+      "thyroid gland", 
+      "nodule", 
+      "calcified", 
+      "right thyroid lobe"
+    ]
+  }, 
+  {
+    "text": "Aorticopulmonary window mediastinal lymphadenopathy", 
+    "lesion_idx": 17583, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "mediastinum", 
+      "aorticopulmonary window"
+    ]
+  }, 
+  {
+    "text": "Left adrenal mass", 
+    "lesion_idx": 179, 
+    "expanded_terms": [
+      "left adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "mass", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "Stable low attenuation lesion in the pancreatic head", 
+    "lesion_idx": 31881, 
+    "expanded_terms": [
+      "pancreatic head", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Lesion in the posterior segment of the right hepatic lobe", 
+    "lesion_idx": 24553, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "precarinal lymph node", 
+    "lesion_idx": 14182, 
+    "expanded_terms": [
+      "lymph node"
+    ]
+  }, 
+  {
+    "text": "Right upper lobe thick-walled cavity", 
+    "lesion_idx": 30560, 
+    "expanded_terms": [
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "lung", 
+      "thick", 
+      "+cavitary"
+    ]
+  }, 
+  {
+    "text": "Anterior mediastinal module", 
+    "lesion_idx": 20533, 
+    "expanded_terms": [
+      "mediastinum", 
+      "chest", 
+      "nodule", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "Right hilar adenopathy", 
+    "lesion_idx": 18758, 
+    "expanded_terms": [
+      "lymph node", 
+      "right hilum lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "enlargement", 
+      "chest", 
+      "mediastinum", 
+      "hilum lymph node"
+    ]
+  }, 
+  {
+    "text": "Posterior mediastinal mass that compresses the carina", 
+    "lesion_idx": 10186, 
+    "expanded_terms": [
+      "mediastinum", 
+      "chest", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "Posterior right renal cyst", 
+    "lesion_idx": 30746, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "right kidney", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Right upper lobe nodular scarring", 
+    "lesion_idx": 24447, 
+    "expanded_terms": [
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "scar"
+    ]
+  }, 
+  {
+    "text": "Omental nodule", 
+    "lesion_idx": 4922, 
+    "expanded_terms": [
+      "omentum", 
+      "nodule", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Left upper lobe partially calcified scarring", 
+    "lesion_idx": 27173, 
+    "expanded_terms": [
+      "left lung", 
+      "chest", 
+      "lung", 
+      "left upper lung", 
+      "scar", 
+      "calcified"
+    ]
+  }, 
+  {
+    "text": "Right inguinal enhancing nodule", 
+    "lesion_idx": 30930, 
+    "expanded_terms": [
+      "pelvis", 
+      "nodule", 
+      "enhancing", 
+      "groin"
+    ]
+  }, 
+  {
+    "text": "Round right pelvic peritoneal mass", 
+    "lesion_idx": 14577, 
+    "expanded_terms": [
+      "pelvis", 
+      "peritoneum", 
+      "mass", 
+      "round", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Nonocclusive thrombus in the left external iliac artery", 
+    "lesion_idx": 31050, 
+    "expanded_terms": [
+      "thrombus", 
+      "left external iliac artery", 
+      "blood vessel"
+    ]
+  }, 
+  {
+    "text": "Right upper lobe ground glass nodule", 
+    "lesion_idx": 13963, 
+    "expanded_terms": [
+      "opacity", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "ground-glass opacity"
+    ]
+  }, 
+  {
+    "text": "Left lateral renal cyst", 
+    "lesion_idx": 16688, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Left upper lobe juxtapleural nodule", 
+    "lesion_idx": 12364, 
+    "expanded_terms": [
+      "pleura", 
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "Right lower lobe pleural nodule", 
+    "lesion_idx": 26882, 
+    "expanded_terms": [
+      "pleura", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "periportal lymphadenopathy", 
+    "lesion_idx": 10604, 
+    "expanded_terms": [
+      "lymph node", 
+      "porta Hepatis lymph node", 
+      "porta Hepatis", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node"
+    ]
+  }, 
+  {
+    "text": "Left uterine low attenuation mass compatible with a fibroid", 
+    "lesion_idx": 22901, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "neoplasm", 
+      "mass", 
+      "leiomyoma", 
+      "uterus", 
+      "pelvis"
+    ]
+  }, 
+  {
+    "text": "Right posterior medial lower lobe nodule", 
+    "lesion_idx": 25524, 
+    "expanded_terms": [
+      "right lung", 
+      "nodule", 
+      "right lower lobe", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Left renal lateral solid exophytic mass", 
+    "lesion_idx": 10873, 
+    "expanded_terms": [
+      "solid", 
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "mass", 
+      "retroperitoneum", 
+      "exophytic", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Nodular skin thickening left posterior gluteal fold", 
+    "lesion_idx": 16831, 
+    "expanded_terms": [
+      "thickening", 
+      "body wall", 
+      "gluteal", 
+      "skin thickening", 
+      "nodule", 
+      "skin", 
+      "muscle"
+    ]
+  }, 
+  {
+    "text": "Mass in the medial segment of the left hepatic lobe", 
+    "lesion_idx": 15333, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "mass", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Pre-tracheal dense or enhancing node", 
+    "lesion_idx": 10956, 
+    "expanded_terms": [
+      "lymph node", 
+      "pretracheal", 
+      "enhancing", 
+      "hyperattenuation"
+    ]
+  }, 
+  {
+    "text": "Left inferior splenic mass compatible with metastasis or infarction", 
+    "lesion_idx": 22481, 
+    "expanded_terms": [
+      "cancer", 
+      "spleen", 
+      "upper abdomen", 
+      "metastasis", 
+      "abdomen", 
+      "neoplasm", 
+      "mass", 
+      "infarction"
+    ]
+  }, 
+  {
+    "text": "Enhancing mass in the inferior liver possibly a hemangioma", 
+    "lesion_idx": 23014, 
+    "expanded_terms": [
+      "blood vessel", 
+      "enhancing", 
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "neoplasm", 
+      "mass", 
+      "liver", 
+      "hemangioma"
+    ]
+  }, 
+  {
+    "text": "Interaortocaval lymphadenopathy", 
+    "lesion_idx": 20354, 
+    "expanded_terms": [
+      "lymph node", 
+      "paracaval lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node"
+    ]
+  }, 
+  {
+    "text": "Right sacral sclerotic bone lesion", 
+    "lesion_idx": 15388, 
+    "expanded_terms": [
+      "sclerotic", 
+      "spine", 
+      "sacrum", 
+      "pelvis", 
+      "pelvic wall", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "Left axillary adenopathy", 
+    "lesion_idx": 28341, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest wall", 
+      "axilla", 
+      "axilla lymph node", 
+      "lymphadenopathy", 
+      "enlargement", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Left iliac lytic bone lesion compatible with metastasis", 
+    "lesion_idx": 31078, 
+    "expanded_terms": [
+      "cancer", 
+      "neoplasm", 
+      "metastasis", 
+      "bone", 
+      "lytic"
+    ]
+  }, 
+  {
+    "text": "Right hepatic posterior segment low attenuation peripheral lesion", 
+    "lesion_idx": 19782, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Nodule along the right oblique fissure", 
+    "lesion_idx": 19659, 
+    "expanded_terms": [
+      "chest", 
+      "nodule", 
+      "lung", 
+      "fissure", 
+      "oblique fissure"
+    ]
+  }, 
+  {
+    "text": "Left adrenal nodule", 
+    "lesion_idx": 16354, 
+    "expanded_terms": [
+      "left adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "nodule", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "Omental nodule", 
+    "lesion_idx": 12625, 
+    "expanded_terms": [
+      "omentum", 
+      "nodule", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Right upper lobe nodule", 
+    "lesion_idx": 14033, 
+    "expanded_terms": [
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right upper lobe"
+    ]
+  }, 
+  {
+    "text": "Right renal low attenuation medial lesion likely a simple cyst", 
+    "lesion_idx": 13539, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "right kidney", 
+      "hypoattenuation", 
+      "simple cyst", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Left hepatic heterogeneous mass compatible with tumor", 
+    "lesion_idx": 21590, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "liver", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "Retrocaval lymphadenopathy", 
+    "lesion_idx": 17941, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "Anterior mediastinal adenopathy", 
+    "lesion_idx": 10191, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "mediastinum", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "Huge heterogeneously lobulated sacral and pelvic mass", 
+    "lesion_idx": 27063, 
+    "expanded_terms": [
+      "spine", 
+      "lobular", 
+      "sacrum", 
+      "mass", 
+      "heterogeneous", 
+      "pelvis", 
+      "pelvic wall", 
+      "lobular mass", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "Left axillary adenopathy", 
+    "lesion_idx": 10620, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest wall", 
+      "axilla", 
+      "axilla lymph node", 
+      "lymphadenopathy", 
+      "enlargement", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Enhancing splenic mass that may represent a hemangioma", 
+    "lesion_idx": 21210, 
+    "expanded_terms": [
+      "blood vessel", 
+      "enhancing", 
+      "spleen", 
+      "upper abdomen", 
+      "abdomen", 
+      "neoplasm", 
+      "mass", 
+      "hemangioma"
+    ]
+  }, 
+  {
+    "text": "Right axillary lymph node", 
+    "lesion_idx": 26718, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest", 
+      "chest wall", 
+      "axilla lymph node", 
+      "axilla"
+    ]
+  }, 
+  {
+    "text": "Right perineal nodule", 
+    "lesion_idx": 32211, 
+    "expanded_terms": [
+      "nodule"
+    ]
+  }, 
+  {
+    "text": "Nodule posterior to the left psoas muscle", 
+    "lesion_idx": 27795, 
+    "expanded_terms": [
+      "paraspinal", 
+      "nodule", 
+      "paraspinal muscle", 
+      "muscle", 
+      "psoas muscle"
+    ]
+  }, 
+  {
+    "text": "Left axillary lymph node", 
+    "lesion_idx": 1077, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest", 
+      "chest wall", 
+      "axilla lymph node", 
+      "axilla"
+    ]
+  }, 
+  {
+    "text": "Right posterior lateral pleural and chest wall mass", 
+    "lesion_idx": 14984, 
+    "expanded_terms": [
+      "chest", 
+      "chest wall", 
+      "mass", 
+      "pleura"
+    ]
+  }, 
+  {
+    "text": "Right external iliac lymph node", 
+    "lesion_idx": 16386, 
+    "expanded_terms": [
+      "lymph node", 
+      "iliac", 
+      "external iliac lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "Right common iliac lymph node", 
+    "lesion_idx": 13403, 
+    "expanded_terms": [
+      "common iliac lymph node", 
+      "lymph node", 
+      "iliac", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "Left anterior mediastinal low attenuation mass", 
+    "lesion_idx": 18366, 
+    "expanded_terms": [
+      "mediastinum", 
+      "chest", 
+      "mass", 
+      "anterior mediastinum", 
+      "hypoattenuation"
+    ]
+  }, 
+  {
+    "text": "Left upper abdominal subdiaphragmatic perigastric mass", 
+    "lesion_idx": 21460, 
+    "expanded_terms": [
+      "stomach", 
+      "diaphragm", 
+      "upper abdomen", 
+      "abdomen", 
+      "chest", 
+      "mass", 
+      "gastrointestinal"
+    ]
+  }, 
+  {
+    "text": "Thoracic vertebral body sclerotic lesion", 
+    "lesion_idx": 14039, 
+    "expanded_terms": [
+      "thoracic vertebral body", 
+      "sclerotic", 
+      "spine", 
+      "chest", 
+      "vertebral body", 
+      "thoracic spine", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "Left paraaortic adenopathy", 
+    "lesion_idx": 20296, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "paraaortic", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "Left axillary lymphadenopathy", 
+    "lesion_idx": 6995, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest wall", 
+      "axilla", 
+      "axilla lymph node", 
+      "lymphadenopathy", 
+      "enlargement", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Left renal posterior medial indeterminate low attenuation lesion", 
+    "lesion_idx": 30128, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "hypoattenuation", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Superior mediastinal fluid probably in a pericardial recess", 
+    "lesion_idx": 14626, 
+    "expanded_terms": [
+      "mediastinum", 
+      "chest", 
+      "pericardium", 
+      "fluid", 
+      "superior mediastinum"
+    ]
+  }, 
+  {
+    "text": "Heterogeneous large left adrenal mass", 
+    "lesion_idx": 10796, 
+    "expanded_terms": [
+      "adrenal gland", 
+      "left adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "large", 
+      "mass", 
+      "retroperitoneum", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "Gastrohepatic lymph node", 
+    "lesion_idx": 17541, 
+    "expanded_terms": [
+      "lymph node"
+    ]
+  }, 
+  {
+    "text": "Left upper lobe perihilar ground glass opacity", 
+    "lesion_idx": 10575, 
+    "expanded_terms": [
+      "opacity", 
+      "left lung", 
+      "hilum", 
+      "chest", 
+      "lung", 
+      "ground-glass opacity", 
+      "left upper lung", 
+      "perihilar"
+    ]
+  }, 
+  {
+    "text": "Right common iliac lymph node", 
+    "lesion_idx": 7016, 
+    "expanded_terms": [
+      "common iliac lymph node", 
+      "lymph node", 
+      "iliac", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "Peripheral right lower lobe nodule", 
+    "lesion_idx": 23157, 
+    "expanded_terms": [
+      "right lung", 
+      "nodule", 
+      "right lower lobe", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Enhancing mass in the aorticopulmonary window", 
+    "lesion_idx": 32302, 
+    "expanded_terms": [
+      "mediastinum", 
+      "chest", 
+      "aorticopulmonary window", 
+      "mass", 
+      "enhancing"
+    ]
+  }, 
+  {
+    "text": "Ill-defined low attenuation hepatic lesion", 
+    "lesion_idx": 32383, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "hypoattenuation", 
+      "indistinct", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Sclerotic sacral lesion", 
+    "lesion_idx": 30309, 
+    "expanded_terms": [
+      "sclerotic", 
+      "spine", 
+      "sacrum", 
+      "pelvis", 
+      "pelvic wall", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "Ill-defined partially calcified anterior mediastinal mass", 
+    "lesion_idx": 21412, 
+    "expanded_terms": [
+      "chest", 
+      "mass", 
+      "mediastinum", 
+      "indistinct", 
+      "calcified", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "Right paratracheal lymphadenopathy", 
+    "lesion_idx": 9699, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "Enhancing lesion in the neck of the pancreas", 
+    "lesion_idx": 731, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "pancreatic neck", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Fissural lymph node in the right major fissure", 
+    "lesion_idx": 28246, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest", 
+      "right major fissure", 
+      "lung", 
+      "fissure"
+    ]
+  }, 
+  {
+    "text": "Pericaval left node", 
+    "lesion_idx": 669, 
+    "expanded_terms": [
+      "lymph node", 
+      "abdomen lymph node", 
+      "abdomen", 
+      "paracaval lymph node"
+    ]
+  }, 
+  {
+    "text": "Low attenuation lesion in the right hepatic lobe (note that the text and lesion do not correspond)", 
+    "lesion_idx": 18604, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Mild prostatic hypertrophy", 
+    "lesion_idx": 20651, 
+    "expanded_terms": [
+      "pelvis", 
+      "prostate"
+    ]
+  }, 
+  {
+    "text": "Right upper lobe juxtapleural ground glass nodule", 
+    "lesion_idx": 26964, 
+    "expanded_terms": [
+      "opacity", 
+      "pleura", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "ground-glass opacity"
+    ]
+  }, 
+  {
+    "text": "Right lower lobe juxtapleural nodule", 
+    "lesion_idx": 21193, 
+    "expanded_terms": [
+      "pleura", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "Right middle lobe nodule", 
+    "lesion_idx": 27050, 
+    "expanded_terms": [
+      "right lung", 
+      "right mid lung", 
+      "nodule", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Right lower lobe band like opacity compatible with atelectasis or consolidation", 
+    "lesion_idx": 24111, 
+    "expanded_terms": [
+      "opacity", 
+      "solid", 
+      "consolidation", 
+      "right lung", 
+      "chest", 
+      "lung", 
+      "atelectasis", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "Left anterolateral chest wall mass with involvement of the adjacent rib", 
+    "lesion_idx": 12998, 
+    "expanded_terms": [
+      "rib", 
+      "chest", 
+      "chest wall", 
+      "mass", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "Left retroperitoneal lymph node", 
+    "lesion_idx": 3592, 
+    "expanded_terms": [
+      "retroperitoneum lymph node", 
+      "lymph node", 
+      "abdomen", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "Precarinal lymphadenopathy", 
+    "lesion_idx": 14132, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "Right hilar low attenuation adenopathy", 
+    "lesion_idx": 6477, 
+    "expanded_terms": [
+      "lymph node", 
+      "right hilum lymph node", 
+      "enlargement", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "hypoattenuation", 
+      "chest", 
+      "mediastinum", 
+      "hilum lymph node"
+    ]
+  }, 
+  {
+    "text": "Right axillary lymph node", 
+    "lesion_idx": 30636, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest", 
+      "chest wall", 
+      "axilla lymph node", 
+      "axilla"
+    ]
+  }, 
+  {
+    "text": "Right middle lobe nodule", 
+    "lesion_idx": 18611, 
+    "expanded_terms": [
+      "right lung", 
+      "right mid lung", 
+      "nodule", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Left external iliac lymph node", 
+    "lesion_idx": 24389, 
+    "expanded_terms": [
+      "lymph node", 
+      "iliac", 
+      "external iliac lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "Left paraaortic lymph node", 
+    "lesion_idx": 12253, 
+    "expanded_terms": [
+      "lymph node", 
+      "paraaortic"
+    ]
+  }, 
+  {
+    "text": "Left iliac bone extraosseous mass invasive of the iliacus muscle", 
+    "lesion_idx": 6494, 
+    "expanded_terms": [
+      "muscle", 
+      "mass", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "Left posterior medial renal cyst", 
+    "lesion_idx": 28873, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Hyperdense or enhancing ventral mid kidney lesion compatible with mass or hemorrhagic cyst", 
+    "lesion_idx": 8923, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "hyperattenuation", 
+      "mass", 
+      "kidney", 
+      "retroperitoneum", 
+      "cyst", 
+      "hemorrhage", 
+      "kidney cyst"
+    ]
+  }, 
+  {
+    "text": "Hyperenhancing mass in the pancreatic head", 
+    "lesion_idx": 21089, 
+    "expanded_terms": [
+      "pancreatic head", 
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "retroperitoneum", 
+      "hyperattenuation", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Subcarinal adenopathy", 
+    "lesion_idx": 32248, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "subcarinal lymph node", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "Right anterior lateral lower pole exophytic heterogeneously enhancing solid mass compatible with carcinoma", 
+    "lesion_idx": 12760, 
+    "expanded_terms": [
+      "enhancing", 
+      "solid", 
+      "neoplasm", 
+      "mass", 
+      "heterogeneous", 
+      "carcinoma", 
+      "exophytic"
+    ]
+  }, 
+  {
+    "text": "Low attenuation lesion in the dome of the right hepatic lobe", 
+    "lesion_idx": 19811, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Left supraclavicular lymphadenopathy", 
+    "lesion_idx": 20807, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "supraclavicular lymph node", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "Right lateral renal cyst", 
+    "lesion_idx": 1900, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "right kidney", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Enhancing mass in the tail of the pancreas", 
+    "lesion_idx": 16287, 
+    "expanded_terms": [
+      "pancreatic tail", 
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "Right lower lobe nodule", 
+    "lesion_idx": 21107, 
+    "expanded_terms": [
+      "right lung", 
+      "nodule", 
+      "right lower lobe", 
+      "lung", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "Right anterolateral renal solid lesion compatible with carcinoma", 
+    "lesion_idx": 21211, 
+    "expanded_terms": [
+      "solid", 
+      "upper abdomen", 
+      "abdomen", 
+      "neoplasm", 
+      "carcinoma", 
+      "right kidney", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "Left inguinal lymph node", 
+    "lesion_idx": 5380, 
+    "expanded_terms": [
+      "lymph node", 
+      "pelvis", 
+      "groin lymph node", 
+      "pelvis lymph node", 
+      "groin"
+    ]
+  }, 
+  {
+    "text": "Left upper lobe nodule", 
+    "lesion_idx": 16080, 
+    "expanded_terms": [
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "Right upper lobe spiculated juxtapleural nodule", 
+    "lesion_idx": 19516, 
+    "expanded_terms": [
+      "pleura", 
+      "spiculated", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "tiny right lung nodule, perifissural,  right middle lobe, chest", 
+    "lesion_idx": 20232, 
+    "expanded_terms": [
+      "fissure", 
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "tiny", 
+      "right mid lung"
+    ]
+  }, 
+  {
+    "text": "Hypodense lesion, lower pole left thyroid lobe, chest, lower neck", 
+    "lesion_idx": 8681, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "thyroid gland", 
+      "neck", 
+      "chest", 
+      "left lobe of thyroid gland"
+    ]
+  }, 
+  {
+    "text": "irregular mixed density nodule, medial to spleen and anterior to left hemidiaphragm, abdomen", 
+    "lesion_idx": 6779, 
+    "expanded_terms": [
+      "nodule", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "Heterogeneous hypodense mass, posterior segment right lobe of liver, abdomen", 
+    "lesion_idx": 22668, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "mass", 
+      "liver", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "irregular cystic lesion in the neck-head of pancreas, abdomen", 
+    "lesion_idx": 9194, 
+    "expanded_terms": [
+      "pancreatic head", 
+      "upper abdomen", 
+      "abdomen", 
+      "pancreatic neck", 
+      "retroperitoneum", 
+      "cyst", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "left parahilar and posterior mediastinal lymph nodes, chest", 
+    "lesion_idx": 2397, 
+    "expanded_terms": [
+      "lymph node", 
+      "left hilum lymph node", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "chest", 
+      "hilum lymph node", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "lytic lesion with sclerotic borders, left side of the body of T10, chest", 
+    "lesion_idx": 32431, 
+    "expanded_terms": [
+      "chest", 
+      "sclerotic", 
+      "bone", 
+      "lytic"
+    ]
+  }, 
+  {
+    "text": "left pericadiac nodule/node, chest", 
+    "lesion_idx": 29368, 
+    "expanded_terms": [
+      "lymph node", 
+      "pericardial", 
+      "chest", 
+      "nodule", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "right retroperitoneal soft tissue mass, medial to upper pole of kidney, Node or right adrenal mass, abdomen", 
+    "lesion_idx": 9066, 
+    "expanded_terms": [
+      "lymph node", 
+      "soft tissue", 
+      "right adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "mass", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "right hilar lymph node (adenopathy), chest", 
+    "lesion_idx": 26558, 
+    "expanded_terms": [
+      "lymph node", 
+      "right hilum lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "enlargement", 
+      "chest", 
+      "mediastinum", 
+      "hilum lymph node"
+    ]
+  }, 
+  {
+    "text": "large heterogeneous left renal mass, extrarenal extension, abdomen", 
+    "lesion_idx": 5060, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "large", 
+      "mass", 
+      "retroperitoneum", 
+      "heterogeneous", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "adenopathy, anterior to heart, anterior mediastinum, lymph node, chest", 
+    "lesion_idx": 10946, 
+    "expanded_terms": [
+      "lymph node", 
+      "anterior chest", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "cardiac", 
+      "mediastinum", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "large mass, liver dome, hypodense with peripheral enhancement, abdomen", 
+    "lesion_idx": 11512, 
+    "expanded_terms": [
+      "enhancing", 
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "large", 
+      "hypoattenuation", 
+      "mass", 
+      "liver"
+    ]
+  }, 
+  {
+    "text": "liver mass, hypodense, posterior segment right lobe, abdomen", 
+    "lesion_idx": 9413, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "mass", 
+      "liver"
+    ]
+  }, 
+  {
+    "text": "enhancing nodule, bladder, attached to left wall, oval,  pelvis", 
+    "lesion_idx": 18588, 
+    "expanded_terms": [
+      "oval", 
+      "pelvis", 
+      "nodule", 
+      "enhancing", 
+      "urinary bladder"
+    ]
+  }, 
+  {
+    "text": "right hilar lymph node (adenopathy), chest", 
+    "lesion_idx": 11420, 
+    "expanded_terms": [
+      "lymph node", 
+      "right hilum lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "enlargement", 
+      "chest", 
+      "mediastinum", 
+      "hilum lymph node"
+    ]
+  }, 
+  {
+    "text": "small right internal iliac lymph node (adenopathy), pelvis", 
+    "lesion_idx": 7001, 
+    "expanded_terms": [
+      "lymph node", 
+      "internal iliac lymph node", 
+      "iliac", 
+      "lymphadenopathy", 
+      "enlargement", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "right retrocrural lymph node, lower  chest,", 
+    "lesion_idx": 1929, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest", 
+      "abdomen", 
+      "abdomen lymph node", 
+      "retrocrural lymph node"
+    ]
+  }, 
+  {
+    "text": "nodule, left lower pleura, costophrenic sulcus, chest", 
+    "lesion_idx": 11432, 
+    "expanded_terms": [
+      "costophrenic sulcus", 
+      "chest", 
+      "nodule", 
+      "pleura", 
+      "left costophrenic sulcus"
+    ]
+  }, 
+  {
+    "text": "small hypodense peripheral lesion, liver, posterior segment of the right liver lobe, abdomen", 
+    "lesion_idx": 29916, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "small peripheral left lower lobe lung (pulmonary) nodule, Chest", 
+    "lesion_idx": 6833, 
+    "expanded_terms": [
+      "left lower lobe", 
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "Left common iliac lymph node, abdomen", 
+    "lesion_idx": 5597, 
+    "expanded_terms": [
+      "common iliac lymph node", 
+      "lymph node", 
+      "iliac", 
+      "abdomen", 
+      "abdomen lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "nodule medial to spleen, posterior to upper pole left kidney, abdomen", 
+    "lesion_idx": 17774, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "nodule", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "right upper lobe lung nodule, chest", 
+    "lesion_idx": 29451, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right upper lobe"
+    ]
+  }, 
+  {
+    "text": "anterior mediastinal lymph node or nodule, chest", 
+    "lesion_idx": 3, 
+    "expanded_terms": [
+      "lymph node", 
+      "anterior chest", 
+      "mediastinum lymph node", 
+      "chest", 
+      "nodule", 
+      "mediastinum", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "small anterior peripheral lung nodule, left upper lobe, chest", 
+    "lesion_idx": 19682, 
+    "expanded_terms": [
+      "anterior chest", 
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "small left common iliac lymph node, abdomen", 
+    "lesion_idx": 10131, 
+    "expanded_terms": [
+      "common iliac lymph node", 
+      "lymph node", 
+      "iliac", 
+      "abdomen", 
+      "abdomen lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "homogenous left adnexal soft tissue density (mass), Pelvic", 
+    "lesion_idx": 30754, 
+    "expanded_terms": [
+      "pelvis", 
+      "soft tissue attenuation", 
+      "adnexa", 
+      "mass", 
+      "soft tissue"
+    ]
+  }, 
+  {
+    "text": "small right common iliac lymph node; pelvis", 
+    "lesion_idx": 5875, 
+    "expanded_terms": [
+      "common iliac lymph node", 
+      "lymph node", 
+      "iliac", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "soft tissue mass right cardiophrenic angle, likely right internal mammary node, chest", 
+    "lesion_idx": 30717, 
+    "expanded_terms": [
+      "lymph node", 
+      "cardiophrenic lymph node", 
+      "soft tissue", 
+      "cardiophrenic", 
+      "mediastinum lymph node", 
+      "chest", 
+      "mass", 
+      "breast", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "a small hyperdense spot within small bowel, left paramedian, likely residue of previous barium or a small calcification, abdomen", 
+    "lesion_idx": 21495, 
+    "expanded_terms": [
+      "intestine", 
+      "abdomen", 
+      "small bowel", 
+      "gastrointestinal", 
+      "calcified", 
+      "hyperattenuation"
+    ]
+  }, 
+  {
+    "text": "small left mediastinal node, chest", 
+    "lesion_idx": 23602, 
+    "expanded_terms": [
+      "lymph node", 
+      "mediastinum", 
+      "chest", 
+      "mediastinum lymph node"
+    ]
+  }, 
+  {
+    "text": "small peripheral left upper lobe nodule, chest", 
+    "lesion_idx": 25271, 
+    "expanded_terms": [
+      "left lung", 
+      "tiny", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "left upper retroperitoneal paraaortic soft tissue mass, lymph node or left adrenal mass; heterogeneous, abdomen", 
+    "lesion_idx": 30219, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "upper abdomen", 
+      "abdomen lymph node", 
+      "abdomen", 
+      "paraaortic", 
+      "retroperitoneum", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "large hypodense poorly defined margin mass left lobe liver, abdomen", 
+    "lesion_idx": 30328, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "large", 
+      "hypoattenuation", 
+      "mass", 
+      "liver", 
+      "indistinct"
+    ]
+  }, 
+  {
+    "text": "large Heterogeneous hypodense mass anterior segment, right lobe, liver, abdomen", 
+    "lesion_idx": 27998, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "large", 
+      "hypoattenuation", 
+      "mass", 
+      "liver", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "small basilar right lower lobe lung (pulmonary) nodule, Chest", 
+    "lesion_idx": 26829, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "lung base", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "small peripheral right lower lobe lung (pulmonary) nodule, Chest", 
+    "lesion_idx": 26246, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "small irregular left upper lobe lung (pulmonary) nodule, Chest", 
+    "lesion_idx": 3255, 
+    "expanded_terms": [
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "small irregular peritoneal nodule anterior to ascending colon, abdomen", 
+    "lesion_idx": 18624, 
+    "expanded_terms": [
+      "peritoneum", 
+      "nodule", 
+      "spiculated", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "left pelvic side wall nodule or lymph node, heterogeneous, pelvis", 
+    "lesion_idx": 9497, 
+    "expanded_terms": [
+      "lymph node", 
+      "nodule", 
+      "pelvis lymph node", 
+      "heterogeneous", 
+      "pelvis", 
+      "pelvic wall"
+    ]
+  }, 
+  {
+    "text": "hypodense soft tissue density aortocaval lymph node, abdomen", 
+    "lesion_idx": 26177, 
+    "expanded_terms": [
+      "lymph node", 
+      "soft tissue", 
+      "paracaval lymph node", 
+      "abdomen", 
+      "hypoattenuation", 
+      "abdomen lymph node", 
+      "soft tissue attenuation"
+    ]
+  }, 
+  {
+    "text": "left superior mediastinal hypodensity with peripheral enhancing rim, lymph node, chest", 
+    "lesion_idx": 15143, 
+    "expanded_terms": [
+      "lymph node", 
+      "enhancing", 
+      "superior mediastinum", 
+      "superior mediastinum lymph node", 
+      "mediastinum lymph node", 
+      "hypoattenuation", 
+      "chest", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "small left common iliac lymph node; pelvis", 
+    "lesion_idx": 30765, 
+    "expanded_terms": [
+      "common iliac lymph node", 
+      "lymph node", 
+      "iliac", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "small ground glass opacity or nodule, right lung, posterior, chest", 
+    "lesion_idx": 21430, 
+    "expanded_terms": [
+      "opacity", 
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "ground-glass opacity"
+    ]
+  }, 
+  {
+    "text": "round cystic lesion, periphery anterior segment, right liver lobe, benign cyst, abdomen", 
+    "lesion_idx": 30776, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "benign", 
+      "liver", 
+      "cyst", 
+      "round"
+    ]
+  }, 
+  {
+    "text": "oval cyst with anterior wall calcifications, left lung hilum, medial left lung, chest", 
+    "lesion_idx": 24275, 
+    "expanded_terms": [
+      "left lung", 
+      "hilum", 
+      "chest", 
+      "lung", 
+      "oval", 
+      "cyst", 
+      "calcified"
+    ]
+  }, 
+  {
+    "text": "small bulged out right renal (kidney) nodule, isodense, noncontrast, abdomen", 
+    "lesion_idx": 29175, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "nodule", 
+      "right kidney", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "left superior mediastinal lymph node, Chest", 
+    "lesion_idx": 7201, 
+    "expanded_terms": [
+      "lymph node", 
+      "superior mediastinum", 
+      "superior mediastinum lymph node", 
+      "mediastinum lymph node", 
+      "chest", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "right adnexal hypodense lesion, likely a right ovarian cyst, pelvis", 
+    "lesion_idx": 11488, 
+    "expanded_terms": [
+      "ovarian cyst", 
+      "adnexa", 
+      "hypoattenuation", 
+      "cyst", 
+      "pelvis", 
+      "ovary"
+    ]
+  }, 
+  {
+    "text": "oval left mediastinal mass, noncontrast CT, lymph node or mass, chest", 
+    "lesion_idx": 31570, 
+    "expanded_terms": [
+      "lymph node", 
+      "mediastinum lymph node", 
+      "chest", 
+      "mass", 
+      "oval", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "small irregular left upper lobe lung (pulmonary) nodule, Chest", 
+    "lesion_idx": 13494, 
+    "expanded_terms": [
+      "spiculated", 
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "small peripheral left lower lobe nodule, juxtapleural, chest", 
+    "lesion_idx": 6737, 
+    "expanded_terms": [
+      "left lower lobe", 
+      "pleura", 
+      "left lung", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "irregular right upper lobe lung (pulmonary) mass, chest", 
+    "lesion_idx": 32059, 
+    "expanded_terms": [
+      "lung mass", 
+      "spiculated", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "lung", 
+      "spiculated mass", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "subcarinal lymph node, chest", 
+    "lesion_idx": 30683, 
+    "expanded_terms": [
+      "lymph node", 
+      "mediastinum", 
+      "chest", 
+      "subcarinal lymph node", 
+      "mediastinum lymph node"
+    ]
+  }, 
+  {
+    "text": "precarinal lymph node, chest", 
+    "lesion_idx": 25708, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "small peripheral nodule left upper lobe, lung, chest", 
+    "lesion_idx": 13060, 
+    "expanded_terms": [
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "right common iliac lymph node; pelvis", 
+    "lesion_idx": 5135, 
+    "expanded_terms": [
+      "common iliac lymph node", 
+      "lymph node", 
+      "iliac", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "hypodense lesion, lateral aspect, spleen, abdomen", 
+    "lesion_idx": 32328, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "abdomen", 
+      "spleen"
+    ]
+  }, 
+  {
+    "text": "left retroperitoneal lymph node, medial to left kidney, abdomen", 
+    "lesion_idx": 8630, 
+    "expanded_terms": [
+      "retroperitoneum lymph node", 
+      "lymph node", 
+      "abdomen lymph node", 
+      "abdomen", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "soft tissue mass anterior to tail of pancreas, peritoneal nodule/mass, abdomen", 
+    "lesion_idx": 30811, 
+    "expanded_terms": [
+      "pancreatic tail", 
+      "peritoneum", 
+      "soft tissue", 
+      "upper abdomen", 
+      "abdomen", 
+      "nodule", 
+      "mass", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "hyperdense or enhancing lesion, liver, left lobe, medial, abdomen", 
+    "lesion_idx": 15729, 
+    "expanded_terms": [
+      "abdomen", 
+      "upper abdomen", 
+      "enhancing", 
+      "hyperattenuation", 
+      "liver"
+    ]
+  }, 
+  {
+    "text": "left retroperitoneal adenopathy (lymph node) paraaortic, abdomen", 
+    "lesion_idx": 10771, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "paraaortic", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "lung\u00a0nodule,\u00a0left\u00a0upper\u00a0lobe", 
+    "lesion_idx": 32345, 
+    "expanded_terms": [
+      "left upper lobe", 
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "small hypodensity liver, right lobe, abdomen", 
+    "lesion_idx": 20360, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "mesenteric lymph node, adenopathy, midline, abdomen", 
+    "lesion_idx": 9259, 
+    "expanded_terms": [
+      "lymph node", 
+      "mesentery lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node", 
+      "mesentery"
+    ]
+  }, 
+  {
+    "text": "large destructive expansile right rib mass, chest", 
+    "lesion_idx": 3664, 
+    "expanded_terms": [
+      "chest wall", 
+      "expansile", 
+      "large", 
+      "chest", 
+      "mass", 
+      "rib", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "left anterior superior mediastinal mass or adenopathy (lymph node), chest", 
+    "lesion_idx": 11606, 
+    "expanded_terms": [
+      "lymph node", 
+      "anterior chest", 
+      "superior mediastinum", 
+      "lymphadenopathy", 
+      "superior mediastinum lymph node", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "mass", 
+      "mediastinum", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "right lower quadrant peritoneal mass, heterogeneous, poorly defined, pelvis", 
+    "lesion_idx": 23640, 
+    "expanded_terms": [
+      "peritoneum", 
+      "abdomen", 
+      "mass", 
+      "heterogeneous", 
+      "pelvis", 
+      "indistinct"
+    ]
+  }, 
+  {
+    "text": "irregular large lung nodule (pulmonary nodule) right upper lobe, chest", 
+    "lesion_idx": 23828, 
+    "expanded_terms": [
+      "right lung", 
+      "spiculated", 
+      "lung nodule", 
+      "large", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right upper lobe"
+    ]
+  }, 
+  {
+    "text": "large subcarinal lymph node, chest", 
+    "lesion_idx": 16087, 
+    "expanded_terms": [
+      "lymph node", 
+      "mediastinum lymph node", 
+      "large", 
+      "chest", 
+      "subcarinal lymph node", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "mesenteric lymph node, adenopathy, left, abdomen", 
+    "lesion_idx": 16713, 
+    "expanded_terms": [
+      "lymph node", 
+      "mesentery lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node", 
+      "mesentery"
+    ]
+  }, 
+  {
+    "text": "irregular lung nodule (pulmonary nodule) right lower lobe, chest", 
+    "lesion_idx": 7451, 
+    "expanded_terms": [
+      "spiculated", 
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "ring enhancing lesion, liver, right lobe, peripheral, abdomen", 
+    "lesion_idx": 16215, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "liver", 
+      "enhancing", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "right epicardiac nodule or lymph node, chest", 
+    "lesion_idx": 17982, 
+    "expanded_terms": [
+      "cardiac", 
+      "lymph node", 
+      "chest", 
+      "nodule"
+    ]
+  }, 
+  {
+    "text": "right breast density or mass, chest", 
+    "lesion_idx": 15487, 
+    "expanded_terms": [
+      "chest", 
+      "mass", 
+      "breast", 
+      "breast mass"
+    ]
+  }, 
+  {
+    "text": "anterior medial right kidney cyst, abdomen", 
+    "lesion_idx": 31081, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "right kidney", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "peripheral liver cyst, right lobe, abdomen", 
+    "lesion_idx": 18064, 
+    "expanded_terms": [
+      "cyst", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "small peripheral thin wall cavity, superior segment of left lower lobe, chest", 
+    "lesion_idx": 29945, 
+    "expanded_terms": [
+      "left lung", 
+      "cavitary", 
+      "chest", 
+      "left lower lobe", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "large mass or lymph node, left mediastinum, left suprahilar, chest", 
+    "lesion_idx": 8309, 
+    "expanded_terms": [
+      "lymph node", 
+      "mediastinum lymph node", 
+      "large", 
+      "chest", 
+      "mass", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "nodule right upper lobe, lung, chest", 
+    "lesion_idx": 14078, 
+    "expanded_terms": [
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "lung nodule"
+    ]
+  }, 
+  {
+    "text": "left hilar mass or lymphadenopathy, chest", 
+    "lesion_idx": 23059, 
+    "expanded_terms": [
+      "lymph node", 
+      "left hilum lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "enlargement", 
+      "chest", 
+      "mass", 
+      "mediastinum", 
+      "hilum lymph node"
+    ]
+  }, 
+  {
+    "text": "hypodense nodule, right thyroid lobe, chest", 
+    "lesion_idx": 28527, 
+    "expanded_terms": [
+      "neck", 
+      "chest", 
+      "hypoattenuation", 
+      "thyroid gland", 
+      "nodule", 
+      "right thyroid lobe"
+    ]
+  }, 
+  {
+    "text": "pericarinal mediastinal adenopathy, chest", 
+    "lesion_idx": 6010, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "small lymph node left lower neck, supraclavicular, neck", 
+    "lesion_idx": 31493, 
+    "expanded_terms": [
+      "lymph node", 
+      "neck", 
+      "mediastinum lymph node", 
+      "chest", 
+      "supraclavicular lymph node", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "peripheral posterior left upper lobe lung nodule, chest", 
+    "lesion_idx": 20971, 
+    "expanded_terms": [
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "lymph node, aortopulmonary window, mediastinal, chest", 
+    "lesion_idx": 12859, 
+    "expanded_terms": [
+      "lymph node", 
+      "mediastinum lymph node", 
+      "chest", 
+      "lung", 
+      "mediastinum", 
+      "aorticopulmonary window"
+    ]
+  }, 
+  {
+    "text": "right paramedian small  mesenteric node; abdomen", 
+    "lesion_idx": 23838, 
+    "expanded_terms": [
+      "lymph node", 
+      "abdomen lymph node", 
+      "mesentery", 
+      "mesentery lymph node", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "left retroperitoneal paraaortic adenopathy, abdomen", 
+    "lesion_idx": 30145, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "paraaortic", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "hypodense lesion, anterior to tail of pancreas, likely a cyst, abdomen", 
+    "lesion_idx": 8733, 
+    "expanded_terms": [
+      "pancreatic tail", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "retroperitoneum", 
+      "cyst", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "oval cavitary lesion, peripheral, right lower lobe, lung, chest", 
+    "lesion_idx": 12382, 
+    "expanded_terms": [
+      "cavitary", 
+      "right lung", 
+      "chest", 
+      "lung", 
+      "oval", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "hyperdense or enhancing lesion, head of pancreas, abdomen", 
+    "lesion_idx": 18648, 
+    "expanded_terms": [
+      "pancreatic head", 
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "retroperitoneum", 
+      "hyperattenuation", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "small left superior mediastinal adenopathy, thoracic inlet, chest", 
+    "lesion_idx": 27087, 
+    "expanded_terms": [
+      "lymph node", 
+      "thoracic inlet", 
+      "superior mediastinum", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "mediastinum", 
+      "left hemithorax"
+    ]
+  }, 
+  {
+    "text": "large, heterogeneous mass with cystic components, right posterior hemithorax, chest", 
+    "lesion_idx": 10519, 
+    "expanded_terms": [
+      "hemithorax", 
+      "large", 
+      "chest", 
+      "mass", 
+      "heterogeneous", 
+      "right hemithorax"
+    ]
+  }, 
+  {
+    "text": "right superior mediastinal adenopathy, chest", 
+    "lesion_idx": 9498, 
+    "expanded_terms": [
+      "lymph node", 
+      "superior mediastinum", 
+      "lymphadenopathy", 
+      "mediastinum lymph node", 
+      "enlargement", 
+      "chest", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "small peripheral right lung  nodule, Chest", 
+    "lesion_idx": 27816, 
+    "expanded_terms": [
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "lung nodule"
+    ]
+  }, 
+  {
+    "text": "small aortocaval node; abdomen", 
+    "lesion_idx": 27503, 
+    "expanded_terms": [
+      "lymph node", 
+      "abdomen lymph node", 
+      "abdomen", 
+      "paracaval lymph node"
+    ]
+  }, 
+  {
+    "text": "ring enhancing lesion, liver, right lobe, peripheral, abdomen", 
+    "lesion_idx": 31970, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "liver", 
+      "enhancing", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "small right axillary lymph node; chest", 
+    "lesion_idx": 30449, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest", 
+      "chest wall", 
+      "axilla lymph node", 
+      "axilla"
+    ]
+  }, 
+  {
+    "text": "oval  perihepatic peritoneal mass anterior to liver, and an intrahepatic lesion, abdomen", 
+    "lesion_idx": 26020, 
+    "expanded_terms": [
+      "oval", 
+      "peritoneum", 
+      "mass", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "hypodense nodule, left thyroid lobe, neck,", 
+    "lesion_idx": 15650, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "thyroid gland", 
+      "nodule", 
+      "neck", 
+      "left lobe of thyroid gland"
+    ]
+  }, 
+  {
+    "text": "small hypodense right thyroid lobe nodule, Neck", 
+    "lesion_idx": 12160, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "thyroid gland", 
+      "nodule", 
+      "right thyroid lobe", 
+      "neck"
+    ]
+  }, 
+  {
+    "text": "Right pelvic sidewall lymph node, Pelvis", 
+    "lesion_idx": 27004, 
+    "expanded_terms": [
+      "lymph node", 
+      "pelvis", 
+      "pelvic wall", 
+      "pelvis lymph node"
+    ]
+  }, 
+  {
+    "text": "peripheral anteromedial right upper lung nodule, right upper lobe (RUL), chest", 
+    "lesion_idx": 26802, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right upper lobe"
+    ]
+  }, 
+  {
+    "text": "peripheral Posteromedial right lower lung nodule, right lower lobe (RLL), chest", 
+    "lesion_idx": 30463, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "ill defined hypodense lesion left liver lobe, Abdomen", 
+    "lesion_idx": 24896, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "hypoattenuation", 
+      "indistinct", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "small right paratracheal lymph node, chest", 
+    "lesion_idx": 15000, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "small peripheral nodule medial left lung, chest", 
+    "lesion_idx": 13932, 
+    "expanded_terms": [
+      "lung", 
+      "chest", 
+      "nodule", 
+      "left lung", 
+      "lung nodule"
+    ]
+  }, 
+  {
+    "text": "small nodule peripheral Posteromedial right lower lung, right lower lobe (RLL), chest", 
+    "lesion_idx": 31707, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "oval mixed density mass, right side neck, Conglomerate lymph node, neck", 
+    "lesion_idx": 19005, 
+    "expanded_terms": [
+      "oval", 
+      "conglomerate", 
+      "mass", 
+      "neck", 
+      "lymph node"
+    ]
+  }, 
+  {
+    "text": "mixed density mass with calcifications and cystic parts, medial aspect of the posterior segment of the right lobe of the liver, segment V, abdomen", 
+    "lesion_idx": 6968, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "liver", 
+      "cyst", 
+      "calcified"
+    ]
+  }, 
+  {
+    "text": "small right external iliac node; pelvis", 
+    "lesion_idx": 23404, 
+    "expanded_terms": [
+      "lymph node", 
+      "iliac", 
+      "external iliac lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "irregular nodule left upper lobe, lung, chest", 
+    "lesion_idx": 8599, 
+    "expanded_terms": [
+      "spiculated", 
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "small lymph node, left, neck base, supraclavicular, neck", 
+    "lesion_idx": 8130, 
+    "expanded_terms": [
+      "lymph node", 
+      "neck", 
+      "mediastinum lymph node", 
+      "chest", 
+      "supraclavicular lymph node", 
+      "mediastinum"
+    ]
+  }, 
+  {
+    "text": "lateral right upper lobe RUL nodule, chest", 
+    "lesion_idx": 10357, 
+    "expanded_terms": [
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right upper lobe"
+    ]
+  }, 
+  {
+    "text": "lung nodule, peripheral medial left upper lobe lingula, chest", 
+    "lesion_idx": 20517, 
+    "expanded_terms": [
+      "lingula", 
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "1-small subcutaneous nodule, left anterior abdominal wall, abdomen, 2-small aortocaval retroperitoneal node, Abdomen", 
+    "lesion_idx": 31120, 
+    "expanded_terms": [
+      "abdominal wall", 
+      "subcutaneous", 
+      "abdomen", 
+      "nodule", 
+      "body wall", 
+      "anterior abdominal wall"
+    ]
+  }, 
+  {
+    "text": "large heterogeneous intraperiponeal mass anterior mesentery, omental cake, abdomen, pelvis", 
+    "lesion_idx": 6576, 
+    "expanded_terms": [
+      "abdomen", 
+      "large", 
+      "mass", 
+      "heterogeneous", 
+      "pelvis", 
+      "omentum", 
+      "mesentery"
+    ]
+  }, 
+  {
+    "text": "small hyperdense, enhancing nodule, posterior aspect pancreatic head, arterial phase, abdomen", 
+    "lesion_idx": 12039, 
+    "expanded_terms": [
+      "pancreatic head", 
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "nodule", 
+      "retroperitoneum", 
+      "hyperattenuation", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "lobulated peripheral mass with small calcifications at the periphery, posterior right lower lobe, chest", 
+    "lesion_idx": 4738, 
+    "expanded_terms": [
+      "right lower lobe", 
+      "lobular", 
+      "right lung", 
+      "chest", 
+      "mass", 
+      "lung", 
+      "lobular mass", 
+      "calcified"
+    ]
+  }, 
+  {
+    "text": "hypodense peripheral mass, posterior right liver lobe, segment VI, abdomen", 
+    "lesion_idx": 13091, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "mass", 
+      "liver"
+    ]
+  }, 
+  {
+    "text": "small posterolateral peripheral lung nodule, right lower lobe, chest", 
+    "lesion_idx": 27184, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "retroperioneal left paraaortic adenopathy, abdomen", 
+    "lesion_idx": 3499, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "paraaortic", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "irregular posterior peripheral lung nodule; right lower lobe, chest", 
+    "lesion_idx": 28591, 
+    "expanded_terms": [
+      "spiculated", 
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "left lower pelvic mass, lateral to rectum, pelvis", 
+    "lesion_idx": 3697, 
+    "expanded_terms": [
+      "pelvis", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "poorly defined peritoneal soft tissue mass right lower quadrant, abdomen", 
+    "lesion_idx": 19143, 
+    "expanded_terms": [
+      "lower abdomen", 
+      "peritoneum", 
+      "soft tissue", 
+      "abdomen", 
+      "mass", 
+      "indistinct"
+    ]
+  }, 
+  {
+    "text": "left retroperitoneal adenopathy (lymph node) paraaortic, abdomen", 
+    "lesion_idx": 12841, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "paraaortic", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "peripheral posterior right lung nodule, posterior segment right upper lobe (RUL), chest", 
+    "lesion_idx": 19437, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right upper lobe"
+    ]
+  }, 
+  {
+    "text": "small ground glass opacity right lower lobe, lung, chest", 
+    "lesion_idx": 30282, 
+    "expanded_terms": [
+      "opacity", 
+      "right lung", 
+      "chest", 
+      "lung", 
+      "ground-glass opacity", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "large hypodense mass with peripheral calcification, right lobe liver, segments V and VI, abdomen", 
+    "lesion_idx": 8898, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "large", 
+      "hypoattenuation", 
+      "mass", 
+      "liver", 
+      "calcified"
+    ]
+  }, 
+  {
+    "text": "oval right cardiophrenic mass or node, chest", 
+    "lesion_idx": 3135, 
+    "expanded_terms": [
+      "oval", 
+      "mass", 
+      "chest", 
+      "cardiophrenic"
+    ]
+  }, 
+  {
+    "text": "small right anterior abdominal and pelvic wall soft tissue nodule, abdomen-pelvis", 
+    "lesion_idx": 27287, 
+    "expanded_terms": [
+      "soft tissue", 
+      "abdominal wall", 
+      "abdomen", 
+      "nodule", 
+      "body wall", 
+      "anterior abdominal wall", 
+      "pelvis", 
+      "pelvic wall"
+    ]
+  }, 
+  {
+    "text": "small nodule, right lower lobe, lung, chest", 
+    "lesion_idx": 30702, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "left retroperitoneal paraaortic adenopathy, abdomen", 
+    "lesion_idx": 28858, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "paraaortic", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "small nodules right side of pelvis posterior to urinary bladder and anterior to rectum, likely at surgical bed, small lymph nodes or peritoneal nodules, pelvis", 
+    "lesion_idx": 18207, 
+    "expanded_terms": [
+      "lymph node", 
+      "pelvis", 
+      "peritoneum", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "indeterminate hypodense medullary lesion in the midpart of right kidney, abdomen", 
+    "lesion_idx": 31780, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "right kidney", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "small hypodense lesion, segment VII liver, peripheral, Abdomen", 
+    "lesion_idx": 11066, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "enhancing lesion, liver, segment VIII, liver dome, abdomen", 
+    "lesion_idx": 17314, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "liver", 
+      "enhancing", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "small nodule peripheral posterior right lower lobe (RLL), lung, chest", 
+    "lesion_idx": 32437, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "small nodule peripheral lateral left lung, chest", 
+    "lesion_idx": 30738, 
+    "expanded_terms": [
+      "lung", 
+      "chest", 
+      "nodule", 
+      "left lung", 
+      "lung nodule"
+    ]
+  }, 
+  {
+    "text": "right pelvic external iliac lymph node, Pelvis", 
+    "lesion_idx": 4930, 
+    "expanded_terms": [
+      "lymph node", 
+      "iliac", 
+      "external iliac lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "small right common iliac lymph node; pelvis", 
+    "lesion_idx": 31056, 
+    "expanded_terms": [
+      "common iliac lymph node", 
+      "lymph node", 
+      "iliac", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "intrathoracic right paraspinal soft tissue mass or adenopathy, chest", 
+    "lesion_idx": 18507, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "chest", 
+      "paraspinal", 
+      "lymphadenopathy"
+    ]
+  }, 
+  {
+    "text": "small anterolateral peripheral lung nodule, right middle lobe, chest", 
+    "lesion_idx": 27996, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right mid lung"
+    ]
+  }, 
+  {
+    "text": "anterior cystic mass with thin peripheral enhancement, segment III, left liver lobe, abdomen", 
+    "lesion_idx": 23015, 
+    "expanded_terms": [
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "mass", 
+      "liver", 
+      "cyst"
+    ]
+  }, 
+  {
+    "text": "intraperitoneal nodule or node, Right lower quadrant abdomen, medial to cecum, abdomen", 
+    "lesion_idx": 10198, 
+    "expanded_terms": [
+      "lymph node", 
+      "lower abdomen", 
+      "intraperitoneal", 
+      "peritoneal cavity", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "left adrenal soft tissue nodule, abdomen", 
+    "lesion_idx": 11350, 
+    "expanded_terms": [
+      "soft tissue", 
+      "left adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "nodule", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "large inhomogeneous infiltrating mass in the pelvis surrounding bowel loops, pelvis", 
+    "lesion_idx": 26481, 
+    "expanded_terms": [
+      "large", 
+      "pelvis", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "large heterogeneous soft tissue mass with spots of calcifications left upper mediastinum, chest", 
+    "lesion_idx": 1587, 
+    "expanded_terms": [
+      "soft tissue", 
+      "large", 
+      "chest", 
+      "mass", 
+      "heterogeneous", 
+      "mediastinum", 
+      "calcified"
+    ]
+  }, 
+  {
+    "text": "oval soft tissue density left pelvic sidewall, adenopathy, pelvis", 
+    "lesion_idx": 25366, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "enlargement", 
+      "pelvis lymph node", 
+      "oval", 
+      "pelvis"
+    ]
+  }, 
+  {
+    "text": "enhancing lesion, liver, segment VIII, liver dome, abdomen", 
+    "lesion_idx": 14458, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "liver", 
+      "enhancing", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "hypodense lesion with peripheral sclerosis left side of L2 vertebral body, abdomen", 
+    "lesion_idx": 12397, 
+    "expanded_terms": [
+      "sclerotic", 
+      "spine", 
+      "abdomen", 
+      "hypoattenuation", 
+      "vertebral body", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "small posterior peripheral lung nodule, right lower lobe, chest", 
+    "lesion_idx": 18528, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "aortocaval lymph node (adenopathy) retroperitoneal, abdomen", 
+    "lesion_idx": 27077, 
+    "expanded_terms": [
+      "lymph node", 
+      "paracaval lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "abdomen lymph node", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "small residual left thyroid lobe, neck-chest", 
+    "lesion_idx": 22575, 
+    "expanded_terms": [
+      "left lobe of thyroid gland", 
+      "thyroid gland", 
+      "neck", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "small right middle lobe lung nodule, chest", 
+    "lesion_idx": 24709, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right mid lung"
+    ]
+  }, 
+  {
+    "text": "sclerotic left iliac bone lesion, lateral to left SI joint, pelvis", 
+    "lesion_idx": 1969, 
+    "expanded_terms": [
+      "pelvis", 
+      "sclerotic", 
+      "bone"
+    ]
+  }, 
+  {
+    "text": "small peripheral posterior right lower lobe lung nodule; Chest", 
+    "lesion_idx": 17765, 
+    "expanded_terms": [
+      "lung nodule", 
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "right lower lobe"
+    ]
+  }, 
+  {
+    "text": "sclerotic lesion in the body and left pedicle of L3, abdomen", 
+    "lesion_idx": 27652, 
+    "expanded_terms": [
+      "spine", 
+      "sclerotic", 
+      "abdomen", 
+      "bone", 
+      "vertebral body"
+    ]
+  }, 
+  {
+    "text": "enhancing lesion in the body of pancreas, arterial phase, abdomen", 
+    "lesion_idx": 744, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "pancreatic body", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "large heterogeneous right axillary mass or conglomerate adenopathy, with foci of calcifications, chest", 
+    "lesion_idx": 9792, 
+    "expanded_terms": [
+      "chest wall", 
+      "axilla", 
+      "large", 
+      "chest", 
+      "mass", 
+      "heterogeneous"
+    ]
+  }, 
+  {
+    "text": "small cystic lesion medial segment VII,  liver, abdomen", 
+    "lesion_idx": 7764, 
+    "expanded_terms": [
+      "cyst", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "right retroperitoneal adenopathy, retrocaval, abdomen", 
+    "lesion_idx": 15679, 
+    "expanded_terms": [
+      "lymph node", 
+      "retroperitoneum lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "right pelvic sidewall lymph node, Pelvis", 
+    "lesion_idx": 12093, 
+    "expanded_terms": [
+      "lymph node", 
+      "pelvis", 
+      "pelvis lymph node"
+    ]
+  }, 
+  {
+    "text": "hypodense liver lesion, segment VIII, abdomen", 
+    "lesion_idx": 24722, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "cyst bulged out from posterior cortex, right kidney, abdomen", 
+    "lesion_idx": 532, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "right kidney", 
+      "cortex", 
+      "kidney cyst", 
+      "retroperitoneum", 
+      "cyst", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "right paratracheal lymph node; chest", 
+    "lesion_idx": 29003, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "peripheral left upper lobe consolidation, chest", 
+    "lesion_idx": 13764, 
+    "expanded_terms": [
+      "left lung", 
+      "chest", 
+      "lung", 
+      "consolidation", 
+      "left upper lung"
+    ]
+  }, 
+  {
+    "text": "hypodense lesion medial to resection margin, liver, abdomen", 
+    "lesion_idx": 32675, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "small hypodense lesion body pancreas, abdomen", 
+    "lesion_idx": 8949, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "pancreatic body", 
+      "retroperitoneum", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "enhancing inhomogeneous mass anterolateral left kidney, abdomen", 
+    "lesion_idx": 215, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "mass", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "abdominal aortic aneurysm with intramural thrombus, abdomen", 
+    "lesion_idx": 17779, 
+    "expanded_terms": [
+      "blood vessel", 
+      "aorta", 
+      "abdomen", 
+      "thrombus", 
+      "aneurysm", 
+      "artery"
+    ]
+  }, 
+  {
+    "text": "hypodense lesion liver dome, segment VII, abdomen", 
+    "lesion_idx": 27145, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "posteromedial peripheral lung nodule, left lower lobe, Chest", 
+    "lesion_idx": 23578, 
+    "expanded_terms": [
+      "left lower lobe", 
+      "left lung", 
+      "lung nodule", 
+      "chest", 
+      "nodule", 
+      "lung"
+    ]
+  }, 
+  {
+    "text": "small peripheral hypodense liver lesion, segment VI, abdomen", 
+    "lesion_idx": 31779, 
+    "expanded_terms": [
+      "hypoattenuation", 
+      "upper abdomen", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "small band or secretion in the left main stem bronchus, chest", 
+    "lesion_idx": 30055, 
+    "expanded_terms": [
+      "bronchus", 
+      "chest", 
+      "airway"
+    ]
+  }, 
+  {
+    "text": " left pelvic cystic lesion, displacing bladder anteriorly, pelvis", 
+    "lesion_idx": 17474, 
+    "expanded_terms": [
+      "cyst", 
+      "pelvis"
+    ]
+  }, 
+  {
+    "text": "right adrenal mass, abdomen", 
+    "lesion_idx": 31032, 
+    "expanded_terms": [
+      "right adrenal gland", 
+      "upper abdomen", 
+      "abdomen", 
+      "adrenal gland", 
+      "mass", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "left external iliac lymph node, pelvis", 
+    "lesion_idx": 10953, 
+    "expanded_terms": [
+      "lymph node", 
+      "iliac", 
+      "external iliac lymph node", 
+      "pelvis lymph node", 
+      "pelvis", 
+      "iliac lymph node"
+    ]
+  }, 
+  {
+    "text": "hyperdense or enhancing mass in the body of pancreas, abdomen", 
+    "lesion_idx": 15476, 
+    "expanded_terms": [
+      "enhancing", 
+      "upper abdomen", 
+      "abdomen", 
+      "pancreatic body", 
+      "mass", 
+      "retroperitoneum", 
+      "hyperattenuation", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "small left retroperitoneal lymph node; abdomen", 
+    "lesion_idx": 6652, 
+    "expanded_terms": [
+      "retroperitoneum lymph node", 
+      "lymph node", 
+      "abdomen lymph node", 
+      "abdomen", 
+      "retroperitoneum"
+    ]
+  }, 
+  {
+    "text": "irregular hypodense lesion with focal peripheral enhancement, segment VI liver, hemangioma, abdomen", 
+    "lesion_idx": 32140, 
+    "expanded_terms": [
+      "blood vessel", 
+      "upper abdomen", 
+      "spiculated", 
+      "abdomen", 
+      "hypoattenuation", 
+      "neoplasm", 
+      "liver", 
+      "hemangioma"
+    ]
+  }, 
+  {
+    "text": "large heterogeneous mass left hemithorax, chest", 
+    "lesion_idx": 9347, 
+    "expanded_terms": [
+      "hemithorax", 
+      "large", 
+      "chest", 
+      "mass", 
+      "heterogeneous", 
+      "left hemithorax"
+    ]
+  }, 
+  {
+    "text": "hypodense lesion in the tail of pancreas, probably cyst, abdomen", 
+    "lesion_idx": 7485, 
+    "expanded_terms": [
+      "pancreatic tail", 
+      "upper abdomen", 
+      "abdomen", 
+      "hypoattenuation", 
+      "retroperitoneum", 
+      "cyst", 
+      "pancreas"
+    ]
+  }, 
+  {
+    "text": "right anterior mediastinal mass with extension into right anterior chest wall, chest", 
+    "lesion_idx": 24580, 
+    "expanded_terms": [
+      "anterior chest", 
+      "anterior chest wall", 
+      "chest wall", 
+      "chest", 
+      "mass", 
+      "mediastinum", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "enhancing right axillary mass, chest", 
+    "lesion_idx": 25395, 
+    "expanded_terms": [
+      "chest", 
+      "chest wall", 
+      "mass", 
+      "enhancing", 
+      "axilla"
+    ]
+  }, 
+  {
+    "text": "large hypodense liver mass with nodular peripheral enhancement, hemangioma, liver left lobe, segment II-III, abdomen", 
+    "lesion_idx": 32025, 
+    "expanded_terms": [
+      "blood vessel", 
+      "liver mass", 
+      "upper abdomen", 
+      "abdomen", 
+      "large", 
+      "hypoattenuation", 
+      "neoplasm", 
+      "mass", 
+      "liver", 
+      "hemangioma"
+    ]
+  }, 
+  {
+    "text": "enhancing right retrocrural adenopathy, with central hypodensity likely central necrosis, abdomen", 
+    "lesion_idx": 7338, 
+    "expanded_terms": [
+      "lymph node", 
+      "enlargement", 
+      "enhancing", 
+      "retrocrural lymph node", 
+      "necrosis", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "hypoattenuation", 
+      "abdomen lymph node"
+    ]
+  }, 
+  {
+    "text": "poorly defined left retroperitoneal paraaortic lymphadenopathy or mass, abdomen", 
+    "lesion_idx": 19425, 
+    "expanded_terms": [
+      "lymph node", 
+      "lymphadenopathy", 
+      "abdomen", 
+      "enlargement", 
+      "paraaortic", 
+      "mass", 
+      "retroperitoneum", 
+      "indistinct"
+    ]
+  }, 
+  {
+    "text": "filling defect within right pulmonary artery, thrombus, chest", 
+    "lesion_idx": 12935, 
+    "expanded_terms": [
+      "thrombus", 
+      "blood vessel", 
+      "pulmonary artery", 
+      "right lung", 
+      "chest", 
+      "lung", 
+      "artery"
+    ]
+  }, 
+  {
+    "text": "poorly defined hypodense lesion in the left liver lobe segment III, abdomen", 
+    "lesion_idx": 13236, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "hypoattenuation", 
+      "indistinct", 
+      "liver", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "bulged out lesion with central hypodensity and peripheral enhancement, posteromedial left kidney, abdomen", 
+    "lesion_idx": 22427, 
+    "expanded_terms": [
+      "upper abdomen", 
+      "abdomen", 
+      "left kidney", 
+      "hypoattenuation", 
+      "retroperitoneum", 
+      "kidney"
+    ]
+  }, 
+  {
+    "text": "enhancing mass right upper lobe apex or adenopathy, chest", 
+    "lesion_idx": 9611, 
+    "expanded_terms": [
+      "enhancing", 
+      "right upper lobe", 
+      "right lung", 
+      "chest", 
+      "lung", 
+      "mass"
+    ]
+  }, 
+  {
+    "text": "left axillary adenopathy, chest", 
+    "lesion_idx": 28432, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest wall", 
+      "axilla", 
+      "axilla lymph node", 
+      "lymphadenopathy", 
+      "enlargement", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "small aortocaval lymph node, abdomen", 
+    "lesion_idx": 25281, 
+    "expanded_terms": [
+      "lymph node", 
+      "abdomen lymph node", 
+      "abdomen", 
+      "paracaval lymph node"
+    ]
+  }, 
+  {
+    "text": "huge mass left upper quadrant abdomen", 
+    "lesion_idx": 28231, 
+    "expanded_terms": [
+      "large", 
+      "upper abdomen", 
+      "mass", 
+      "abdomen"
+    ]
+  }, 
+  {
+    "text": "anterior superior mediastinal mass or adenopathy, chest", 
+    "lesion_idx": 13429, 
+    "expanded_terms": [
+      "lymph node", 
+      "anterior chest", 
+      "superior mediastinum", 
+      "mediastinum lymph node", 
+      "chest", 
+      "mass", 
+      "mediastinum", 
+      "anterior mediastinum"
+    ]
+  }, 
+  {
+    "text": "small left hilar node, chest", 
+    "lesion_idx": 18319, 
+    "expanded_terms": [
+      "lymph node", 
+      "left hilum lymph node", 
+      "mediastinum lymph node", 
+      "hilum", 
+      "chest", 
+      "mediastinum", 
+      "hilum lymph node"
+    ]
+  }, 
+  {
+    "text": "small left paratracheal node, chest", 
+    "lesion_idx": 15984, 
+    "expanded_terms": [
+      "lymph node", 
+      "chest"
+    ]
+  }, 
+  {
+    "text": "small peripheral nodule, medial, right lung, chest", 
+    "lesion_idx": 30730, 
+    "expanded_terms": [
+      "right lung", 
+      "chest", 
+      "nodule", 
+      "lung", 
+      "lung nodule"
+    ]
+  }
+]

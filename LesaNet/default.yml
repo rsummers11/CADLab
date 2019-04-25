@@ -1,0 +1,29 @@
+exp_name: 'LesaNet'  # this name, together with "begin_epoch", decides the file name of your checkpoint for training and inference
+mode: 'demo'  # 'train', 'infer', or 'demo'
+begin_epoch: 15  # if = 0, start new training process; if > 0, load previous checkpoint according to exp_name
+validate_at_begin: False  # do validation before start training
+generate_features_all: False  # generate and save features for all lesions that can be used for lesion retrieval
+
+gpu: '0'
+groundtruth_file: 'YOUR_PATH/DeepLesion/DL_info.csv'  # modify this to your own path
+image_path: 'YOUR_PATH/DeepLesion/Images_png/'  # modify this to your own path
+split_file: 'program_data/text_mined_labels_171_and_split.json'
+hand_split_file: 'program_data/hand_labeled_test_set.json'
+ontology_file: 'program_data/lesion_ontology_181022.xlsx'
+demo_labels_file: 'program_data/labels_for_demo.xlsx'
+
+# optimizer
+lr: 0.01
+lr_step: '10'  # decrease lr after e2e_lr_step epochs
+epochs: 15
+momentum: 0.9
+lr_factor: 0.1
+weight_decay: 0.0001
+frequent: 10  # show loss after "frequent" iterations
+
+# for training
+seed: 123
+show_avg_loss: 50  # average the loss in show_avg_loss iterations
+clip_gradient: 10.
+drop_last_batch: True  # might be useful since last batch may have very few samples thus not accurate for training
+keep_best_model: True  # only keep the model with best accuracy to save disk space

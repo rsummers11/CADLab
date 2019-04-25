@@ -1,0 +1,40 @@
+SLICE_INTV: 2  # slice interval in mm after interpolation. if 0, only use one slice thus no 3d context
+NUM_SLICES: 3  # multi-slice input to incorporate 3d context
+NORM_SPACING: 1  # normalize image size to norm_spacing mm/pixel (so the smaller this value, the larger the image).
+MAX_IM_SIZE: 800
+MAX_PATCH_SIZE: 200
+
+ARCH: 'VGG16bn'
+EMBEDDING_DIM: 256
+SCORE_PROPAGATION: True
+SAMPLES_PER_BATCH: 128
+
+BOX_PAD: 60
+ROI_METHOD: 'FIXED_CONTEXT'
+PAD_BORDER: True
+
+TRAIN:
+  USE_PRETRAINED_MODEL: False
+  TEXT_MINED_LABEL: 'RU'
+
+  CE_LOSS_WT_1: 1
+  CE_LOSS_WT_2: 1
+  CE_LOSS_WEIGHTED: True
+  CE_POS_WT_CLAMP: 300
+
+  RHEM_LOSS_WT: 1
+  RHEM_POWER: 2
+  RHEM_BATCH_SIZE: 10000
+
+  TRIPLET_LOSS_WT: 5
+  TRIPLET_LOSS_MARGIN: .1
+  NUM_TRIPLET: 5000
+  SIMILAR_LABEL_THRESHOLD: 1
+  DISSIMILAR_LABEL_THRESHOLD: 0
+
+TEST:
+  CRITERION: 'mean_perclass_f1'
+  SCORE_PARAM: 5  # the threshold or top-K for label decision. Only useful if USE_CALIBRATED_TH=False
+  FILTER_EXCLUSIVE_LABELS: False  # if label A's score is higher than B while A and B are exclusive, then remove B
+  # not always good, because B may be the correct label if A and B are hard to distinguish
+  USE_CALIBRATED_TH: True  # calibrate a threshold for each label in the val set, then use it in the test set
