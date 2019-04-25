@@ -17,8 +17,7 @@ _Framework and sample lesion ontology, see [1]:_
     <td><img src="images/label_relation.png"></td> 
   </tr>
 </table>
- 
-  
+
 #### Requirements  
 * PyTorch 0.4.1  
 * Python 2.7  
