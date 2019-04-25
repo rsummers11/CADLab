@@ -11,7 +11,7 @@ You can use LesaNet to:
 1. Given a lesion image patch, find similar lesions in your database (content-based image retrieval).  
 
 _Framework and sample lesion ontology, see [1]:_
-<table style="width:100%">
+<table rules="none">
   <tr>
     <td><img src="images/framework.png"></td>
     <td><img src="images/label_relation.png"></td> 
