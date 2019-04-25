@@ -11,7 +11,7 @@ You can use LesaNet to:
 1. Given a lesion image patch, find similar lesions in your database (content-based image retrieval).  
 
 _Framework and sample lesion ontology, see [1]:_
-<img src="images/framework.png" width="50%" height="50%"> <img src="images/label_relation.png" width="47%" height="40%">  
+<img src="images/framework.png" width="50%" height="50%"> <img src="images/label_relation.png" width="40%" height="40%">  
   
 #### Requirements  
 * PyTorch 0.4.1  
