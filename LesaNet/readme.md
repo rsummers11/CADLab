@@ -13,8 +13,8 @@ You can use LesaNet to:
 _Framework and sample lesion ontology, see [1]:_
 <table style="width:100%">
   <tr>
-    <td><img src="images/framework.png" width="50%" height="50%"></td>
-    <td><img src="images/label_relation.png" width="40%" height="40%"></td> 
+    <td><img src="images/framework.png"></td>
+    <td><img src="images/label_relation.png"></td> 
   </tr>
 </table>
  
