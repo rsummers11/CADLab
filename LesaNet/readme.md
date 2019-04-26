@@ -11,7 +11,7 @@ You can use LesaNet to:
 1. Given a label (e.g., kidney), find all lesions with that label in your database;
 1. Given a lesion image patch, find similar lesions in your database (content-based image retrieval).  
 
-#### Results  
+#### Sample results  
 <img src="images/result_examples.png" width="100%" height="100%">  
 
 #### Requirements  
