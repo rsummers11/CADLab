@@ -1,8 +1,10 @@
 
 ## Lesion annotation network (LesaNet)  
-  
-Developed by Ke Yan (yankethu@gmail.com, [yanke23.com](http://yanke23.com)), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory, National Institutes of Health Clinical Center  
-  
+
+This project contains the code and labels of the CVPR 2019 oral paper: “Holistic and Comprehensive Annotation of Clinically Significant Findings on Diverse CT Images: Learning from Radiology Reports and Label Ontology” ([arXiv](https://arxiv.org/abs/1904.04661)).
+
+Developed by Ke Yan (yankethu@gmail.com, [yanke23.com](http://yanke23.com)), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory, National Institutes of Health Clinical Center.  
+ 
 LesaNet [1] predicts the body part, type, and attributes of a variety of lesions in CT images. It is a multi-label classification CNN. It learns to annotate lesion images by leveraging radiology reports and the relations between labels (ontology).
   
 You can use LesaNet to:
@@ -22,7 +24,7 @@ _Framework and sample lesion ontology, see [1]:_
 * PyTorch 0.4.1  
 * Python 2.7  
 * The DeepLesion dataset [2,3,4]  
-* The roi_pooling layer, which can be forked from [faster-rcnn.pytorch](https://github.com/jwyang/faster-rcnn.pytorch/tree/master/lib/model/roi_pooling) and put in `roi_pooling/`
+* The roi_pooling layer, which can be compiled from [faster-rcnn.pytorch](https://github.com/viggin/faster-rcnn.pytorch) and put in `roi_pooling/`
 * `virtualenv_setup.sh` and `requirements.txt` can be used to build a virtual environment for LesaNet.  
   
 #### Usage on DeepLesion
