@@ -1,4 +1,3 @@
-
 ## Lesion annotation network (LesaNet)  
 
 This project contains the code and labels of the CVPR 2019 oral paper: “Holistic and Comprehensive Annotation of Clinically Significant Findings on Diverse CT Images: Learning from Radiology Reports and Label Ontology” ([arXiv](https://arxiv.org/abs/1904.04661)).
@@ -12,13 +11,8 @@ You can use LesaNet to:
 1. Given a label (e.g., kidney), find all lesions with that label in your database;
 1. Given a lesion image patch, find similar lesions in your database (content-based image retrieval).  
 
-_Framework and sample lesion ontology, see [1]:_
-<table rules="none">
-  <tr>
-    <td><img src="images/framework.png"></td>
-    <td><img src="images/label_relation.png"></td> 
-  </tr>
-</table>
+#### Results  
+<img src="images/result_examples.png" width="100%" height="100%">  
 
 #### Requirements  
 * PyTorch 0.4.1  
@@ -50,8 +44,13 @@ The 171 labels used in [1] is a subset of this ontology.
 * `hand_labeled_test_set.json`: 500 random lesions in the test set manually annotated by two radiologists in a more comprehensive fashion [1].  
 * `labels_for_demo.xlsx`: The sizes, accuracies, and thresholds of the 171 labels on the hand-labeled test set.
 
-#### Results  
-<img src="images/result_examples.png" width="100%" height="100%">  
+_Framework and sample lesion ontology, see [1]:_
+<table rules="none">
+  <tr>
+    <td><img src="images/framework.png"></td>
+    <td><img src="images/label_relation.png"></td> 
+  </tr>
+</table>
 
 #### Limitations  
 * Because of the complexity of the free-text radiology reports and the limitation of the text-mining algorithm, the labels in `text_mined_labels_171_and_split.json` may contain noises.  
