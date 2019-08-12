@@ -1,0 +1,13 @@
+matplotlib
+easydict
+pyyaml
+opencv-python
+nibabel
+cffi
+openpyxl
+sklearn
+scipy
+tqdm
+cython
+GPUtil
+pycocotools

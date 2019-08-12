@@ -1,0 +1,12 @@
+# config file for "demo" and "batch" mode, see "MODE" in config.yml
+TEST_SLICE_INTV_MM: 1  # run a slice every x mm in the volume
+DETECTION_SCORE_THRESH: 0.5
+MAX_DETECTIONS_PER_IMG: 15
+MIN_LYMPH_NODE_DIAM_TO_SHOW: 0  # in millimeter
+MASK_THRESHOLD: .5
+BBOX_NMS_OVERLAP: .3
+IMG_DO_CLIP: True  # clip the black borders of CT images
+
+# for "batch" mode
+TAGS_TO_KEEP: {}  # for example, "{'liver': .5}" keeps only detections with tag score > 0.5 for "liver"
+RESULT_FIELDS: ['tag_scores', 'scores', 'contour_mm']

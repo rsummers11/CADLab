@@ -1,0 +1,675 @@
+Loaded configuration file config.yml
+{'BEGIN_EPOCH': 0,
+ 'DATALOADER': {'DROP_LAST_BATCH': False, 'SIZE_DIVISIBILITY': 16},
+ 'DATASETS': {'TAG': {'MANUAL_ANNOT_TEST_FILE': 'hand_labeled_test_set.json',
+                      'SPLIT_FILE': 'text_mined_labels_171_and_split.json',
+                      'TAG_DICT_FILE': 'lesion_ontology_181022.xlsx',
+                      'USE_CACHE_FILE': 'tags_cache.json'},
+              'TEST': ['DeepLesion_test'],
+              'TRAIN': ['DeepLesion_train'],
+              'VAL': ['DeepLesion_val']},
+ 'EVAL_AT_BEGIN': False,
+ 'EXP_NAME': 'wo add ft, box fc 2048, tag 1024, w fusion',
+ 'FINETUNE_FROM': '',
+ 'GPU': '',
+ 'INPUT': {'DATA_AUG_3D': -0.5,
+           'DATA_AUG_POSITION': True,
+           'DATA_AUG_SCALE': [0.8, 1.2],
+           'IMG_DO_CLIP': True,
+           'MAX_IM_SIZE': 512,
+           'NORM_SPACING': 0.8,
+           'NUM_IMAGES_3DCE': 3,
+           'NUM_SLICES': 3,
+           'SLICE_INTV': 2},
+ 'KEEP_BEST_MODEL': True,
+ 'LOG_IN_FILE': True,
+ 'MODE': 'train',
+ 'MODEL': {'BACKBONE': {'CONV_BODY': 'DenseTrunc-121',
+                        'FEATURE_UPSAMPLE': True,
+                        'FEATURE_UPSAMPLE_LEVEL': 3,
+                        'FEATURE_FUSION_LEVELS': [False, False, True],
+                        'OUT_CHANNELS': 512},
+           'refine_ON': True,
+           'INIT_FROM_PRETRAIN': True,
+           'MASK_ON': True,
+           'META_ARCHITECTURE': 'GeneralizedRCNN',
+           'ROI_BOX_HEAD': {'CLSF_LOSS_WEIGHT': 1,
+                            'DROP_OUT': False,
+                            'FEATURE_EXTRACTOR': 'MLPFeatureExtractor',
+                            'FOCAL_LOSS': False,
+                            'MLP_HEAD_DIM': 2048,
+                            'NUM_CLASSES': 2,
+                            'POOLER_RESOLUTION': 7,
+                            'POOLER_SAMPLING_RATIO': 2,
+                            'POOLER_SCALES': [0.25],
+                            'PREDICTOR': 'FPNPredictor',
+                            'REG_LOSS_WEIGHT': 10},
+           'ROI_refine_HEAD': {'ADD_FEATURE': False},
+           'ROI_HEADS': {'BATCH_SIZE_PER_IMAGE': 64,
+                         'BBOX_REG_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+                         'DETECTIONS_PER_IMG': 50,
+                         'NMS': 0.5,
+                         'SCORE_THRESH': 0.05,
+                         'USE_FPN': False},
+           'ROI_MASK_HEAD': {'CONV_LAYERS': [256, 256, 256, 256],
+                             'FEATURE_EXTRACTOR': 'MaskRCNNFPNFeatureExtractor',
+                             'MASK_LOSS_WEIGHT': 1,
+                             'POOLER_RESOLUTION': 14,
+                             'POOLER_SAMPLING_RATIO': 2,
+                             'POOLER_SCALES': [0.25],
+                             'PREDICTOR': 'MaskRCNNCustomPredictor',
+                             'RESOLUTION': 28,
+                             'SHARE_BOX_FEATURE_EXTRACTOR': False},
+           'ROI_TAG_HEAD': {'CE_LOSS_POS_WT': True,
+                            'CE_POS_WT_CLAMP': 300,
+                            'FEATURE_EXTRACTOR': 'TagFeatureExtractor',
+                            'MLP_HEAD_DIM': 1024,
+                            'OHEM_LOSS_WEIGHT': 1,
+                            'OHEM_POWER': 2,
+                            'OHEM_SEL_NUM': 10000,
+                            'PREDICTOR': 'MultiLabelPredictor',
+                            'TAG_LOSS_WEIGHT': 1},
+           'RPN': {'ANCHOR_SIZES': [16, 24, 32, 48, 96],
+                   'ANCHOR_STRIDE': [4],
+                   'BATCH_SIZE_PER_IMAGE': 32,
+                   'CLSF_LOSS_WEIGHT': 1,
+                   'CONV_OUT_DIM': 512,
+                   'FOCAL_LOSS': False,
+                   'FPN_POST_NMS_TOP_N_TEST': 1000,
+                   'MIN_SIZE': 8,
+                   'POST_NMS_TOP_N_TEST': 300,
+                   'POST_NMS_TOP_N_TRAIN': 2000,
+                   'PRE_NMS_TOP_N_TEST': 6000,
+                   'PRE_NMS_TOP_N_TRAIN': 12000,
+                   'REG_LOSS_WEIGHT': 1,
+                   'USE_FPN': False},
+           'TAG_ON': True,
+           'USE_3D_refine': True},
+ 'SOLVER': {'BASE_LR': 0.004,
+            'CHECKPOINT_PERIOD': 1,
+            'CLIP_GRADIENT': 10.0,
+            'IMS_PER_BATCH': 8,
+            'MAX_EPOCH': 8,
+            'SHOW_LOSS_ITER': 100,
+            'STEPS': [4, 6],
+            'WARMUP_ITERS': 0,
+            'WEIGHT_DECAY': 0.0005},
+ 'TEST': {'EVAL_SEG_TAG_ON_GT': True,
+          'IMS_PER_BATCH': 8,
+          'MASK': {'THRESHOLD': 0.5},
+          'MIN_LYMPH_NODE_DIAM': 5,
+          'POSTPROCESS_ON': False,
+          'SHUFFLE': True,
+          'TAG': {'CALIBRATE_TH': True, 'SELECTION_VAL': 0.9},
+          'USE_SAVED_PRED_RES': 'proc',
+          'VISUALIZE': {'DETECTIONS_PER_IMG': 5,
+                        'NMS': 0.3,
+                        'SCORE_THRESH': 0.25,
+                        'SHOW_MASK_HEATMAPS': False,
+                        'SHOW_SCALE': 2}}}
+Using 1 GPUs
+Manual random seed 1
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+252 parent-children relation pairs; 4451 exclusive relation pairs
+DeepLesion train num_images: 22478
+building model ...
+Start training
+epoch 0 iter 0/2810  loss: 4.534  rpn_clsf: 0.697  rpn_reg: 0.033  frcn_clsf: 0.699  frcn_reg: 0.000  mask: 0.513  tag: 0.595  clsf2: 0.699  tag2: 0.595  ohem: 0.699  time: 0.315  lr: 0.004
+epoch 0 iter 100/2810  loss: 3.059  rpn_clsf: 0.370  rpn_reg: 0.028  frcn_clsf: 0.171  frcn_reg: 0.002  mask: 0.311  tag: 0.627  clsf2: 0.174  tag2: 0.612  ohem: 0.605  time: 0.104  lr: 0.004
+epoch 0 iter 200/2810  loss: 2.859  rpn_clsf: 0.246  rpn_reg: 0.023  frcn_clsf: 0.228  frcn_reg: 0.005  mask: 0.272  tag: 0.621  clsf2: 0.230  tag2: 0.635  ohem: 0.538  time: 0.106  lr: 0.004
+epoch 0 iter 300/2810  loss: 2.851  rpn_clsf: 0.201  rpn_reg: 0.024  frcn_clsf: 0.294  frcn_reg: 0.008  mask: 0.257  tag: 0.565  clsf2: 0.300  tag2: 0.564  ohem: 0.516  time: 0.112  lr: 0.004
+epoch 0 iter 400/2810  loss: 2.874  rpn_clsf: 0.157  rpn_reg: 0.027  frcn_clsf: 0.300  frcn_reg: 0.010  mask: 0.233  tag: 0.612  clsf2: 0.308  tag2: 0.582  ohem: 0.502  time: 0.111  lr: 0.004
+epoch 0 iter 500/2810  loss: 2.591  rpn_clsf: 0.129  rpn_reg: 0.022  frcn_clsf: 0.285  frcn_reg: 0.009  mask: 0.233  tag: 0.492  clsf2: 0.297  tag2: 0.481  ohem: 0.491  time: 0.113  lr: 0.004
+epoch 0 iter 600/2810  loss: 2.742  rpn_clsf: 0.107  rpn_reg: 0.023  frcn_clsf: 0.300  frcn_reg: 0.008  mask: 0.219  tag: 0.596  clsf2: 0.307  tag2: 0.552  ohem: 0.494  time: 0.113  lr: 0.004
+epoch 0 iter 700/2810  loss: 2.548  rpn_clsf: 0.103  rpn_reg: 0.021  frcn_clsf: 0.271  frcn_reg: 0.008  mask: 0.211  tag: 0.531  clsf2: 0.276  tag2: 0.504  ohem: 0.502  time: 0.112  lr: 0.004
+epoch 0 iter 800/2810  loss: 2.548  rpn_clsf: 0.100  rpn_reg: 0.023  frcn_clsf: 0.265  frcn_reg: 0.008  mask: 0.209  tag: 0.518  clsf2: 0.269  tag2: 0.478  ohem: 0.514  time: 0.115  lr: 0.004
+epoch 0 iter 900/2810  loss: 2.466  rpn_clsf: 0.094  rpn_reg: 0.021  frcn_clsf: 0.263  frcn_reg: 0.008  mask: 0.202  tag: 0.493  clsf2: 0.268  tag2: 0.461  ohem: 0.530  time: 0.115  lr: 0.004
+epoch 0 iter 1000/2810  loss: 2.500  rpn_clsf: 0.093  rpn_reg: 0.024  frcn_clsf: 0.264  frcn_reg: 0.008  mask: 0.190  tag: 0.506  clsf2: 0.271  tag2: 0.448  ohem: 0.534  time: 0.111  lr: 0.004
+epoch 0 iter 1100/2810  loss: 2.487  rpn_clsf: 0.084  rpn_reg: 0.022  frcn_clsf: 0.267  frcn_reg: 0.008  mask: 0.206  tag: 0.517  clsf2: 0.271  tag2: 0.460  ohem: 0.516  time: 0.113  lr: 0.004
+epoch 0 iter 1200/2810  loss: 2.459  rpn_clsf: 0.083  rpn_reg: 0.023  frcn_clsf: 0.265  frcn_reg: 0.007  mask: 0.189  tag: 0.499  clsf2: 0.267  tag2: 0.427  ohem: 0.539  time: 0.112  lr: 0.004
+epoch 0 iter 1300/2810  loss: 2.404  rpn_clsf: 0.082  rpn_reg: 0.023  frcn_clsf: 0.267  frcn_reg: 0.007  mask: 0.196  tag: 0.417  clsf2: 0.280  tag2: 0.399  ohem: 0.520  time: 0.112  lr: 0.004
+epoch 0 iter 1400/2810  loss: 2.324  rpn_clsf: 0.073  rpn_reg: 0.022  frcn_clsf: 0.258  frcn_reg: 0.007  mask: 0.193  tag: 0.469  clsf2: 0.262  tag2: 0.448  ohem: 0.498  time: 0.112  lr: 0.004
+epoch 0 iter 1500/2810  loss: 2.324  rpn_clsf: 0.074  rpn_reg: 0.023  frcn_clsf: 0.259  frcn_reg: 0.007  mask: 0.196  tag: 0.443  clsf2: 0.278  tag2: 0.390  ohem: 0.531  time: 0.115  lr: 0.004
+epoch 0 iter 1600/2810  loss: 2.354  rpn_clsf: 0.066  rpn_reg: 0.017  frcn_clsf: 0.244  frcn_reg: 0.007  mask: 0.190  tag: 0.463  clsf2: 0.257  tag2: 0.403  ohem: 0.548  time: 0.115  lr: 0.004
+epoch 0 iter 1700/2810  loss: 2.297  rpn_clsf: 0.072  rpn_reg: 0.020  frcn_clsf: 0.245  frcn_reg: 0.007  mask: 0.187  tag: 0.455  clsf2: 0.264  tag2: 0.410  ohem: 0.540  time: 0.110  lr: 0.004
+epoch 0 iter 1800/2810  loss: 2.196  rpn_clsf: 0.075  rpn_reg: 0.020  frcn_clsf: 0.241  frcn_reg: 0.007  mask: 0.194  tag: 0.397  clsf2: 0.252  tag2: 0.363  ohem: 0.525  time: 0.112  lr: 0.004
+epoch 0 iter 1900/2810  loss: 2.364  rpn_clsf: 0.070  rpn_reg: 0.023  frcn_clsf: 0.261  frcn_reg: 0.007  mask: 0.193  tag: 0.449  clsf2: 0.278  tag2: 0.391  ohem: 0.556  time: 0.112  lr: 0.004
+epoch 0 iter 2000/2810  loss: 2.138  rpn_clsf: 0.058  rpn_reg: 0.018  frcn_clsf: 0.239  frcn_reg: 0.006  mask: 0.187  tag: 0.394  clsf2: 0.249  tag2: 0.366  ohem: 0.515  time: 0.109  lr: 0.004
+epoch 0 iter 2100/2810  loss: 2.228  rpn_clsf: 0.070  rpn_reg: 0.019  frcn_clsf: 0.247  frcn_reg: 0.007  mask: 0.181  tag: 0.429  clsf2: 0.258  tag2: 0.331  ohem: 0.555  time: 0.112  lr: 0.004
+epoch 0 iter 2200/2810  loss: 2.167  rpn_clsf: 0.066  rpn_reg: 0.021  frcn_clsf: 0.242  frcn_reg: 0.007  mask: 0.186  tag: 0.405  clsf2: 0.256  tag2: 0.339  ohem: 0.529  time: 0.112  lr: 0.004
+epoch 0 iter 2300/2810  loss: 2.183  rpn_clsf: 0.055  rpn_reg: 0.017  frcn_clsf: 0.245  frcn_reg: 0.006  mask: 0.186  tag: 0.390  clsf2: 0.259  tag2: 0.347  ohem: 0.526  time: 0.111  lr: 0.004
+epoch 0 iter 2400/2810  loss: 2.257  rpn_clsf: 0.057  rpn_reg: 0.019  frcn_clsf: 0.240  frcn_reg: 0.007  mask: 0.175  tag: 0.469  clsf2: 0.243  tag2: 0.392  ohem: 0.524  time: 0.109  lr: 0.004
+epoch 0 iter 2500/2810  loss: 2.115  rpn_clsf: 0.058  rpn_reg: 0.020  frcn_clsf: 0.243  frcn_reg: 0.007  mask: 0.180  tag: 0.388  clsf2: 0.264  tag2: 0.348  ohem: 0.524  time: 0.110  lr: 0.004
+epoch 0 iter 2600/2810  loss: 2.125  rpn_clsf: 0.058  rpn_reg: 0.017  frcn_clsf: 0.231  frcn_reg: 0.006  mask: 0.179  tag: 0.356  clsf2: 0.249  tag2: 0.321  ohem: 0.542  time: 0.110  lr: 0.004
+epoch 0 iter 2700/2810  loss: 2.142  rpn_clsf: 0.061  rpn_reg: 0.018  frcn_clsf: 0.233  frcn_reg: 0.007  mask: 0.178  tag: 0.404  clsf2: 0.239  tag2: 0.337  ohem: 0.529  time: 0.114  lr: 0.004
+epoch 0 iter 2800/2810  loss: 2.163  rpn_clsf: 0.063  rpn_reg: 0.019  frcn_clsf: 0.247  frcn_reg: 0.007  mask: 0.181  tag: 0.382  clsf2: 0.252  tag2: 0.331  ohem: 0.536  time: 0.112  lr: 0.004
+Saving checkpoint to checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_01.pth
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0312 s
+Total inference time: 0:03:05.802424 (0.038781553786772824 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.4817, 0.6126, 0.7121, 0.7825, 0.8383, 0.8848
+mean of [0.5, 1, 2, 4]: 0.6472
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.8912	0.1403	0.4970	0.2639	0.9036	0.2328	0.2032	0.2726	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.4454+-1.2749, 2.1389+-2.3759
+total test time: 200.024701
+
+1: 0.6472
+epoch 1 iter 0/2810  loss: 2.132  rpn_clsf: 0.063  rpn_reg: 0.019  frcn_clsf: 0.241  frcn_reg: 0.007  mask: 0.181  tag: 0.384  clsf2: 0.249  tag2: 0.326  ohem: 0.524  time: 0.111  lr: 0.004
+epoch 1 iter 100/2810  loss: 2.091  rpn_clsf: 0.051  rpn_reg: 0.018  frcn_clsf: 0.220  frcn_reg: 0.006  mask: 0.179  tag: 0.382  clsf2: 0.222  tag2: 0.330  ohem: 0.521  time: 0.112  lr: 0.004
+epoch 1 iter 200/2810  loss: 2.085  rpn_clsf: 0.049  rpn_reg: 0.016  frcn_clsf: 0.221  frcn_reg: 0.006  mask: 0.175  tag: 0.384  clsf2: 0.241  tag2: 0.309  ohem: 0.536  time: 0.112  lr: 0.004
+epoch 1 iter 300/2810  loss: 1.999  rpn_clsf: 0.049  rpn_reg: 0.021  frcn_clsf: 0.223  frcn_reg: 0.006  mask: 0.178  tag: 0.349  clsf2: 0.238  tag2: 0.312  ohem: 0.512  time: 0.112  lr: 0.004
+epoch 1 iter 400/2810  loss: 2.056  rpn_clsf: 0.052  rpn_reg: 0.020  frcn_clsf: 0.239  frcn_reg: 0.006  mask: 0.172  tag: 0.368  clsf2: 0.248  tag2: 0.313  ohem: 0.497  time: 0.112  lr: 0.004
+epoch 1 iter 500/2810  loss: 2.112  rpn_clsf: 0.052  rpn_reg: 0.019  frcn_clsf: 0.233  frcn_reg: 0.007  mask: 0.179  tag: 0.369  clsf2: 0.248  tag2: 0.310  ohem: 0.523  time: 0.112  lr: 0.004
+epoch 1 iter 600/2810  loss: 1.971  rpn_clsf: 0.048  rpn_reg: 0.021  frcn_clsf: 0.229  frcn_reg: 0.006  mask: 0.176  tag: 0.345  clsf2: 0.244  tag2: 0.301  ohem: 0.522  time: 0.111  lr: 0.004
+epoch 1 iter 700/2810  loss: 2.043  rpn_clsf: 0.054  rpn_reg: 0.019  frcn_clsf: 0.213  frcn_reg: 0.006  mask: 0.173  tag: 0.345  clsf2: 0.232  tag2: 0.306  ohem: 0.542  time: 0.111  lr: 0.004
+epoch 1 iter 800/2810  loss: 1.992  rpn_clsf: 0.046  rpn_reg: 0.018  frcn_clsf: 0.225  frcn_reg: 0.006  mask: 0.171  tag: 0.354  clsf2: 0.236  tag2: 0.297  ohem: 0.525  time: 0.114  lr: 0.004
+epoch 1 iter 900/2810  loss: 1.950  rpn_clsf: 0.040  rpn_reg: 0.021  frcn_clsf: 0.214  frcn_reg: 0.006  mask: 0.170  tag: 0.328  clsf2: 0.226  tag2: 0.275  ohem: 0.525  time: 0.112  lr: 0.004
+epoch 1 iter 1000/2810  loss: 2.040  rpn_clsf: 0.054  rpn_reg: 0.017  frcn_clsf: 0.232  frcn_reg: 0.006  mask: 0.177  tag: 0.339  clsf2: 0.241  tag2: 0.286  ohem: 0.509  time: 0.111  lr: 0.004
+epoch 1 iter 1100/2810  loss: 2.002  rpn_clsf: 0.051  rpn_reg: 0.021  frcn_clsf: 0.226  frcn_reg: 0.006  mask: 0.171  tag: 0.334  clsf2: 0.243  tag2: 0.264  ohem: 0.546  time: 0.111  lr: 0.004
+epoch 1 iter 1200/2810  loss: 1.903  rpn_clsf: 0.048  rpn_reg: 0.019  frcn_clsf: 0.209  frcn_reg: 0.006  mask: 0.163  tag: 0.328  clsf2: 0.225  tag2: 0.275  ohem: 0.546  time: 0.110  lr: 0.004
+epoch 1 iter 1300/2810  loss: 1.977  rpn_clsf: 0.047  rpn_reg: 0.019  frcn_clsf: 0.216  frcn_reg: 0.006  mask: 0.166  tag: 0.349  clsf2: 0.240  tag2: 0.301  ohem: 0.509  time: 0.111  lr: 0.004
+epoch 1 iter 1400/2810  loss: 2.065  rpn_clsf: 0.044  rpn_reg: 0.020  frcn_clsf: 0.211  frcn_reg: 0.006  mask: 0.168  tag: 0.361  clsf2: 0.221  tag2: 0.341  ohem: 0.522  time: 0.110  lr: 0.004
+epoch 1 iter 1500/2810  loss: 2.126  rpn_clsf: 0.047  rpn_reg: 0.019  frcn_clsf: 0.223  frcn_reg: 0.006  mask: 0.167  tag: 0.403  clsf2: 0.234  tag2: 0.347  ohem: 0.521  time: 0.114  lr: 0.004
+epoch 1 iter 1600/2810  loss: 2.090  rpn_clsf: 0.047  rpn_reg: 0.016  frcn_clsf: 0.214  frcn_reg: 0.006  mask: 0.175  tag: 0.365  clsf2: 0.224  tag2: 0.312  ohem: 0.589  time: 0.111  lr: 0.004
+epoch 1 iter 1700/2810  loss: 2.014  rpn_clsf: 0.050  rpn_reg: 0.017  frcn_clsf: 0.218  frcn_reg: 0.006  mask: 0.172  tag: 0.394  clsf2: 0.226  tag2: 0.314  ohem: 0.506  time: 0.110  lr: 0.004
+epoch 1 iter 1800/2810  loss: 2.059  rpn_clsf: 0.043  rpn_reg: 0.018  frcn_clsf: 0.211  frcn_reg: 0.006  mask: 0.167  tag: 0.382  clsf2: 0.216  tag2: 0.307  ohem: 0.564  time: 0.112  lr: 0.004
+epoch 1 iter 1900/2810  loss: 2.035  rpn_clsf: 0.042  rpn_reg: 0.020  frcn_clsf: 0.223  frcn_reg: 0.006  mask: 0.168  tag: 0.372  clsf2: 0.232  tag2: 0.314  ohem: 0.533  time: 0.110  lr: 0.004
+epoch 1 iter 2000/2810  loss: 2.046  rpn_clsf: 0.047  rpn_reg: 0.018  frcn_clsf: 0.225  frcn_reg: 0.006  mask: 0.164  tag: 0.379  clsf2: 0.238  tag2: 0.302  ohem: 0.515  time: 0.110  lr: 0.004
+epoch 1 iter 2100/2810  loss: 2.071  rpn_clsf: 0.046  rpn_reg: 0.017  frcn_clsf: 0.223  frcn_reg: 0.006  mask: 0.171  tag: 0.349  clsf2: 0.251  tag2: 0.284  ohem: 0.539  time: 0.109  lr: 0.004
+epoch 1 iter 2200/2810  loss: 1.982  rpn_clsf: 0.043  rpn_reg: 0.015  frcn_clsf: 0.224  frcn_reg: 0.006  mask: 0.171  tag: 0.330  clsf2: 0.228  tag2: 0.299  ohem: 0.501  time: 0.115  lr: 0.004
+epoch 1 iter 2300/2810  loss: 1.940  rpn_clsf: 0.037  rpn_reg: 0.017  frcn_clsf: 0.202  frcn_reg: 0.005  mask: 0.156  tag: 0.358  clsf2: 0.210  tag2: 0.294  ohem: 0.525  time: 0.111  lr: 0.004
+epoch 1 iter 2400/2810  loss: 2.038  rpn_clsf: 0.044  rpn_reg: 0.017  frcn_clsf: 0.230  frcn_reg: 0.006  mask: 0.168  tag: 0.388  clsf2: 0.247  tag2: 0.292  ohem: 0.523  time: 0.112  lr: 0.004
+epoch 1 iter 2500/2810  loss: 2.017  rpn_clsf: 0.041  rpn_reg: 0.017  frcn_clsf: 0.203  frcn_reg: 0.006  mask: 0.169  tag: 0.334  clsf2: 0.212  tag2: 0.296  ohem: 0.534  time: 0.110  lr: 0.004
+epoch 1 iter 2600/2810  loss: 1.881  rpn_clsf: 0.044  rpn_reg: 0.022  frcn_clsf: 0.223  frcn_reg: 0.005  mask: 0.163  tag: 0.343  clsf2: 0.230  tag2: 0.299  ohem: 0.496  time: 0.111  lr: 0.004
+epoch 1 iter 2700/2810  loss: 1.972  rpn_clsf: 0.049  rpn_reg: 0.016  frcn_clsf: 0.213  frcn_reg: 0.005  mask: 0.163  tag: 0.336  clsf2: 0.240  tag2: 0.278  ohem: 0.561  time: 0.114  lr: 0.004
+epoch 1 iter 2800/2810  loss: 1.951  rpn_clsf: 0.040  rpn_reg: 0.017  frcn_clsf: 0.206  frcn_reg: 0.006  mask: 0.173  tag: 0.367  clsf2: 0.232  tag2: 0.308  ohem: 0.504  time: 0.112  lr: 0.004
+Saving checkpoint to checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_02.pth
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0309 s
+Total inference time: 0:03:03.217551 (0.038242026973780895 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.4985, 0.5950, 0.6851, 0.7618, 0.8230, 0.8709
+mean of [0.5, 1, 2, 4]: 0.6351
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9101	0.2137	0.3206	0.4659	0.9184	0.2751	0.2106	0.3965	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.6473+-1.9793, 2.3450+-3.4437
+total test time: 197.345191
+
+1: 0.6472
+2: 0.6351
+epoch 2 iter 0/2810  loss: 1.995  rpn_clsf: 0.043  rpn_reg: 0.018  frcn_clsf: 0.211  frcn_reg: 0.006  mask: 0.169  tag: 0.378  clsf2: 0.234  tag2: 0.325  ohem: 0.504  time: 0.111  lr: 0.004
+epoch 2 iter 100/2810  loss: 1.980  rpn_clsf: 0.042  rpn_reg: 0.019  frcn_clsf: 0.194  frcn_reg: 0.005  mask: 0.164  tag: 0.340  clsf2: 0.208  tag2: 0.281  ohem: 0.527  time: 0.111  lr: 0.004
+epoch 2 iter 200/2810  loss: 1.826  rpn_clsf: 0.038  rpn_reg: 0.015  frcn_clsf: 0.198  frcn_reg: 0.005  mask: 0.159  tag: 0.320  clsf2: 0.215  tag2: 0.259  ohem: 0.507  time: 0.115  lr: 0.004
+epoch 2 iter 300/2810  loss: 1.894  rpn_clsf: 0.044  rpn_reg: 0.018  frcn_clsf: 0.207  frcn_reg: 0.006  mask: 0.156  tag: 0.302  clsf2: 0.221  tag2: 0.231  ohem: 0.530  time: 0.112  lr: 0.004
+epoch 2 iter 400/2810  loss: 1.807  rpn_clsf: 0.034  rpn_reg: 0.014  frcn_clsf: 0.191  frcn_reg: 0.005  mask: 0.161  tag: 0.315  clsf2: 0.212  tag2: 0.239  ohem: 0.527  time: 0.109  lr: 0.004
+epoch 2 iter 500/2810  loss: 1.834  rpn_clsf: 0.037  rpn_reg: 0.017  frcn_clsf: 0.192  frcn_reg: 0.006  mask: 0.165  tag: 0.306  clsf2: 0.209  tag2: 0.271  ohem: 0.509  time: 0.113  lr: 0.004
+epoch 2 iter 600/2810  loss: 1.997  rpn_clsf: 0.040  rpn_reg: 0.016  frcn_clsf: 0.208  frcn_reg: 0.005  mask: 0.165  tag: 0.369  clsf2: 0.227  tag2: 0.283  ohem: 0.515  time: 0.110  lr: 0.004
+epoch 2 iter 700/2810  loss: 1.803  rpn_clsf: 0.036  rpn_reg: 0.016  frcn_clsf: 0.192  frcn_reg: 0.005  mask: 0.160  tag: 0.333  clsf2: 0.207  tag2: 0.251  ohem: 0.536  time: 0.111  lr: 0.004
+epoch 2 iter 800/2810  loss: 1.882  rpn_clsf: 0.039  rpn_reg: 0.017  frcn_clsf: 0.198  frcn_reg: 0.005  mask: 0.165  tag: 0.325  clsf2: 0.208  tag2: 0.264  ohem: 0.497  time: 0.112  lr: 0.004
+epoch 2 iter 900/2810  loss: 1.936  rpn_clsf: 0.037  rpn_reg: 0.016  frcn_clsf: 0.203  frcn_reg: 0.005  mask: 0.172  tag: 0.306  clsf2: 0.218  tag2: 0.259  ohem: 0.563  time: 0.110  lr: 0.004
+epoch 2 iter 1000/2810  loss: 1.932  rpn_clsf: 0.042  rpn_reg: 0.016  frcn_clsf: 0.203  frcn_reg: 0.005  mask: 0.163  tag: 0.327  clsf2: 0.214  tag2: 0.265  ohem: 0.550  time: 0.112  lr: 0.004
+epoch 2 iter 1100/2810  loss: 1.933  rpn_clsf: 0.035  rpn_reg: 0.019  frcn_clsf: 0.190  frcn_reg: 0.005  mask: 0.161  tag: 0.345  clsf2: 0.204  tag2: 0.276  ohem: 0.535  time: 0.110  lr: 0.004
+epoch 2 iter 1200/2810  loss: 1.875  rpn_clsf: 0.041  rpn_reg: 0.017  frcn_clsf: 0.194  frcn_reg: 0.005  mask: 0.158  tag: 0.335  clsf2: 0.200  tag2: 0.272  ohem: 0.524  time: 0.112  lr: 0.004
+epoch 2 iter 1300/2810  loss: 1.892  rpn_clsf: 0.038  rpn_reg: 0.016  frcn_clsf: 0.193  frcn_reg: 0.005  mask: 0.160  tag: 0.310  clsf2: 0.220  tag2: 0.265  ohem: 0.538  time: 0.113  lr: 0.004
+epoch 2 iter 1400/2810  loss: 1.841  rpn_clsf: 0.038  rpn_reg: 0.016  frcn_clsf: 0.200  frcn_reg: 0.005  mask: 0.159  tag: 0.322  clsf2: 0.221  tag2: 0.269  ohem: 0.492  time: 0.113  lr: 0.004
+epoch 2 iter 1500/2810  loss: 1.890  rpn_clsf: 0.038  rpn_reg: 0.016  frcn_clsf: 0.199  frcn_reg: 0.005  mask: 0.161  tag: 0.307  clsf2: 0.206  tag2: 0.260  ohem: 0.538  time: 0.111  lr: 0.004
+epoch 2 iter 1600/2810  loss: 1.828  rpn_clsf: 0.040  rpn_reg: 0.015  frcn_clsf: 0.194  frcn_reg: 0.005  mask: 0.163  tag: 0.300  clsf2: 0.200  tag2: 0.255  ohem: 0.493  time: 0.110  lr: 0.004
+epoch 2 iter 1700/2810  loss: 1.898  rpn_clsf: 0.037  rpn_reg: 0.017  frcn_clsf: 0.184  frcn_reg: 0.005  mask: 0.162  tag: 0.353  clsf2: 0.192  tag2: 0.285  ohem: 0.525  time: 0.112  lr: 0.004
+epoch 2 iter 1800/2810  loss: 1.883  rpn_clsf: 0.040  rpn_reg: 0.016  frcn_clsf: 0.194  frcn_reg: 0.005  mask: 0.155  tag: 0.346  clsf2: 0.204  tag2: 0.280  ohem: 0.483  time: 0.111  lr: 0.004
+epoch 2 iter 1900/2810  loss: 1.852  rpn_clsf: 0.036  rpn_reg: 0.016  frcn_clsf: 0.199  frcn_reg: 0.005  mask: 0.165  tag: 0.328  clsf2: 0.216  tag2: 0.282  ohem: 0.496  time: 0.112  lr: 0.004
+epoch 2 iter 2000/2810  loss: 1.828  rpn_clsf: 0.036  rpn_reg: 0.016  frcn_clsf: 0.188  frcn_reg: 0.005  mask: 0.160  tag: 0.315  clsf2: 0.200  tag2: 0.271  ohem: 0.505  time: 0.111  lr: 0.004
+epoch 2 iter 2100/2810  loss: 1.915  rpn_clsf: 0.036  rpn_reg: 0.015  frcn_clsf: 0.206  frcn_reg: 0.005  mask: 0.158  tag: 0.338  clsf2: 0.214  tag2: 0.275  ohem: 0.555  time: 0.111  lr: 0.004
+epoch 2 iter 2200/2810  loss: 1.885  rpn_clsf: 0.037  rpn_reg: 0.017  frcn_clsf: 0.197  frcn_reg: 0.005  mask: 0.156  tag: 0.314  clsf2: 0.202  tag2: 0.267  ohem: 0.528  time: 0.114  lr: 0.004
+epoch 2 iter 2300/2810  loss: 1.873  rpn_clsf: 0.043  rpn_reg: 0.018  frcn_clsf: 0.203  frcn_reg: 0.006  mask: 0.157  tag: 0.302  clsf2: 0.220  tag2: 0.251  ohem: 0.514  time: 0.116  lr: 0.004
+epoch 2 iter 2400/2810  loss: 1.921  rpn_clsf: 0.041  rpn_reg: 0.017  frcn_clsf: 0.197  frcn_reg: 0.006  mask: 0.170  tag: 0.310  clsf2: 0.217  tag2: 0.253  ohem: 0.527  time: 0.113  lr: 0.004
+epoch 2 iter 2500/2810  loss: 1.856  rpn_clsf: 0.032  rpn_reg: 0.016  frcn_clsf: 0.198  frcn_reg: 0.005  mask: 0.161  tag: 0.321  clsf2: 0.204  tag2: 0.257  ohem: 0.534  time: 0.115  lr: 0.004
+epoch 2 iter 2600/2810  loss: 1.898  rpn_clsf: 0.036  rpn_reg: 0.018  frcn_clsf: 0.186  frcn_reg: 0.005  mask: 0.158  tag: 0.341  clsf2: 0.197  tag2: 0.259  ohem: 0.509  time: 0.113  lr: 0.004
+epoch 2 iter 2700/2810  loss: 1.926  rpn_clsf: 0.036  rpn_reg: 0.016  frcn_clsf: 0.193  frcn_reg: 0.005  mask: 0.163  tag: 0.352  clsf2: 0.203  tag2: 0.279  ohem: 0.526  time: 0.113  lr: 0.004
+epoch 2 iter 2800/2810  loss: 1.937  rpn_clsf: 0.034  rpn_reg: 0.017  frcn_clsf: 0.186  frcn_reg: 0.006  mask: 0.156  tag: 0.368  clsf2: 0.195  tag2: 0.304  ohem: 0.510  time: 0.115  lr: 0.004
+Saving checkpoint to checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_03.pth
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0310 s
+Total inference time: 0:02:57.315753 (0.03701017585185892 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.5568, 0.6622, 0.7389, 0.8019, 0.8566, 0.8973
+mean of [0.5, 1, 2, 4]: 0.6899
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9123	0.2399	0.2699	0.5167	0.9219	0.2862	0.2145	0.4302	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.5205+-1.7205, 2.1488+-2.9206
+total test time: 189.314557
+
+1: 0.6472
+2: 0.6351
+3: 0.6899
+epoch 3 iter 0/2810  loss: 1.949  rpn_clsf: 0.036  rpn_reg: 0.017  frcn_clsf: 0.188  frcn_reg: 0.006  mask: 0.156  tag: 0.381  clsf2: 0.197  tag2: 0.311  ohem: 0.522  time: 0.113  lr: 0.004
+epoch 3 iter 100/2810  loss: 1.788  rpn_clsf: 0.030  rpn_reg: 0.014  frcn_clsf: 0.180  frcn_reg: 0.005  mask: 0.159  tag: 0.307  clsf2: 0.192  tag2: 0.263  ohem: 0.530  time: 0.115  lr: 0.004
+epoch 3 iter 200/2810  loss: 1.755  rpn_clsf: 0.032  rpn_reg: 0.017  frcn_clsf: 0.185  frcn_reg: 0.005  mask: 0.155  tag: 0.284  clsf2: 0.195  tag2: 0.250  ohem: 0.516  time: 0.113  lr: 0.004
+epoch 3 iter 300/2810  loss: 1.810  rpn_clsf: 0.035  rpn_reg: 0.017  frcn_clsf: 0.185  frcn_reg: 0.005  mask: 0.162  tag: 0.323  clsf2: 0.191  tag2: 0.250  ohem: 0.531  time: 0.113  lr: 0.004
+epoch 3 iter 400/2810  loss: 1.805  rpn_clsf: 0.029  rpn_reg: 0.016  frcn_clsf: 0.188  frcn_reg: 0.005  mask: 0.157  tag: 0.308  clsf2: 0.204  tag2: 0.241  ohem: 0.541  time: 0.111  lr: 0.004
+epoch 3 iter 500/2810  loss: 1.767  rpn_clsf: 0.033  rpn_reg: 0.016  frcn_clsf: 0.189  frcn_reg: 0.005  mask: 0.157  tag: 0.324  clsf2: 0.205  tag2: 0.256  ohem: 0.488  time: 0.111  lr: 0.004
+epoch 3 iter 600/2810  loss: 1.794  rpn_clsf: 0.029  rpn_reg: 0.016  frcn_clsf: 0.185  frcn_reg: 0.004  mask: 0.156  tag: 0.277  clsf2: 0.210  tag2: 0.233  ohem: 0.501  time: 0.113  lr: 0.004
+epoch 3 iter 700/2810  loss: 1.797  rpn_clsf: 0.037  rpn_reg: 0.016  frcn_clsf: 0.180  frcn_reg: 0.005  mask: 0.155  tag: 0.313  clsf2: 0.189  tag2: 0.262  ohem: 0.504  time: 0.110  lr: 0.004
+epoch 3 iter 800/2810  loss: 1.790  rpn_clsf: 0.035  rpn_reg: 0.016  frcn_clsf: 0.184  frcn_reg: 0.005  mask: 0.166  tag: 0.299  clsf2: 0.194  tag2: 0.228  ohem: 0.523  time: 0.113  lr: 0.004
+epoch 3 iter 900/2810  loss: 1.842  rpn_clsf: 0.026  rpn_reg: 0.015  frcn_clsf: 0.198  frcn_reg: 0.005  mask: 0.161  tag: 0.307  clsf2: 0.206  tag2: 0.240  ohem: 0.566  time: 0.110  lr: 0.004
+epoch 3 iter 1000/2810  loss: 1.860  rpn_clsf: 0.033  rpn_reg: 0.016  frcn_clsf: 0.200  frcn_reg: 0.005  mask: 0.159  tag: 0.326  clsf2: 0.212  tag2: 0.244  ohem: 0.526  time: 0.111  lr: 0.004
+epoch 3 iter 1100/2810  loss: 1.862  rpn_clsf: 0.035  rpn_reg: 0.016  frcn_clsf: 0.184  frcn_reg: 0.005  mask: 0.157  tag: 0.323  clsf2: 0.207  tag2: 0.250  ohem: 0.519  time: 0.110  lr: 0.004
+epoch 3 iter 1200/2810  loss: 1.918  rpn_clsf: 0.034  rpn_reg: 0.016  frcn_clsf: 0.183  frcn_reg: 0.005  mask: 0.169  tag: 0.333  clsf2: 0.203  tag2: 0.263  ohem: 0.514  time: 0.110  lr: 0.004
+epoch 3 iter 1300/2810  loss: 1.785  rpn_clsf: 0.034  rpn_reg: 0.015  frcn_clsf: 0.197  frcn_reg: 0.005  mask: 0.160  tag: 0.306  clsf2: 0.214  tag2: 0.246  ohem: 0.529  time: 0.111  lr: 0.004
+epoch 3 iter 1400/2810  loss: 1.736  rpn_clsf: 0.032  rpn_reg: 0.015  frcn_clsf: 0.185  frcn_reg: 0.005  mask: 0.158  tag: 0.280  clsf2: 0.205  tag2: 0.228  ohem: 0.508  time: 0.111  lr: 0.004
+epoch 3 iter 1500/2810  loss: 1.819  rpn_clsf: 0.033  rpn_reg: 0.017  frcn_clsf: 0.189  frcn_reg: 0.005  mask: 0.153  tag: 0.330  clsf2: 0.207  tag2: 0.271  ohem: 0.502  time: 0.111  lr: 0.004
+epoch 3 iter 1600/2810  loss: 1.788  rpn_clsf: 0.036  rpn_reg: 0.015  frcn_clsf: 0.185  frcn_reg: 0.005  mask: 0.163  tag: 0.298  clsf2: 0.194  tag2: 0.242  ohem: 0.502  time: 0.110  lr: 0.004
+epoch 3 iter 1700/2810  loss: 1.809  rpn_clsf: 0.033  rpn_reg: 0.017  frcn_clsf: 0.186  frcn_reg: 0.005  mask: 0.156  tag: 0.300  clsf2: 0.191  tag2: 0.246  ohem: 0.527  time: 0.110  lr: 0.004
+epoch 3 iter 1800/2810  loss: 1.835  rpn_clsf: 0.037  rpn_reg: 0.016  frcn_clsf: 0.194  frcn_reg: 0.005  mask: 0.156  tag: 0.309  clsf2: 0.211  tag2: 0.244  ohem: 0.548  time: 0.110  lr: 0.004
+epoch 3 iter 1900/2810  loss: 1.842  rpn_clsf: 0.032  rpn_reg: 0.016  frcn_clsf: 0.195  frcn_reg: 0.005  mask: 0.156  tag: 0.293  clsf2: 0.205  tag2: 0.234  ohem: 0.542  time: 0.111  lr: 0.004
+epoch 3 iter 2000/2810  loss: 1.755  rpn_clsf: 0.033  rpn_reg: 0.016  frcn_clsf: 0.184  frcn_reg: 0.005  mask: 0.154  tag: 0.275  clsf2: 0.193  tag2: 0.231  ohem: 0.534  time: 0.110  lr: 0.004
+epoch 3 iter 2100/2810  loss: 1.855  rpn_clsf: 0.035  rpn_reg: 0.018  frcn_clsf: 0.181  frcn_reg: 0.005  mask: 0.148  tag: 0.341  clsf2: 0.188  tag2: 0.259  ohem: 0.532  time: 0.110  lr: 0.004
+epoch 3 iter 2200/2810  loss: 1.749  rpn_clsf: 0.032  rpn_reg: 0.014  frcn_clsf: 0.198  frcn_reg: 0.005  mask: 0.160  tag: 0.291  clsf2: 0.213  tag2: 0.237  ohem: 0.467  time: 0.109  lr: 0.004
+epoch 3 iter 2300/2810  loss: 1.756  rpn_clsf: 0.036  rpn_reg: 0.016  frcn_clsf: 0.174  frcn_reg: 0.005  mask: 0.156  tag: 0.301  clsf2: 0.193  tag2: 0.250  ohem: 0.565  time: 0.112  lr: 0.004
+epoch 3 iter 2400/2810  loss: 1.818  rpn_clsf: 0.034  rpn_reg: 0.016  frcn_clsf: 0.186  frcn_reg: 0.005  mask: 0.158  tag: 0.303  clsf2: 0.207  tag2: 0.245  ohem: 0.520  time: 0.111  lr: 0.004
+epoch 3 iter 2500/2810  loss: 1.833  rpn_clsf: 0.035  rpn_reg: 0.016  frcn_clsf: 0.189  frcn_reg: 0.005  mask: 0.156  tag: 0.306  clsf2: 0.190  tag2: 0.249  ohem: 0.517  time: 0.111  lr: 0.004
+epoch 3 iter 2600/2810  loss: 1.916  rpn_clsf: 0.034  rpn_reg: 0.017  frcn_clsf: 0.195  frcn_reg: 0.005  mask: 0.165  tag: 0.335  clsf2: 0.210  tag2: 0.256  ohem: 0.519  time: 0.110  lr: 0.004
+epoch 3 iter 2700/2810  loss: 1.787  rpn_clsf: 0.029  rpn_reg: 0.015  frcn_clsf: 0.181  frcn_reg: 0.005  mask: 0.150  tag: 0.302  clsf2: 0.188  tag2: 0.245  ohem: 0.533  time: 0.113  lr: 0.004
+epoch 3 iter 2800/2810  loss: 1.781  rpn_clsf: 0.036  rpn_reg: 0.014  frcn_clsf: 0.189  frcn_reg: 0.005  mask: 0.158  tag: 0.309  clsf2: 0.203  tag2: 0.251  ohem: 0.520  time: 0.114  lr: 0.004
+Saving checkpoint to checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_04.pth
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0308 s
+Total inference time: 0:02:59.444654 (0.0374545302577169 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.5652, 0.6708, 0.7575, 0.8253, 0.8742, 0.9136
+mean of [0.5, 1, 2, 4]: 0.7047
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9171	0.2549	0.3071	0.4900	0.9236	0.3511	0.2715	0.4967	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.3594+-1.2166, 1.9771+-2.2016
+total test time: 192.559371
+
+1: 0.6472
+2: 0.6351
+3: 0.6899
+4: 0.7047
+epoch 4 iter 0/2810  loss: 1.781  rpn_clsf: 0.036  rpn_reg: 0.014  frcn_clsf: 0.195  frcn_reg: 0.005  mask: 0.159  tag: 0.298  clsf2: 0.204  tag2: 0.247  ohem: 0.523  time: 0.114  lr: 0.0004
+epoch 4 iter 100/2810  loss: 1.598  rpn_clsf: 0.028  rpn_reg: 0.013  frcn_clsf: 0.170  frcn_reg: 0.005  mask: 0.152  tag: 0.268  clsf2: 0.170  tag2: 0.217  ohem: 0.456  time: 0.111  lr: 0.0004
+epoch 4 iter 200/2810  loss: 1.547  rpn_clsf: 0.025  rpn_reg: 0.014  frcn_clsf: 0.160  frcn_reg: 0.004  mask: 0.149  tag: 0.269  clsf2: 0.160  tag2: 0.216  ohem: 0.472  time: 0.113  lr: 0.0004
+epoch 4 iter 300/2810  loss: 1.550  rpn_clsf: 0.032  rpn_reg: 0.013  frcn_clsf: 0.166  frcn_reg: 0.004  mask: 0.147  tag: 0.263  clsf2: 0.163  tag2: 0.213  ohem: 0.498  time: 0.112  lr: 0.0004
+epoch 4 iter 400/2810  loss: 1.555  rpn_clsf: 0.023  rpn_reg: 0.013  frcn_clsf: 0.164  frcn_reg: 0.004  mask: 0.144  tag: 0.271  clsf2: 0.165  tag2: 0.192  ohem: 0.504  time: 0.109  lr: 0.0004
+epoch 4 iter 500/2810  loss: 1.627  rpn_clsf: 0.022  rpn_reg: 0.014  frcn_clsf: 0.156  frcn_reg: 0.004  mask: 0.140  tag: 0.270  clsf2: 0.157  tag2: 0.202  ohem: 0.521  time: 0.109  lr: 0.0004
+epoch 4 iter 600/2810  loss: 1.570  rpn_clsf: 0.026  rpn_reg: 0.013  frcn_clsf: 0.163  frcn_reg: 0.004  mask: 0.152  tag: 0.272  clsf2: 0.163  tag2: 0.197  ohem: 0.519  time: 0.114  lr: 0.0004
+epoch 4 iter 700/2810  loss: 1.494  rpn_clsf: 0.022  rpn_reg: 0.011  frcn_clsf: 0.155  frcn_reg: 0.004  mask: 0.149  tag: 0.254  clsf2: 0.156  tag2: 0.178  ohem: 0.486  time: 0.111  lr: 0.0004
+epoch 4 iter 800/2810  loss: 1.568  rpn_clsf: 0.020  rpn_reg: 0.011  frcn_clsf: 0.147  frcn_reg: 0.004  mask: 0.147  tag: 0.266  clsf2: 0.148  tag2: 0.194  ohem: 0.505  time: 0.113  lr: 0.0004
+epoch 4 iter 900/2810  loss: 1.565  rpn_clsf: 0.023  rpn_reg: 0.012  frcn_clsf: 0.158  frcn_reg: 0.004  mask: 0.145  tag: 0.259  clsf2: 0.157  tag2: 0.184  ohem: 0.495  time: 0.109  lr: 0.0004
+epoch 4 iter 1000/2810  loss: 1.556  rpn_clsf: 0.021  rpn_reg: 0.013  frcn_clsf: 0.152  frcn_reg: 0.004  mask: 0.144  tag: 0.257  clsf2: 0.153  tag2: 0.195  ohem: 0.492  time: 0.110  lr: 0.0004
+epoch 4 iter 1100/2810  loss: 1.637  rpn_clsf: 0.023  rpn_reg: 0.014  frcn_clsf: 0.156  frcn_reg: 0.004  mask: 0.144  tag: 0.278  clsf2: 0.155  tag2: 0.194  ohem: 0.551  time: 0.110  lr: 0.0004
+epoch 4 iter 1200/2810  loss: 1.481  rpn_clsf: 0.021  rpn_reg: 0.013  frcn_clsf: 0.152  frcn_reg: 0.004  mask: 0.144  tag: 0.243  clsf2: 0.153  tag2: 0.176  ohem: 0.502  time: 0.109  lr: 0.0004
+epoch 4 iter 1300/2810  loss: 1.547  rpn_clsf: 0.022  rpn_reg: 0.011  frcn_clsf: 0.163  frcn_reg: 0.004  mask: 0.150  tag: 0.236  clsf2: 0.161  tag2: 0.180  ohem: 0.514  time: 0.113  lr: 0.0004
+epoch 4 iter 1400/2810  loss: 1.609  rpn_clsf: 0.023  rpn_reg: 0.015  frcn_clsf: 0.162  frcn_reg: 0.004  mask: 0.146  tag: 0.239  clsf2: 0.161  tag2: 0.182  ohem: 0.547  time: 0.110  lr: 0.0004
+epoch 4 iter 1500/2810  loss: 1.570  rpn_clsf: 0.022  rpn_reg: 0.014  frcn_clsf: 0.157  frcn_reg: 0.004  mask: 0.142  tag: 0.254  clsf2: 0.156  tag2: 0.185  ohem: 0.489  time: 0.113  lr: 0.0004
+epoch 4 iter 1600/2810  loss: 1.485  rpn_clsf: 0.021  rpn_reg: 0.013  frcn_clsf: 0.159  frcn_reg: 0.004  mask: 0.143  tag: 0.253  clsf2: 0.159  tag2: 0.166  ohem: 0.467  time: 0.111  lr: 0.0004
+epoch 4 iter 1700/2810  loss: 1.547  rpn_clsf: 0.018  rpn_reg: 0.014  frcn_clsf: 0.150  frcn_reg: 0.004  mask: 0.144  tag: 0.244  clsf2: 0.153  tag2: 0.173  ohem: 0.494  time: 0.110  lr: 0.0004
+epoch 4 iter 1800/2810  loss: 1.480  rpn_clsf: 0.020  rpn_reg: 0.012  frcn_clsf: 0.149  frcn_reg: 0.004  mask: 0.145  tag: 0.234  clsf2: 0.150  tag2: 0.171  ohem: 0.469  time: 0.109  lr: 0.0004
+epoch 4 iter 1900/2810  loss: 1.598  rpn_clsf: 0.018  rpn_reg: 0.012  frcn_clsf: 0.145  frcn_reg: 0.004  mask: 0.145  tag: 0.271  clsf2: 0.145  tag2: 0.190  ohem: 0.562  time: 0.109  lr: 0.0004
+epoch 4 iter 2000/2810  loss: 1.566  rpn_clsf: 0.018  rpn_reg: 0.013  frcn_clsf: 0.145  frcn_reg: 0.004  mask: 0.144  tag: 0.263  clsf2: 0.147  tag2: 0.182  ohem: 0.563  time: 0.110  lr: 0.0004
+epoch 4 iter 2100/2810  loss: 1.556  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.147  frcn_reg: 0.004  mask: 0.149  tag: 0.276  clsf2: 0.146  tag2: 0.204  ohem: 0.520  time: 0.110  lr: 0.0004
+epoch 4 iter 2200/2810  loss: 1.524  rpn_clsf: 0.016  rpn_reg: 0.011  frcn_clsf: 0.147  frcn_reg: 0.004  mask: 0.148  tag: 0.245  clsf2: 0.144  tag2: 0.176  ohem: 0.539  time: 0.114  lr: 0.0004
+epoch 4 iter 2300/2810  loss: 1.526  rpn_clsf: 0.019  rpn_reg: 0.013  frcn_clsf: 0.151  frcn_reg: 0.004  mask: 0.148  tag: 0.243  clsf2: 0.149  tag2: 0.176  ohem: 0.515  time: 0.109  lr: 0.0004
+epoch 4 iter 2400/2810  loss: 1.571  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.145  frcn_reg: 0.004  mask: 0.143  tag: 0.251  clsf2: 0.142  tag2: 0.188  ohem: 0.529  time: 0.111  lr: 0.0004
+epoch 4 iter 2500/2810  loss: 1.543  rpn_clsf: 0.021  rpn_reg: 0.011  frcn_clsf: 0.153  frcn_reg: 0.004  mask: 0.147  tag: 0.255  clsf2: 0.153  tag2: 0.179  ohem: 0.513  time: 0.113  lr: 0.0004
+epoch 4 iter 2600/2810  loss: 1.560  rpn_clsf: 0.019  rpn_reg: 0.013  frcn_clsf: 0.156  frcn_reg: 0.004  mask: 0.146  tag: 0.278  clsf2: 0.155  tag2: 0.185  ohem: 0.550  time: 0.114  lr: 0.0004
+epoch 4 iter 2700/2810  loss: 1.502  rpn_clsf: 0.018  rpn_reg: 0.013  frcn_clsf: 0.143  frcn_reg: 0.004  mask: 0.145  tag: 0.239  clsf2: 0.142  tag2: 0.173  ohem: 0.552  time: 0.113  lr: 0.0004
+epoch 4 iter 2800/2810  loss: 1.461  rpn_clsf: 0.020  rpn_reg: 0.013  frcn_clsf: 0.153  frcn_reg: 0.004  mask: 0.141  tag: 0.234  clsf2: 0.151  tag2: 0.175  ohem: 0.486  time: 0.114  lr: 0.0004
+Saving checkpoint to checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_05.pth
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0306 s
+Total inference time: 0:02:49.206913 (0.035317660771439406 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.7031, 0.7905, 0.8537, 0.8983, 0.9300, 0.9435
+mean of [0.5, 1, 2, 4]: 0.8114
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9263	0.3079	0.2602	0.5352	0.9321	0.4769	0.4047	0.5803	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.3626+-1.2772, 1.9209+-2.2915
+total test time: 179.367256
+
+1: 0.6472
+2: 0.6351
+3: 0.6899
+4: 0.7047
+5: 0.8114
+epoch 5 iter 0/2810  loss: 1.461  rpn_clsf: 0.021  rpn_reg: 0.014  frcn_clsf: 0.153  frcn_reg: 0.004  mask: 0.145  tag: 0.225  clsf2: 0.151  tag2: 0.173  ohem: 0.486  time: 0.114  lr: 0.0004
+epoch 5 iter 100/2810  loss: 1.391  rpn_clsf: 0.019  rpn_reg: 0.011  frcn_clsf: 0.141  frcn_reg: 0.004  mask: 0.143  tag: 0.232  clsf2: 0.145  tag2: 0.171  ohem: 0.444  time: 0.114  lr: 0.0004
+epoch 5 iter 200/2810  loss: 1.465  rpn_clsf: 0.019  rpn_reg: 0.012  frcn_clsf: 0.146  frcn_reg: 0.004  mask: 0.143  tag: 0.223  clsf2: 0.145  tag2: 0.164  ohem: 0.503  time: 0.111  lr: 0.0004
+epoch 5 iter 300/2810  loss: 1.522  rpn_clsf: 0.019  rpn_reg: 0.012  frcn_clsf: 0.140  frcn_reg: 0.004  mask: 0.144  tag: 0.248  clsf2: 0.140  tag2: 0.176  ohem: 0.578  time: 0.114  lr: 0.0004
+epoch 5 iter 400/2810  loss: 1.521  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.142  frcn_reg: 0.004  mask: 0.139  tag: 0.232  clsf2: 0.145  tag2: 0.173  ohem: 0.515  time: 0.107  lr: 0.0004
+epoch 5 iter 500/2810  loss: 1.501  rpn_clsf: 0.018  rpn_reg: 0.011  frcn_clsf: 0.144  frcn_reg: 0.004  mask: 0.147  tag: 0.236  clsf2: 0.143  tag2: 0.169  ohem: 0.512  time: 0.111  lr: 0.0004
+epoch 5 iter 600/2810  loss: 1.530  rpn_clsf: 0.017  rpn_reg: 0.011  frcn_clsf: 0.138  frcn_reg: 0.004  mask: 0.151  tag: 0.235  clsf2: 0.140  tag2: 0.167  ohem: 0.527  time: 0.112  lr: 0.0004
+epoch 5 iter 700/2810  loss: 1.443  rpn_clsf: 0.021  rpn_reg: 0.013  frcn_clsf: 0.143  frcn_reg: 0.004  mask: 0.146  tag: 0.226  clsf2: 0.146  tag2: 0.165  ohem: 0.483  time: 0.109  lr: 0.0004
+epoch 5 iter 800/2810  loss: 1.523  rpn_clsf: 0.019  rpn_reg: 0.012  frcn_clsf: 0.153  frcn_reg: 0.004  mask: 0.147  tag: 0.238  clsf2: 0.152  tag2: 0.174  ohem: 0.568  time: 0.114  lr: 0.0004
+epoch 5 iter 900/2810  loss: 1.535  rpn_clsf: 0.019  rpn_reg: 0.012  frcn_clsf: 0.141  frcn_reg: 0.004  mask: 0.143  tag: 0.239  clsf2: 0.143  tag2: 0.183  ohem: 0.493  time: 0.109  lr: 0.0004
+epoch 5 iter 1000/2810  loss: 1.493  rpn_clsf: 0.018  rpn_reg: 0.012  frcn_clsf: 0.147  frcn_reg: 0.004  mask: 0.148  tag: 0.225  clsf2: 0.149  tag2: 0.164  ohem: 0.508  time: 0.110  lr: 0.0004
+epoch 5 iter 1100/2810  loss: 1.524  rpn_clsf: 0.022  rpn_reg: 0.013  frcn_clsf: 0.140  frcn_reg: 0.004  mask: 0.145  tag: 0.248  clsf2: 0.138  tag2: 0.179  ohem: 0.545  time: 0.111  lr: 0.0004
+epoch 5 iter 1200/2810  loss: 1.568  rpn_clsf: 0.015  rpn_reg: 0.012  frcn_clsf: 0.137  frcn_reg: 0.004  mask: 0.149  tag: 0.242  clsf2: 0.140  tag2: 0.171  ohem: 0.567  time: 0.110  lr: 0.0004
+epoch 5 iter 1300/2810  loss: 1.436  rpn_clsf: 0.019  rpn_reg: 0.013  frcn_clsf: 0.142  frcn_reg: 0.004  mask: 0.144  tag: 0.226  clsf2: 0.142  tag2: 0.169  ohem: 0.523  time: 0.110  lr: 0.0004
+epoch 5 iter 1400/2810  loss: 1.541  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.146  frcn_reg: 0.004  mask: 0.141  tag: 0.245  clsf2: 0.145  tag2: 0.170  ohem: 0.556  time: 0.111  lr: 0.0004
+epoch 5 iter 1500/2810  loss: 1.530  rpn_clsf: 0.019  rpn_reg: 0.014  frcn_clsf: 0.141  frcn_reg: 0.004  mask: 0.142  tag: 0.224  clsf2: 0.142  tag2: 0.173  ohem: 0.544  time: 0.113  lr: 0.0004
+epoch 5 iter 1600/2810  loss: 1.510  rpn_clsf: 0.018  rpn_reg: 0.013  frcn_clsf: 0.136  frcn_reg: 0.004  mask: 0.144  tag: 0.244  clsf2: 0.137  tag2: 0.172  ohem: 0.530  time: 0.111  lr: 0.0004
+epoch 5 iter 1700/2810  loss: 1.517  rpn_clsf: 0.019  rpn_reg: 0.012  frcn_clsf: 0.149  frcn_reg: 0.004  mask: 0.144  tag: 0.253  clsf2: 0.148  tag2: 0.169  ohem: 0.518  time: 0.113  lr: 0.0004
+epoch 5 iter 1800/2810  loss: 1.461  rpn_clsf: 0.021  rpn_reg: 0.012  frcn_clsf: 0.134  frcn_reg: 0.004  mask: 0.144  tag: 0.229  clsf2: 0.136  tag2: 0.167  ohem: 0.498  time: 0.109  lr: 0.0004
+epoch 5 iter 1900/2810  loss: 1.547  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.141  frcn_reg: 0.004  mask: 0.146  tag: 0.254  clsf2: 0.141  tag2: 0.168  ohem: 0.554  time: 0.111  lr: 0.0004
+epoch 5 iter 2000/2810  loss: 1.472  rpn_clsf: 0.016  rpn_reg: 0.010  frcn_clsf: 0.131  frcn_reg: 0.004  mask: 0.139  tag: 0.257  clsf2: 0.130  tag2: 0.184  ohem: 0.514  time: 0.110  lr: 0.0004
+epoch 5 iter 2100/2810  loss: 1.486  rpn_clsf: 0.020  rpn_reg: 0.012  frcn_clsf: 0.138  frcn_reg: 0.004  mask: 0.140  tag: 0.249  clsf2: 0.136  tag2: 0.176  ohem: 0.531  time: 0.110  lr: 0.0004
+epoch 5 iter 2200/2810  loss: 1.586  rpn_clsf: 0.018  rpn_reg: 0.014  frcn_clsf: 0.139  frcn_reg: 0.004  mask: 0.140  tag: 0.272  clsf2: 0.138  tag2: 0.177  ohem: 0.543  time: 0.110  lr: 0.0004
+epoch 5 iter 2300/2810  loss: 1.476  rpn_clsf: 0.017  rpn_reg: 0.014  frcn_clsf: 0.148  frcn_reg: 0.004  mask: 0.142  tag: 0.235  clsf2: 0.148  tag2: 0.178  ohem: 0.507  time: 0.109  lr: 0.0004
+epoch 5 iter 2400/2810  loss: 1.490  rpn_clsf: 0.018  rpn_reg: 0.012  frcn_clsf: 0.146  frcn_reg: 0.004  mask: 0.141  tag: 0.232  clsf2: 0.149  tag2: 0.157  ohem: 0.509  time: 0.113  lr: 0.0004
+epoch 5 iter 2500/2810  loss: 1.498  rpn_clsf: 0.018  rpn_reg: 0.012  frcn_clsf: 0.141  frcn_reg: 0.004  mask: 0.145  tag: 0.249  clsf2: 0.142  tag2: 0.172  ohem: 0.534  time: 0.110  lr: 0.0004
+epoch 5 iter 2600/2810  loss: 1.531  rpn_clsf: 0.015  rpn_reg: 0.011  frcn_clsf: 0.145  frcn_reg: 0.004  mask: 0.145  tag: 0.233  clsf2: 0.143  tag2: 0.181  ohem: 0.573  time: 0.111  lr: 0.0004
+epoch 5 iter 2700/2810  loss: 1.477  rpn_clsf: 0.017  rpn_reg: 0.013  frcn_clsf: 0.132  frcn_reg: 0.004  mask: 0.145  tag: 0.246  clsf2: 0.133  tag2: 0.176  ohem: 0.547  time: 0.110  lr: 0.0004
+epoch 5 iter 2800/2810  loss: 1.464  rpn_clsf: 0.016  rpn_reg: 0.012  frcn_clsf: 0.135  frcn_reg: 0.004  mask: 0.147  tag: 0.244  clsf2: 0.133  tag2: 0.173  ohem: 0.500  time: 0.112  lr: 0.0004
+Saving checkpoint to checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_06.pth
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0307 s
+Total inference time: 0:02:49.189728 (0.035314073992581685 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.7170, 0.8066, 0.8629, 0.9051, 0.9349, 0.9448
+mean of [0.5, 1, 2, 4]: 0.8229
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9273	0.3189	0.2704	0.5586	0.9330	0.4780	0.3973	0.5996	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.2967+-1.1646, 1.8783+-2.1486
+total test time: 179.341743
+
+1: 0.6472
+2: 0.6351
+3: 0.6899
+4: 0.7047
+5: 0.8114
+6: 0.8229
+epoch 6 iter 0/2810  loss: 1.465  rpn_clsf: 0.016  rpn_reg: 0.012  frcn_clsf: 0.132  frcn_reg: 0.004  mask: 0.146  tag: 0.245  clsf2: 0.130  tag2: 0.175  ohem: 0.521  time: 0.110  lr: 4e-05
+epoch 6 iter 100/2810  loss: 1.452  rpn_clsf: 0.017  rpn_reg: 0.011  frcn_clsf: 0.145  frcn_reg: 0.004  mask: 0.149  tag: 0.225  clsf2: 0.146  tag2: 0.169  ohem: 0.478  time: 0.111  lr: 4e-05
+epoch 6 iter 200/2810  loss: 1.459  rpn_clsf: 0.017  rpn_reg: 0.013  frcn_clsf: 0.135  frcn_reg: 0.004  mask: 0.144  tag: 0.239  clsf2: 0.133  tag2: 0.166  ohem: 0.476  time: 0.116  lr: 4e-05
+epoch 6 iter 300/2810  loss: 1.394  rpn_clsf: 0.018  rpn_reg: 0.014  frcn_clsf: 0.138  frcn_reg: 0.004  mask: 0.139  tag: 0.216  clsf2: 0.136  tag2: 0.162  ohem: 0.477  time: 0.115  lr: 4e-05
+epoch 6 iter 400/2810  loss: 1.417  rpn_clsf: 0.016  rpn_reg: 0.011  frcn_clsf: 0.136  frcn_reg: 0.004  mask: 0.147  tag: 0.225  clsf2: 0.133  tag2: 0.165  ohem: 0.494  time: 0.108  lr: 4e-05
+epoch 6 iter 500/2810  loss: 1.460  rpn_clsf: 0.018  rpn_reg: 0.011  frcn_clsf: 0.138  frcn_reg: 0.004  mask: 0.147  tag: 0.225  clsf2: 0.136  tag2: 0.159  ohem: 0.510  time: 0.110  lr: 4e-05
+epoch 6 iter 600/2810  loss: 1.517  rpn_clsf: 0.016  rpn_reg: 0.010  frcn_clsf: 0.130  frcn_reg: 0.004  mask: 0.143  tag: 0.254  clsf2: 0.129  tag2: 0.174  ohem: 0.522  time: 0.110  lr: 4e-05
+epoch 6 iter 700/2810  loss: 1.453  rpn_clsf: 0.018  rpn_reg: 0.012  frcn_clsf: 0.139  frcn_reg: 0.004  mask: 0.147  tag: 0.224  clsf2: 0.136  tag2: 0.166  ohem: 0.489  time: 0.110  lr: 4e-05
+epoch 6 iter 800/2810  loss: 1.446  rpn_clsf: 0.016  rpn_reg: 0.012  frcn_clsf: 0.135  frcn_reg: 0.004  mask: 0.138  tag: 0.233  clsf2: 0.134  tag2: 0.165  ohem: 0.518  time: 0.114  lr: 4e-05
+epoch 6 iter 900/2810  loss: 1.487  rpn_clsf: 0.017  rpn_reg: 0.011  frcn_clsf: 0.141  frcn_reg: 0.004  mask: 0.149  tag: 0.237  clsf2: 0.140  tag2: 0.173  ohem: 0.489  time: 0.114  lr: 4e-05
+epoch 6 iter 1000/2810  loss: 1.453  rpn_clsf: 0.016  rpn_reg: 0.011  frcn_clsf: 0.145  frcn_reg: 0.004  mask: 0.142  tag: 0.215  clsf2: 0.147  tag2: 0.165  ohem: 0.535  time: 0.113  lr: 4e-05
+epoch 6 iter 1100/2810  loss: 1.444  rpn_clsf: 0.015  rpn_reg: 0.012  frcn_clsf: 0.137  frcn_reg: 0.004  mask: 0.136  tag: 0.252  clsf2: 0.132  tag2: 0.169  ohem: 0.515  time: 0.110  lr: 4e-05
+epoch 6 iter 1200/2810  loss: 1.434  rpn_clsf: 0.016  rpn_reg: 0.012  frcn_clsf: 0.135  frcn_reg: 0.004  mask: 0.144  tag: 0.226  clsf2: 0.133  tag2: 0.166  ohem: 0.520  time: 0.110  lr: 4e-05
+epoch 6 iter 1300/2810  loss: 1.469  rpn_clsf: 0.015  rpn_reg: 0.013  frcn_clsf: 0.132  frcn_reg: 0.004  mask: 0.138  tag: 0.242  clsf2: 0.131  tag2: 0.166  ohem: 0.525  time: 0.113  lr: 4e-05
+epoch 6 iter 1400/2810  loss: 1.461  rpn_clsf: 0.018  rpn_reg: 0.010  frcn_clsf: 0.135  frcn_reg: 0.004  mask: 0.137  tag: 0.242  clsf2: 0.135  tag2: 0.168  ohem: 0.525  time: 0.110  lr: 4e-05
+epoch 6 iter 1500/2810  loss: 1.354  rpn_clsf: 0.016  rpn_reg: 0.011  frcn_clsf: 0.143  frcn_reg: 0.004  mask: 0.144  tag: 0.212  clsf2: 0.144  tag2: 0.161  ohem: 0.453  time: 0.113  lr: 4e-05
+epoch 6 iter 1600/2810  loss: 1.418  rpn_clsf: 0.015  rpn_reg: 0.011  frcn_clsf: 0.132  frcn_reg: 0.004  mask: 0.144  tag: 0.217  clsf2: 0.130  tag2: 0.157  ohem: 0.514  time: 0.113  lr: 4e-05
+epoch 6 iter 1700/2810  loss: 1.489  rpn_clsf: 0.015  rpn_reg: 0.012  frcn_clsf: 0.130  frcn_reg: 0.004  mask: 0.144  tag: 0.238  clsf2: 0.127  tag2: 0.172  ohem: 0.543  time: 0.109  lr: 4e-05
+epoch 6 iter 1800/2810  loss: 1.415  rpn_clsf: 0.015  rpn_reg: 0.010  frcn_clsf: 0.141  frcn_reg: 0.004  mask: 0.141  tag: 0.225  clsf2: 0.137  tag2: 0.161  ohem: 0.506  time: 0.110  lr: 4e-05
+epoch 6 iter 1900/2810  loss: 1.514  rpn_clsf: 0.017  rpn_reg: 0.014  frcn_clsf: 0.133  frcn_reg: 0.004  mask: 0.140  tag: 0.243  clsf2: 0.132  tag2: 0.159  ohem: 0.507  time: 0.111  lr: 4e-05
+epoch 6 iter 2000/2810  loss: 1.453  rpn_clsf: 0.017  rpn_reg: 0.013  frcn_clsf: 0.135  frcn_reg: 0.004  mask: 0.140  tag: 0.235  clsf2: 0.135  tag2: 0.169  ohem: 0.517  time: 0.110  lr: 4e-05
+epoch 6 iter 2100/2810  loss: 1.447  rpn_clsf: 0.015  rpn_reg: 0.013  frcn_clsf: 0.139  frcn_reg: 0.004  mask: 0.142  tag: 0.218  clsf2: 0.138  tag2: 0.163  ohem: 0.495  time: 0.110  lr: 4e-05
+epoch 6 iter 2200/2810  loss: 1.355  rpn_clsf: 0.014  rpn_reg: 0.012  frcn_clsf: 0.129  frcn_reg: 0.004  mask: 0.142  tag: 0.210  clsf2: 0.127  tag2: 0.163  ohem: 0.488  time: 0.110  lr: 4e-05
+epoch 6 iter 2300/2810  loss: 1.383  rpn_clsf: 0.015  rpn_reg: 0.012  frcn_clsf: 0.131  frcn_reg: 0.004  mask: 0.136  tag: 0.224  clsf2: 0.130  tag2: 0.145  ohem: 0.499  time: 0.110  lr: 4e-05
+epoch 6 iter 2400/2810  loss: 1.494  rpn_clsf: 0.016  rpn_reg: 0.012  frcn_clsf: 0.130  frcn_reg: 0.004  mask: 0.134  tag: 0.236  clsf2: 0.128  tag2: 0.167  ohem: 0.546  time: 0.110  lr: 4e-05
+epoch 6 iter 2500/2810  loss: 1.446  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.142  frcn_reg: 0.004  mask: 0.146  tag: 0.246  clsf2: 0.137  tag2: 0.174  ohem: 0.492  time: 0.109  lr: 4e-05
+epoch 6 iter 2600/2810  loss: 1.423  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.140  frcn_reg: 0.004  mask: 0.142  tag: 0.223  clsf2: 0.139  tag2: 0.159  ohem: 0.522  time: 0.111  lr: 4e-05
+epoch 6 iter 2700/2810  loss: 1.432  rpn_clsf: 0.020  rpn_reg: 0.013  frcn_clsf: 0.133  frcn_reg: 0.004  mask: 0.139  tag: 0.229  clsf2: 0.132  tag2: 0.163  ohem: 0.480  time: 0.110  lr: 4e-05
+epoch 6 iter 2800/2810  loss: 1.443  rpn_clsf: 0.018  rpn_reg: 0.011  frcn_clsf: 0.131  frcn_reg: 0.004  mask: 0.139  tag: 0.232  clsf2: 0.129  tag2: 0.162  ohem: 0.529  time: 0.110  lr: 4e-05
+Saving checkpoint to checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_07.pth
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0306 s
+Total inference time: 0:02:48.191832 (0.035105788317086974 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.7238, 0.8038, 0.8629, 0.9046, 0.9329, 0.9398
+mean of [0.5, 1, 2, 4]: 0.8238
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9278	0.3184	0.2675	0.5483	0.9331	0.4897	0.4151	0.5970	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.3498+-1.2816, 1.8912+-2.2735
+total test time: 178.214263
+
+1: 0.6472
+2: 0.6351
+3: 0.6899
+4: 0.7047
+5: 0.8114
+6: 0.8229
+7: 0.8238
+epoch 7 iter 0/2810  loss: 1.434  rpn_clsf: 0.015  rpn_reg: 0.011  frcn_clsf: 0.133  frcn_reg: 0.004  mask: 0.141  tag: 0.234  clsf2: 0.131  tag2: 0.162  ohem: 0.521  time: 0.110  lr: 4e-05
+epoch 7 iter 100/2810  loss: 1.429  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.129  frcn_reg: 0.004  mask: 0.141  tag: 0.235  clsf2: 0.125  tag2: 0.159  ohem: 0.531  time: 0.112  lr: 4e-05
+epoch 7 iter 200/2810  loss: 1.433  rpn_clsf: 0.017  rpn_reg: 0.013  frcn_clsf: 0.139  frcn_reg: 0.004  mask: 0.138  tag: 0.232  clsf2: 0.135  tag2: 0.167  ohem: 0.495  time: 0.115  lr: 4e-05
+epoch 7 iter 300/2810  loss: 1.439  rpn_clsf: 0.016  rpn_reg: 0.012  frcn_clsf: 0.136  frcn_reg: 0.004  mask: 0.141  tag: 0.229  clsf2: 0.135  tag2: 0.164  ohem: 0.494  time: 0.111  lr: 4e-05
+epoch 7 iter 400/2810  loss: 1.505  rpn_clsf: 0.015  rpn_reg: 0.011  frcn_clsf: 0.134  frcn_reg: 0.004  mask: 0.148  tag: 0.233  clsf2: 0.130  tag2: 0.174  ohem: 0.555  time: 0.110  lr: 4e-05
+epoch 7 iter 500/2810  loss: 1.348  rpn_clsf: 0.015  rpn_reg: 0.012  frcn_clsf: 0.134  frcn_reg: 0.004  mask: 0.143  tag: 0.213  clsf2: 0.134  tag2: 0.153  ohem: 0.447  time: 0.110  lr: 4e-05
+epoch 7 iter 600/2810  loss: 1.481  rpn_clsf: 0.017  rpn_reg: 0.013  frcn_clsf: 0.140  frcn_reg: 0.004  mask: 0.148  tag: 0.215  clsf2: 0.139  tag2: 0.167  ohem: 0.538  time: 0.113  lr: 4e-05
+epoch 7 iter 700/2810  loss: 1.479  rpn_clsf: 0.015  rpn_reg: 0.011  frcn_clsf: 0.129  frcn_reg: 0.004  mask: 0.145  tag: 0.237  clsf2: 0.131  tag2: 0.161  ohem: 0.505  time: 0.110  lr: 4e-05
+epoch 7 iter 800/2810  loss: 1.460  rpn_clsf: 0.014  rpn_reg: 0.011  frcn_clsf: 0.129  frcn_reg: 0.004  mask: 0.141  tag: 0.228  clsf2: 0.128  tag2: 0.165  ohem: 0.581  time: 0.113  lr: 4e-05
+epoch 7 iter 900/2810  loss: 1.435  rpn_clsf: 0.016  rpn_reg: 0.012  frcn_clsf: 0.133  frcn_reg: 0.004  mask: 0.146  tag: 0.223  clsf2: 0.130  tag2: 0.166  ohem: 0.481  time: 0.110  lr: 4e-05
+epoch 7 iter 1000/2810  loss: 1.406  rpn_clsf: 0.015  rpn_reg: 0.012  frcn_clsf: 0.128  frcn_reg: 0.004  mask: 0.141  tag: 0.218  clsf2: 0.129  tag2: 0.167  ohem: 0.506  time: 0.110  lr: 4e-05
+epoch 7 iter 1100/2810  loss: 1.498  rpn_clsf: 0.015  rpn_reg: 0.012  frcn_clsf: 0.140  frcn_reg: 0.004  mask: 0.141  tag: 0.218  clsf2: 0.139  tag2: 0.159  ohem: 0.522  time: 0.110  lr: 4e-05
+epoch 7 iter 1200/2810  loss: 1.456  rpn_clsf: 0.019  rpn_reg: 0.012  frcn_clsf: 0.140  frcn_reg: 0.004  mask: 0.139  tag: 0.224  clsf2: 0.137  tag2: 0.157  ohem: 0.495  time: 0.110  lr: 4e-05
+epoch 7 iter 1300/2810  loss: 1.426  rpn_clsf: 0.014  rpn_reg: 0.011  frcn_clsf: 0.132  frcn_reg: 0.004  mask: 0.142  tag: 0.211  clsf2: 0.132  tag2: 0.160  ohem: 0.532  time: 0.110  lr: 4e-05
+epoch 7 iter 1400/2810  loss: 1.464  rpn_clsf: 0.016  rpn_reg: 0.012  frcn_clsf: 0.135  frcn_reg: 0.004  mask: 0.148  tag: 0.235  clsf2: 0.135  tag2: 0.161  ohem: 0.510  time: 0.110  lr: 4e-05
+epoch 7 iter 1500/2810  loss: 1.396  rpn_clsf: 0.016  rpn_reg: 0.011  frcn_clsf: 0.125  frcn_reg: 0.004  mask: 0.141  tag: 0.215  clsf2: 0.123  tag2: 0.154  ohem: 0.490  time: 0.110  lr: 4e-05
+epoch 7 iter 1600/2810  loss: 1.415  rpn_clsf: 0.018  rpn_reg: 0.012  frcn_clsf: 0.138  frcn_reg: 0.004  mask: 0.143  tag: 0.234  clsf2: 0.139  tag2: 0.157  ohem: 0.506  time: 0.114  lr: 4e-05
+epoch 7 iter 1700/2810  loss: 1.462  rpn_clsf: 0.014  rpn_reg: 0.012  frcn_clsf: 0.134  frcn_reg: 0.004  mask: 0.143  tag: 0.209  clsf2: 0.132  tag2: 0.162  ohem: 0.502  time: 0.111  lr: 4e-05
+epoch 7 iter 1800/2810  loss: 1.440  rpn_clsf: 0.016  rpn_reg: 0.012  frcn_clsf: 0.138  frcn_reg: 0.004  mask: 0.137  tag: 0.235  clsf2: 0.137  tag2: 0.158  ohem: 0.519  time: 0.110  lr: 4e-05
+epoch 7 iter 1900/2810  loss: 1.487  rpn_clsf: 0.016  rpn_reg: 0.011  frcn_clsf: 0.140  frcn_reg: 0.004  mask: 0.143  tag: 0.214  clsf2: 0.139  tag2: 0.160  ohem: 0.517  time: 0.110  lr: 4e-05
+epoch 7 iter 2000/2810  loss: 1.461  rpn_clsf: 0.017  rpn_reg: 0.013  frcn_clsf: 0.131  frcn_reg: 0.004  mask: 0.136  tag: 0.228  clsf2: 0.132  tag2: 0.169  ohem: 0.543  time: 0.109  lr: 4e-05
+epoch 7 iter 2100/2810  loss: 1.430  rpn_clsf: 0.016  rpn_reg: 0.013  frcn_clsf: 0.130  frcn_reg: 0.004  mask: 0.142  tag: 0.219  clsf2: 0.130  tag2: 0.164  ohem: 0.487  time: 0.111  lr: 4e-05
+epoch 7 iter 2200/2810  loss: 1.416  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.129  frcn_reg: 0.004  mask: 0.147  tag: 0.223  clsf2: 0.129  tag2: 0.156  ohem: 0.490  time: 0.110  lr: 4e-05
+epoch 7 iter 2300/2810  loss: 1.479  rpn_clsf: 0.015  rpn_reg: 0.011  frcn_clsf: 0.132  frcn_reg: 0.004  mask: 0.139  tag: 0.242  clsf2: 0.132  tag2: 0.167  ohem: 0.497  time: 0.110  lr: 4e-05
+epoch 7 iter 2400/2810  loss: 1.464  rpn_clsf: 0.016  rpn_reg: 0.011  frcn_clsf: 0.127  frcn_reg: 0.004  mask: 0.141  tag: 0.233  clsf2: 0.125  tag2: 0.169  ohem: 0.518  time: 0.109  lr: 4e-05
+epoch 7 iter 2500/2810  loss: 1.533  rpn_clsf: 0.020  rpn_reg: 0.012  frcn_clsf: 0.134  frcn_reg: 0.004  mask: 0.143  tag: 0.248  clsf2: 0.136  tag2: 0.167  ohem: 0.540  time: 0.110  lr: 4e-05
+epoch 7 iter 2600/2810  loss: 1.385  rpn_clsf: 0.018  rpn_reg: 0.012  frcn_clsf: 0.134  frcn_reg: 0.004  mask: 0.141  tag: 0.228  clsf2: 0.134  tag2: 0.161  ohem: 0.463  time: 0.112  lr: 4e-05
+epoch 7 iter 2700/2810  loss: 1.432  rpn_clsf: 0.017  rpn_reg: 0.012  frcn_clsf: 0.134  frcn_reg: 0.004  mask: 0.138  tag: 0.245  clsf2: 0.133  tag2: 0.157  ohem: 0.508  time: 0.111  lr: 4e-05
+epoch 7 iter 2800/2810  loss: 1.440  rpn_clsf: 0.015  rpn_reg: 0.010  frcn_clsf: 0.129  frcn_reg: 0.004  mask: 0.137  tag: 0.202  clsf2: 0.129  tag2: 0.151  ohem: 0.545  time: 0.110  lr: 4e-05
+Saving checkpoint to checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_08.pth
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0306 s
+Total inference time: 0:02:48.313274 (0.035131136227987726 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.7215, 0.8070, 0.8625, 0.9053, 0.9315, 0.9409
+mean of [0.5, 1, 2, 4]: 0.8241
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9278	0.3198	0.2694	0.5479	0.9330	0.4908	0.4155	0.5995	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.3434+-1.2561, 1.8993+-2.2817
+total test time: 178.241975
+
+1: 0.6472
+2: 0.6351
+3: 0.6899
+4: 0.7047
+5: 0.8114
+6: 0.8229
+7: 0.8238
+8: 0.8241
+Total training time: 6:00:24.767912 (2703.0960 s / epoch)
+Loading checkpoint from checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_08.pth
+optimizer and scheduler not loaded from checkpoint file
+Loading optimizer from checkpoints/wo add ft, box fc 2048, tag 1024, w fusion_epoch_08.pth
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+DeepLesion val num_images: 4791
+Start evaluation on DeepLesion_val dataset(4791 images).
+Total forwarding time per image: 0.0307 s
+Total inference time: 0:02:49.684164 (0.035417274950043785 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.7215, 0.8072, 0.8625, 0.9055, 0.9312, 0.9409
+mean of [0.5, 1, 2, 4]: 0.8242
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9278	0.3200	0.2696	0.5481	0.9330	0.4909	0.4157	0.5994	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.3432+-1.2549, 1.8993+-2.2818
+total test time: 179.828658
+
+lesion tags loaded from program_data/tags_cache.json
+171 tags, 20266 tagged sentences, 81430 positive tags altogether
+loading 500 manually annotated test tags
+DeepLesion test num_images: 4817
+Start evaluation on DeepLesion_test dataset(4817 images).
+Total forwarding time per image: 0.0302 s
+Total inference time: 0:08:12.426336 (0.10222676677874121 s / img per device, on 1 devices)
+postprocessing: generating tag predictions, mask contours, RECIST measurements.
+
+Detection accuracy:
+Sensitivity @ [0.5, 1, 2, 4, 8, 16] average FPs per image:
+0.7347, 0.8208, 0.8756, 0.9141, 0.9414, 0.9507
+mean of [0.5, 1, 2, 4]: 0.8363
+
+Computing detection accuracy per tag:
+0, 
+10, 
+20, 
+30, 
+40, 
+50, 
+60, 
+70, 
+80, 
+90, 
+100, 
+110, 
+120, 
+130, 
+140, 
+150, 
+160, 
+170, 
+
+
+
+Tagging accuracy:
+mined annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+nan	nan	nan	nan	0.0000	1.0000	1.0000	1.0000	
+
+manually annotated annotations:
+m_AUC	pc_F1	pc_Pr	pc_Re	wm_AUC	ov_F1	ov_Pr	ov_Re	
+0.9507	0.4465	0.4344	0.6026	0.9595	0.6027	0.4990	0.7607	
+
+
+Segmentation accuracy:
+avg min distance (mm) from groundtruth recist points to predicted contours in GT boxes:
+error of lesion diameter (mm) estimated from predicted contours in GT boxes:
+1.4216+-1.3139, 1.9665+-2.1837
+total test time: 765.638703
+
+Completed at 07-21_23-00-09: wo add ft, box fc 2048, tag 1024, w fusion

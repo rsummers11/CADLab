@@ -1,0 +1,156 @@
+EXP_NAME: "MULAN trained on DeepLesion"  # this name, together with "BEGIN_EPOCH", decides the file name of your checkpoint for training and inference
+FINETUNE_FROM: ""  # useful in training. If "", same with EXP_NAME
+GPU: ''  # if "", choose the idlest GPU
+BEGIN_EPOCH: 8  # if = 0, start new training process; if > 0, load previous checkpoint according to FINETUNE_FROM
+LOG_IN_FILE: True
+MODE: "demo"  # "train", "eval", "vis", "demo", "batch", see readme.md
+# If you want to train, set MODE to "train", BEGIN_EPOCH to 0, and EXP_NAME to a new name.
+EVAL_AT_BEGIN: False  # do validation before start training
+KEEP_BEST_MODEL: True
+
+SOLVER:
+  BASE_LR: 0.004
+  WEIGHT_DECAY: 0.0005
+  STEPS: [4, 6]
+  MAX_EPOCH: 8
+  IMS_PER_BATCH: 8
+  WARMUP_ITERS: 0
+  CHECKPOINT_PERIOD: 1
+  SHOW_LOSS_ITER: 100
+  CLIP_GRADIENT: 10.
+
+DATASETS:  # config your dataset paths in paths_catalog.py
+  TRAIN: ["DeepLesion_train"]
+  VAL: ["DeepLesion_val"]
+  TEST: ["DeepLesion_test"]
+  TAG:
+    SPLIT_FILE: 'text_mined_labels_171_and_split.json'
+    USE_CACHE_FILE: "tags_cache.json"
+    TAG_DICT_FILE: "lesion_ontology_181022.xlsx"
+    MANUAL_ANNOT_TEST_FILE: "hand_labeled_test_set.json"
+
+INPUT:
+  NORM_SPACING: .8  # first normalize image size to NORM_SPACING mm/pixel (so the smaller this value, the larger the image).
+  MAX_IM_SIZE: 512  # then restrict the maximum image size to MAX_SIZE
+  IMG_DO_CLIP: True  # clip the black borders of CT images
+  SLICE_INTV: 2  # slice interval in mm after interpolation. If 0, only use one slice thus no 3D context
+  NUM_SLICES: 3  # multi-slice input (data-level fusion in 3DCE paper) to incorporate 3D context
+  NUM_IMAGES_3DCE: 3  # number of 3-slice images for feature fusion
+
+  DATA_AUG_SCALE: [.8, 1.2]
+  DATA_AUG_3D: -0.5
+  DATA_AUG_POSITION: True
+DATALOADER:
+  SIZE_DIVISIBILITY: 16
+  DROP_LAST_BATCH: False
+
+MODEL:
+  # fuse feature maps of neighboring CT slices at the final level of the backbone and FEATURE_FUSION_LEVELS
+  USE_3D_FUSION: True
+  TAG_ON: True
+  MASK_ON: True
+  REFINE_ON: True
+
+  META_ARCHITECTURE: "GeneralizedRCNN"
+  INIT_FROM_PRETRAIN: True  # whether use ImageNet pretrained weights
+  BACKBONE:
+    CONV_BODY: "DenseTrunc-121"
+    FEATURE_UPSAMPLE: True  # use the FPN structure in the backbone and only predict on the finest feature map
+    FEATURE_UPSAMPLE_LEVEL: 3  # (FEATURE_UPSAMPLE_LEVEL=1 -> ANCHOR_STRIDE=1, POOLER_SCALES=1); (2 -> 2, .5); (3 -> 4, .25); ...
+    OUT_CHANNELS: 512
+    # 3d feature fusion, see densenet_custom_trunc.py. FEATURE_FUSION_LEVELS[i] = True means fuse after conv block i
+    FEATURE_FUSION_LEVELS: [False, False, True]
+
+  RPN:
+    USE_FPN: False  # the original FPN with a head in each level. We didn't use it in this project
+    ANCHOR_STRIDE: [4]
+    ANCHOR_SIZES: [16, 24, 32, 48, 96]
+    PRE_NMS_TOP_N_TRAIN: 12000
+    POST_NMS_TOP_N_TRAIN: 2000
+    PRE_NMS_TOP_N_TEST: 6000
+    POST_NMS_TOP_N_TEST: 300
+    FPN_POST_NMS_TOP_N_TEST: 1000
+    BATCH_SIZE_PER_IMAGE: 32
+    CONV_OUT_DIM: 512
+    MIN_SIZE: 8
+    CLSF_LOSS_WEIGHT: 1
+    REG_LOSS_WEIGHT: 1
+    FOCAL_LOSS: False
+  ROI_HEADS:
+    USE_FPN: False
+    BATCH_SIZE_PER_IMAGE: 64
+    BBOX_REG_WEIGHTS: [1., 1., 1., 1.]
+    DETECTIONS_PER_IMG: 50
+    SCORE_THRESH: 0.05
+    NMS: .5
+
+  ROI_BOX_HEAD:
+    NUM_CLASSES: 2  # in box head, only classify lesion/nonlesion
+    POOLER_RESOLUTION: 7
+    POOLER_SCALES: [.25]
+    POOLER_SAMPLING_RATIO: 2
+    FEATURE_EXTRACTOR: "MLPFeatureExtractor"
+    PREDICTOR: "FPNPredictor"
+    REG_LOSS_WEIGHT: 10
+    CLSF_LOSS_WEIGHT: 1
+    MLP_HEAD_DIM: 2048
+    DROP_OUT: False
+    FOCAL_LOSS: False
+
+  ROI_MASK_HEAD:
+    POOLER_SCALES: [.25]
+    FEATURE_EXTRACTOR: "MaskRCNNFPNFeatureExtractor"
+    PREDICTOR: "MaskRCNNCustomPredictor"
+    POOLER_RESOLUTION: 14
+    POOLER_SAMPLING_RATIO: 2
+    RESOLUTION: 28
+    SHARE_BOX_FEATURE_EXTRACTOR: False
+    CONV_LAYERS: [256, 256, 256, 256]
+    MASK_LOSS_WEIGHT: 1
+
+  ROI_TAG_HEAD:
+    FEATURE_EXTRACTOR: "TagFeatureExtractor"
+    PREDICTOR: "MultiLabelPredictor"
+    CE_LOSS_POS_WT: True  # weighted CE loss for imbalanced labels
+    CE_POS_WT_CLAMP: 300
+    TAG_LOSS_WEIGHT: 1
+    MLP_HEAD_DIM: 1024
+
+    # relational hard example mining
+    OHEM_LOSS_WEIGHT: 1
+    OHEM_POWER: 2
+    OHEM_SEL_NUM: 10000
+
+  ROI_REFINE_HEAD:
+    # Additional features to the score refine layer.
+    # If your dataset does not have these features, set them to false.
+    # The trained model we provided did not use these features for users' convenience.
+    # But using these features in DeepLesion slightly improves accuracy.
+    BOX_FEATURE: False  # x, y, w, h
+    Z_FEATURE: False  # the z score of the key slice in the DeepLesion dataset
+    DEMOGRAPHIC_FEATURE: False  # sex and age in DeepLesion
+
+TEST:
+  IMS_PER_BATCH: 8
+  SHUFFLE: True
+  POSTPROCESS_ON: False  # currently include removing small lymph nodes. But when evaluating on DeepLesion this is not helpful
+  MIN_LYMPH_NODE_DIAM: 5
+  # evaluate segmentation and tagging on gt boxes, independent on detection results, like in the MULAN paper
+  EVAL_SEG_TAG_ON_GT: True
+  COMPUTE_DET_ACC_PER_TAG: False
+
+  MASK:
+    THRESHOLD: .5
+  TAG:
+    # if CALIBRATE_TH=False: if val>=1, select val tags with top scores; if 0<val<1, select tags w scores>val;
+    # if CALIBRATE_TH=True: in val set, use SELECTION_VAL; in test set, use tag-specific thresholds computed on val set
+    SELECTION_VAL: .9
+    CALIBRATE_TH: True
+
+  VISUALIZE:
+    SHOW_MASK_HEATMAPS: False
+    SHOW_SCALE: 2
+    DETECTIONS_PER_IMG: 5
+    SCORE_THRESH: 0.25
+    NMS: .3
+  USE_SAVED_PRED_RES: 'proc'  # when debugging evaluation code, use previous prediction results to save time. "none", "raw", or "proc"
