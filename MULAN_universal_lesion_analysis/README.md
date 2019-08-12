@@ -10,7 +10,6 @@ segment it as well. It is designed based on the mask RCNN framework with a 3D fe
 This code was adapted from Facebook's [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). We thank them for their excellent project.
 
 #### Sample results  
-Result examples:
 <div align="center"><img src="results_example.png" width="70%" height="70%"></div>  
 
 
@@ -45,7 +44,9 @@ additional feature input (age, sex, etc.) in the refine layer, so its accuracy o
 1. K. Yan, X. Wang, L. Lu, and R. M. Summers, “DeepLesion: Automated Mining of Large-Scale Lesion Annotations and Universal Lesion Detection with Deep Learning,” J. Med. Imaging, 2018. ([paper](http://yanke23.com/papers/18_JMI_DeepLesion.pdf))  
 1. K. Yan, Y. Peng, V. Sandfort, M. Bagheri, Z. Lu, and R. M. Summers, “Holistic and Comprehensive Annotation of Clinically Significant Findings on Diverse CT Images: Learning from Radiology Reports and Label Ontology,” in CVPR, 2019. ([arXiv](https://arxiv.org/abs/1904.04661))  
 
-Network backbone:
+#### Network structure
+Backbone:
 <img src="network_backbone.png" width="100%" height="100%">  
-Network heads:
-<img src="network_heads.png" width="100%" height="100%">  
+
+heads:
+<img src="network_heads.png" width="80%" height="80%">  
