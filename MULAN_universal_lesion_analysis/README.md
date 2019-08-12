@@ -12,9 +12,8 @@ This code was adapted from Facebook's [maskrcnn-benchmark](https://github.com/fa
 #### Sample results  
 <div align="center"><img src="results_example.png" width="70%" height="70%"></div>  
 
-
 #### Requirements  
-* PyTorch 1.1  
+* PyTorch 1.1, torchvision 0.3.0  
 * Python 3.6  
 * If you just want to test our model, a MULAN model [1] trained on DeepLesion is [here](https://nihcc.box.com/s/agcs3orjctj981vyitwgrzaxcyx1qq71). you can put it in `checkpoints/`. Note that the released model does not have 
 additional feature input (age, sex, etc.) in the refine layer, so its accuracy on DeepLesion is different from [1].
@@ -45,8 +44,8 @@ additional feature input (age, sex, etc.) in the refine layer, so its accuracy o
 1. K. Yan, Y. Peng, V. Sandfort, M. Bagheri, Z. Lu, and R. M. Summers, “Holistic and Comprehensive Annotation of Clinically Significant Findings on Diverse CT Images: Learning from Radiology Reports and Label Ontology,” in CVPR, 2019. ([arXiv](https://arxiv.org/abs/1904.04661))  
 
 #### Network structure
-Backbone:
+Backbone:  
 <img src="network_backbone.png" width="100%" height="100%">  
 
-heads:
+heads:  
 <img src="network_heads.png" width="80%" height="80%">  

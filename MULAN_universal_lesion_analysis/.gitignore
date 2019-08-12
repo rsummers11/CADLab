@@ -5,3 +5,6 @@ venv/
 *.pth
 *.pyc
 *.m~
+text_mined_labels_171_and_split.json
+lesion_ontology_181022.xlsx
+hand_labeled_test_set.json
