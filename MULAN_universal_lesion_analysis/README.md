@@ -1,6 +1,6 @@
 ## Multitask Universal Lesion Analysis Network (MULAN)  
 
-This project contains the code of the MICCAI 2019 paper: “MULAN: Multitask Universal Lesion Analysis Network for Joint Lesion Detection, Tagging, and Segmentation”.
+This project contains the code of the MICCAI 2019 paper: “MULAN: Multitask Universal Lesion Analysis Network for Joint Lesion Detection, Tagging, and Segmentation” [1].
 
 Developed by Ke Yan (yankethu@gmail.com, [yanke23.com](http://yanke23.com)), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory, National Institutes of Health Clinical Center.  
  
@@ -10,8 +10,11 @@ segment it as well. It is designed based on the mask RCNN framework with a 3D fe
 This code was adapted from Facebook's [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark). We thank them for their excellent project.
 
 #### Sample results  
-<img src="results_example.png" width="100%" height="100%">  
+Result examples:
+<img src="results_example.png" width="50%" height="50%">  
+Network backbone:
 <img src="network_backbone.png" width="100%" height="100%">  
+Network heads:
 <img src="network_heads.png" width="100%" height="100%">  
 
 #### Requirements  
