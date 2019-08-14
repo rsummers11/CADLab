@@ -38,7 +38,7 @@ additional feature input (age, sex, etc.) in the refine layer, so its accuracy o
 * MULAN was trained on lesions in DeepLesion, so it may be inaccurate on body regions and lesions that are rare in DeepLesion.
 
 #### References  
-1. K. Yan, Y. B. Tang, Y. Peng, V. Sandfort, M. Bagheri, Z. Lu, and R. M. Summers, “MULAN: Multitask Universal Lesion Analysis Network for Joint Lesion Detection, Tagging, and Segmentation,” in International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2019.  
+1. K. Yan, Y. B. Tang, Y. Peng, V. Sandfort, M. Bagheri, Z. Lu, and R. M. Summers, “MULAN: Multitask Universal Lesion Analysis Network for Joint Lesion Detection, Tagging, and Segmentation,” in International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2019. ([arXiv](https://arxiv.org/abs/1908.04373))
 1. The DeepLesion dataset. ([download](https://nihcc.box.com/v/DeepLesion))  
 1. K. Yan, X. Wang, L. Lu, and R. M. Summers, “DeepLesion: Automated Mining of Large-Scale Lesion Annotations and Universal Lesion Detection with Deep Learning,” J. Med. Imaging, 2018. ([paper](http://yanke23.com/papers/18_JMI_DeepLesion.pdf))  
 1. K. Yan, Y. Peng, V. Sandfort, M. Bagheri, Z. Lu, and R. M. Summers, “Holistic and Comprehensive Annotation of Clinically Significant Findings on Diverse CT Images: Learning from Radiology Reports and Label Ontology,” in CVPR, 2019. ([arXiv](https://arxiv.org/abs/1904.04661))  
@@ -48,4 +48,4 @@ Backbone:
 <img src="network_backbone.png" width="100%" height="100%">  
 
 heads:  
-<img src="network_heads.png" width="80%" height="80%">  
+<div align="center"><img src="network_heads.png" width="80%" height="80%"></div>  
