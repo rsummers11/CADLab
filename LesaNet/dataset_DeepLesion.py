@@ -127,7 +127,7 @@ class DeepLesion(data.Dataset):
         slice_idx = self.slice_idx[img_idx]
         spacing = self.spacing[img_idx]
         slice_intv = self.slice_intv[img_idx]
-        box = self.boxes[img_idx]
+        box = self.boxes[img_idx].copy()
 
         im, im_scale, crop = load_prep_img(imname, slice_idx, spacing, slice_intv,
                                             do_clip=False, num_slice=config.NUM_SLICES)
