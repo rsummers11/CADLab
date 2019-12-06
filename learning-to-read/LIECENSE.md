@@ -1,15 +1,6 @@
-Redistribution and use in source and binary forms, with or without modification,
-are permitted provided that the following conditions are met:
+MIT License
 
-Redistributions in binary form must reproduce the above copyright notice,
-this list of conditions and the following disclaimer in the documentation
-and/or other materials provided with the distribution.
-
-Neither the name of the National Institutes of Health, nor the names of its
-contributors may be used to endorse or promote products derived from
-this software without specific prior written permission.
-
-The original Mask-RCNN is Copyright (c) 2018 Facebook and licensed under the MIT License:
+Hoo-Chang Shin, Kirk Roberts, Le Lu, Dina Demner-Fushman, Jianhua Yao, Ronald M Summers
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,3 +19,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+ADDENDUM:
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution:
+
+Neither the name of the National Institutes of Health, nor the names of its
+contributors may be used to endorse or promote products derived from
+this software without specific prior written permission.
