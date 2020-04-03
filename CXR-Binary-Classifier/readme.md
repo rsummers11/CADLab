@@ -2,11 +2,22 @@
 
 This project contains the code and labels of our **npj Digital Medicine** paper: “Automated abnormality classification of chest radiographs using deep convolutional neural networks” (accepted, to appear online soon).
 
+    @article{tang2020npj,
+        title={Automated abnormality classification of chest radiographs using deep convolutional neural networks},
+        author={Tang, Yu-Xing and Tang, You-Bao and Peng, Yifan and Bagheri, Mohammadhadi and Redd, Bernadette A. and Brandon, Catherine J. and Lu, Zhiyong and Han, Mei and Xiao, Jing and Summers, Ronald M},
+        journal= {npj Digital Medicine},
+        volume={},
+        number={},
+        pages={},
+        year={2020},
+        publisher={Nature Publishing Group}
+    }
+
 Developed by Yuxing Tang (yuxing.tang@nih.gov), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory, National Institutes of Health (NIH) Clinical Center.
 
 # Introduction
 
-CXR-Binary-Classifier is a **binary CNN classifier** than can predict if a chest radiograph (chest X-ray, or CXR) is normal or abnormal. The abnormalities include 14 abnormal findings that were defined in the [NIH-CXR paper](https://nihcc.app.box.com/v/ChestXray-NIHCC/file/256057377774)
+CXR-Binary-Classifier is a **binary CNN classifier** than can predict if a chest radiograph (chest X-ray, or CXR) is normal or abnormal. The abnormalities include 14 abnormal findings that were defined in the [NIH-CXR paper](https://nihcc.app.box.com/v/ChestXray-NIHCC/file/256057377774).
 
     @inproceedings{wang2017chestx,
         title={Chestx-ray8: Hospital-scale chest x-ray database and benchmarks on weakly-supervised classification and localization of common thorax diseases},
