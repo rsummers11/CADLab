@@ -4,7 +4,7 @@ This project contains the code and labels of our **npj Digital Medicine** paper:
 
     @article{tang2020npj,
         title={Automated abnormality classification of chest radiographs using deep convolutional neural networks},
-        author={Tang, Yu-Xing and Tang, You-Bao and Peng, Yifan and Bagheri, Mohammadhadi and Redd, Bernadette A. and Brandon, Catherine J. and Lu, Zhiyong and Han, Mei and Xiao, Jing and Summers, Ronald M},
+        author={Tang, Yu-Xing and Tang, You-Bao and Peng, Yifan and Yan, Ke and Bagheri, Mohammadhadi and Redd, Bernadette A. and Brandon, Catherine J. and Lu, Zhiyong and Han, Mei and Xiao, Jing and Summers, Ronald M},
         journal= {npj Digital Medicine},
         volume={},
         number={},
