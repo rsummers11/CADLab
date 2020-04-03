@@ -1,0 +1,1 @@
+## This folder should contain the trained CNN models. If you just want to test our model, you can download our trained [DenseNet-121 model](https://nihcc.box.com/s/tiniov0agwsewzd243dxrt9mqa271pat) and put it here.
