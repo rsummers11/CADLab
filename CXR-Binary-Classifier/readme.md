@@ -88,7 +88,7 @@ After training is done, run `bash run_test_CXR.sh`to test the model.
 Running the testing code will generate a receiver operating characteristic (ROC) curve in a PDF file. The quantitative results (_e.g._, accuracy, sensitivity, specificity, F1, PPV, NPV, etc) will be shown in the terminal.
 
 ## Software terms of use
-Please refer to `Software Terms of Use-CXR Binary Classifier.pdf`.
+Please refer to [Software Terms of Use-CXR Binary Classifier.pdf](https://github.com/rsummers11/CADLab/blob/master/CXR-Binary-Classifier/Software%20Terms%20of%20Use-CXR%20Binary%20Classifier.pdf).
 
 Please cite our papers if you use our source code/data/labels/models.
 
