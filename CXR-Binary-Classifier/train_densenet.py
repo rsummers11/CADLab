@@ -55,7 +55,7 @@ def main():
 		print("=> creating model '{}'".format(args.arch))
 		model = models.__dict__[args.arch](pretrained=False)
 
-	os.environ["CUDA_VISIBLE_DEVICES"]=str(args.gpu_id)
+	torch.cuda.set_device(args.gpu_id)
 
 	# number of classes
 	numClass = 1 # 1 for binary classification
