@@ -67,7 +67,7 @@ def run_test():
 
 	model = models.__dict__[args.arch](pretrained=True)
 
-	os.environ["CUDA_VISIBLE_DEVICES"]=str(args.gpu_id)
+	torch.cuda.set_device(args.gpu_id)
 
 	# number of classes
 	numClass = 1
