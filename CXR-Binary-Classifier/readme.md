@@ -1,6 +1,6 @@
 # Automated abnormality classification of chest X-rays (CXR-Binary-Classifier) 
 
-This project contains the code and labels of our **npj Digital Medicine** paper: “Automated abnormality classification of chest radiographs using deep convolutional neural networks” [link](https://www.nature.com/articles/s41746-020-0273-z).
+This project contains the code and labels of our **npj Digital Medicine** paper: “Automated abnormality classification of chest radiographs using deep convolutional neural networks”. [link](https://www.nature.com/articles/s41746-020-0273-z)
 
     @article{tang2020automated,
         title={Automated abnormality classification of chest radiographs using deep convolutional neural networks},
@@ -92,13 +92,13 @@ Please refer to [Software Terms of Use-CXR Binary Classifier.pdf](https://github
 
 Please cite our papers if you use our source code/data/labels/models.
 
-    @article{tang2020npj,
+    @article{tang2020automated,
         title={Automated abnormality classification of chest radiographs using deep convolutional neural networks},
         author={Tang, Yu-Xing and Tang, You-Bao and Peng, Yifan and Yan, Ke and Bagheri, Mohammadhadi and Redd, Bernadette A and Brandon, Catherine J and Lu, Zhiyong and Han, Mei and Xiao, Jing and Summers, Ronald M},
         journal= {npj Digital Medicine},
-        volume={},
-        number={},
-        pages={},
+        volume={3},
+        number={1},
+        pages={1--8},
         year={2020},
         publisher={Nature Publishing Group}
     }
