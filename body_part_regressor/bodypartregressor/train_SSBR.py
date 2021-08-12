@@ -40,7 +40,7 @@ default_solver = "solver.prototxt"
 default_cfg = "config.yml"
 test_prototxt = "test.prototxt"
 
-os.chdir(os.path.join(os.path.dirname(__file__), os.pardir))  # go to root dir of this project
+#os.chdir(os.path.join(os.path.dirname(__file__), os.pardir))  # go to root dir of this project
 
 
 def parse_args_train():
@@ -115,4 +115,4 @@ if __name__ == '__main__':
     model_paths, validate_acc = train_net(args.solver,
                                           pretrained_model=args.pretrained_model)
     elapse_time_train = (clock() - start) / 60
-    print 'Training time', elapse_time_train, 'min'
+    print('Training time', elapse_time_train, 'min')

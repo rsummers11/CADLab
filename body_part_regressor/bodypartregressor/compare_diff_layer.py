@@ -43,8 +43,8 @@ class CompareDiffLayer(caffe.Layer):
         self.Af = np.zeros((self.out_num, self.in_num))
         idx1 = 0
         idx2 = 0
-        for i in xrange(self.group_size):
-            for j in xrange(self.slice_num-2):
+        for i in range(self.group_size):
+            for j in range(self.slice_num-2):
                 self.Af[idx1, idx2:idx2+3] = [1,-2,1]
                 idx1 += 1
                 idx2 += 1
@@ -63,12 +63,12 @@ class CompareDiffLayer(caffe.Layer):
         top[1].data[...] = np.zeros((self.out_num, 1))
 
         if DEBUG:
-            print 'reg_values:', bottom[0].data.ravel().tolist()
-            print 'diff values:', out
+            print('reg_values:', bottom[0].data.ravel().tolist())
+            print('diff values:', out)
 
     def backward(self, top, propagate_down, bottom):
         """This layer does not propagate gradients."""
         top_diff = top[0].diff
         out = self.Ab.dot(top_diff)
         #print out
-	bottom[0].diff[...] = out.reshape(*bottom[0].diff.shape)
+        bottom[0].diff[...] = out.reshape(*bottom[0].diff.shape)

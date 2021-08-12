@@ -1,0 +1,3 @@
+include bodypartregressor/config.yml
+include bodypartregressor/*.prototxt
+include bodypartregressor/snapshots/_iter_10000.caffemodel

@@ -45,7 +45,7 @@ __C.TRAIN.USE_PREFETCH = False
 __C.TRAIN.DO_VALIDATION = True
 __C.TRAIN.VALIDATION_ITERATION = ''
 
-# if file size is less than this kilobytes, it will not be used for training since very small size indicates the image 
+# if file size is less than this kilobytes, it will not be used for training since very small size indicates the image
 # contains very little contents
 __C.TRAIN.MIN_IM_SIZE_KB = 20
 
@@ -103,9 +103,9 @@ def _merge_a_into_b(a, b):
     if type(a) is not edict:
         return
 
-    for k, v in a.iteritems():
+    for k, v in a.items():
         # a must specify keys that are in b
-        if not b.has_key(k):
+        if k not in b:
             raise KeyError('{} is not a valid config key'.format(k))
 
         # the types must match, too
@@ -123,7 +123,7 @@ def _merge_a_into_b(a, b):
             try:
                 _merge_a_into_b(a[k], b[k])
             except:
-                print('Error under config key: {}'.format(k))
+                print(('Error under config key: {}'.format(k)))
                 raise
         else:
             b[k] = v
@@ -146,10 +146,10 @@ def cfg_from_list(cfg_list):
         key_list = k.split('.')
         d = __C
         for subkey in key_list[:-1]:
-            assert d.has_key(subkey)
+            assert subkey in d
             d = d[subkey]
         subkey = key_list[-1]
-        assert d.has_key(subkey)
+        assert subkey in d
         try:
             value = literal_eval(v)
         except:

@@ -18,7 +18,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import sys
 import os
-
 import _init_paths
 import caffe
 import cv2
@@ -37,8 +36,8 @@ default_cfg = "config.yml"
 GPU_ID = 0
 IMG_SUFFIX = '.png'
 
-rtdir = os.path.join(os.path.dirname(__file__), os.pardir)
-os.chdir(rtdir)  # go to root dir of this project
+#rtdir = os.path.join(os.path.dirname(__file__), os.pardir)
+#os.chdir(rtdir)  # go to root dir of this project
 
 
 def get_image_index(image_set_file):
@@ -63,13 +62,13 @@ if __name__ == '__main__':
     caffe.set_mode_gpu()
     net = caffe.Net(default_prototxt, default_model, caffe.TEST)
 
-    print 'Processing img ...'
+    print('Processing img ...')
     image_index = get_image_index(image_set_file)
     im_num = len(image_index)
     vals = np.empty((im_num,))
-    for j in xrange(im_num):
+    for j in range(im_num):
         fn = os.path.join(data_dir, image_index[j])
-        print fn, '\t',
+        print(fn, '\t', end=' ')
         im = load_img(fn)
         im -= cfg.PIXEL_MEANS
 
@@ -79,9 +78,9 @@ if __name__ == '__main__':
 
         blobs_out = net.forward(data=data)
         vals[j] = blobs_out['reg_value']
-        print vals[j]
+        print(vals[j])
 
-    fn = os.path.join(sys.path[0], 'slice_scores.txt')
+    fn = 'slice_scores.txt'
     with open(fn,'w') as f:
         f.writelines([a + '\t' + str(b) + '\r\n' for a,b in zip(image_index, vals)])
-    print 'Written to', fn
+    print('Written to', fn)

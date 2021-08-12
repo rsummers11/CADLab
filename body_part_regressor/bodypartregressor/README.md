@@ -7,7 +7,6 @@ Update 7/2020 by Daniel C. Elton:
 
 * Converted from Python 2 to Python 3
 * added nifti_inference.py, to allow for runs on NiFTI images.
-* added setup.py to install as a library using "python setup.py install" 
 
 
 If you use this code, please read and cite the following works:
@@ -36,9 +35,11 @@ of the folder containing all volumes in DATA_DIR of config.yml. If you want to u
 different data format, change data_layer.py.
 
 ## Inference with .nii.gz
-Run `python bodypartregressor/nifti_inference.py filename.nii.gz`
+Run `python nifti_inference.py filename.nii.gz`
 
-Results will be written to "slice_scores*.txt"
+Results will be written to "slice_scores*.txt". There are two columns - first is raw scores, 2nd is the linear regression fit.
+
+If you need to add the -1024 HU offset, set the OFFSET variable in line 99 of nifti_inference.py to -1024 before running. 
 
 ## Inference with .png
 To do inference with .png put images in bodypartregressor/test_data/, then run `python bodypartregressor/deploy.py`. The trained model is in snapshots folder.
@@ -57,6 +58,8 @@ ct = ctnib.get_data().astype(np.float32)  #get CT as numpy array
 
 slice_scores = nifti_inference(ct)  #get a list of scores
 ```
+
+
 
 
 ## Notes

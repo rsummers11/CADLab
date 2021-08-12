@@ -43,8 +43,8 @@ class CompareLayer(caffe.Layer):
         self.Af = np.zeros((self.out_num, self.in_num))
         idx1 = 0
         idx2 = 0
-        for i in xrange(self.group_size):
-            for j in xrange(self.slice_num-1):
+        for i in range(self.group_size):
+            for j in range(self.slice_num-1):
                 # print idx1,idx2
                 self.Af[idx1, idx2:idx2+2] = np.array([-1,1])
                 self.Af[idx1+1, idx2:idx2+2] = np.array([1,-1])
@@ -52,7 +52,7 @@ class CompareLayer(caffe.Layer):
                 idx2 += 1
             idx2 += 1
 
-        if DEBUG: print self.Af
+        if DEBUG: print(self.Af)
 
         self.Ab = self.Af.transpose()
 
@@ -66,8 +66,8 @@ class CompareLayer(caffe.Layer):
         vals = bottom[0].data.reshape((self.in_num, 1))
         out = self.Af.dot(vals)
         if DEBUG:
-            print vals
-            print out
+            print(vals)
+            print(out)
 
         top[0].data[:,0] = out.ravel()
         top[0].data[:,1] = -out.ravel()
