@@ -49,7 +49,7 @@ class DataLayer(caffe.Layer):
             img_list = [ f for f in os.listdir(fd_path) if f.endswith(cfg.IMG_SUFFIX) and
                          os.path.getsize(os.path.join(fd_path,f)) > cfg.TRAIN.MIN_IM_SIZE_KB]
             if len(img_list) < self.slice_num:
-                print 'only',len(img_list), 'images in', v
+                print('only',len(img_list), 'images in', v)
                 continue
             img_list.sort(key=lambda x: int(x[:-4]))  # make sure the former image is above the latter one in the volume, assuming the indices are ordered
             self.data_list.append(img_list)
@@ -138,12 +138,12 @@ class DataLayer(caffe.Layer):
                     ims1.append(im)
 
                 if try_again:
-                    print '~', fn
+                    print('~', fn)
                     continue
                 else:
                     ims += ims1
                     break
-            if DEBUG: print img_ids, nIm
+            if DEBUG: print(img_ids, nIm)
 
         # print self._sel_hist, self._sel_hist/self._sel_hist.sum()
         return ims
@@ -157,7 +157,7 @@ class DataLayer(caffe.Layer):
         # assert self.batch_size % 2 == 0, "self.batch_size must be even!"
 
         self._load_imdb(cfg.train_imdb)
-        print '{:d} volume entries'.format(self.volume_num)
+        print('{:d} volume entries'.format(self.volume_num))
         self._shuffle_roidb_inds()
         self._training = self.phase == 0
 
@@ -182,9 +182,9 @@ class DataLayer(caffe.Layer):
                         ims = self._get_minibatch(v_inds)
                         self._data_queue.put(ims)
                         # print 'prefetched', v_inds, self._data_queue.qsize()
-                    except Exception, e:
+                    except Exception as e:
                         self.error = e
-                        print(e.message)
+                        print((e.message))
                         exit(1)
 
             self._prefetch_process = Process(target=prefetch)
@@ -192,7 +192,7 @@ class DataLayer(caffe.Layer):
 
             # Terminate the child process when the parent exists
             def cleanup():
-                print 'Terminating BlobFetcher'
+                print('Terminating BlobFetcher')
                 self._prefetch_process.terminate()
                 self._prefetch_process.join()
 
@@ -210,7 +210,7 @@ class DataLayer(caffe.Layer):
         top[0].reshape(*(im_blob.shape))
         top[0].data[...] = im_blob
 
-        if DEBUG: print im_blob.shape
+        if DEBUG: print(im_blob.shape)
 
     def backward(self, top, propagate_down, bottom):
         """This layer does not propagate gradients."""

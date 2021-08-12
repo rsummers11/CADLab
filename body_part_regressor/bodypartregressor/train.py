@@ -38,13 +38,13 @@ def snapshot(solver, solver_param):
                 '_iter_{:d}'.format(solver.iter) + '.caffemodel')
 
     net.save(str(filename))
-    print 'Wrote snapshot to: {:s}'.format(filename)
+    print('Wrote snapshot to: {:s}'.format(filename))
 
     return filename
 
 
 def validate_net(model_path, prev_accs):
-    print "Validating ..."
+    print("Validating ...")
 
     # net.name = experiment_name
     caffe.set_mode_gpu()
@@ -82,9 +82,9 @@ def train(solver, solver_param):
         if need_val:
             acc = validate_net(snapshot_path, validate_accuracies)
             validate_accuracies.append(acc)
-            print 'validate_accuracies:'
+            print('validate_accuracies:')
             for i in range(len(validate_accuracies)):
-                print cfg.TRAIN.VALIDATION_ITERATION[i], ':', '%.5f' % validate_accuracies[i]
+                print(cfg.TRAIN.VALIDATION_ITERATION[i], ':', '%.5f' % validate_accuracies[i])
 
     if last_snapshot_iter != solver.iter:
         model_paths.append.snapshot()
@@ -96,15 +96,15 @@ def train_net(solver_prototxt,
 
     solver = caffe.SGDSolver(solver_prototxt)
     if pretrained_model is not None:
-        print ('Loading pretrained model '
-               'weights from {:s}').format(pretrained_model)
+        print(('Loading pretrained model '
+               'weights from {:s}').format(pretrained_model))
         solver.net.copy_from(pretrained_model)
 
     solver_param = caffe_pb2.SolverParameter()
     with open(solver_prototxt, 'rt') as f:
         pb2.text_format.Merge(f.read(), solver_param)
 
-    print 'Solving...'
+    print('Solving...')
     model_paths, validate_acc = train(solver, solver_param)
-    print 'done solving'
+    print('done solving')
     return model_paths, validate_acc
