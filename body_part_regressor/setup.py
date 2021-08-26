@@ -16,6 +16,6 @@ setup(name='bodypartregressor',
       classifiers=[
         'Programming Language :: Python :: 3.7.7',
 	  ],
-      install_requires=['easydict', 'nibabel', 'tqdm'],
+      install_requires=['easydict', 'nibabel', 'tqdm', 'scikit-learn'],
       packages=find_packages(),
       zip_safe=False)

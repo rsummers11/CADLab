@@ -3,12 +3,6 @@
 Developed by Ke Yan (ke.yan@nih.gov, [yanke23.com]()), Imaging Biomarkers and Computer-Aided Diagnosis Laboratory,
 National Institutes of Health Clinical Center
 
-Update 7/2020 by Daniel C. Elton:
-
-* Converted from Python 2 to Python 3
-* added nifti_inference.py, to allow for runs on NiFTI images.
-
-
 If you use this code, please read and cite the following works:
 
 * Ke Yan, Le Lu, Ronald Summers, "Unsupervised Body Part Regression via Spatially Self-ordering Convolutional Neural Networks", IEEE ISBI, 2018, https://arxiv.org/abs/1707.03891
@@ -25,10 +19,11 @@ Samples of unsupervisedly learned body-part scores:
 ## Requirements
 1. Caffe - use "conda install caffe-gpu" for GPU caffe or "conda install caffe" for CPU
 2. easydict - install with "pip install easydict"
-3. nibabel (for NiFTI inference)
-4. (for training only) VGG-16 pretrained caffemodel (optional, because the
+3. nibabel (for NIFTI inference)
+4. scikit-learn 
+5. (for training only) VGG-16 pretrained caffemodel (optional, because the
 algorithm works well even if trained from scratch given enough data).
-5. (for training only) Unlabeled training volumes, each volume stored in a folder
+6. (for training only) Unlabeled training volumes, each volume stored in a folder
 of 2D slices named by <slice_index>.png. List the names of volume folders in a
 list file and put the list file's name in TRAIN_IMDB of train.sh. Specify the name
 of the folder containing all volumes in DATA_DIR of config.yml. If you want to use
@@ -42,11 +37,11 @@ Results will be written to "slice_scores*.txt". There are two columns - first is
 If you need to add the -1024 HU offset, set the OFFSET variable in line 99 of nifti_inference.py to -1024 before running. 
 
 ## Inference with .png
-To do inference with .png put images in bodypartregressor/test_data/, then run `python bodypartregressor/deploy.py`. The trained model is in snapshots folder.
+To do inference with .png put images in bodypartregressor/test_data/, then run `python bodypartregressor/deploy.py`. 
 
 ## Installation
 Minimal packaging of this repository was performed to allow for installation of nifti_inference.
-To install in your system, run `python setup.py install` from this directory
+To install in your system, run `python setup.py install` from this directory. Alternatively, run `pip install .`
 
 Then you can use the NiFTI inference capability of the package as follows:
 ```python
@@ -59,10 +54,24 @@ ct = ctnib.get_data().astype(np.float32)  #get CT as numpy array
 slice_scores = nifti_inference(ct)  #get a list of scores
 ```
 
+## Output 
+The slice_scores.txt file obtained using nifti_inference.py now has two columns - the raw score and the linear regressed score. 
 
+To see a graph showing the linear regression line, uncomment lines 121-125 in nifti_inference.py. 
 
+## Changelog 
+Update 7/2020 by Daniel C. Elton:
+
+* Converted from Python 2 to Python 3
+* added nifti_inference.py, to allow for runs on NiFTI images.
+* added setup.py to make installable. 
+
+Update 7/2021 by Daniel C. Elton:
+
+* perform linear regression on the output so score vs slice # is a straight line. This smooths out irregularities. Both the raw score and score on the regressed line are outputted. 
 
 ## Notes
+* The trained model is in snapshots folder.
 * When training, see the requirements below and run train.sh.
 * The provided trained model was trained on 4400 unlabeled CT volumes with various reconstruction filters,
 scan ranges, and pathological conditions. Random 2D patch cropping was used when training.
@@ -75,5 +84,6 @@ the algorithm to sagittal/coronal planes, MR volumes, etc.
 * The output of SSBR can be used to roughly locate slices of certain body-parts, input to other CAD
 algorithms as features, detect abnormal volumes, and so on. See paper.
 
-
+## License 
+MIT License (see LICENCE.md file) 
 We utilize open source code from [py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn).
