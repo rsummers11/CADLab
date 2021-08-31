@@ -1,0 +1,3 @@
+file1.nii.gz
+file2.nii.gz
+file3.nii.gz
