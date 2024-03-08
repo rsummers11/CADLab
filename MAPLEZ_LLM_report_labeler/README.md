@@ -2,7 +2,7 @@
 
 by [Ricardo Bigolin Lanfredi](https://github.com/ricbl)
 
-Repository for data and code for the paper [Enhancing Chest X-ray Datasets with Privacy-Preserving LLMs and Multi-Type Annotations: A Data-Driven Approach for Improved Classification](). If you are here for the extended annotations of the ChestXray14 and MIMIC-CXR datasets, check the "new_dataset_annotations" folder in [this link](https://nihcc.box.com/s/ctvezyhzxitamo05gmlumuu8m8h999la).
+Repository for data and code for the paper [Enhancing Chest X-ray Datasets with Privacy-Preserving LLMs and Multi-Type Annotations: A Data-Driven Approach for Improved Classification](https://arxiv.org/pdf/2403.04024). If you are here for the extended annotations of the ChestXray14 and MIMIC-CXR datasets, check the "new_dataset_annotations" folder in [this link](https://nihcc.box.com/s/ctvezyhzxitamo05gmlumuu8m8h999la).
 
 ## Datasets
 
