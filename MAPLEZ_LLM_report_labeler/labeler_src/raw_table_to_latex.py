@@ -14,15 +14,18 @@ from collections import defaultdict
 import argparse
 
 def main(args):
+    type_annotation = args.type_annotation
     results = pd.read_csv(args.input_raw_table)
     results = results[(results['n_pos'] > 10) | (results['n_pos'] != results['n_pos'])]
-    results = results[(results['dataset']!='reflacx_phase12')]
+    if 'human' not in type_annotation:
+        results = results[(results['dataset']!='reflacx_phase12')]
     total_unnormalized_weights = results[results['row_unnormalized_weight']==results['row_unnormalized_weight']]['row_unnormalized_weight'].values.sum()
 
     do_large_table = args.do_large_table
-    type_annotation = args.type_annotation
+    
 
     precision_weight = 3
+    precision_pvalue = 3
 
     p_value_dict = {0.001:['\makebox[\widthof{\(^{\scriptscriptstyle{*}\scriptscriptstyle{*}\scriptscriptstyle{*}}\)}][c]{}',\
                             '\(^{\scriptscriptstyle{*}\scriptscriptstyle{*}\scriptscriptstyle{*}}\)'], 
@@ -30,7 +33,7 @@ def main(args):
                             '\makebox[\widthof{\(^{\scriptscriptstyle{*}\scriptscriptstyle{*}\scriptscriptstyle{*}}\)}][l]{\(^{\scriptscriptstyle{*}\scriptscriptstyle{*}}\)}'],
                             0.05:['\makebox[\widthof{\(^{\scriptscriptstyle{*}\scriptscriptstyle{*}\scriptscriptstyle{*}}\)}][c]{}',\
                             '\makebox[\widthof{\(^{\scriptscriptstyle{*}\scriptscriptstyle{*}\scriptscriptstyle{*}}\)}][l]{\(^{\scriptscriptstyle{*}}\)}'],
-                            1:['\makebox[\widthof{\(^{\scriptscriptstyle{*}\scriptscriptstyle{*}\scriptscriptstyle{*}}\)}][c]{}',\
+                            1.0000000001:['\makebox[\widthof{\(^{\scriptscriptstyle{*}\scriptscriptstyle{*}\scriptscriptstyle{*}}\)}][c]{}',\
                             '\makebox[\widthof{\(^{\scriptscriptstyle{*}\scriptscriptstyle{*}\scriptscriptstyle{*}}\)}][l]{\(^{ns}\)}']}
     if type_annotation=='other_modalities':
         precision=3
@@ -52,7 +55,8 @@ def main(args):
                     'label_liver lesion': 'Liver lesion',  
         'label_kidney lesion': 'Kidney lesion', 
         'label_adrenal gland abnormality':'Adrenal gland abnormality',
-        'all':'All',
+        'all':'All-W',
+        'all_macro':'All-M',
             }
             column_dict = {'dataset':'Data',
                 'abnormality':'Abn.',
@@ -69,7 +73,8 @@ def main(args):
                 'ct':'CT',
                 'pet':'PET',
                 'mri':'MRI',
-            'all':'All',
+            'all':'All-W',
+            'all_macro': 'All-M'
             }
             column_dict = {
                 'dataset':'Data',
@@ -106,7 +111,8 @@ def main(args):
             'pneumonia':'\\textit{PNA}',
             'pneumothorax':'\\textit{PTX}',
             'human':'\\textit{Human}',
-            'all':'All',
+            'all':'All-W',
+            'all_macro':'All-M',
             'reflacx_phase12':'\\textit{RFL-12}',
             'chexpert':'\\textit{CheXpert}',
                 'label_atelectasis':'Atel.',
@@ -133,8 +139,9 @@ def main(args):
             'reflacx':'\\textit{RFL-3}',
             'pneumonia':'\\textit{PNA}',
             'pneumothorax':'\\textit{PTX}',
-            'chexpert':'\\textit{CheXpert}',
-            'all':'All',
+            'chexpert':'\\textit{CXt}',
+            'all':'All-W',
+            'all_macro':'All-M',
             }
             column_dict = {
                 'dataset':'Data',
@@ -146,8 +153,8 @@ def main(args):
 
         main_score = 'auc'
 
-        labeler_dict = {'chexpert_model':'CheXpert','vqa_model':'VQA','llm_model':'LLM',\
-                        'no_loc': '$\lambda_{loc}=0$', 'labels':'Cat. Labels', '3notignore':'Use "Stable"',\
+        labeler_dict = {'chexpert_model':'CheXpert','vqa_model':'VQA', 'chexbert_model':'CheXbert', 'llm_model':'LLM', \
+                        'no_loc': '$\lambda_{loc}=0$', 'labels':'Cat. Labels', '3notignore':'Use ``Stable"',\
                             'generic':'MAPLEZ-G', 'all_changes':'All Changes'}
 
 
@@ -173,13 +180,15 @@ def main(args):
         'pneumonia':'\\textit{PNA}',
         'pneumothorax':'\\textit{PTX}',
         'human':'\\textit{Human}',
-        'all':'All',
+        'all':'All-W',
+        'all_macro':'All-M',
         'reflacx_phase12':'\\textit{RFL-12}',
         'chexpert':'\\textit{CheXpert}'
         }
 
         column_dict = {'dataset':'Data',
             'abnormality':'Abn.',
+            'n':'$N$',
         'n_pos':'$N^+$',
         'row_unnormalized_weight':'W',
         'median':''
@@ -195,10 +204,11 @@ def main(args):
         if do_large_table:
             score_type_dict = {'precision':'Precision', 'recall':'Recall', 'f1':'F1'}
         else:
+            del column_dict['dataset']
             score_type_dict = {'f1':'F1'}
     if type_annotation=='human_probability':
-        precision=3
-        precision_confidence = 3
+        precision=1
+        precision_confidence = 1
         precision_weight = 2
         label_dict = {'atelectasis':'Atel.',
         'cardiomegaly':'Card.',
@@ -211,12 +221,14 @@ def main(args):
         '-':'-'}
 
         dataset_dict = {
-        'all':'All',
+        'all':'All-W',
+        'all_macro':'All-M',
         'reflacx_phase12':'\\textit{RFL-12}'
         }
 
         column_dict = {'dataset':'Data',
             'abnormality':'Abn.',
+            'n':'$N$',
         'n_pos':'$N^+$',
         'row_unnormalized_weight':'W',
         'median':''
@@ -242,24 +254,34 @@ def main(args):
         'pleural effusion':'Effus.',
         'pneumothorax':'PTX',
         '-':'-'}
-
-        dataset_dict = {'nih':'NIH',
-        'mimic':'MIMIC',
-        'reflacx':'\\textit{RFL-3}',
-        'pneumonia':'\\textit{PNA}',
-        'pneumothorax':'\\textit{PTX}',
-        'human':'\\textit{Human}',
-        'all':'All',
-        'reflacx_phase12':'\\textit{RFL-12}',
-        'label_atelectasis':'Atel.',
-        'label_cardiomegaly':'Card.',
-        'label_consolidation':'Cons.',
-        'label_lung edema':'Edema',
-        'label_fracture':'Fract.',
-        'label_lung opacity':'Opac.',
-        'label_pleural effusion':'Effus.',
-        'label_pneumothorax':'PTX',
-        }
+        if do_large_table:
+            dataset_dict = {'nih':'NIH',
+            'mimic':'MIMIC',
+            'reflacx':'\\textit{RFL-3}',
+            'pneumonia':'\\textit{PNA}',
+            'pneumothorax':'\\textit{PTX}',
+            'human':'\\textit{Human}',
+            'all':'All-W',
+            'all_macro':'All-M',
+            'label_atelectasis':'Atel.',
+            'label_cardiomegaly':'Card.',
+            'label_consolidation':'Cons.',
+            'label_lung edema':'Edema',
+            'label_fracture':'Fract.',
+            'label_lung opacity':'Opac.',
+            'label_pleural effusion':'Effus.',
+            'label_pneumothorax':'PTX',
+            }
+        else:
+            dataset_dict = {'nih':'NIH',
+            'mimic':'MIMIC',
+            'reflacx':'\\textit{RFL-3}',
+            'pneumonia':'\\textit{PNA}',
+            'pneumothorax':'\\textit{PTX}',
+            'human':'\\textit{Human}',
+            'all':'All-W',
+            'all_macro':'All-M',
+            }
 
         column_dict = {'dataset':'Data',
             'abnormality':'Abn.',
@@ -274,7 +296,7 @@ def main(args):
 
         main_score = 'f1'
 
-        labeler_dict = {'chexpert':'CheXpert', 'vicuna':'Vicuna', 'vqa': 'VQA', 'llm_generic': 'MAPLEZ-G', 'llm':'MAPLEZ'}
+        labeler_dict = {'chexpert':'CheXpert', 'vicuna':'Vicuna', 'vqa': 'VQA', 'chexbert': 'CheXbert', 'template': 'Template', 'llm_generic': 'MAPLEZ-G', 'llm':'MAPLEZ'}
 
         if do_large_table:
             score_type_dict = {'precision':'Precision', 'recall':'Recall', 'f1':'F1'}
@@ -294,7 +316,8 @@ def main(args):
 
         dataset_dict = {
         'mimic':'MIMIC',
-        'all':'All'
+        'all':'All-W',
+        'all_macro':'All-M'
         }
 
         column_dict = {
@@ -328,7 +351,9 @@ def main(args):
         '-':'-'}
 
         dataset_dict = {
-        'mimic':'MIMIC'
+        'mimic':'MIMIC',
+        'all':'All-W',
+        'all_macro':'All-M'
         }
 
         column_dict = {
@@ -360,11 +385,15 @@ def main(args):
         '-':'-'}
 
         dataset_dict = {
-        'all':'All'
+            'reflacx':'\\textit{RFL-3}',
+        'all':'All-W',
+        'all_macro':'All-M'
         }
 
         column_dict = {
             'abnormality':'Abn.',
+                    'n':'$N$',
+        'n_pos':'$N^+$',
         'row_unnormalized_weight':'W',
         'median':''
         }
@@ -389,6 +418,7 @@ def main(args):
                 for score_type in score_type_dict:
                     if do_large_table:
                         table_string += score_type_dict[score_type]
+                        table_string += '& \\textit{P}'
                     else:
                         table_string += labeler_dict[labeler]
                     
@@ -403,9 +433,9 @@ def main(args):
     for row_index, row in results.iterrows():
         if row['dataset'] not in dataset_dict:
             continue
-        
-        if row['abnormality'] not in label_dict:
-            continue
+        if row['dataset'] not in ['pneumonia', 'pneumothorax']:
+            if row['abnormality'] not in label_dict:
+                continue
         if row['abnormality']=='-' and not average_midrule_added:
             table_string+='\\midrule'
             table_string+='\n'
@@ -416,9 +446,9 @@ def main(args):
             if column =='median':
                 for labeler in labeler_dict:
                     for score_type in score_type_dict:
-                        if row[f'{labeler}_{score_type}_median']==row[f'{labeler}_{score_type}_median']:
-                            if best_comparison(row[f'{labeler}_{score_type}_median'],best_score[score_type]):
-                                best_score[score_type] = row[f'{labeler}_{score_type}_median']
+                        if row[f'{labeler}_{score_type}_value']==row[f'{labeler}_{score_type}_value']:
+                            if best_comparison(row[f'{labeler}_{score_type}_value'],best_score[score_type]):
+                                best_score[score_type] = row[f'{labeler}_{score_type}_value']
                                 best_var[score_type] = row[f'{labeler}_{score_type}_var']
 
         for column in column_dict:
@@ -435,27 +465,39 @@ def main(args):
                     if do_large_table and 'other_modalities' not in type_annotation:
                         table_string += f'{labeler_dict[labeler]} & '
                     for score_type in score_type_dict:
-                        if not row[f'{labeler}_{score_type}_median']==row[f'{labeler}_{score_type}_median']:
+                        if not row[f'{labeler}_{score_type}_value']==row[f'{labeler}_{score_type}_value']:
                             table_string += '-'
                         else:
                             if labeler not in ['llm','llm_model']:
-                                p_value = 2*(0.5-abs(row[f'{labeler}_{score_type}_p']-0.5))
+
+                                p_value = row[f'{labeler}_{score_type}_p']
+
                                 for p_value_limit in p_value_dict:
-                                    if p_value<=p_value_limit:
+                                    if p_value<p_value_limit:
                                         p_value_string = p_value_dict[p_value_limit]
                                         break
 
                                 table_string += p_value_string[0]
-                            if best_score[score_type]==row[f'{labeler}_{score_type}_median'] and 'other_modalities' not in type_annotation:
+                            if best_score[score_type]==row[f'{labeler}_{score_type}_value'] and 'other_modalities' not in type_annotation:
                                 table_string += '\\textbf{'
-                            if do_large_table or 'probability' in type_annotation:
-                                table_string += f"{row[f'{labeler}_{score_type}_median']:.{precision}f} [{row[f'{labeler}_{score_type}_low']:.{precision_confidence}f},{row[f'{labeler}_{score_type}_high']:.{precision_confidence}f}]"
+                            if do_large_table or 'probability' in type_annotation or 'severity' in type_annotation or 'location' in type_annotation:
+                                table_string += f"{row[f'{labeler}_{score_type}_value']:.{precision}f} [{row[f'{labeler}_{score_type}_low']:.{precision_confidence}f},{row[f'{labeler}_{score_type}_high']:.{precision_confidence}f}]"
                             else:
-                                table_string += f"{row[f'{labeler}_{score_type}_median']:.{precision}f}"
-                            if best_score[score_type]==row[f'{labeler}_{score_type}_median'] and 'other_modalities' not in type_annotation:
+                                table_string += f"{row[f'{labeler}_{score_type}_value']:.{precision}f}"
+                            if best_score[score_type]==row[f'{labeler}_{score_type}_value'] and 'other_modalities' not in type_annotation:
                                 table_string += '}'
                             if labeler  not in ['llm','llm_model']:
                                 table_string += p_value_string[1]
+
+                            if do_large_table or ('probability' in type_annotation and labeler not in ['llm','llm_model']):
+                                if 'other_modalities' not in type_annotation:
+                                    table_string += f"& "
+                                    if labeler not in ['llm','llm_model']:
+                                        if p_value<0.001:
+                                            table_string += f"\\textless .001"
+                                        else:
+                                            table_string += f"{p_value:.{precision_pvalue}f}".lstrip('0')
+
                         table_string += ' & '
                     if do_large_table and 'other_modalities' not in type_annotation:
                         table_string+='\\\\\n'
@@ -471,7 +513,9 @@ def main(args):
                     else:
                         value = dataset_dict[row[column]]
                 elif column=='abnormality':
-                    if 'label_' in row['dataset']:
+                    if (('probability' in type_annotation or 'severity' in type_annotation or 'location' in type_annotation ) and row[column]=='-') or (('human_label' in type_annotation) and row[column]=='-' and not do_large_table):
+                        value = dataset_dict[row['dataset']]
+                    elif 'label_' in row['dataset']:
                         value = dataset_dict[row['dataset']]
                     elif 'abnormality' in row:
                         value = label_dict[row[column]]

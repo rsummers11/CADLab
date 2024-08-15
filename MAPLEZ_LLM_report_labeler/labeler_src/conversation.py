@@ -144,7 +144,7 @@ conv_v1_2 = Conversation(
            f"The assistant gives helpful structured answers to the radiologist."
            ,
     roles=("User", "Assistant"),
-    messages=(),
+    messages=[],
     offset=2,
     sep_style=SeparatorStyle.SINGLE,
     sep="###",

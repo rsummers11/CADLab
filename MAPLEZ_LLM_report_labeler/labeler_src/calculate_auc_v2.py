@@ -139,7 +139,7 @@ def main(args):
         for col in preds.columns[3:]:
             preds[col] = pd.to_numeric(preds[col], errors='coerce').astype('float')
 
-        if args.dataset=='mimic' and args.labeler!='vicuna':
+        if args.dataset=='mimic' and args.labeler!='vicuna' and args.labeler!='template':
             preds[['subject_id', 'study_id']] = preds['subjectid_studyid'].str.split('_', expand=True)
         else:
             preds['study_id'] = preds['subjectid_studyid']

@@ -26,7 +26,7 @@ def pre_process_path(dicom_path):
     return temp_path.strip()
 
 class MIMICCXRDataset(Dataset):
-    def __init__(self, df, df_new_labels_llm, df_new_labels_vqa, df_labels_reflacx):
+    def __init__(self, df, df_chexbert, df_new_labels_llm, df_new_labels_vqa, df_labels_reflacx):
         self.df = df
         self.dataset_size = len(self.df)
         
@@ -35,6 +35,8 @@ class MIMICCXRDataset(Dataset):
         self.df_new_labels_llm = df_new_labels_llm
         self.df_new_labels_vqa = df_new_labels_vqa
         self.df_labels_reflacx = df_labels_reflacx
+        self.df_chexbert = df_chexbert
+        self.df_chexbert[str_labels] = (self.df_chexbert[str_labels].fillna(-2))
     
     def __len__(self):
         return self.dataset_size
@@ -47,6 +49,7 @@ class MIMICCXRDataset(Dataset):
         filepath = jpg_path + '/files/' + pid[:3] + '/' + pid + '/s' + str(self.df.iloc[idx]["study_id"]) + '/' + self.df.iloc[idx]["dicom_id"] + '.jpg'
         img = imageio.imread(pre_process_path(filepath))
         mimic_gt = np.zeros([len(str_labels)])
+        chexbert_gt = np.zeros([len(str_labels)])
         new_gt = np.zeros([len(str_labels)])
         probabilities = np.zeros([len(str_labels)])
         location_labels = np.zeros([len(str_labels),len(str_labels_location)])-2
@@ -84,6 +87,9 @@ class MIMICCXRDataset(Dataset):
             this_location_labels = np.zeros([len(str_labels_location)])-2
 
             for index_label, label in enumerate(str_labels):
+                if dataset=='reflacx':
+                    if translation_mimic_to_new_labels[label] not in rows_new_labels_this_case.columns:
+                        continue
                 if dataset!='reflacx':
                     this_location_vector_index = -1
                     location = rows_new_labels_this_case[rows_new_labels_this_case['type_annotation']=='location'][translation_mimic_to_new_labels[label]].values[0]
@@ -131,6 +137,7 @@ class MIMICCXRDataset(Dataset):
                     probabilities[index_label] = probability
                     new_gt[index_label] = new_label
                     mimic_gt[index_label]= self.df.iloc[idx][label]
+                    chexbert_gt[index_label]= self.df_chexbert[self.df_chexbert['image_1'] == (str(self.df.iloc[idx]['subject_id']) + '_' + str(self.df.iloc[idx]['study_id']))][label].values[0]
                     location_vector_index[index_label] = this_location_vector_index
                     location_labels[index_label,:] = this_location_labels
                 elif dataset=='vqa':
@@ -143,4 +150,5 @@ class MIMICCXRDataset(Dataset):
                     reflacx_probabilities[index_label] = probability
                     reflacx_new_gt[index_label] = new_label
         
-        return img, mimic_gt, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, vqa_new_gt, vqa_severities, vqa_location_labels, vqa_location_vector_index, vqa_probabilities, reflacx_new_gt, reflacx_probabilities, reflacx_present
+        return img, mimic_gt, chexbert_gt, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, vqa_new_gt, vqa_severities, vqa_location_labels, vqa_location_vector_index, vqa_probabilities, reflacx_new_gt, reflacx_probabilities, reflacx_present
+    

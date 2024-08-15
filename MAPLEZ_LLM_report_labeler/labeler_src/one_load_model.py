@@ -71,6 +71,12 @@ lung opacity, run atelectasis, consolidation, lung edema, lung lesion, pneumonia
 output for lung opacity. Default: run it for all labels''')
     parser.add_argument('--n_jobs', type=int, default = 8, help='''Number of parallel jobs to run in this script. For 5 V100X GPU, running it with 2 parallel jobs made a fuller use of the GPU than with only 1 job, 
 running it at almost double the speed. No speedup was seen for running it with more than 2 jobs. Default: 8 jobs.''')
+    parser.add_argument('--do_vicuna', type=str2bool, default = 'false', help='''''')
+    parser.add_argument('--do_template', type=str2bool, default = 'false', help='''''')
+    parser.add_argument('--do_only_test_mimic', type=str2bool, default = 'true', help='''''')
+    parser.add_argument('--repetition_penalty', type=float, default = 0, help='''''')
+    parser.add_argument('--top_p', type=float, default = 0.95, help='''''')
+    parser.add_argument('--frequency_penalty', type=float, default = 0, help='''''')
 
     args = parser.parse_args()
     download_location = args.download_location

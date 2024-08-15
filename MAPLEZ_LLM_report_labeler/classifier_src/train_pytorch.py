@@ -57,7 +57,7 @@ def train_one_epoch(model, criterion, optimizer, data_loader, device, epoch, out
 
     header = f"Epoch: [{epoch}]"
     for i, batch in enumerate(metric_logger.log_every(data_loader, args.print_freq, header)):
-        (image, target, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, vqa_new_gt, \
+        (image, target, chexbert_target, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, vqa_new_gt, \
              vqa_severities, vqa_location_labels, vqa_location_vector_index, vqa_probabilities, reflacx_new_gt, reflacx_probabilities, reflacx_present) = batch
         if not args.ignore_comparison_uncertainty:
             unchanged_uncertainties = unchanged_uncertainties*0
@@ -66,9 +66,9 @@ def train_one_epoch(model, criterion, optimizer, data_loader, device, epoch, out
         if i==0:
             output.save_image(image, 'image_train', epoch)
         start_time = time.time()
-        image, target, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, \
+        image, target, chexbert_target, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, \
             vqa_new_gt, vqa_severities, vqa_location_labels, vqa_location_vector_index, vqa_probabilities = \
-            image.to(device), target.to(device), new_gt.to(device), \
+            image.to(device), target.to(device), chexbert_target.to(device), new_gt.to(device), \
             severities.to(device), location_labels.to(device), \
             location_vector_index.to(device), probabilities.to(device), \
             unchanged_uncertainties.to(device), vqa_new_gt.to(device), \
@@ -88,6 +88,12 @@ def train_one_epoch(model, criterion, optimizer, data_loader, device, epoch, out
             probability_to_use = vqa_probabilities
         elif args.labeler == 'chexpert':
             target_to_use = target
+            location_label_to_use = None
+            location_vector_to_use = None
+            severity_to_use = None
+            probability_to_use = None
+        elif args.labeler == 'chexbert':
+            target_to_use = chexbert_target
             location_label_to_use = None
             location_vector_to_use = None
             severity_to_use = None
@@ -175,7 +181,7 @@ def evaluate(model, criterion, data_loader, data_loader_test_chexpert_images, da
                         metric_logger.meters[f"target_nihpneumonia_{log_suffix}"].update(pneumonia_labels[(pneumonia_label_present).bool()].detach().cpu().numpy())       
 
         for i, batch in enumerate(metric_logger.log_every(data_loader, print_freq, header)):
-            (image, target, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, vqa_new_gt,\
+            (image, target, chexbert_target, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, vqa_new_gt,\
              vqa_severities, vqa_location_labels, vqa_location_vector_index, vqa_probabilities, reflacx_new_gt, reflacx_probabilities, reflacx_present) = batch
             if not args.ignore_comparison_uncertainty:
                 unchanged_uncertainties = unchanged_uncertainties*0
@@ -183,10 +189,10 @@ def evaluate(model, criterion, data_loader, data_loader_test_chexpert_images, da
                 image = 1- image
             if i==0:
                 output.save_image(image, 'image_val', epoch)
-            image, target, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, \
+            image, target, chexbert_target, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, \
                 vqa_new_gt, vqa_severities, vqa_location_labels, vqa_location_vector_index, vqa_probabilities, reflacx_new_gt, \
                 reflacx_probabilities, reflacx_present = \
-                image.to(device, non_blocking=True), target.to(device, non_blocking=True), new_gt.to(device, non_blocking=True), \
+                image.to(device, non_blocking=True), target.to(device, non_blocking=True), chexbert_target.to(device, non_blocking=True), new_gt.to(device, non_blocking=True), \
                 severities.to(device, non_blocking=True), location_labels.to(device, non_blocking=True), \
                 location_vector_index.to(device, non_blocking=True), probabilities.to(device, non_blocking=True), \
                 unchanged_uncertainties.to(device, non_blocking=True), vqa_new_gt.to(device, non_blocking=True), \
@@ -208,6 +214,12 @@ def evaluate(model, criterion, data_loader, data_loader_test_chexpert_images, da
                 probability_to_use = vqa_probabilities
             elif args.labeler == 'chexpert':
                 target_to_use = target
+                location_label_to_use = None
+                location_vector_to_use = None
+                severity_to_use = None
+                probability_to_use = None
+            elif args.labeler == 'chexbert':
+                target_to_use = chexbert_target
                 location_label_to_use = None
                 location_vector_to_use = None
                 severity_to_use = None
@@ -235,7 +247,8 @@ def evaluate(model, criterion, data_loader, data_loader_test_chexpert_images, da
                         this_target = vqa_new_gt[allowed_indices, :]
                     elif val_labeler == 'chexpert':
                         this_target = target[allowed_indices, :]
-        
+                    elif val_labeler == 'chexbert':
+                        this_target = chexbert_target[allowed_indices, :]
                     this_target = this_target[:, index_class]
                     this_target[this_target==-3] = 0
                     this_target[this_target==-2] = 0
@@ -703,7 +716,7 @@ def get_args_parser(add_help=True):
     parser.add_argument("--severity_loss_multiplier", type=float, default=0, help="")
     parser.add_argument("--location_loss_multiplier", type=float, default=0, help="")
     parser.add_argument("--n_hidden_neurons_in_heads", type=int, default=256, help="")
-    parser.add_argument("--labeler", type=str, default='llm', choices = ['llm', 'vqa', 'chexpert'], help="")
+    parser.add_argument("--labeler", type=str, default='llm', choices = ['llm', 'vqa', 'chexpert', 'chexbert'], help="")
     parser.add_argument("--ignore_comparison_uncertainty", type=str2bool, default='true', help="")
     parser.add_argument("--uncertainty_label", default=1, type=int, help="")
     parser.add_argument("--label_smoothing", default=0, type=float, help="")
@@ -723,9 +736,9 @@ def get_args_parser(add_help=True):
 
     args.num_classes = len(str_labels_mimic)
     if args.split_validation=='val':
-        args.val_labeler = ['llm', 'vqa', 'chexpert']
+        args.val_labeler = ['llm', 'vqa', 'chexpert','chexbert']
     else:
-        args.val_labeler = ['llm', 'vqa', 'chexpert', 'reflacx']
+        args.val_labeler = ['llm', 'vqa', 'chexpert','chexbert', 'reflacx']
 
     args.skip_train = args.test_only
     if args.adjust_lr:

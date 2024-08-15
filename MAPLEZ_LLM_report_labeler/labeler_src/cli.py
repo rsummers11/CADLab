@@ -138,6 +138,20 @@ def parse_location_filter(sentence, fn_inputs):
         return 1
     return 0
 
+def extract_answer(template_string):
+    pattern = rf':\s*"\[(.*?)\]"'
+    
+    match = re.search(pattern, template_string)
+    
+    if match:
+        return match.group(1)
+    else:
+        return "Finding not found in the template"
+    
+def parse_template(sentence, fn_inputs):
+    answer = extract_answer(sentence.lower())
+    return parse_yes_no(answer, None)
+
 class Node:
     def __init__(self, data, subdata, max_new_tokens=1, parse_sentence=parse_yes_no):
         self.subdata = subdata
@@ -171,6 +185,12 @@ def get_node_output(current_node, fn_inputs, tokenizer, model, model_name, do_ta
                 "max_new_tokens": current_node.max_new_tokens,
                 "stop": conv.sep if conv.sep_style == SeparatorStyle.SINGLE else conv.sep2,
             }
+            if  args.repetition_penalty is not None:
+                params["repetition_penalty"] = args.repetition_penalty
+            if  args.top_p is not None:
+                params["top_p"] = args.top_p
+            if  args.frequency_penalty is not None:
+                params["frequency_penalty"] = args.frequency_penalty
             pre = 0
             for outputs in generate_stream(tokenizer, model, params, args.device):
                 outputs = outputs[len(prompt) + 1:].strip()
@@ -285,12 +305,17 @@ Answer:"'''],[False,True], 3 , parse_location_filter)
         mimic_report_root = f'{mimic_root}/files/mimic-cxr-reports'
 
         chexpert_df = pd.read_csv(os.path.join(mimic_root, 'mimic-cxr-2.0.0-chexpert.csv.gz'), compression='gzip').astype('Int64')
+        if args.do_only_test_mimic:
+            split_df = pd.read_csv(os.path.join(mimic_root, 'mimic-cxr-2.0.0-split.csv.gz'), compression='gzip')
+            split_df['subject_id'] = split_df['subject_id'].astype('Int64')
+            split_df['study_id'] = split_df['study_id'].astype('Int64')
+            chexpert_df = pd.merge(chexpert_df, split_df, on=['study_id', 'subject_id'])
+            chexpert_df = chexpert_df[chexpert_df['split'] == 'test']
+
     elif args.dataset=='nih':
         chexpert_df = pd.read_csv(args.nih_reports_csv)
         # chexpert_df['subject_id'] = chexpert_df['image1'].apply(lambda row: row.split('/')[-1].split('.')[0])
-        # chexpert_df['subject_id'] = chexpert_df['image2'].apply(lambda row: '')
-        chexpert_df['subject_id'] = ''
-
+        chexpert_df['subject_id'] = chexpert_df['image2'].apply(lambda row: '')
         # chexpert_df['study_id'] = chexpert_df['image2'].apply(lambda row: row.split('/')[-1].split('.')[0])
         chexpert_df['study_id'] = chexpert_df['image1']
 
@@ -401,6 +426,28 @@ Answer:"'''],[False,True], 3 , parse_location_filter)
             location_node,
             severity_node
             ]])
+    if args.do_vicuna:
+        prompts = Node([lambda sentence_, label_: f'Given the full report "{sentence_}", use a one sentence logical deductive reasoning to infer if the radiologist observed presence of evidence of "{label_set_mimic_generic[label_]}". Answer with "Yes" or "No".'],
+                    [Node([lambda sentence_, label_: f'Given the full report "{sentence_}", use a one sentence logical deductive reasoning to infer if the radiologist stated the absence of evidence of "{label_set_mimic_generic[label_]}". Answer with "Yes" or "No".'],
+                        [[-2, -1, -1, -1],[0, -1, -1, -1]]),
+                    Node([lambda sentence_, label_: f'Given the full report "{sentence_}", use a one sentence logical deductive reasoning to infer if "{label_set_mimic_generic[label_]}" might not be present even though the radiologist observed presence of evidence of "{label_set_mimic_generic[label_]}". Answer with "Yes" or "No".'],
+                        [[1, -1, -1, -1],[-1, -1, -1, -1]])])
+    if args.do_template:
+        prompts = Node([lambda sentence_, label_: (f"""Please accurately classify radiology reports for the presence r absence of findings. For each report, you will classify for the presence or absence of the following findings: {label_set_mimic_generic[label_]} """ + (" (this does NOT include pericardial effusion)" if label_set_mimic_generic[label_]=="pleural effusion" else "") + f""". structure your answer like the template I provide to you delimited by triple backticks and return this template and nothing else.
+ALWAYS RETURN THE FULL TEMPLATE:
+```
+{{"{label_set_mimic_generic[label_]}": "[ANSWER]"}}
+```
+
+the default answer is 'Undefined'.
+if the patient has the finding, answer 'Yes'.
+if the patient does not have the finding, answer 'No'.
+
+Classify the following radiology report according to the template.
+Always output the full template, even if a finding is not mentioned:
+
+"{sentence_}"
+""")],[[0, -1, -1, -1],[1, -1, -1, -1]], max_new_tokens=1, parse_sentence=parse_template)
 
     def run_one_report(idx, row, model_list):
         

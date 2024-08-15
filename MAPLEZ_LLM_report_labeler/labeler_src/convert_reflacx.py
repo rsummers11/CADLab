@@ -25,13 +25,16 @@ def get_probability_from_number(probability_number):
     if probability_number==0:
         return 0
 
-columns_to_use = ['pneumothorax','cardiomegaly','lung opacity','consolidation','lung edema']
+columns_to_use = ['pneumothorax','cardiomegaly','lung opacity','consolidation','lung edema', 'atelectasis', 'pleural effusion', 'fracture']
 
 columns_to_join_preds = {'consolidation':['Consolidation'],
                          'cardiomegaly':['Enlarged cardiac silhouette'],
                         'lung opacity':['Interstitial lung disease', 'Pulmonary edema','Consolidation', 'Atelectasis','Enlarged hilum', 'Groundglass opacity', 'Lung nodule or mass'],
                         'lung edema':['Pulmonary edema'],
                         'pneumothorax':['Pneumothorax'],
+                        'atelectasis':['Atelectasis'],
+                        'pleural effusion':['Pleural abnormality'],
+                        'fracture':['Fracture'],
                          }
 
 primary_labels = {}

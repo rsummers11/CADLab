@@ -37,9 +37,9 @@ def get_mimic_dataset_by_split(args, split, fn_create_dataset, post_transform, h
         filename = f'{split}_{h5_filename}',
         fn_create_dataset = lambda: 
             TransformsDataset(fn_create_dataset(split, args), pre_transform_train, 0),
-         preprocessing_functions = [change_np_type_fn(np.ubyte, 1), None, None, None, None, None, None, None, None, None, None, None, None, None, None, None], # chest x-rays are converted to 1 byte of precision to save space and disk IO when saving as hdf5 file
-         postprocessing_functions = [change_np_type_fn(np.float32, 1./255.), None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],
-         n_processes = 16, load_to_memory = [False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]),
+         preprocessing_functions = [change_np_type_fn(np.ubyte, 1), None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None], # chest x-rays are converted to 1 byte of precision to save space and disk IO when saving as hdf5 file
+         postprocessing_functions = [change_np_type_fn(np.float32, 1./255.), None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],
+         n_processes = 16, load_to_memory = [False, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True]),
             post_transform, [0]  ),[ToTensorMine()], 1  )
 
 def get_mimic_by_split(split,args):
@@ -50,7 +50,8 @@ def get_mimic_by_split(split,args):
         new_labels_df_llm = pd.read_csv('./new_dataset_annotations/mimic_llm_annotations.csv')
     new_labels_df_vqa = pd.read_csv('vqa_dataset_converted.csv')
     df_labels_reflacx = pd.read_csv('reflacx_dataset_converted.csv')
-    return MIMICCXRDataset({'train': train_df, 'val': val_df, 'test': test_df}[split], new_labels_df_llm, new_labels_df_vqa, df_labels_reflacx)
+    chexbert_df = pd.read_csv('mimic_chexbert_labels.csv')
+    return MIMICCXRDataset({'train': train_df, 'val': val_df, 'test': test_df}[split], chexbert_df, new_labels_df_llm, new_labels_df_vqa, df_labels_reflacx)
 
 def get_chexpert_by_split(split, args):
     test_df = pd.read_csv(chexpert_dataset_location + '/groundtruth.csv')

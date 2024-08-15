@@ -18,9 +18,72 @@ from sklearn.metrics import roc_auc_score, precision_score, recall_score,f1_scor
 from pathlib import Path
 from scipy.interpolate import interp1d
 from sortedcollections import OrderedSet
+import random
+import sys
+import copy
+
+from scipy.stats._resampling import _bootstrap_iv
+from scipy.stats._resampling import _bootstrap_resample
+from scipy.stats._resampling import _bca_interval
+from scipy.stats._resampling import _percentile_along_axis
+from scipy.stats._resampling import BootstrapResult
+from scipy.stats._resampling import ConfidenceInterval
+
+def bootstrap(data, statistic, *, n_resamples=9999, batch=None,
+              vectorized=None, paired=False, axis=0, confidence_level=0.95,
+              alternative='two-sided', method='BCa', bootstrap_result=None,
+              random_state=None):
+    # Input validation
+    args = _bootstrap_iv(data, statistic, vectorized, paired, axis,
+                         confidence_level, alternative, n_resamples, batch,
+                         method, bootstrap_result, random_state)
+    (data2, statistic2, vectorized, paired, axis, confidence_level,
+     alternative, n_resamples, batch, method, bootstrap_result,
+     random_state) = args
+
+    theta_hat_b = ([] if bootstrap_result is None
+                   else [bootstrap_result.bootstrap_distribution])
+
+    batch_nominal = batch or n_resamples or 1
+    
+    for k in range(0, n_resamples, batch_nominal):
+        batch_actual = min(batch_nominal, n_resamples-k)
+        # Compute bootstrap distribution of statistic
+        for batch_index in range(batch_actual):
+            rng = np.random.RandomState()
+            theta_hat_b.append([statistic(*data, rng = rng)])
+    theta_hat_b = np.concatenate(theta_hat_b, axis=-1)
+
+    # Calculate percentile interval
+    alpha = ((1 - confidence_level)/2 if alternative == 'two-sided'
+             else (1 - confidence_level))
+    if method == 'bca':
+        interval = _bca_interval(data2, statistic2, axis=-1, alpha=alpha,
+                                 theta_hat_b=theta_hat_b, batch=batch)[:2]
+        percentile_fun = _percentile_along_axis
+    else:
+        interval = alpha, 1-alpha
+
+        def percentile_fun(a, q):
+            return np.percentile(a=a, q=q, axis=-1)
+    # Calculate confidence interval of statistic
+    ci_l = percentile_fun(theta_hat_b, interval[0]*100)
+    ci_u = percentile_fun(theta_hat_b, interval[1]*100)
+    if method == 'basic':  # see [3]
+        theta_hat = statistic2(*data2, axis=-1)
+        ci_l, ci_u = 2*theta_hat - ci_u, 2*theta_hat - ci_l
+
+    if alternative == 'less':
+        ci_l = np.full_like(ci_l, -np.inf)
+    elif alternative == 'greater':
+        ci_u = np.full_like(ci_u, np.inf)
+
+    return BootstrapResult(confidence_interval=ConfidenceInterval(ci_l, ci_u),
+                           bootstrap_distribution=theta_hat_b,
+                           standard_error=np.std(theta_hat_b, ddof=1, axis=-1))
 
 n_iterations = 2000
-
+tolerance = sys.float_info.epsilon * 10
 def auc_metric(target_column, output_column):
     if len(target_column)==0:
         return float('inf')
@@ -39,93 +102,72 @@ def find_full_folder_name(base_folder, partial_name):
     return None
 
 def get_if_several_predictions(vector):
-    return isinstance(vector,list) or len(vector.shape)==2
+    return isinstance(vector,list) or len(vector.shape)>=2
 
-def get_bootstrap(scores_fn, gt_vector, pred_vector, weights = None):
-    bootstrapped_scores = []
-    n_samples = gt_vector.shape[0]
+from joblib import Parallel, delayed
+import joblib
+
+import hashlib
+def get_hashed_seed(global_seed, index):
+    hash_input = f"{global_seed}_{index}".encode()
+    hash_output = hashlib.sha256(hash_input).hexdigest()
+    # Convert the hexadecimal hash to an integer
+    return int(hash_output, 16) % (2**32 - 1)
+
+def average_seeds_metric(scores_fn, rng, gt_vector, pred_vector, ids_vector = None):
     several_predictions = get_if_several_predictions(pred_vector)
+    score = []
     if several_predictions:
-        new_pred_vector = np.array([])
-        new_gt_vector = np.array([])
-        new_weight_vector = np.array([])
-        n_subvector = len(pred_vector)
-        for index_subvector in range(n_subvector):
-            
-            new_pred_vector = np.hstack((new_pred_vector,pred_vector[index_subvector]))
-            new_gt_vector = np.hstack((new_gt_vector,gt_vector))
-            new_weight_vector = np.hstack((new_weight_vector,weights))
-        gt_vector = new_gt_vector 
-        pred_vector = new_pred_vector
-        if weights is not None:
-            weights = new_weight_vector/n_subvector
-    for i in range(n_iterations):
-        sampled_indices = np.random.choice(gt_vector.shape[0], size=n_samples, replace=True, p = weights)
-        sampled_gt = gt_vector[sampled_indices]
-        sampled_pred = pred_vector[sampled_indices]
-        score = scores_fn(sampled_gt, sampled_pred)
-        bootstrapped_scores.append(score)
-    sorted_scores = np.array(bootstrapped_scores)
-    sorted_scores.sort()
-    confidence_lower = sorted_scores[int(0.025 * len(sorted_scores))]
-    confidence_upper = sorted_scores[int(0.975 * len(sorted_scores))]
-    median = sorted_scores[int(0.5 * len(sorted_scores))]
-    average = sorted_scores.mean()
-    var = sorted_scores.var()
-    return median, confidence_lower, confidence_upper, average, var
-
-def get_hypothesis_test_equality(scores_fn, gt_vector1, pred_vector1, gt_vector2, pred_vector2, weights = None):
-    assert((gt_vector1==gt_vector2).all())
-    
-    n_samples = gt_vector1.shape[0]
-    several_predictions1 = get_if_several_predictions(pred_vector1)
-    several_predictions2 = get_if_several_predictions(pred_vector2)
-    if several_predictions1 or several_predictions2:
-        new_pred_vector1 = np.array([])
-        new_pred_vector2 = np.array([])
-        new_weight_vector = np.array([])
-        new_gt_vector = np.array([])
-        if several_predictions1:
-            n_subvector = len(pred_vector1)
+        for index_seed in range(len(pred_vector)):
+            sampled_pred = pred_vector[index_seed]
+            if ids_vector is None:
+                if rng is None:
+                    score.append(scores_fn(gt_vector, sampled_pred))
+                else:
+                    score.append(scores_fn(gt_vector, sampled_pred, rng))
+            else:
+                if rng is None:
+                    score.append(scores_fn(gt_vector, sampled_pred, ids_vector))
+                else:
+                    score.append(scores_fn(gt_vector, sampled_pred, ids_vector, rng))
+        score = sum(score)/len(score)
+    else:
+        sampled_pred = pred_vector
+        if ids_vector is None:
+            if rng is None:
+                score = scores_fn(gt_vector, sampled_pred)
+            else:
+                score = scores_fn(gt_vector, sampled_pred, rng)
         else:
-            n_subvector = len(pred_vector2)
-        for index_subvector in range(n_subvector):
-            if several_predictions1:
-                new_pred_vector1 = np.hstack((new_pred_vector1,pred_vector1[index_subvector]))
+            if rng is None:
+                score = scores_fn(gt_vector, sampled_pred, ids_vector)
             else:
-                new_pred_vector1 = np.hstack((new_pred_vector1,pred_vector1))
-            if several_predictions2:
-                new_pred_vector2 = np.hstack((new_pred_vector2,pred_vector2[index_subvector]))
-            else:
-                new_pred_vector2 = np.hstack((new_pred_vector2,pred_vector2))
-            new_gt_vector = np.hstack((new_gt_vector,gt_vector1))
-            new_weight_vector = np.hstack((new_weight_vector,weights))
-        gt_vector1 = new_gt_vector 
-        pred_vector1 = new_pred_vector1
-        if weights is not None:
-            weights = new_weight_vector/n_subvector
-        pred_vector2 = new_pred_vector2
-    gt_vector = np.concatenate((gt_vector1, gt_vector1), axis=0)
-    pred_vector = np.concatenate((pred_vector1, pred_vector2), axis=0)
-    obs_diff = scores_fn(gt_vector1,pred_vector1) - scores_fn(gt_vector1,pred_vector2)
-    count = 0
-    if weights is not None:
-        weights = np.concatenate((weights, weights), axis=0)/2
-    for i in range(n_iterations):
-        sampled_indices = np.random.choice(2*gt_vector1.shape[0], size=n_samples, replace=True, p = weights)
-        sampled_gt1 = gt_vector[sampled_indices]
-        sampled_pred1 = pred_vector[sampled_indices]
-        sampled_indices = np.random.choice(2*gt_vector1.shape[0], size=n_samples, replace=True, p = weights)
-        sampled_gt2 = gt_vector[sampled_indices]
-        sampled_pred2 = pred_vector[sampled_indices]
-        iter_diff = scores_fn(sampled_gt1,sampled_pred1) - scores_fn(sampled_gt2,sampled_pred2)
-        if iter_diff>=obs_diff:
-            if iter_diff==obs_diff:
-                count += 0.5
-            else:
-                count += 1
-    return count/n_iterations
+                score = scores_fn(gt_vector, sampled_pred, ids_vector, rng)
+    return score
+def calculate_micro_score(gt_vector, pred_vector, score_fn, rng = None):
+    if rng is not None:
+        sampled_indices = rng.choice(len(gt_vector), size=len(gt_vector), replace=True)
+        gt_vector = gt_vector[sampled_indices]
+        pred_vector = pred_vector[sampled_indices]
+    score = score_fn(gt_vector,pred_vector)
+    return score
 
+def calculate_macro_score(dataset_sizes, gt_vector, pred_vector, ids_vector, score_fn, row_weights = None, rng = None):
+    if row_weights is None:
+        row_weights = np.array([1] * len(dataset_sizes))
+    sum_weights = row_weights.sum()
+    score = 0.
+    for index_dataset, dataset_size in enumerate(dataset_sizes):
+        g1 = gt_vector[ids_vector==index_dataset]
+        p1 = pred_vector[ids_vector==index_dataset]
+        assert(len(g1)==len(p1))
+        assert(len(g1)==dataset_size or len(g1)==dataset_size-1)
+        if rng is not None:
+            sampled_indices = rng.choice(len(g1), size=len(g1), replace=True)
+            g1 = g1[sampled_indices]
+            p1 = p1[sampled_indices]
+        score+=score_fn(g1,p1)*row_weights[index_dataset]/sum_weights
+    return score
 def flexible_concatenate(target_array, new_array):
     # If the target array is "empty" (in this case, we define "empty" as None)
     if target_array is None:
@@ -179,6 +221,61 @@ def get_items_from_argparse(args, argparse_string):
 
     return result_dict
 
+def score_statistic(data1,data2,score_fn):
+    data2 = np.array(data2)
+    if len(data2.shape)>2:
+        data2 =  np.transpose(data2, (1, 0, 2))
+    
+    if len(data1.shape)>1 and (data1.shape[0]==n_iterations or data1.shape[0]-1==data1.shape[-1]) :
+        scores = []
+        for index_perm in range(data1.shape[0]):
+            d1 = data1[index_perm]
+            d2 = data2[index_perm]
+            scores.append(score_fn(d1,d2))
+        return np.array(scores)
+    else:
+        d1 = data1
+        d2 = data2
+        return score_fn(d1, d2)
+
+
+def score_statistic_aggregate(data1,data2,data3,rng,score_fn):
+    data1 = np.array(data1)
+    data2 = np.array(data2)
+    data3 = np.array(data3)
+    if len(data1.shape)>2:
+        data1 =  np.transpose(data1, (1, 0, 2))
+    if len(data2.shape)>2:
+        data2 =  np.transpose(data2, (1, 0, 2))
+    if len(data3.shape)>2:
+        data3 =  np.transpose(data3, (1, 0, 2))
+    if len(data1.shape)>1 and (data1.shape[0]==n_iterations or data1.shape[0]-1==data1.shape[-1]):
+        scores = []
+        for index_perm in range(data1.shape[0]):
+            d1 = data1[index_perm]
+            d2 = data2[index_perm]
+            d3 = data3[index_perm]
+            scores.append(score_fn(d1,d2,d3,rng))
+        return np.array(scores)
+    else:
+        d1 = data1
+        d2 = data2
+        d3 = data3
+        return score_fn(d1, d2, d3,rng)
+
+def score_statistic_difference(data1,data2, axis = None, score_fn = None):
+    if len(data1.shape)>1 and (data1.shape[0]==n_iterations or data1.shape[0]-1==data1.shape[-1]):
+        scores = []
+        for index_perm in range(data1.shape[0]):
+            d1 = data1[index_perm]
+            d2 = data2[index_perm]
+            scores.append(score_fn(d1) - score_fn(d2))
+        return np.array(scores)
+    else:
+        d1 = data1
+        d2 = data2
+        return score_fn(d1) - score_fn(d2)
+                                    
 def main(args):
     group_by_abnormality = True
     location_labels_allowed = {}   
@@ -190,10 +287,16 @@ def main(args):
         from convert_annotations_ct_mri import main as build_from_annotation_files_
         
         _labelers = ['llm']
+        if 'location' in args.type_annotation:
+            datasets = ['ct','mri']
+        else:
+            datasets = ['ct','mri','pet']
         
         abnormalities =  ['lung lesion', 'liver lesion', 'kidney lesion', 'adrenal gland abnormality','pleural effusion', 'hypermetabolic abnormality in the thorax', 'hypermetabolic abnormality in the abdomen', 'hypermetabolic abnormality in the pelvis']
         model_to_compare_against = []
         aggregation_datasets = ['ct','mri','pet','all']
+        if args.do_macro_scores:
+            aggregation_datasets += ['all_macro']
         vqa_forbidden_datasets = ['']
         output_filename = f'{args.output_folder}/{args.type_annotation}_table_raw_v2.csv'
         score_type_dict = {'f1':f1_score, 'precision': precision_score, 'recall': recall_score}
@@ -222,7 +325,10 @@ def main(args):
         str_labels_location = list(OrderedSet([item for sublist in location_labels_allowed.values() for item in sublist]))
 
     if (args.type_annotation=='classifier'):
-        _labelers = {'no_loc': ['test_llm_no_loc_73290',
+        _labelers = {'llm_model':['test_llm_68295',
+            'test_llm_71272',
+            'test_llm_24023',],
+            'no_loc': ['test_llm_no_loc_73290',
             'test_llm_no_loc_42251',
             'test_llm_no_loc_81034',],
             'generic':['test_llm_generic_76772',
@@ -231,10 +337,6 @@ def main(args):
             'vqa_model':['test_vqa_73780',
             'test_vqa_64412',
             'test_vqa_58139',],
-            'llm_model':['test_llm_68295',
-            'test_llm_72395',
-            'test_llm_71272',
-            'test_llm_24023',],
             '3notignore':['test_llm_3notignore_62604',
             'test_llm_3notignore_82272',
             'test_llm_3notignore_35673',],
@@ -244,6 +346,9 @@ def main(args):
             'chexpert_model':['test_chexpert_90577',
             'test_chexpert_65897',
             'test_chexpert_34197'],
+            'chexbert_model':['test_chexbert_71774',
+                              'test_chexbert_26693',
+                              'test_chexbert_14852'],
             'all_changes':['test_llm_all_changes_54847',
             'test_llm_all_changes_61681',
             'test_llm_all_changes_61785']}
@@ -261,6 +366,8 @@ def main(args):
         score_type_dict = {'auc':auc_metric}
         main_score = 'auc'
         aggregation_datasets = ['reflacx','chexpert','all']
+        if args.do_macro_scores:
+            aggregation_datasets += ['all_macro']
         vqa_forbidden_datasets = ['']
         output_filename = f'{args.output_folder}/models_table_raw_v2.csv'
         abnormalities = ['atelectasis', 'cardiomegaly', 'consolidation', 'lung edema', 'fracture',\
@@ -298,7 +405,7 @@ def main(args):
         datasets = ['reflacx_phase12']
         abnormalities = ['cardiomegaly', 'consolidation', 'lung edema', 
                         'lung opacity', 'pneumothorax']
-        _labelers = {'human':['r1','r2'], 'llm':['']}
+        _labelers = {'llm':[''], 'human':['r1','r2']}
         output_filename = f'{args.output_folder}/{args.type_annotation}_table_raw_human_v2.csv'
         if 'probability' in args.type_annotation:
             score_type_dict = {'mae':mae_score}
@@ -313,7 +420,11 @@ def main(args):
         extra_name = ''
         
         aggregation_datasets = ['reflacx_phase12']
+        if args.do_macro_scores:
+            aggregation_datasets += ['all_macro']
         vqa_forbidden_datasets = ['human', 'pneumothorax', 'pneumonia','nih','all']
+        if args.do_macro_scores:
+            vqa_forbidden_datasets += ['all_macro']
         model_to_compare_against = ['llm']
         def build_from_annotation_files(labeler, dataset):
             assert(dataset=='reflacx_phase12')
@@ -349,7 +460,7 @@ def main(args):
             return to_return
     
     if (args.type_annotation=='location'):
-        _labelers = ['vqa', 'llm', 'llm_generic']
+        _labelers = ['llm', 'vqa', 'llm_generic']
         datasets = ['mimic']
         abnormalities = ['atelectasis', 'consolidation', 'lung edema', 'fracture',\
                         'lung opacity', 'pleural effusion', 'pneumothorax']
@@ -360,6 +471,8 @@ def main(args):
         main_score = 'f1'
         word_type = 'loc'
         aggregation_datasets = ['all']
+        if args.do_macro_scores:
+            aggregation_datasets += ['all_macro']
         vqa_forbidden_datasets = ['human', 'pneumothorax', 'pneumonia','nih']
         model_to_compare_against = ['llm']
         location_labels_allowed = {
@@ -386,7 +499,7 @@ def main(args):
 
     # severity
     if (args.type_annotation=='severity'):
-        _labelers = ['vqa', 'llm', 'llm_generic']
+        _labelers = ['llm', 'vqa', 'llm_generic']
         datasets = ['mimic']
         extra_name = f'{"_agree" if args.limit_to_label_agreement else ""}'
         output_filename = f'{args.output_folder}/severity_table_raw_all_cases{extra_name}_v2.csv'
@@ -398,19 +511,28 @@ def main(args):
         main_score = 'f1'
         word_type = 'sev'
         aggregation_datasets = ['all']
+        if args.do_macro_scores:
+            aggregation_datasets += ['all_macro']
         vqa_forbidden_datasets = ['human', 'pneumothorax', 'pneumonia','nih']
         model_to_compare_against = ['llm']
 
     #labels
     if (args.type_annotation=='labels'):
-        _labelers = ['chexpert', 'vicuna', 'vqa', 'llm', 'llm_generic']
+        if args.table_origin_weights is not None:
+            _labelers = ['llm', 'vicuna', 'llm_generic']
+        else:
+            _labelers = ['llm', 'vicuna', 'chexbert', 'chexpert', 'vqa', 'llm_generic',  'template']
         if args.include_human_dataset:
-            datasets = ['nih', 'mimic', 'reflacx', 'pneumonia', 'pneumothorax', 'reflacx_phase12']
+            datasets = ['nih', 'mimic', 'reflacx', 'pneumonia', 'pneumothorax']
+
         else:
             datasets = ['nih', 'mimic']
         abnormalities = ['atelectasis', 'cardiomegaly', 'consolidation', 'lung edema', 'fracture',\
                         'lung opacity', 'pleural effusion', 'pneumothorax']
-        output_filename = f'{args.output_folder}/label_table_raw_v2.csv'
+        if args.table_origin_weights is not None:
+            output_filename = f'{args.output_folder}/label_table_raw_newllms_v2.csv'
+        else:
+            output_filename = f'{args.output_folder}/label_table_raw_v2.csv'
         score_type_dict = {'f1':f1_score, 'precision': precision_score, 'recall': recall_score}
         limit_to_label_agreement = False
         main_score = 'f1'
@@ -420,14 +542,20 @@ def main(args):
             aggregation_datasets = ['nih','mimic','reflacx','human','all']
         else:
             aggregation_datasets = ['nih','mimic','all']
+        if args.do_macro_scores:
+            aggregation_datasets += ['all_macro']
         vqa_forbidden_datasets = ['human', 'pneumothorax', 'pneumonia','nih','all',\
             'label_atelectasis','label_cardiomegaly','label_consolidation', \
                 'label_lung edema', 'label_lung opacity', 'label_fracture', 'label_pleural effusion', 'label_pneumothorax']
+        if args.do_macro_scores:
+            vqa_forbidden_datasets += ['all_macro']
         model_to_compare_against = ['llm']
     #probability
     if (args.type_annotation=='probability'):
         aggregation_datasets = ['all']
-        _labelers = ['vqa', 'llm', 'llm_generic']
+        if args.do_macro_scores:
+            aggregation_datasets += ['all_macro']
+        _labelers = ['llm', 'vqa', 'llm_generic']
         datasets = ['reflacx', 'reflacx_phase12']
         abnormalities = ['cardiomegaly', 'consolidation', 'lung edema',\
                         'lung opacity', 'pneumothorax']
@@ -461,6 +589,11 @@ def main(args):
         return total/count
 
     results = {}
+    bootstrapped_scores = {}
+    bootstrapped_scores_concatenated = {}
+    macro_gts = {}
+    macro_weights = {}
+    macro_preds = {}
     for dataset in datasets:
         results[dataset] = {}
         if dataset=='nih':
@@ -490,15 +623,17 @@ def main(args):
         list_of_labelers = labelers(dataset)
         
         for labeler in list_of_labelers:
-            if labeler in ['chexpert', 'vicuna', 'vqa', 'llm', 'llm_generic'] and 'dataset_arg' in locals():
+            if labeler in ['chexpert', 'vicuna', 'vqa', 'llm', 'llm_generic', 'chexbert', 'template'] and 'dataset_arg' in locals():
                 results[dataset][labeler] = {}
                 done_before = False
                 for abnormality in abnormalities:
                     file_path = Path(f'{args.output_folder}/{abnormality}_{labeler}_{dataset}_{word_type}_outputs{extra_name}.csv')
                     done_before = done_before or file_path.exists()
                 if not done_before:
+                    if dataset=='pet':
+                        continue
                     args2 = SimpleNamespace(type_annotation=("probability" if (args.type_annotation=='probability') else "labels"), \
-                                        run_labels = (args.type_annotation=='labels' or args.type_annotation=='probability'), \
+                                        run_labels = (args.type_annotation=='labels' or args.type_annotation=='probability' or args.type_annotation=='human_label'), \
                                             run_location=(args.type_annotation=='location'),\
                                             run_severity= (args.type_annotation=='severity'),\
                         groundtruth = groundtruth, labeler = labeler, dataset = dataset_arg, use_relabeled = use_relabeled, 
@@ -514,7 +649,11 @@ def main(args):
                         groundtruth_csv_reflacx = args.groundtruth_csv_reflacx,
                         groundtruth_csv_reflacx12 = args.groundtruth_csv_reflacx12,
                         prediction_file_nih_vicuna = args.prediction_file_nih_vicuna,
-                        prediction_file_mimic_vicuna = args.prediction_file_mimic_vicuna
+                        prediction_file_mimic_vicuna = args.prediction_file_mimic_vicuna,
+                        prediction_file_nih_chexbert = args.prediction_file_nih_chexbert,
+                        prediction_file_mimic_chexbert = args.prediction_file_mimic_chexbert,
+                        prediction_file_nih_template = args.prediction_file_nih_template,
+                        prediction_file_mimic_template = args.prediction_file_mimic_template
                         )
                     results[dataset][labeler] = get_labels(args2)
                     for abnormality in abnormalities:
@@ -580,8 +719,21 @@ def main(args):
                     else:
                         assert(row['n'] == len(gt_vector))
                     for score in score_type_dict:
-                        row[f'{labeler}_{score}_median'], row[f'{labeler}_{score}_low'], row[f'{labeler}_{score}_high'], row[f'{labeler}_{score}_average'], row[f'{labeler}_{score}_var'] = get_bootstrap(score_type_dict[score], gt_vector, pred_vector)
-                    
+                        import scipy
+                        bootstrap_fn_1 = lambda g1, p1: average_seeds_metric(score_type_dict[score], None, g1, p1)
+                        bootstrap_fn = lambda data1, data2, axis: score_statistic(data1, data2, bootstrap_fn_1)
+                        row[f'{labeler}_{score}_value'] =  bootstrap_fn(gt_vector,pred_vector, None)
+                        res = scipy.stats.bootstrap((gt_vector,pred_vector), bootstrap_fn, n_resamples=n_iterations, paired = True, axis = -1, vectorized = True)
+                        row[f'{labeler}_{score}_low'] = res.confidence_interval.low
+                        row[f'{labeler}_{score}_high'] = res.confidence_interval.high
+                        row[f'{labeler}_{score}_var'] = res.standard_error**2
+                        if not row[f'{labeler}_{score}_low']==row[f'{labeler}_{score}_low']:
+                            row[f'{labeler}_{score}_low']=row[f'{labeler}_{score}_value']
+                        if not row[f'{labeler}_{score}_high']==row[f'{labeler}_{score}_high']:
+                            row[f'{labeler}_{score}_high']=row[f'{labeler}_{score}_value']
+                        row[f'{labeler}_{score}_median'] = (row[f'{labeler}_{score}_low']+row[f'{labeler}_{score}_high'])
+
+
                     for labeler2 in model_to_compare_against:
                         if labeler == labeler2:
                             continue
@@ -593,7 +745,14 @@ def main(args):
                                 assert(len(pred_vector2)==len(gt_vector2))
 
                             for score in score_type_dict:
-                                row[f'{labeler}_{score}_p'] = get_hypothesis_test_equality(score_type_dict[score], gt_vector, pred_vector, gt_vector2, pred_vector2)
+                                import scipy
+                                bootstrap_fn_1 = lambda g1, p1: average_seeds_metric(score_type_dict[score], None, g1, p1)
+                                bootstrap_fn = lambda data1, data2, axis: score_statistic_difference(data1, data2, axis, lambda d1: bootstrap_fn_1(gt_vector, d1))
+                                print('oi9', np.array(pred_vector).shape,np.array(pred_vector2).shape)
+                                res = scipy.stats.permutation_test((np.array(pred_vector),np.array(pred_vector2)),bootstrap_fn , permutation_type='samples',
+                                    vectorized=True, n_resamples=n_iterations, axis = -1)
+                                row[f'{labeler}_{score}_p'] = res.pvalue
+
             if row['n_pos'] is not None:
                 for labeler in labelers(dataset):
                     if labeler=='vqa' and dataset not in ['mimic', 'reflacx', 'reflacx_phase12']:
@@ -619,57 +778,49 @@ def main(args):
             this_df_table = df_table[df_table['abnormality']==dataset[6:]]
         elif dataset=='human':
             this_df_table = df_table[df_table['human']==1]
-        elif dataset=='all':
+        elif dataset=='all' or dataset=='all_macro':
             this_df_table = df_table
         else:
             this_df_table = df_table[df_table['dataset']==dataset]
-        if dataset=='all' or dataset[:6]=='label_':
-            this_df_table = this_df_table[this_df_table['dataset']!='reflacx_phase12']
+        if dataset=='all' or dataset=='all_macro' or dataset[:6]=='label_':
+            if 'human' not in args.type_annotation:
+                this_df_table = this_df_table[this_df_table['dataset']!='reflacx_phase12']
         this_df_table = this_df_table[this_df_table['abnormality']!='-']
         this_df_table = this_df_table[this_df_table['n_pos']>10]
-        total_weights = this_df_table['row_unnormalized_weight'].values.sum()
-        this_df_table['this_result_row_weight'] = this_df_table['row_unnormalized_weight']/total_weights
+        if args.table_origin_weights is not None:
+            weights_table = pd.read_csv(args.table_origin_weights)
+            weights_table = pd.merge(this_df_table[['abnormality', 'dataset']], weights_table, on = ['abnormality', 'dataset'])
+            this_df_table = this_df_table.reset_index(drop=True)
+            weights_table = weights_table.reset_index(drop=True)
+
+            assert(len(weights_table)==len(this_df_table))
+            total_weights = weights_table['row_unnormalized_weight'].values.sum()
+            this_df_table['this_result_row_weight'] = weights_table['row_unnormalized_weight']/total_weights
+        else:
+            total_weights = this_df_table['row_unnormalized_weight'].values.sum()
+            this_df_table['this_result_row_weight'] = this_df_table['row_unnormalized_weight']/total_weights
         row = {'dataset': dataset, 'abnormality':'-'}
         values_to_check = {'abnormality': [row['abnormality']], 'dataset':[row['dataset']]}
         if df_table.loc[:, list(values_to_check.keys())].isin(values_to_check).all(axis=1).any():
             continue
-        if len(this_df_table)<=1:
-            continue
-        for labeler in labelers(dataset):
-            print(labeler)
-            for score in score_type_dict:
-                weights = np.array([])
-                gt_vector = np.array([])
-                pred_vector = None
-                for _, old_row in this_df_table.iterrows():
-                    this_gt_vector,this_pred_vector = results[old_row['dataset']][labeler][old_row['abnormality']] 
-                    if 'location' in args.type_annotation and old_row['dataset']!='mri':
-                        indices_to_keep = np.array([location in location_labels_allowed[old_row['abnormality']] for location in str_labels_location])
-                        repeat_factor = len(this_gt_vector) // len(indices_to_keep)
-                        repeated_indices = np.tile(indices_to_keep, repeat_factor)
-                        this_gt_vector = this_gt_vector[repeated_indices]
-                        this_pred_vector = this_pred_vector[repeated_indices]
-                        assert(len(this_gt_vector)==len(this_pred_vector))
-                    weights = np.hstack((weights, [old_row['this_result_row_weight']/old_row['n']] * len(this_gt_vector)))
-                    gt_vector = np.hstack((gt_vector,this_gt_vector))
-                    if isinstance(this_pred_vector,list):
-                        for index_preds in range(len(this_pred_vector)):
-                            if pred_vector is None:
-                                pred_vector = []
-                            if pred_vector is not None and len(pred_vector)<index_preds+1:
-                                pred_vector.append(None)
-                            pred_vector[index_preds] = flexible_concatenate(pred_vector[index_preds],this_pred_vector[index_preds])
-                    else:
-                        pred_vector = flexible_concatenate(pred_vector,this_pred_vector)
-                row[f'{labeler}_{score}_median'], row[f'{labeler}_{score}_low'], row[f'{labeler}_{score}_high'], row[f'{labeler}_{score}_average'], row[f'{labeler}_{score}_var'] = get_bootstrap(score_type_dict[score], gt_vector, pred_vector, weights)
-                for labeler2 in model_to_compare_against:
-                    if labeler == labeler2:
-                        continue
-                    weights2 = np.array([])
-                    gt_vector2 = np.array([])
-                    pred_vector2 = None
-                    for _, old_row in this_df_table.iterrows():
-                        this_gt_vector,this_pred_vector = results[old_row['dataset']][labeler2][old_row['abnormality']] 
+        
+        
+        if len(this_df_table)>1:
+            rng_seed = random.randint(0, 2**32 - 1)
+            for labeler in labelers(dataset):
+                print(labeler)
+                for score in score_type_dict:
+                    weights = np.array([])
+                    gt_vector = np.array([])
+                    dataset_ids = np.array([])
+                    dataset_sizes = np.array([])
+                    row_weights = np.array([])
+                    pred_vector = None
+                    for index_row, old_row in this_df_table.reset_index().iterrows():
+                        this_gt_vector,this_pred_vector = results[old_row['dataset']][labeler][old_row['abnormality']] 
+                        
+                        row_weights = np.hstack((row_weights, [old_row['this_result_row_weight']]))
+                        
                         if 'location' in args.type_annotation and old_row['dataset']!='mri':
                             indices_to_keep = np.array([location in location_labels_allowed[old_row['abnormality']] for location in str_labels_location])
                             repeat_factor = len(this_gt_vector) // len(indices_to_keep)
@@ -677,22 +828,111 @@ def main(args):
                             this_gt_vector = this_gt_vector[repeated_indices]
                             this_pred_vector = this_pred_vector[repeated_indices]
                             assert(len(this_gt_vector)==len(this_pred_vector))
-                        weights2 = np.hstack((weights2, [old_row['this_result_row_weight']/old_row['n']] * len(this_gt_vector)))
-                        gt_vector2 = np.hstack((gt_vector2,this_gt_vector))
+                        if not args.do_micro_scores:
+                            assert(old_row['n']==len(this_gt_vector))
+                            weights = np.hstack((weights, [old_row['this_result_row_weight']/old_row['n']] * len(this_gt_vector)))
+                        dataset_size = len(this_gt_vector)
+                        dataset_sizes = np.hstack((dataset_sizes, [dataset_size]))
+                        dataset_ids = np.hstack((dataset_ids, [index_row] * len(this_gt_vector)))     
+                        gt_vector = np.hstack((gt_vector,this_gt_vector))
                         if isinstance(this_pred_vector,list):
                             for index_preds in range(len(this_pred_vector)):
-                                if pred_vector2 is None:
-                                    pred_vector2 = []
-                                if pred_vector2 is not None and len(pred_vector2)<index_preds+1:
-                                    pred_vector2.append(None)
-                                pred_vector2[index_preds] = flexible_concatenate(pred_vector2[index_preds],this_pred_vector[index_preds])
+                                if pred_vector is None:
+                                    pred_vector = []
+                                if pred_vector is not None and len(pred_vector)<index_preds+1:
+                                    pred_vector.append(None)
+                                pred_vector[index_preds] = flexible_concatenate(pred_vector[index_preds],this_pred_vector[index_preds])
                         else:
-                            pred_vector2 = flexible_concatenate(pred_vector2,this_pred_vector)
-                    assert((weights2==weights).all())
-                    for score in score_type_dict:
-                        row[f'{labeler}_{score}_p'] = get_hypothesis_test_equality(score_type_dict[score], gt_vector, pred_vector, gt_vector2, pred_vector2, weights)
-        df_table = pd.concat([df_table, pd.DataFrame(row, index=[0])], ignore_index=True)
-        df_table.to_csv(output_filename, index=False)
+                            pred_vector = flexible_concatenate(pred_vector,this_pred_vector)
+                    
+                    if args.do_micro_scores and not dataset=='all_macro':
+                        bootstrap_fn_1 = lambda g1, p1, i1, rng = None: calculate_micro_score(g1, p1, i1, score_type_dict[score], rng = rng)
+                    else:
+                        bootstrap_fn_1 = lambda g1, p1, i1, rng = None: calculate_macro_score(dataset_sizes, g1, p1, i1, score_type_dict[score], row_weights if dataset!='all_macro' else None, rng = rng)
+                    bootstrap_fn_2 = lambda g1, p1, i1, rng=None: average_seeds_metric(bootstrap_fn_1, rng, g1, p1, i1)
+                    bootstrap_fn = lambda data1, data2, data3, axis=-1, rng=None: score_statistic_aggregate(data1, data2, data3, rng, bootstrap_fn_2)
+                    import scipy
+                    row[f'{labeler}_{score}_value'] =  bootstrap_fn(gt_vector,pred_vector,dataset_ids)
+                    res = bootstrap((gt_vector,pred_vector,dataset_ids), bootstrap_fn, n_resamples=n_iterations, paired = True, vectorized = True, axis = -1)
+                    row[f'{labeler}_{score}_low'] = res.confidence_interval.low
+                    
+                    row[f'{labeler}_{score}_high'] = res.confidence_interval.high
+                    row[f'{labeler}_{score}_var'] = res.standard_error**2
+                    if not row[f'{labeler}_{score}_low']==row[f'{labeler}_{score}_low']:
+                        row[f'{labeler}_{score}_low']=row[f'{labeler}_{score}_value']
+                    if not row[f'{labeler}_{score}_high']==row[f'{labeler}_{score}_high']:
+                        row[f'{labeler}_{score}_high']=row[f'{labeler}_{score}_value']
+                    row[f'{labeler}_{score}_median'] = (row[f'{labeler}_{score}_low']+row[f'{labeler}_{score}_high'])/2
+                        
+                    for labeler2 in model_to_compare_against:
+                        if labeler == labeler2:
+                            continue
+                        weights2 = np.array([])
+                        gt_vector2 = np.array([])
+                        pred_vector2 = None
+                        for _, old_row in this_df_table.iterrows():
+                            this_gt_vector,this_pred_vector = results[old_row['dataset']][labeler2][old_row['abnormality']] 
+                            if 'location' in args.type_annotation and old_row['dataset']!='mri':
+                                indices_to_keep = np.array([location in location_labels_allowed[old_row['abnormality']] for location in str_labels_location])
+                                repeat_factor = len(this_gt_vector) // len(indices_to_keep)
+                                repeated_indices = np.tile(indices_to_keep, repeat_factor)
+                                this_gt_vector = this_gt_vector[repeated_indices]
+                                this_pred_vector = this_pred_vector[repeated_indices]
+                                assert(len(this_gt_vector)==len(this_pred_vector))
+                            if not args.do_micro_scores:
+                                assert(old_row['n']==len(this_gt_vector))
+                                weights2 = np.hstack((weights2, [old_row['this_result_row_weight']/old_row['n']] * len(this_gt_vector)))
+                            gt_vector2 = np.hstack((gt_vector2,this_gt_vector))
+                            if isinstance(this_pred_vector,list):
+                                for index_preds in range(len(this_pred_vector)):
+                                    if pred_vector2 is None:
+                                        pred_vector2 = []
+                                    if pred_vector2 is not None and len(pred_vector2)<index_preds+1:
+                                        pred_vector2.append(None)
+                                    pred_vector2[index_preds] = flexible_concatenate(pred_vector2[index_preds],this_pred_vector[index_preds])
+                            else:
+                                pred_vector2 = flexible_concatenate(pred_vector2,this_pred_vector)
+                        assert((weights2==weights).all())
+                        if df_table.loc[:, list(values_to_check.keys())].isin(values_to_check).all(axis=1).any() or len(this_df_table)==1:
+                            continue
+                        import scipy
+                        score_fn = lambda data1, data2, axis: score_statistic_difference(data1, data2, axis, lambda d1: bootstrap_fn_2(gt_vector, d1, dataset_ids))
+                        test_pred_vector = np.array(pred_vector)
+                        test_pred_vector2 = np.array(pred_vector2)
+                        len1 = len(test_pred_vector.shape)
+                        len2 = len(test_pred_vector2.shape)
+
+                        # Determine which array is smaller and which is larger
+                        if len1 < len2:
+                            test_pred_vector = test_pred_vector[None]
+                            test_pred_vector = np.tile(test_pred_vector, ((len2 // len1),1))
+                        elif len2 < len1:
+                            test_pred_vector2 = test_pred_vector2[None]
+                            test_pred_vector2 = np.tile(test_pred_vector2, ((len1 // len2), 1))
+                        print(test_pred_vector.shape, test_pred_vector2.shape)
+                        if len(test_pred_vector.shape)>1:
+                            test_pred_vector = test_pred_vector.transpose((1,0))
+                        if len(test_pred_vector2.shape)>1:
+                            test_pred_vector2 = test_pred_vector2.transpose((1,0))
+                            
+                        res = scipy.stats.permutation_test((test_pred_vector,test_pred_vector2), score_fn, permutation_type='samples',
+                            vectorized=True, n_resamples=n_iterations)
+                        row[f'{labeler}_{score}_p'] = res.pvalue
+
+                        print(labeler, score, row[f'{labeler}_{score}_p'])
+        if len(this_df_table)==1:
+            row = this_df_table.iloc[0].to_dict()
+            keys_to_remove = [labeler_3 + '_f1_var_normalized' for labeler_3 in labelers(this_df_table['dataset'].values[0])] + ['row_var', 'row_unnormalized_weight', 'this_result_row_weight', 'n', 'n_pos', 'human']
+
+            row = {k: v for k, v in row.items() if k not in keys_to_remove}
+
+            row['dataset'] = dataset
+            row['abnormality'] = '-'
+
+        if not (df_table.loc[:, list(values_to_check.keys())].isin(values_to_check).all(axis=1).any()) and not ((not group_by_abnormality) and dataset[:6]=='label_') and not (len(this_df_table)<=0):
+
+            df_table = pd.concat([df_table, pd.DataFrame(row, index=[0])], ignore_index=True)
+            df_table.to_csv(output_filename, index=False)
 
 import argparse
 def str2bool(v):
@@ -725,17 +965,25 @@ if __name__=='__main__':
     parser.add_argument("--groundtruth_csv_pneumothorax", type=str, default='pneumothorax_relabeled_dataset_converted.csv', help='''''')
     
     parser.add_argument("--prediction_file_nih_llm", type=str, default='./new_dataset_annotations/nih_llm_annotations_test.csv', help='''''')
+    parser.add_argument("--prediction_file_nih_chexbert", type=str, default='./test_nih_chexbert_labels_converted_id_converted.csv', help='''''')
+    parser.add_argument("--prediction_file_mimic_chexbert", type=str, default='./mimic_chexbert_labels_converted.csv', help='''''')
     parser.add_argument("--prediction_file_mimic_vqa", type=str, default='./vqa_dataset_converted.csv', help='''''')
     parser.add_argument("--prediction_file_mimic_llm", type=str, default='./new_dataset_annotations/mimic_llm_annotations.csv', help='''''')
     parser.add_argument("--prediction_file_nih_chexpert", type=str, default='./chexpert_nih_dataset_converted.csv', help='''''')
     parser.add_argument("--prediction_file_mimic_chexpert", type=str, default='./chexpert_mimic_dataset_converted.csv', help='''''')
     parser.add_argument("--prediction_file_nih_llmgeneric", type=str, default='./nih_llm_annotations_test_generic.csv', help='''''')
     parser.add_argument("--prediction_file_mimic_llmgeneric", type=str, default='./mimic_llm_annotations_generic.csv', help='''''')
-    parser.add_argument("--prediction_file_nih_vicuna", type=str, default='./vicuna_nih_dataset_converted.csv', help='''''')
-    parser.add_argument("--prediction_file_mimic_vicuna", type=str, default='./vicuna_mimic_dataset_converted.csv', help='''''')
+    parser.add_argument("--prediction_file_nih_vicuna", type=str, default='./llama2_vicuna_nih_converted.csv', help='''''')
+    parser.add_argument("--prediction_file_mimic_vicuna", type=str, default='./llama2_vicuna_mimic_converted.csv', help='''''')
+    parser.add_argument("--prediction_file_nih_template", type=str, default='./template_with_vllm_nih_v2_converted.csv', help='''''')
+    parser.add_argument("--prediction_file_mimic_template", type=str, default='./template_with_vllm_mimic_v2_converted.csv', help='''''')
     parser.add_argument("--prediction_file_ct_llm", type=str, default='./parsing_results_llm_ct.csv', help='''''')
     parser.add_argument("--prediction_file_pet_llm", type=str, default='./parsing_results_llm_pet.csv', help='''''')
     parser.add_argument("--prediction_file_mri_llm", type=str, default='./parsing_results_llm_mri.csv', help='''''')
+
+    parser.add_argument("--do_macro_scores", type=str2bool, default='true', help='''''')
+    parser.add_argument("--do_micro_scores", type=str2bool, default='false', help='''''')
+    parser.add_argument("--table_origin_weights", type=str, default=None, help='''''')
 
     parser.add_argument("--include_human_dataset", type=str2bool, default="true", help='''''')
     parser.add_argument("--only_llm", type=str2bool, default="false", help='''''')

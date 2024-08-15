@@ -28,7 +28,7 @@ str_labels_mimic = {
     'Pleural Other':'P.Ot.',
     'Pneumothorax':'PTX',
     'Support Devices':'Sup.D.'}
-datasets = {'llm': 'MAPLEZ', 'vqa': 'VQA', 'chexpert':'CheXpert'}
+datasets = {'llm': 'MAPLEZ', 'vqa': 'VQA', 'chexpert':'CheXpert', 'chexbert':'CheXbert'}
 
 
 row_names_list = [{'gt_present': 'Pr.',
@@ -62,9 +62,13 @@ for abnormality in str_labels_mimic:
     else:
         this_df = statistics_df[statistics_df['abnormality']==abnormality]
     row['abnormality'] = abnormality
+    this_df['chexbert_gt'].fillna(-2, inplace=True)
     row['n'] = len(this_df)
     for category in labels_dict:
+        this_df['chexbert_gt_'+category] = (this_df['chexbert_gt']==labels_dict[category])*1
+    for category in labels_dict:
         row['chexpert_gt_'+category] = this_df['mimic_gt_'+category].sum()
+        row['chexbert_gt_'+category] = this_df['chexbert_gt_'+category].sum()
         row['llm_gt_'+category]  = this_df['new_gt_'+category].sum()
         row['vqa_gt_'+category] = this_df['vqa_new_gt_'+category].sum()
         row['reflacx_gt_'+category] = this_df['reflacx_new_gt_'+category][this_df['reflacx_present']==1].sum()

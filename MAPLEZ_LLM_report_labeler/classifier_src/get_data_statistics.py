@@ -54,7 +54,7 @@ def pre_process_path(dicom_path):
     return temp_path.strip()
 
 class MIMICCXRDataset(Dataset):
-    def __init__(self, df, df_new_labels_llm, df_new_labels_vqa, df_labels_reflacx):
+    def __init__(self, df, chexbert_df, df_new_labels_llm, df_new_labels_vqa, df_labels_reflacx):
         self.df = df
         self.dataset_size = len(self.df)
         
@@ -63,6 +63,7 @@ class MIMICCXRDataset(Dataset):
         self.df_new_labels_llm = df_new_labels_llm
         self.df_new_labels_vqa = df_new_labels_vqa
         self.df_labels_reflacx = df_labels_reflacx
+        self.df_chexbert = chexbert_df
         self.df['subjectid_studyid'] = self.df['subject_id'].astype(str) + '_' + self.df['study_id'].astype(str)
         self.df_new_labels_llm = pd.merge(self.df['subjectid_studyid'], self.df_new_labels_llm, on='subjectid_studyid', how='left').reset_index()
         self.df_new_labels_vqa = pd.merge(self.df['subjectid_studyid'], self.df_new_labels_vqa, on='subjectid_studyid', how='left').reset_index()
@@ -79,6 +80,7 @@ class MIMICCXRDataset(Dataset):
         pid = 'p' + str(self.df.iloc[idx]["subject_id"])
         filepath = jpg_path + '/files/' + pid[:3] + '/' + pid + '/s' + str(self.df.iloc[idx]["study_id"]) + '/' + self.df.iloc[idx]["dicom_id"] + '.jpg'
         mimic_gt = np.zeros([len(str_labels)])
+        chexbert_gt = np.zeros([len(str_labels)])
         new_gt = np.zeros([len(str_labels)])
         probabilities = np.zeros([len(str_labels)])
         location_labels = np.zeros([len(str_labels),len(str_labels_location)])-2
@@ -122,6 +124,9 @@ class MIMICCXRDataset(Dataset):
             this_location_labels = np.zeros([len(str_labels_location)])-2
 
             for index_label, label in enumerate(str_labels):
+                if dataset=='reflacx':
+                    if translation_mimic_to_new_labels[label] not in rows_new_labels_this_case.columns:
+                        continue
                 if dataset!='reflacx':
                     this_location_vector_index = -1
                     location = rows_new_labels_this_case[rows_new_labels_this_case['type_annotation']=='location'][translation_mimic_to_new_labels[label]].values[0]
@@ -171,6 +176,8 @@ class MIMICCXRDataset(Dataset):
                     mimic_gt[index_label]= self.df.iloc[idx][label]
                     location_vector_index[index_label] = this_location_vector_index
                     location_labels[index_label,:] = this_location_labels
+                    chexbert_gt[index_label]= self.df_chexbert[self.df_chexbert['image_1'] == (str(self.df.iloc[idx]['subject_id']) + '_' + str(self.df.iloc[idx]['study_id']))][label].values[0]
+
                 elif dataset=='vqa':
                     vqa_severities[index_label] = severity
                     vqa_probabilities[index_label] = probability
@@ -180,9 +187,8 @@ class MIMICCXRDataset(Dataset):
                 elif dataset=='reflacx':
                     reflacx_probabilities[index_label] = probability
                     reflacx_new_gt[index_label] = new_label
+        return mimic_gt, chexbert_gt, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, vqa_new_gt, vqa_severities, vqa_location_labels, vqa_location_vector_index, vqa_probabilities, reflacx_new_gt, reflacx_probabilities, reflacx_present
         
-        return mimic_gt, new_gt, severities, location_labels, location_vector_index, probabilities, unchanged_uncertainties, vqa_new_gt, vqa_severities, vqa_location_labels, vqa_location_vector_index, vqa_probabilities, reflacx_new_gt, reflacx_probabilities, reflacx_present
-
 def get_train_val_dfs(args):
     train_df = pd.read_csv(f'./train_df{"_all" if args.include_ap else ""}.csv')
     val_df = pd.read_csv(f'./val_df{"_all" if args.include_ap else ""}.csv')
@@ -197,13 +203,14 @@ def get_mimic_by_split(split,args):
         new_labels_df_llm = pd.read_csv('./new_dataset_annotations/mimic_llm_annotations.csv')
     new_labels_df_vqa = pd.read_csv('vqa_dataset_converted.csv')
     df_labels_reflacx = pd.read_csv('reflacx_dataset_converted.csv')
-    return MIMICCXRDataset({'train': train_df, 'val': val_df, 'test': test_df}[split], new_labels_df_llm, new_labels_df_vqa, df_labels_reflacx)
+    chexbert_df = pd.read_csv('mimic_chexbert_labels.csv')
+    return MIMICCXRDataset({'train': train_df, 'val': val_df, 'test': test_df}[split], chexbert_df, new_labels_df_llm, new_labels_df_vqa, df_labels_reflacx)
 from types import SimpleNamespace
 args = SimpleNamespace(do_generic = False, include_ap = True)
 a = get_mimic_by_split('train',args)
 table = []
 for element in a:
-    mimic_gt, new_gt, severities, location_labels, \
+    mimic_gt, chexbert_gt, new_gt, severities, location_labels, \
     location_vector_index, probabilities, unchanged_uncertainties, \
     vqa_new_gt, vqa_severities, vqa_location_labels, vqa_location_vector_index, \
     vqa_probabilities, reflacx_new_gt, reflacx_probabilities, reflacx_present = element
@@ -212,6 +219,7 @@ for element in a:
         row = {}
         row['abnormality'] = abnormality
         row['mimic_gt'] = mimic_gt[index_abnormality]
+        row['chexbert_gt'] = chexbert_gt[index_abnormality]
         row['new_gt'] = new_gt[index_abnormality]
         row['vqa_new_gt'] = vqa_new_gt[index_abnormality]
         row['reflacx_new_gt'] = reflacx_new_gt[index_abnormality]
