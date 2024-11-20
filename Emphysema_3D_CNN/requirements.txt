@@ -36,4 +36,4 @@ subprocess32==3.5.2
 tensorflow-gpu==1.4.1
 tensorflow-tensorboard==0.4.0
 toolz==0.9.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
